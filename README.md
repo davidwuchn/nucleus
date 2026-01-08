@@ -281,7 +281,8 @@ Nucleus is an experimental framework. Contributions welcome:
 
 ## License
 
-[Your chosen license here]
+Copyright 2026 Michael Whitford
+AGPL 3.0
 
 ## Citation
 
@@ -292,7 +293,7 @@ If you use Nucleus in your work:
   title={Nucleus: Mathematical Framework for AI Prompting},
   author={[Your name]},
   year={2025},
-  url={https://github.com/[your-repo]/nucleus}
+  url={https://github.com/michaelwhitford/nucleus}
 }
 ```
 
