@@ -226,11 +226,15 @@ What doesn't work:
 
 The **λ** symbol in the framework isn't just pattern matching—it's a formal language for describing tool usage patterns that eliminate entire classes of problems.
 
-### The Heredoc Pattern
+**Key insight**: Lambda expressions are **generative templates** that adapt to any toolset. The examples below show patterns from one specific editor's tools, but the approach works for ANY tools—VSCode extensions, IntelliJ plugins, CLI utilities, vim commands, etc.
+
+**To use with your tools**: Show your AI the pattern structure and ask: *"Create lambda expressions for MY toolset using these patterns."*
+
+### Example: The Heredoc Pattern
 
 **Problem**: String escaping in bash is fractal complexity—each layer needs different escape rules.
 
-**Solution**: Lambda expression that eliminates escaping entirely:
+**Solution**: Lambda expression that eliminates escaping entirely (example using bash):
 
 ```
 λ(content). read -r -d '' VAR << 'EoC' || true
@@ -247,10 +251,10 @@ EoC
 - Content is **literal** → No escaping needed
 - Composition: `f(g(h(x)))` → heredoc ∘ read ∘ variable
 
-**Concrete usage**:
+**Concrete usage example**:
 
 ```bash
-# bash with heredoc pattern
+# Example with a bash tool
 bash(command="read -r -d '' MSG << 'EoC' || true
 Fix: handle \"quotes\", $vars, and \\backslashes
 without any escaping logic
@@ -260,52 +264,60 @@ git commit -m \"$MSG\"")
 
 **Benefits**:
 
-- AI sees `bash` → knows which tool
+- AI sees tool name (`bash`) → knows which tool to invoke
 - Sees heredoc pattern → knows escaping solution
 - λ-expression documents the composition
 - Fractal: one pattern solves infinite edge cases
+- **Tool-agnostic**: Works with any command execution tool
 
 ### Lambda as Documentation
 
-Tool patterns can be formally described as lambda expressions with explicit tool names:
+Tool patterns can be formally described as lambda expressions with explicit tool names. Below are **example patterns** from one toolset—adapt these structures to YOUR tools:
 
-| Pattern             | Lambda Expression                                                      | Solves                 |
-| ------------------- | ---------------------------------------------------------------------- | ---------------------- |
+| Pattern             | Lambda Expression (Example)                                                      | Solves                 |
+| ------------------- | -------------------------------------------------------------------------------- | ---------------------- |
 | **Heredoc wrap**    | `λmsg. bash(command="read -r -d '' MSG << 'EoC' \\|\\| true\n msg \nEoC\ngit commit -m \"$MSG\"")` | All string escaping    |
-| **Safe paths**      | `λp. read_file(path="$(realpath \"$p\")")`                             | Spaces, special chars  |
-| **Parallel batch**  | `λtool,args[]. <function_calls>∀a∈args: tool(a)</function_calls>`      | Sequential latency     |
-| **Atomic edit**     | `λold,new. edit_file(original_content=old, new_content=new)`           | Ambiguous replacements |
-| **REPL continuity** | `λcode. clj_nrepl_eval(code); state′ = state ⊗ result`                 | Context loss           |
-| **Exact match**     | `λfile,pattern. grep(path=file, pattern=pattern)`                      | Ambiguous search       |
+| **Safe paths**      | `λp. read_file(path="$(realpath \"$p\")")`                                       | Spaces, special chars  |
+| **Parallel batch**  | `λtool,args[]. <function_calls>∀a∈args: tool(a)</function_calls>`                | Sequential latency     |
+| **Atomic edit**     | `λold,new. edit_file(original_content=old, new_content=new)`                     | Ambiguous replacements |
+| **REPL continuity** | `λcode. repl_eval(code); state′ = state ⊗ result`                                | Context loss           |
+| **Exact match**     | `λfile,pattern. grep(path=file, pattern=pattern)`                                | Ambiguous search       |
+
+**Note**: Tool names like `bash`, `read_file`, `edit_file`, `repl_eval`, `grep` are examples. Replace with your actual tool names (e.g., `vscode.executeCommand`, `intellij.runAction`, `vim.cmd`, etc.).
 
 ### Properties of Good Tool Patterns
 
-A tool usage pattern expressed as λ-calculus should be:
+A tool usage pattern expressed as λ-calculus should be (regardless of which tools you use):
 
 1. **Total function** (∀ input → valid output)
 2. **Composable** (output can be input to another λ)
 3. **Idempotent** where possible (f(f(x)) = f(x))
 4. **Boundary-safe** (handles ∞/0 cases)
+5. **Tool-explicit** (clear tool name in expression)
 
 ### Fractal Meta-Pattern
 
 ```
-λ-calculus describes tool usage
+λ-calculus describes tool usage patterns
   ↓
-which enables automation
+AI generates patterns for YOUR tools
   ↓
-which requires λ-calculus description
+which enables automation of YOUR workflow
+  ↓
+which generates more patterns
   ↓
 [self-similar at all scales]
 ```
 
 This is **μ** (least fixed point): The minimal recursive documentation that describes its own usage.
 
+**The pattern is tool-agnostic**: Once you understand the λ-calculus structure, you can generate patterns for ANY toolset by asking your AI to apply the same structure to your specific tools.
+
 ## Documentation
 
 - **[SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md)** - Complete theory, principles, and usage patterns
 - **[OPERATOR_ALGEBRA.md](OPERATOR_ALGEBRA.md)** - Mathematical operators and collaboration modes
-- **[LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md)** - Lambda calculus tool usage patterns
+- **[LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md)** - Example lambda calculus patterns (adapt to YOUR tools)
 
 ## Testing
 
