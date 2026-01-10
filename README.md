@@ -126,7 +126,7 @@ When tested with the prompt "Create a Python game using pygame" and Nucleus cont
 Create `AGENTS.md` in your repository:
 
 ```markdown
-# PRINCIPLES
+# Nucleus Principles
 
 [phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε⚡φ Σ⚡μ c⚡h] | OODA
 Human ⊗ AI
@@ -326,6 +326,7 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 - **[OPERATOR_ALGEBRA.md](OPERATOR_ALGEBRA.md)** - Mathematical operators and collaboration modes
 - **[LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md)** - Example lambda calculus patterns (adapt to YOUR tools)
 - **[DIAG.md](DIAG.md)** - Example debugger prompt for exploring AI latent space (only works on some models)
+- **[NUCLEUS_GAME.md](NUCLEUS_GAME.md)** - A game in a propmt "programmed" in nucleus format (copy/paste to AI to play)
 
 ## Testing
 
