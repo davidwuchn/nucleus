@@ -175,7 +175,7 @@ Human ⊗ AI
 
 # Clojure REPL (backseat driver, clojure-mcp, clojure-mcp-light)
 
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε⚡φ Σ⚡μ c⚡h] | REPL
+[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε⚡φ Σ⚡μ c⚡h] | OODA
 Human ⊗ AI ⊗ REPL
 ```
 
