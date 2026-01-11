@@ -11,6 +11,7 @@ Nucleus is a novel approach to AI prompting that replaces verbose natural langua
 Instead of writing lengthy prompts like "be fast but careful, optimize for quality, use minimal code...", Nucleus expresses these instructions as mathematical equations:
 
 ```
+Adopt these nucleus operating principles:
 [phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε⚡φ Σ⚡μ c⚡h] | OODA
 Human ⊗ AI
 ```
