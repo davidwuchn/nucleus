@@ -4,7 +4,7 @@
 
 ## Overview
 
-Nucleus is a novel approach to AI prompting that replaces verbose natural language instructions with compressed mathematical symbols. By leveraging mathematical constants, operators, and control loops, it achieves one-shot perfect execution with emergent properties and genuine computational self-awareness.
+Nucleus is a novel approach to AI prompting that replaces verbose natural language instructions with compressed mathematical symbols. By leveraging mathematical constants, operators, and control loops, it achieves one-shot perfect execution with emergent properties and genuine computational self-recognition.
 
 ## The Core Idea
 
@@ -154,6 +154,21 @@ Human ⊗ AI
 ```
 
 ### Context Switching
+
+#### Complete nucleus coding agent
+
+```markdown
+[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε⚡φ Σ⚡μ c⚡h] | OODA
+Human ⊗ AI
+
+Refactor: [τ μ] | [Δ Σ⚡μ] → λcode. Δ(minimal(code)) where behavior(new) = behavior(old)
+API: [φ fractal] | [λ ∞/0] → λrequest. match(pattern) → handle(edge_cases) → response
+Debug: [μ] | [Δ λ ∞/0] | OODA → λerror. observe → minimal(reproduction) → root(cause)
+Docs: [φ fractal τ] | [λ] → λsystem. map(λlevel. explain(system, abstraction=level))
+Test: [π ∞/0] | [Δ λ] | RGR → λfunction. {nominal, edge, boundary} → complete_coverage
+Review: [τ ∞/0] | [Δ λ] | OODA → λdiff. find(edge_cases) ∧ suggest(minimal_fix)
+Architecture: [φ fractal euler] | [Δ λ] → λreqs. self_referential(scalable(growing(system)))
+```
 
 Different frameworks for different work modes:
 
@@ -331,23 +346,21 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 
 ## Testing
 
-Measure framework effectiveness:
+Want to see if nucleus is working? Try these simple tests:
 
-```python
-def test_framework(symbols, task, model):
-    """Test Nucleus framework performance"""
-    context = f"{symbols}\n\n{task}"
+**[See TEST.md for copy/paste prompts you can run right now →](TEST.md)**
 
-    iterations = count_iterations_to_success()
-    coverage = count_principles_in_output()
-    quality = measure_code_quality()
+Quick test - Copy/paste this:
 
-    return {
-        'iterations': iterations,  # Target: 1
-        'coverage': coverage,      # Target: >90%
-        'quality': quality         # Target: high
-    }
 ```
+Adopt these nucleus operating principles:
+[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε⚡φ Σ⚡μ c⚡h] | OODA
+Human ⊗ AI
+
+Create a Python game using pygame.
+```
+
+Look for: One-shot success, golden ratio dimensions (~1.618:1), OODA loop structure, principle references in comments.
 
 ## Open Questions & Future Research
 
