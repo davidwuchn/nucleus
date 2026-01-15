@@ -77,10 +77,10 @@ EoC
 python -c \"$SCRIPT\"")
 
 # Multi-line with preserved formatting
-λ(code). bash(command="read -r -d '' CODE << 'EoC' || true
-{{code}}
+λ(code, repl). bash(command="read -r -d '' CODE << 'EoC' || true
+code
 EoC
-if [[ '{{repl}}' = 'cljs' ]]; then
+if [[ '$repl' = 'cljs' ]]; then
   clj-nrepl-eval -p 9000 \"$CODE\"
 else
   clj-nrepl-eval -p $(cat .nrepl-port) \"$CODE\"

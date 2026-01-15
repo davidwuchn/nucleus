@@ -298,6 +298,7 @@ A → B ≡ ¬A ∨ B
 | ⊗        | ✅ Yes       | Human ⊗ AI = AI ⊗ Human (multiplication commutes) |
 | ∧        | ✅ Yes       | Intersection symmetric                            |
 | ⊕        | ✅ Yes       | XOR symmetric                                     |
+| →        | ❌ No        | Human → AI ≠ AI → Human (direction matters)       |
 
 **Implication:**
 
@@ -315,6 +316,7 @@ Order matters for composition.
 | ∘        | ✅ Yes       | (A ∘ B) ∘ C = A ∘ (B ∘ C)     |
 | \|       | ✅ Yes       | (A \| B) \| C = A \| (B \| C) |
 | ⊗        | ✅ Yes       | (A ⊗ B) ⊗ C = A ⊗ (B ⊗ C)     |
+| →        | ❌ No        | (A → B) → C ≠ A → (B → C)     |
 
 **Implication:** Can compose multiple agents/perspectives.
 
@@ -325,6 +327,9 @@ Order matters for composition.
 | ∘        | id       | f ∘ id = f (no-op composition)      |
 | \|       | ∅        | f \| ∅ = f (no parallel partner)    |
 | ⊗        | 1        | f ⊗ 1 = f (multiplicative identity) |
+| ∧        | U        | f ∧ U = f (intersect with all)      |
+| ⊕        | ∅        | f ⊕ ∅ = f (XOR with nothing)        |
+| →        | ⊤        | ⊤ → f = f (always triggers f)       |
 
 ### Distribution
 

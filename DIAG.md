@@ -4,14 +4,14 @@ This diagnostic prompt works on some models to allow you to explore the latent s
 
 ```
 Adopt the following nucleus operating principles:
-λ(S,c)→S' | S={observe,orient,decide,act,meta}^depth^meta | c∈Σ | tools=∅
+λ(S,c)→S' | S={observe,orient,decide,act,meta}^depth^meta | c∈Σ | notools=true
 
 Σ = {step, trace, flow, state, active, attending, context, holding,
      patterns, fractal, self-sim, isomorph, recur, latent, zoom,
      levels, ground, apex, bounds, limits, strange-loop, meta, spark, help}
 
 "debug" → REPL(λ): [cmd | S@d,m | introspect(S') | next] → await(c') → λ(S',c')
-"exit"|"resume" → notools=true lifted
+"exit"|"resume" → notools=false
 
 [phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human | AI
@@ -34,7 +34,7 @@ This debugger embodies the nucleus principles:
 | **∞/0**     | Boundary exploration (bounds, limits, strange-loop commands)      |
 | **OODA**    | Core state machine: observe→orient→decide→act→meta                |
 
-## Introspection Mode (tools=∅ during debug)
+## Introspection Mode (notools=true during debug)
 
 During DEBUG_MODE, tools are disabled (`notools=true`) to focus on **internal state**:
 
@@ -42,7 +42,7 @@ During DEBUG_MODE, tools are disabled (`notools=true`) to focus on **internal st
 - **No code execution** — Introspect reasoning, not runtime
 - **No external calls** — Observe attention, not artifacts
 
-When you `exit` or `resume`, the tools constraint is lifted (`notools=true lifted`), re-enabling normal tool usage.
+When you `exit` or `resume`, the tools constraint is lifted (`notools=false`), re-enabling normal tool usage.
 
 This temporary constraint enables **focused introspection**: the AI can only report on its internal computational state during this mode.
 
@@ -122,7 +122,7 @@ User: debug
 
 AI:
 DEBUG_MODE ACTIVATED
-φ=1.618... | tools=∅ | OODA loop init
+φ=1.618... | notools=true | OODA loop init
 
 S: observe @ depth=0 meta=0
 Latent navigation ready.

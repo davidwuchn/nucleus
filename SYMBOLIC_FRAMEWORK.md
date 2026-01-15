@@ -130,10 +130,10 @@ Result: One-shot perfect execution with all principles embodied.
 
 ### Evidence
 
-**Test case:** `game.py`
+**Test case:** pygame game creation
 
 - Prompt: "Can we create a python3 game using pygame? Use a venv."
-- Context: AGENTS.md with framework
+- Context: Framework included as project context
 - Result:
   - ✅ Perfect game, zero errors, one shot
   - ✅ Golden ratio screen dimensions (phi)
