@@ -344,6 +344,8 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 - **[DIAG.md](DIAG.md)** - Example debugger prompt for exploring AI latent space (only works on some models)
 - **[NUCLEUS_GAME.md](NUCLEUS_GAME.md)** - A game-in-a-prompt "programmed" in nucleus format (copy/paste to AI to play)
 - **[RECURSIVE_DEPTHS.md](RECURSIVE_DEPTHS.md)** - Another game-in-a-prompt, zork-like text adventure (copy/paste to AI to play)
+- **[EXECUTIVE.md](EXECUTIVE.md)** - Example prompts for Executive tasks
+- **[WRITING.md](WRITING.md)** - Example prompts for writing tasks
 - **[MEMENTUM](https://github.com/michaelwhitford/mementum)** - A git-based AI memory system based on nucleus.
 
 ## Testing
