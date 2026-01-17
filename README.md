@@ -407,6 +407,10 @@ Nucleus is an experimental framework. Contributions welcome:
 - Improve theoretical foundations
 - Develop tooling and integrations
 
+## Projects using Nucleus
+
+- [Matryoshka](https://github.com/yogthos/Matryoshka) - Process documents 100x larger than your LLM's context window
+
 ## License
 
 AGPL 3.0
