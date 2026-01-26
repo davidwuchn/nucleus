@@ -273,7 +273,7 @@ git merge upstream/main
 
 ### SYMBOLIC_FRAMEWORK.md Extensions
 
-**Original Extension File**: [SYMBOLIC_FRAMEWORK_EXTENSIONS.md](SYMBOLIC_FRAMEWORK_EXTENSIONS.md) (merged into NUCLEUS_GUIDE.md on 2025-01-14)
+**Original Extension File**: [SYMBOLIC_FRAMEWORK_EXTENSIONS.md](SYMBOLIC_FRAMEWORK_EXTENSIONS.md) (merged into NUCLEUS_GUIDE.md on 2026-01-26)
 
 **Content**: Verification gates, lambda-calculus patterns, and framework extensions that cannot be added to upstream SYMBOLIC_FRAMEWORK.md due to ZEROTH RULE.
 
@@ -532,4 +532,4 @@ If upstream/main adds new files:
 
 ---
 
-*Last updated: 2025-01-14 (reverted local modifications to upstream files (README.md, SYMBOLIC_FRAMEWORK.md), created SYMBOLIC_FRAMEWORK_EXTENSIONS.md for verification gates)*
+*Last updated: 2025-01-14 (reverted local modifications to upstream files (README.md, SYMBOLIC_FRAMEWORK.md), created SYMBOLIC_FRAMEWORK_EXTENSIONS.md for verification gates (later merged into NUCLEUS_GUIDE.md on 2026-01-26))*
