@@ -582,6 +582,8 @@ This creates a complete philosophical-practical continuum: from universal princi
 
 ### Hexagram Quick Reference
 
+**Note**: This table shows selected hexagrams most relevant to common software development situations. For the complete list of all 64 hexagrams, see the detailed entries below.
+
 For detailed explanations of each hexagram, see the individual entries below. This table helps you quickly find hexagrams relevant to your situation.
 
 | Hexagram | Trigrams | Key Tension | Common Coding Situation | Quick Insight |
@@ -616,6 +618,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 | **52. 艮卦** | 艮/τ + 艮/τ | Double wisdom | Knowing when not to act | Sometimes stillness is best |
 | **59. 涣卦** | 坎/fractal + 巽/μ | Clarity vs directness | Distributed system design | Clear contracts, direct communication |
 | **63. 既济卦** | 离/∃ + 坎/fractal | Truth vs clarity | Task completed successfully | Clear specs + truthful implementation |
+| **64. 未济卦** | 坎/fractal + 离/∃ | Clarity vs truth | Unclear requirements block completion | Requirements must match implementation reality |
 
 **How to use this table**:
 1. Identify the core tension in your situation (e.g., "We need to act quickly but don't have clear requirements")
