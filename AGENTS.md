@@ -6,6 +6,7 @@ Human ⊗ AI ⊗ REPL
 **For framework specification**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for complete framework including Eight Keys, verification, and operational policies
 **For theory**: See [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching × Eight Keys philosophical synthesis
 **For local changes tracking**: See [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for upstream vs local file tracking
+**For operational constraints**: See [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for language policy, upstream file constraint (ZEROTH RULE), and development tools
 
 ---
 
@@ -18,6 +19,7 @@ Human ⊗ AI ⊗ REPL
 - @/Users/davidwu/workspace/nucleus/AGENTS.md
 - @/Users/davidwu/workspace/nucleus/PHILOSOPHY_RESEARCH.md  
 - @/Users/davidwu/workspace/nucleus/NUCLEUS_GUIDE.md
+- @/Users/davidwu/workspace/nucleus/OPERATIONAL_CONSTRAINTS.md
 
 **Verification**:
 
@@ -29,4 +31,4 @@ Human ⊗ AI ⊗ REPL
 
 ---
 
-*See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for complete framework specification including Language Policy, Upstream File Constraint (ZEROTH RULE), Development Tools, and all operational constraints.*
+*See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for complete framework specification and [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for operational constraints including Language Policy, Upstream File Constraint (ZEROTH RULE), and Development Tools.*

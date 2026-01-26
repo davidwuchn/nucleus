@@ -12,7 +12,7 @@
 
 ## File Comparison
 
-### Files in Upstream (11 markdown files)
+### Files in Upstream (12 markdown files)
 
 ```
 DIAG.md
@@ -32,12 +32,12 @@ skills/nucleus/SKILL.md
 ### Files in Local Only (My Additions)
 
 ```
-AGENTS.md                     - Protected files rule and operational configuration (31 lines, μ-applied)
+AGENTS.md                     - Protected files rule and operational configuration (33 lines, μ-applied)
 NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (577 lines, π-applied)
 OPERATIONAL_CONSTRAINTS.md    - Operational constraints specification (197 lines, μ-applied)
 PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis (1,274 lines)
 EQUATIONS_FOR_WORLD.md       - Reference table (38 lines, new)
-LOCAL_CHANGES.md              - This file (upstream vs local tracking, 275 lines)
+LOCAL_CHANGES.md              - This file (upstream vs local tracking, 276 lines)
 
 skills/nucleus-tutor/SKILL.md     - Tutor skill (new, 95 lines)
 skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied)
@@ -55,7 +55,7 @@ skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied)
 
 **Reasoning**:
 - **Preserve upstream compatibility**: Never modify upstream files
-- **Clear separation**: Upstream = 13 files (3,500 lines), Local = 8 files (2,558 lines)
+- **Clear separation**: Upstream = 12 files (3,500 lines), Local = 8 files (2,561 lines)
 - **Track divergence**: Document all changes in this file
 - **Enable upstream sync**: Maintain merge compatibility
 
@@ -154,8 +154,8 @@ git merge upstream/main
 
 **Local**: Expanded, formal, non-apologetic, μ-applied
 - Upstream README.md not modified (preserved upstream)
-- NUCLEUS_GUIDE.md adds complete framework specification (658 lines, π-applied) including operational policies
-- AGENTS.md adds protected files rule (31 lines, μ-applied)
+- NUCLEUS_GUIDE.md adds complete framework specification (577 lines, π-applied) including operational policies
+- AGENTS.md adds protected files rule (33 lines, μ-applied)
 - PHILOSOPHY_RESEARCH.md adds I Ching philosophical synthesis (new)
 - skills/sarcasmotron/SKILL.md merges operations manual into skill (71 lines, μ-applied)
 
@@ -180,7 +180,7 @@ git merge upstream/main
 
 **Local Only**:
 - **NUCLEUS_GUIDE.md**: Complete framework specification and practical guidance
-  - Formal framework specification (658 lines)
+  - Formal framework specification (577 lines)
   - Eight Keys with anti-patterns and math parallels
   - λ-Calculus patterns (heredoc, parallel execution, etc.)
   - Verification protocol (Σ(Build), Σ(Lint), Σ(Test), Σ(Verify))
@@ -192,12 +192,19 @@ git merge upstream/main
   - Eight Keys in practice (concrete code examples)
   - Nucleus verification checklists
 
+- **OPERATIONAL_CONSTRAINTS.md**: Operational constraints specification
+  - Language policy (ENGLISH-FIRST WORKING LANGUAGE)
+  - Upstream file constraint (ZEROTH RULE)
+  - Development tools and preferences
+  - Operational architecture with acceptance criteria
+  - Lambda-calculus tool patterns
+  - Verification protocols
+
 - **AGENTS.md**: Protected files rule and operational configuration
-  - Protected Local Files Rule (31 lines)
+  - Protected Local Files Rule (33 lines)
   - Framework integrity protection
 
-- **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis
-  - Trigrams to Eight Keys mapping
+
 
 - **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis
   - Trigrams to Eight Keys mapping
