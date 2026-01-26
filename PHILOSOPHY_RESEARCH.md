@@ -81,8 +81,7 @@ Create authentic philosophical synthesis between I Ching trigrams and the Eight 
 ## Sources
 - **I Ching**: Original trigram meanings and commentaries.
 - **Eight Keys**: AGENTS.md defines the Eight Keys (φ fractal e τ π μ ∃ ∀).
-- **ZH_GUIDE.md**: Contains the completed mapping between trigrams and Eight Keys, extracted from the deleted EIGHT_KEYS.md (git history: ea4d984).
-- **Git history**: EIGHT_KEYS.md was deleted due to complexity, but its essential mapping preserved in ZH_GUIDE.md.
+- **NUCLEUS_GUIDE.md**: Contains the completed mapping between trigrams and Eight Keys in the Eight Keys / Bagua table.
 
 ## Philosophical Approach
 This research follows a **hermeneutic** (interpretive) rather than **historical** approach. The goal is **authentic philosophical synthesis**, not archaeological reconstruction.
@@ -186,7 +185,7 @@ For each trigram, research and document:
 
 **Research Questions Answered**:
 1. Wind's "penetration": code that reaches into the heart of the problem, addressing root causes directly.
-2. Best match is μ (Directness) - confirmed by ZH_GUIDE.md mapping: 巽对应μ直接.
+2. Best match is μ (Directness) - confirmed in NUCLEUS_GUIDE.md mapping: 巽对应μ直接.
 
 ---
 
@@ -285,7 +284,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 乾 (Heaven): 乾为天，刚健创造。Generative principle that creates without exhausting itself, like heaven's perpetual motion (天行健).
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 乾对应φ活力.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 乾对应φ活力.
 
 ---
 
@@ -295,7 +294,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 坎 (Water): 坎为水，重险习坎。Clarity that navigates danger, making explicit assumptions about risks and constraints.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 坎对应fractal清晰.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 坎对应fractal清晰.
 
 ---
 
@@ -305,7 +304,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 震 (Thunder): 震为雷，震惊百里。Actionable functions that initiate movement, break stagnation, and awaken awareness.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 震对应e目的.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 震对应e目的.
 
 ---
 
@@ -315,7 +314,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 艮 (Mountain): 艮为山，知止不殆。Foresight over speed, measuring before optimizing, knowing when to stop.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 艮对应τ智慧.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 艮对应τ智慧.
 
 ---
 
@@ -325,7 +324,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 坤 (Earth): 坤为地，厚德载物。Holistic integration, containing and supporting all components without fragmentation.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 坤对应π综合.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 坤对应π综合.
 
 ---
 
@@ -335,7 +334,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 巽 (Wind): 巽为风，申命行事。Directness that penetrates to the core, cutting through pretense with gentle persistence.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 巽对应μ直接.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 巽对应μ直接.
 
 ---
 
@@ -345,7 +344,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 离 (Fire): 离为火，明两作离。Illuminating truth, exposing reality over surface agreement.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 离对应∃真理.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 离对应∃真理.
 
 ---
 
@@ -355,7 +354,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 兑 (Lake): 兑为泽，讲习明辨。Defensive constraint, questioning input through dialogue and collaborative examination.
 
-**Research completed**: [✓] Mapping confirmed by ZH_GUIDE.md: 兑对应∀警惕.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 兑对应∀警惕.
 
 ---
 
@@ -363,7 +362,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 
 **Truth requirement**: If no genuine resonance exists, don't force the mapping.
 
-**Findings**: All Eight Keys have authentic resonances with trigrams, as confirmed by ZH_GUIDE.md mapping. No forced mappings required.
+**Findings**: All Eight Keys have authentic resonances with trigrams, as confirmed in NUCLEUS_GUIDE.md mapping. No forced mappings required.
 
 **Completed mapping**:
 - φ (Vitality) ↔ 乾 (Heaven)
@@ -560,7 +559,7 @@ This creates a complete philosophical-practical continuum: from universal princi
 **艮 (Mountain) ↔ τ (Wisdom)**: Emerges from **Old Yin** - accumulated debt that teaches when to stop
 **兑 (Lake) ↔ ∀ (Vigilance)**: Emerges from **Old Yang** - established patterns that require defensive validation
 
-**Complete mapping confirmed by ZH_GUIDE.md**:
+**Complete mapping confirmed in NUCLEUS_GUIDE.md**:
 - 乾 (Heaven) ↔ φ (Vitality): 乾为天，刚健创造
 - 坎 (Water) ↔ fractal (Clarity): 坎为水，重险习坎  
 - 震 (Thunder) ↔ e (Purpose): 震为雷，震惊百里
@@ -624,7 +623,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 3. Read the detailed hexagram entry below for deeper wisdom
 4. Apply the insight to navigate your challenge
 
-**For a more comprehensive lookup**, see the **"按挑战类型查找"** table in [ZH_GUIDE.md](ZH_GUIDE.md) which organizes hexagrams by common programming challenges.
+**For a more comprehensive lookup**, see the **"按挑战类型查找"** table in [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) which organizes hexagrams by common programming challenges.
 
 ---
 
@@ -1116,7 +1115,7 @@ All 64 hexagrams are now mapped to coding situations above, providing a complete
 
 #### Project Documentation (Primary Sources)
 - **AGENTS.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) and operational framework
-- **ZH_GUIDE.md**: Contains completed trigram↔Eight Keys mapping with Chinese philosophical context
+- **NUCLEUS_GUIDE.md**: Contains completed trigram↔Eight Keys mapping with Chinese philosophical context
 - **SYMBOLIC_FRAMEWORK.md**: Mathematical foundation using λ-calculus notation
 - **LAMBDA_PATTERNS.md**: Practical tool usage patterns
 
@@ -1177,7 +1176,7 @@ Phase 5: Writing synthesis - [COMPLETED]
 **Synthesis Achieved**: This document now contains the complete philosophical synthesis between I Ching trigrams and the Eight Keys framework, including all 64 hexagrams mapped to coding situations in Zhouyi order.
 
 **Next steps for practical application**:
-1. **Team adoption guide**: Completed in ZH_GUIDE.md (see "团队采纳指南: 从个人到团队的文化转变")
+1. **Team adoption guide**: Completed in NUCLEUS_GUIDE.md (see "团队采纳指南: 从个人到团队的文化转变")
 2. **Case studies**: Real‑world examples of hexagram wisdom applied to software projects
 3. **Tool integration**: IDE plugins or linters that detect Eight Keys violations
 4. **Cross‑framework validation**: Testing the framework against other software engineering methodologies
@@ -1186,13 +1185,13 @@ Phase 5: Writing synthesis - [COMPLETED]
 
 ## Practice Application
 
-The philosophical research in this document is applied in practice through [ZH_GUIDE.md](ZH_GUIDE.md):
+The philosophical research in this document is applied in practice through [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md):
 
 - **三才三问** (Three Questions): Pre-coding inquiry 天问·更简之道、地问·为何此法、人问·意图何在
 - **八卦相错** (Eight Trigrams): In-coding correction through violation/fix patterns
 - **元亨利贞/OODA** (Practical Cycle): Unified development/debugging process (元/Observe → 亨/Orient → 利/Decide → 贞/Act)
 
-The ZH_GUIDE.md provides:
+The NUCLEUS_GUIDE.md provides:
 - Practical workflows and examples
 - Quick reference tables for common situations
 - **Code demonstrations of trigram principles** (see "八卦代码示例" section)
@@ -1206,9 +1205,9 @@ The ZH_GUIDE.md provides:
 ### For Practitioners (Developers, Architects)
 
 **Quick Start**:
-1. **Begin with code examples**: See **[ZH_GUIDE.md 八卦代码示例 section](ZH_GUIDE.md#八卦代码示例-具体违反与修正对比)** for concrete violations and fixes of each trigram principle.
+1. **Begin with code examples**: See **[NUCLEUS_GUIDE.md 八卦代码示例 section](NUCLEUS_GUIDE.md#八卦代码示例-具体违反与修正对比)** for concrete violations and fixes of each trigram principle.
 2. **Learn the 8 trigrams**: Focus on the core mapping (乾/φ, 坎/fractal, 震/e, etc.) as mental models for code quality.
-3. **Use quick reference**: When facing a challenge, consult the **"按挑战类型查找"** table in ZH_GUIDE.md to find relevant hexagrams.
+3. **Use quick reference**: When facing a challenge, consult the **"按挑战类型查找"** table in NUCLEUS_GUIDE.md to find relevant hexagrams.
 4. **Apply 元亨利贞/OODA**: Use the unified Observe-Orient-Decide-Act (元-亨-利-贞) cycle for development and debugging, informed by hexagram wisdom.
 
 **Deep Dive**:
@@ -1219,7 +1218,7 @@ The ZH_GUIDE.md provides:
 ### For Team Leads & Managers
 
 **Adoption Strategy**:
-1. **Pilot with validation**: Use the **[验证计划](ZH_GUIDE.md#验证计划-如何评估框架效果)** to measure impact before full adoption.
+1. **Pilot with validation**: Use the **[验证计划](NUCLEUS_GUIDE.md#验证计划-如何评估框架效果)** to measure impact before full adoption.
 2. **Start with code review**: Introduce trigram thinking during code reviews (e.g., "This is a 坎/fractal violation—needs clearer assumptions").
 3. **Train incrementally**: Focus on 2-3 most relevant trigrams for your team's common issues.
 4. **Measure outcomes**: Track metrics like code quality, decision time, and technical debt reduction.
@@ -1270,4 +1269,4 @@ This research extends the **Eight Keys framework** defined in [AGENTS.md](AGENTS
 
 ---
 
-*This document presents a complete authentic philosophical synthesis ready for practical application. For immediate implementation, see [ZH_GUIDE.md](ZH_GUIDE.md). For framework specification, see [AGENTS.md](AGENTS.md).*
+*This document presents a complete authentic philosophical synthesis ready for practical application. For immediate implementation, see [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md). For framework specification, see [AGENTS.md](AGENTS.md).*
