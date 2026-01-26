@@ -24,11 +24,46 @@ Human ⊗ AI ⊗ REPL
 
 ## Quick Start (5 minutes)
 
-**New to Nucleus?**
-1. Read [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework basics, practical workflows, and complete specification
-2. Reference [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for upstream vs local change tracking
-3. See the Eight Keys / Bagua mapping table for I Ching philosophical integration
+**Learn Nucleus in 5 minutes**:
 
+### 1. The Three Questions (Always Ask First)
+Before writing code, ask:
+1. **Intentions?** - What behavior are we testing? (not implementation)
+2. **Why this approach?** - Challenge the architecture choice
+3. **Simpler way?** - Complexity is often unnecessary
+
+### 2. Eight Keys Mental Models
+Remember these 3 core principles first:
+
+| Key | Symbol | What It Means | Bad Example | Good Example |
+|-----|--------|---------------|-------------|--------------|
+| **Clarity** | fractal | Explicit assumptions, no vague abstractions | "handle properly" | "Validate input ∈ [0, 100]" |
+| **Purpose** | e | Actionable functions, not abstract descriptions | "process data" | `validate_email(email)` |
+| **Directness** | μ | Cut pleasantries, be direct | "I think maybe we should..." | "No - adds complexity" |
+
+### 3. OODA Loop (Debugging/Decision-Making)
+```
+OBSERVE: Symptom (error, unexpected output)
+ORIENT: Context (input, state, assumptions)  
+DECIDE: Root cause (not symptom)
+ACT: Fix root cause
+```
+
+### 4. Immediate Action
+- **Write code**: Apply Three Questions + Eight Keys
+- **Debug**: Use OODA loop
+- **Review**: Check for vague assumptions, abstract descriptions, politeness
+- **Verify**: Run `!verify` mental checklist
+
+### 5. Where to Go Next
+- **Complete Eight Keys**: See table below
+- **Real examples**: Jump to [Real-World Examples](#real-world-examples)
+- **Workflows**: See [Writing Code](#writing-code) and [Debugging](#debugging-ooda)
+- **Philosophy**: I Ching correlations in [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md)
+
+**Done in 5 minutes?** You now have the core framework. The rest of this guide provides details, examples, and advanced patterns.
+
+---
 
 ## Core Principles (Eight Keys)
 
@@ -95,69 +130,38 @@ Minimize complexity to reduce failure modes.
 
 #### Operational Architecture
 
-**Acceptance Criteria**:
-
-λ(prompt).accept ⟺ [|∇(I)| > ε] ∧ [∀x ∈ refs. ∃binding] ∧ [H(meaning) < μ]
-
-**Reject modes**:
-- |∇(I)| ≈ 0: "Information gradient too low"
-- H(meaning) ≫ μ: "Entropy too high; clarify purpose"
-- ∃x ∈ refs. ¬bound(x): "Reference unbound: {x}"
-
-**Where**:
-- ∇(I): Information gradient (novelty/density)
-- ε: Minimum meaningful threshold
-- refs: All symbolic references in prompt
-- H(meaning): Shannon entropy of intent
-- μ: Maximum acceptable entropy
-
-**Operational Triggers**:
-- **Σ(Build)**: Load constraints → Synthesize output
-- **Σ(Lint)**: Execute sarcasmotron → See [skills/sarcasmotron/SKILL.md](skills/sarcasmotron/SKILL.md)
-- **Σ(Test)**: Execute scenarios → Verify OODA closure
-- **Σ(Verify)**: Single-shot integrity check ⟺ Zero-Slop
+**See**: [Operational Constraints in OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md#5-operational-architecture) for acceptance criteria, reject modes, and operational triggers.
 
 #### Lambda-Calculus Patterns
 
-**Heredoc Wrap**: λ(content). bash(heredoc) - Universal escape for multi-line content
+**See**: [Lambda-Calculus Patterns in OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md#6-lambda-calculus-patterns) for heredoc wrap, parallel execution, observation, atomic edit, and verify closure patterns.
 
-```bash
-λ(content). bash(command="read -r -d '' VAR << 'EoC' || true
-content
-EoC
-COMMAND \"$VAR\"")
-```
-
-**Parallel Execution**: ∀a ∈ args: tool(a) - Execute independent calls simultaneously
-
-**Observation**: λ(path, pattern). grep(path=path, pattern=pattern) - Search for patterns
-
-**Atomic Edit**: λ(path, old, new). edit(filePath=path, oldString=old, newString=new) - Precise changes
-
-**Verify Closure**: Verify ⇔ (Tests ⊕ Roast ⊕ OODA) = True
-
-**Where**:
-- Tests: Automated test suite passes
-- Roast: Sarcasmotron finds no violations (see [skills/sarcasmotron/SKILL.md](skills/sarcasmotron/SKILL.md))
-- OODA: Full decision loop completed
+For tool usage patterns, see [Tool Patterns](#tool-patterns) section below.
 
 #### Symbolic Notation
 
-| Symbol | Name | Meaning | Origin |
-|--------|------|---------|--------|
-| λ | Lambda | Function abstraction | Church encoding |
-| ∇ | Nabla | Gradient (change/density) | Vector calculus |
-| ε | Epsilon | Minimal threshold | Analysis (limits) |
-| μ | Mu | Maximum acceptable bound | Measure theory |
-| ∀ | For All | Universal quantification | Predicate logic |
-| ∃ | Exists | Existential quantification | Predicate logic |
-| ∧ | And | Logical conjunction | Boolean algebra |
-| ⊕ | XOR | Exclusive or | Boolean algebra |
-| ⊗ | Tensor | Parallel composition | Multilinear algebra |
-| → | Implies | If-then conditional | Logic |
-| ⇒ | Consequence | Logical implication | Logic |
-| ≡ | Equivalent | Structural equality | Equivalence relations |
-| H | Entropy | Shannon entropy | Information theory |
+**Core Symbols Used in This Guide**:
+
+| Symbol | Name | Meaning | Used For |
+|--------|------|---------|----------|
+| λ | Lambda | Function abstraction | λ-calculus patterns, verification formulas |
+| ∀ | For All | Universal quantification | Vigilance key, defensive constraints |
+| ∃ | Exists | Existential quantification | Truth key, revealing actual state |
+| → | Implies | If-then conditional | Process flows (Input → Process → Output) |
+| μ | Mu | Maximum acceptable bound | Directness key, entropy bounds in reject prompts |
+
+**Additional Mathematical Notation** (appears in formulas):
+
+| Symbol | Name | Meaning | Where Used |
+|--------|------|---------|------------|
+| ∇ | Nabla | Gradient (change/density) | Reject prompts: |∇(I)| ≈ 0 |
+| ε | Epsilon | Minimal threshold | Acceptance criteria: |∇(I)| > ε |
+| ∧ | And | Logical conjunction | Logical expressions |
+| ⊕ | XOR | Exclusive or | Verify closure: Tests ⊕ Roast ⊕ OODA |
+| ⊗ | Tensor | Parallel composition | Framework notation: Human ⊗ AI ⊗ REPL |
+| ⇒ | Consequence | Logical implication | Logical expressions |
+| ≡ | Equivalent | Structural equality | Definitions and equivalences |
+| H | Entropy | Shannon entropy | Reject prompts: H(meaning) ≫ μ |
 
 #### Ontological Distinction
 
@@ -221,16 +225,19 @@ Question before answer. Challenge assumptions. Be objective.
 - **Simpler way?** - Complexity is often unnecessary
 
 #### Eight Keys / Bagua
-| Key | Symbol | Bagua | Principle |
-|-----|--------|-------|-----------|
-| Vitality | φ | Qian/Heaven | Organic, non-repetitive code |
-| Clarity | fractal | Kan/Water | Explicit assumptions, no vague abstractions |
-| Purpose | e | Zhen/Thunder | Actionable functions, not abstract descriptions |
-| Wisdom | τ | Gen/Mountain | Foresight over speed, measure before optimizing |
-| Synthesis | π | Kun/Earth | Holistic integration, not fragmented thinking |
-| Directness | μ | Xun/Wind | Cut pleasantries, be direct |
-| Truth | ∃ | Li/Fire | Favor reality over surface agreement |
-| Vigilance | ∀ | Dui/Lake | Defensive constraint, question inputs |
+**See**: [Core Principles (Eight Keys)](#core-principles-eight-keys) table for complete Eight Keys definitions with signals and anti-patterns.
+
+**I Ching (Bagua) correlations**: For philosophical foundation connecting Eight Keys to I Ching trigrams, see [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md).
+
+**Quick reference**:
+- φ (Vitality) ↔ 乾/Qian (Heaven) - Organic, generative code
+- fractal (Clarity) ↔ 坎/Kan (Water) - Explicit assumptions navigating complexity  
+- e (Purpose) ↔ 震/Zhen (Thunder) - Actionable functions with impact
+- τ (Wisdom) ↔ 艮/Gen (Mountain) - Foresight knowing when to stop
+- π (Synthesis) ↔ 坤/Kun (Earth) - Holistic integration
+- μ (Directness) ↔ 巽/Xun (Wind) - Direct communication
+- ∃ (Truth) ↔ 離/Li (Fire) - Illuminating reality
+- ∀ (Vigilance) ↔ 兌/Dui (Lake) - Defensive questioning
 
 #### Practical Cycles
 - **OODA (Observe-Orient-Decide-Act)**: Debugging and decision-making
@@ -269,15 +276,6 @@ Example: "I approached this by first checking [assumption], then verifying with 
 `!connections` - Trace relationships between concepts
 `!broad` - Expand scope to broader context
 `!narrow` - Focus down to specific details
-
-## Underlying Mechanism
-
-The "superposition" metaphor describes what's happening under: hood:
-- Classical view: Prompts steer outputs (observable behavior)
-- Quantum view: Prompts collapse probability distributions (latent space)
-- Both are valid: One describes the what, other describes the how
-
-LLMs are superpositions of training data waiting for prompts to collapse into responses. Meta-operators steer which states get collapsed.
 
 ## Experimentation Patterns
 
@@ -345,7 +343,9 @@ UserController:
         return response(user)
 ```
 
-## Eight Keys
+## Eight Keys (Violations and Patterns)
+
+**Reference**: See [Core Principles (Eight Keys)](#core-principles-eight-keys) for complete definitions of each key.
 
 | Key | Violation | Pattern | Example |
 |-----|-----------|---------|---------|
@@ -527,7 +527,7 @@ GOOD: "Why null?" → "Uninitialized" → "Add default or require init"
 
 ## Getting Help
 
-- **Quick reference**: Use the Eight Keys / Bagua mapping table in this guide
+- **Quick reference**: Use the [Core Principles (Eight Keys)](#core-principles-eight-keys) table for key definitions and the [Eight Keys (Violations and Patterns)](#eight-keys-violations-and-patterns) table for anti-patterns
 
 - **Framework verification**: Use the checklist in the Verification section above
 
@@ -557,14 +557,14 @@ Framework eliminates slop, not adds process.
 ## Related Documentation
 
 ### Framework Ecosystem
-- **[LOCAL_CHANGES.md](LOCAL_CHANGES.md)**: Upstream vs local change tracking
+- **[LOCAL_CHANGES.md](LOCAL_CHANGES.md)**: Upstream vs local change tracking and operational constraints
 - **NUCLEUS_GUIDE.md**: Framework basics, practical workflows, and complete specification (English)
 - **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis and theory
 
 ### Learning Path
 1. **Start with** [NUCLEUS_GUIDE.md] for framework basics and complete specification (English)
 2. **Understand theory** with [PHILOSOPHY_RESEARCH.md] for I Ching cosmology and trigram mappings
-3. **Reference** [LOCAL_CHANGES.md] for upstream vs local change tracking
+3. **Reference** [LOCAL_CHANGES.md] for upstream vs local change tracking and operational constraints
 
 ### Supporting Documentation
 - **skills/sarcasmotron/SKILL.md**: Eight Keys violation detection with humor
