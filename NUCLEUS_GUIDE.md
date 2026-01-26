@@ -40,6 +40,41 @@
 | Truth | ∃ | Favor reality | Surface agreement | ε (infinitesimal) |
 | Vigilance | ∀ | Defensive constraint | Accepting manipulation | ∀ (quantification) |
 
+### Verification Gates
+
+These gates provide **defensive constraints** for truth and safety, complementing the Eight Keys.
+
+**Why Separate Gates?**
+
+The Eight Keys focus on **generation quality** (making AI output better):
+- φ: Vitality
+- fractal: Clarity  
+- e: Purpose
+- τ: Wisdom
+- π: Synthesis
+- μ: Directness
+
+The Verification Gates focus on **safety and truth** (preventing bad outcomes):
+- ∃: Truth
+- ∀: Vigilance
+
+**Facade Pattern**: Gates wrap Eight Keys without modifying them.
+
+```text
+λ(output).verify ⟺ [
+  apply_eight_keys(output),      # Generation quality
+  apply_verification_gates(output) # Safety and truth
+]
+```
+
+**Combined Framework**:
+
+```text
+[eight_keys] | [verification_gates]
+```
+
+Where `[eight_keys]` = [phi fractal e tao pi mu] and `[verification_gates]` = [∃ ∀].
+
 ---
 ## Critical Perspective
 
@@ -293,6 +328,35 @@ function calculateSumOptimized(arr) {
 - [ ] Explicit error handling
 - [ ] Single responsibility
 - [ ] DRY (no duplication)
+
+### Test Protocol
+
+```lambda
+# Test protocol expressed in λ-calculus notation
+# Uses recursion for iteration, function composition for measurements
+test_framework = λ(symbols, task, model).
+  let context = concat(symbols, "\n\n", task)
+      # Recursive test loop: state → (iterations, success, output)
+      test_loop = λ(iterations, success, output).
+        if success ∨ iterations ≥ 10
+        then (iterations, success, output)
+        else let output' = generate(model, context)
+                 success' = verify_output(output')
+             in test_loop(iterations + 1, success', output')
+      (iterations, success, output) = test_loop(0, false, null)
+      coverage = count_principles(output, symbols)
+      quality = measure_quality(output)
+  in { iterations, coverage, quality }
+
+# Hypothesis: Human ⊗ AI framework achieves:
+# - iterations = 1
+# - coverage > 0.9
+# - quality = high
+
+# Note: This λ-calculus expression demonstrates how transformers might compute
+# test protocols via lambda primitives. For concrete tool patterns implementing
+# such recursive loops and measurements, see [LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md).
+```
 
 ## Workflows
 

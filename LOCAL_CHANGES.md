@@ -41,7 +41,6 @@ PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis
 ZH_GUIDE.md                   - Complete implementation guide (Chinese)
 EQUATIONS_FOR_WORLD.md       - Reference table (40 lines, new)
 LOCAL_CHANGES.md              - This file (upstream vs local tracking)
-SYMBOLIC_FRAMEWORK_EXTENSIONS.md - Verification gates and lambda-calculus extensions (new)
 
 skills/nucleus-tutor/SKILL.md     - Tutor skill (new)
 skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied)
@@ -124,9 +123,9 @@ git merge upstream/main
 
 | Category | Upstream | Local | Change |
 |----------|----------|-------|--------|
-| Root markdown files | 11 | 17 | +6 |
+| Root markdown files | 11 | 16 | +5 |
 | Skills files | 2 | 4 | +2 |
-| Total files | 13 | 21 | +8 |
+| Total files | 13 | 20 | +7 |
 | Total lines | ~3,500 | ~6,500 | +86% |
 
 ---
@@ -274,11 +273,11 @@ git merge upstream/main
 
 ### SYMBOLIC_FRAMEWORK.md Extensions
 
-**Extension File**: [SYMBOLIC_FRAMEWORK_EXTENSIONS.md](SYMBOLIC_FRAMEWORK_EXTENSIONS.md)
+**Original Extension File**: [SYMBOLIC_FRAMEWORK_EXTENSIONS.md](SYMBOLIC_FRAMEWORK_EXTENSIONS.md) (merged into NUCLEUS_GUIDE.md on 2025-01-14)
 
 **Content**: Verification gates, lambda-calculus patterns, and framework extensions that cannot be added to upstream SYMBOLIC_FRAMEWORK.md due to ZEROTH RULE.
 
-**Status**: Created 2025-01-14, contains verification gates (∃, ∀) complementing Eight Keys.
+**Status**: Merged into [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) (Verification Gates section and Test Protocol). The verification gates (∃, ∀) complement Eight Keys and are now integrated into the practical guide.
 
 ---
 
