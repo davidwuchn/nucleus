@@ -1,9 +1,6 @@
 # Local Changes vs Upstream
 
 **Tracking divergence from upstream/main**
-
----
-
 ## Repository Information
 
 - **Upstream**: https://github.com/michaelwhitford/nucleus.git
@@ -35,7 +32,7 @@ skills/nucleus/SKILL.md
 ### Files in Local Only (My Additions)
 
 ```
-AGENTS.md                     - Framework specification (91 lines, μ-applied)
+AGENTS.md                     - Protected files rule and operational configuration (31 lines, μ-applied)
 NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (584 lines, π-applied)
 PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis (1,272 lines)
 EQUATIONS_FOR_WORLD.md       - Reference table (38 lines, new)
@@ -53,7 +50,7 @@ skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied)
 
 **Core Principle**: Respect upstream structure, add value locally.
 
-**ZEROTH RULE**: NEVER modify upstream files (see [AGENTS.md](AGENTS.md#upstream-file-constraint-zeroth-rule))
+**ZEROTH RULE**: NEVER modify upstream files (see [Upstream File Constraint](#upstream-file-constraint-zeroth-rule))
 
 **Reasoning**:
 - **Preserve upstream compatibility**: Never modify upstream files
@@ -118,6 +115,90 @@ git merge upstream/main
 
 ---
 
+## 4. Operational Constraints
+
+### Implementation Constraints
+
+- **Architecture**: Fractal hierarchy [Σ/μ]
+- **Formatting**: Monospace GitHub Markdown
+- **Errors**: Fail fast/loud, explicit ∞/0 handling
+- **Task**: One `in_progress` at a time
+- **Self-Hosting**: This document follows its own constraints (fractal structure, anti-patterns defined, λ-calculus notation consistent)
+- **Verification Gates**: Zero-Slop achieved through verification at each production stage
+- **ZEROTH RULE**: NEVER modify upstream files (λ(upstream_file).modify ⟺ ALWAYS REJECT) - see [Upstream File Constraint](#upstream-file-constraint-zeroth-rule)
+- **Language Policy**: English is working language for all operations (see [Language Policy](#language-policy-english-first-working-language))
+
+**Goal**: Zero-Slop Convergence via VDD.
+
+### Language Policy (ENGLISH-FIRST WORKING LANGUAGE)
+
+🔴 **MANDATORY RULE**: English is the primary working language for all operations
+
+#### English-First Requirements
+
+| Context | Language Policy | Example |
+| ----------- | ----------------- | ---------- |
+| **Git commit messages** | English ONLY | `feat: Add user authentication` NOT `feat: [CHINESE TEXT]` |
+| **Code comments** | English preferred, Chinese allowed for clarity | `// Validate email format` (Chinese for clarity: 验证邮箱格式) |
+| **Documentation** | English first, then Chinese | English explanation followed by Chinese translation |
+| **Variable/function names** | English ONLY | `validate_email()` NOT `验证邮箱()` |
+| **API endpoints** | English ONLY | `/api/users` NOT `/api/用户` |
+| **Error messages** | English preferred | `Invalid token` NOT `无效令牌` |
+
+#### Documentation Bilingual Format
+
+**Structure**: English section first, then Chinese translation
+
+#### Rationale
+
+**Why English-First?**
+
+- **International collaboration**: Code and commits are shared globally
+- **Searchability**: English comments are searchable by all developers
+- **Tool compatibility**: Most development tools expect English
+- **Onboarding**: New team members can understand without Chinese language skill
+- **Code reviews**: Global developers can review without translation
+
+**Chinese Allowance**:
+
+- Internal team communication in Chinese OK
+- Documentation can provide Chinese translations for better understanding
+- Code comments may include Chinese for clarity when team is primarily Chinese-speaking
+
+### Upstream File Constraint (ZEROTH RULE)
+
+**ZEROTH RULE**: NEVER modify files that exist in upstream/main
+
+λ(upstream_file).modify ⟺ **FAIL ∀ (Vigilance) + FAIL ∃ (Truth)**
+
+#### Verification
+
+```bash
+# Before any edit, check if file exists in upstream
+git ls-tree upstream/main --name-only | rg -F "filename.md"
+
+# If it returns anything → DO NOT MODIFY
+# Create new file instead
+```
+
+##### Upstream Files List (reference only, DO NOT EDIT)
+
+- DIAG.md, EXECUTIVE.md, LAMBDA_PATTERNS.md, NUCLEUS_GAME.md
+- OPERATOR_ALGEBRA.md, RECURSIVE_DEPTHS.md, README.md, WRITING.md
+- SYMBOLIC_FRAMEWORK.md, TEST.md
+- skills/nucleus/SKILL.md, skills/nucleus-clojure/SKILL.md
+
+**Violate this rule → INSTANT FAIL**
+
+### Development Tools
+
+**Search Tool Preference**: Always prefer `rg` (ripgrep) over `grep` for text search operations. Ripgrep is faster, respects `.gitignore` by default, and has better Unicode support.
+
+**Markdown Linting**: Installed `markdownlint-cli` globally. Use `markdownlint .` to check markdown formatting across the project. Configuration in `.markdownlint.json`.
+
+
+
+---
 ## Key Differences
 
 ### 1. Documentation Philosophy
@@ -129,8 +210,8 @@ git merge upstream/main
 
 **Local**: Expanded, formal, non-apologetic, μ-applied
 - Upstream README.md not modified (preserved upstream)
-- AGENTS.md adds formal framework specification (91 lines, μ-applied)
-- NUCLEUS_GUIDE.md adds practical guidance (584 lines, π-applied)
+- NUCLEUS_GUIDE.md adds complete framework specification (658 lines, π-applied) including operational policies
+- AGENTS.md adds protected files rule (31 lines, μ-applied)
 - PHILOSOPHY_RESEARCH.md adds I Ching philosophical synthesis (new)
 - skills/sarcasmotron/SKILL.md merges operations manual into skill (71 lines, μ-applied)
 
@@ -142,29 +223,37 @@ git merge upstream/main
 - No formal verification protocol
 
 **Local**:
-- AGENTS.md formalizes the framework with:
+- NUCLEUS_GUIDE.md formalizes the framework with:
   - Eight Keys (ontological principles with anti-patterns)
   - λ-Calculus tool patterns
   - Symbolic compression correspondence
   - Verification protocol (Σ(Build), Σ(Lint), Σ(Test), Σ(Verify))
+  - Operational policies (Language Policy, ZEROTH RULE, Development Tools)
+- AGENTS.md provides protected files rule for framework integrity
 - TEST.md for verification
 
 ### 3. Content Additions
 
 **Local Only**:
-- **AGENTS.md**: Primary system directives and coding standards
-  - Formal framework specification (91 lines)
+- **NUCLEUS_GUIDE.md**: Complete framework specification and practical guidance
+  - Formal framework specification (658 lines)
   - Eight Keys with anti-patterns and math parallels
   - λ-Calculus patterns (heredoc, parallel execution, etc.)
   - Verification protocol (Σ(Build), Σ(Lint), Σ(Test), Σ(Verify))
-
-- **NUCLEUS_GUIDE.md**: Practical Nucleus-specific guidance
+  - Operational policies (Language Policy, ZEROTH RULE, Development Tools)
   - Critical perspective (Three Questions)
   - Bang commands usage
   - λ(prompt).accept rejection patterns
   - Fractal architecture examples
   - Eight Keys in practice (concrete code examples)
   - Nucleus verification checklists
+
+- **AGENTS.md**: Protected files rule and operational configuration
+  - Protected Local Files Rule (31 lines)
+  - Framework integrity protection
+
+- **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis
+  - Trigrams to Eight Keys mapping
 
 - **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis
   - Trigrams to Eight Keys mapping
@@ -182,7 +271,7 @@ git merge upstream/main
 
 **Rule (ZEROTH RULE)**: All changes must be in new files only. Upstream files preserved for merge compatibility.
 
-See [AGENTS.md](AGENTS.md#upstream-file-constraint-zeroth-rule) for complete enforcement with λ-calculus notation.
+See [Upstream File Constraint](#upstream-file-constraint-zeroth-rule) for complete enforcement with λ-calculus notation.
 
 ### File Categories
 
@@ -227,7 +316,7 @@ If upstream/main adds new files:
 
 **Core Principle**: Respect upstream structure, add value locally.
 
-**ZEROTH RULE**: NEVER modify upstream files (see [AGENTS.md](AGENTS.md#upstream-file-constraint-zeroth-rule))
+**ZEROTH RULE**: NEVER modify upstream files (see [Upstream File Constraint](#upstream-file-constraint-zeroth-rule))
 
 - ✅ **DO**: Add new files (AGENTS.md, NUCLEUS_GUIDE.md, PHILOSOPHY_RESEARCH.md, etc.)
 - ✅ **DO**: Modify new local files freely

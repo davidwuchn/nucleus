@@ -68,4 +68,4 @@ Correct: "Validate inputs are within [0, MAX_INT]; reject with HTTP 400 on failu
 
 ---
 
-*See [AGENTS.md](AGENTS.md) for Eight Keys definition.*
+*See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for Eight Keys definition.*
