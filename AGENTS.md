@@ -88,4 +88,4 @@ git ls-tree upstream/main --name-only | grep -F "filename.md"
 
 **Markdown Linting**: Installed `markdownlint-cli` globally. Use `markdownlint .` to check markdown formatting across the project. Configuration in `.markdownlint.json`.
 
-*For complete framework specification including philosophy, operational architecture, lambda-calculus patterns, verification protocol, and implementation constraints, see [LOCAL_CHANGES.md](LOCAL_CHANGES.md).*
+*For complete framework specification including philosophy, operational architecture, lambda-calculus patterns, verification protocol, and implementation constraints, see [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md).*
