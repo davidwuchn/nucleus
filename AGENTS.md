@@ -55,7 +55,7 @@ Human ⊗ AI ⊗ REPL
 
 ```bash
 # Before any edit, check if file exists in upstream
-git ls-tree upstream/main --name-only | grep -F "filename.md"
+git ls-tree upstream/main --name-only | rg -F "filename.md"
 
 # If it returns anything → DO NOT MODIFY
 # Create new file instead
@@ -74,7 +74,11 @@ git ls-tree upstream/main --name-only | grep -F "filename.md"
 
 **PROTECTED RULE**: Before editing critical local configuration files, always ask the user for explicit permission.
 
-**First Protected File**: @/Users/davidwu/workspace/nucleus/AGENTS.md
+**Protected Files**:
+
+- @/Users/davidwu/workspace/nucleus/AGENTS.md
+- @/Users/davidwu/workspace/nucleus/PHILOSOPHY_RESEARCH.md  
+- @/Users/davidwu/workspace/nucleus/NUCLEUS_GUIDE.md
 
 **Verification**:
 
@@ -85,6 +89,8 @@ git ls-tree upstream/main --name-only | grep -F "filename.md"
 **Violate this rule → INSTANT FAIL**
 
 ## Development Tools
+
+**Search Tool Preference**: Always prefer `rg` (ripgrep) over `grep` for text search operations. Ripgrep is faster, respects `.gitignore` by default, and has better Unicode support.
 
 **Markdown Linting**: Installed `markdownlint-cli` globally. Use `markdownlint .` to check markdown formatting across the project. Configuration in `.markdownlint.json`.
 

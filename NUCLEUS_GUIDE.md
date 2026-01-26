@@ -5,14 +5,9 @@
 **Nucleus Guide**: Framework basics in English
 - Critical perspective and three questions
 - Meta-operators and tool patterns
-- Eight Keys framework overview
+- Eight Keys framework overview with Bagua mappings
 - Workflows and verification
-
-**Advanced Practice**: See [ZH_GUIDE.md](ZH_GUIDE.md) for complete implementation guide in Chinese
-- Bagua code examples
-- 64 hexagrams quick reference
-- Team adoption roadmap
-- Validation plan
+- Complete technical specification
 
 **Philosophical Foundation**: See [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching × Eight Keys synthesis
 - I Ching cosmology structure
@@ -24,7 +19,7 @@
 **New to Nucleus?**
 1. Read [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework basics, practical workflows, and complete specification
 2. Reference [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for upstream vs local change tracking
-3. Use [ZH_GUIDE.md](ZH_GUIDE.md) for Chinese implementation guide with code examples
+3. See the Eight Keys / Bagua mapping table for I Ching philosophical integration
 
 
 ## Core Principles (Eight Keys)
@@ -221,8 +216,7 @@ Question before answer. Challenge assumptions. Be objective.
 ### Related Documents
 
 - **[AGENTS.md](AGENTS.md)** - Operational rules and constraints (ZEROTH RULE, Language Policy, Protected Files)
-- **[ZH_GUIDE.md](ZH_GUIDE.md)** - Complete implementation guide with Chinese Bagua code examples
-- **[PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md)** - I Ching × Eight Keys philosophical synthesis
+- **[PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md)** - I Ching × Eight Keys philosophical synthesis and trigram mappings
 
 ---
 
@@ -540,13 +534,11 @@ GOOD: "Why null?" → "Uninitialized" → "Add default or require init"
 
 ## Getting Help
 
-- **Quick reference**: Use Bagua quick reference card in [ZH_GUIDE.md](ZH_GUIDE.md)
+- **Quick reference**: Use the Eight Keys / Bagua mapping table in this guide
 
-- **Common challenges**: See "64 Hexagrams Programming Situations Quick Reference" for hexagram-based solutions
+- **Framework verification**: Use the checklist in the Verification section above
 
-- **Team adoption**: Follow 4-phase roadmap in "Team Adoption Guide" (ZH_GUIDE.md)
-
-- **Verification**: Use checklist in this guide (above) and metrics in [ZH_GUIDE.md](ZH_GUIDE.md)
+- **Philosophical context**: See [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching trigram mappings and hexagram explanations
 
 ---
 
@@ -575,13 +567,11 @@ Framework eliminates slop, not adds process.
 - **[LOCAL_CHANGES.md](LOCAL_CHANGES.md)**: Upstream vs local change tracking
 - **NUCLEUS_GUIDE.md**: Framework basics, practical workflows, and complete specification (English)
 - **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis and theory
-- **ZH_GUIDE.md**: Complete implementation guide with code examples (Chinese)
 
 ### Learning Path
 1. **Start with** [NUCLEUS_GUIDE.md] for framework basics and complete specification (English)
-2. **Apply with** [ZH_GUIDE.md] for implementation (Chinese with Bagua code examples)
-3. **Understand theory** with [PHILOSOPHY_RESEARCH.md] for I Ching cosmology
-4. **Reference** [LOCAL_CHANGES.md] for upstream vs local change tracking
+2. **Understand theory** with [PHILOSOPHY_RESEARCH.md] for I Ching cosmology and trigram mappings
+3. **Reference** [LOCAL_CHANGES.md] for upstream vs local change tracking
 
 ### Supporting Documentation
 - **skills/sarcasmotron/SKILL.md**: Eight Keys violation detection with humor
