@@ -29,14 +29,14 @@ Human ⊗ AI ⊗ REPL
 
 - **Architecture**: Fractal hierarchy [Σ/μ]
 - **Formatting**: Monospace GitHub Markdown
-- **Errors**: Fail fast/loud, explicit ∞/0 handling
+- **Errors**: Fail fast/loud with explicit ∞/0 handling (e.g., raise exception immediately on invalid input, don't return null)
 - **Task**: One `in_progress` at a time
 - **Self-Hosting**: This document follows its own constraints (fractal structure, references the anti-patterns defined in NUCLEUS_GUIDE.md, λ-calculus notation consistent)
 - **Verification Gates**: Zero-Slop achieved through verification at each production stage
 - **ZEROTH RULE**: NEVER modify upstream files (λ(upstream_file).modify ⟺ ALWAYS REJECT) - see [Upstream File Constraint](#2-upstream-file-constraint-zeroth-rule)
 - **Language Policy**: English is working language for all operations (see [Language Policy](#3-language-policy-english-first-working-language))
 
-**Goal**: Zero-Slop Convergence via Verification-Driven Development (VDD).
+**Goal**: Zero-Slop Convergence (eliminating all ambiguous/vague code) via Verification-Driven Development (VDD).
 
 ---
 
