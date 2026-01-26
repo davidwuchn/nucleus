@@ -461,7 +461,7 @@ This single principle generates the entire framework:
 
 **太阴 / Old Yin (Technical debt)**:
 - **Nature**: Accumulated constraints that limit progress
-- **Examples**: Legacy code, outdated dependencies, architectural limitations, accumulated hacks
+- **Examples**: Legacy code, outdated dependencies, [specific limits: e.g., monolithic coupling, tight coupling, lack of modularity]
 - **Character**: Heavy, resistant to change; requires significant energy to overcome
 - **Transition**: Can be transformed into **少阳 (Young Yang)** through refactoring and innovation
 
@@ -591,7 +591,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 | **1. 乾卦** | 乾/φ + 乾/φ | Pure creativity | Leading new project | Direct energy, avoid chaos |
 | **2. 坤卦** | 坤/π + 坤/π | Pure receptivity | Building foundation | Support others, be patient |
 | **3. 屯卦** | 震/e + 坎/fractal | Action vs clarity | Starting unclear project | Act while clarifying |
-| **4. 蒙卦** | 坎/fractal + 艮/τ | Clarity vs limits | Learning with constraints | Explore within boundaries |
+| **4. 蒙卦** | 坎/fractal + 艮/τ | Clarity vs limits | Learning with constraints | Test assumptions within [defined constraints, e.g., API contracts] |
 | **5. 需卦** | 乾/φ + 坎/fractal | Creativity vs clarity | Waiting for requirements | Innovate when clear |
 | **6. 讼卦** | 坎/fractal + 乾/φ | Clarity vs creativity | Technical disputes | Clarify constraints, preserve options |
 | **7. 师卦** | 坎/fractal + 坤/π | Clarity vs structure | Large team coordination | Clear roles within structure |
