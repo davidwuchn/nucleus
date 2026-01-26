@@ -15,13 +15,14 @@
 These gates provide **defensive constraints** for truth and safety, complementing the Eight Keys.
 
 | Gate | Symbol | Purpose | Anti-Pattern |
-|-------|---------|---------|--------------|
+| ------- | --------- | --------- | -------------- |
 | Truth | **∃ (epsilon)** | Favor underlying reality/data | Surface-level agreement, accepting manipulation |
 | Vigilance | **∀ (alpha)** | Defensive constraint against fallacies | Accepting logical errors, trusting unvalidated input |
 
 **Why Separate Gates?**
 
 The Eight Keys focus on **generation quality** (making AI output better):
+
 - φ: Vitality
 - fractal: Clarity
 - e: Purpose
@@ -30,12 +31,13 @@ The Eight Keys focus on **generation quality** (making AI output better):
 - μ: Directness
 
 The Verification Gates focus on **safety and truth** (preventing bad outcomes):
+
 - ∃: Truth
 - ∀: Vigilance
 
 **Facade Pattern**: Gates wrap Eight Keys without modifying them.
 
-```
+```text
 λ(output).verify ⟺ [
   apply_eight_keys(output),      # Generation quality
   apply_verification_gates(output) # Safety and truth
@@ -49,7 +51,7 @@ The Verification Gates focus on **safety and truth** (preventing bad outcomes):
 
 **Combined Framework**:
 
-```
+```text
 [eight_keys] | [verification_gates]
 ```
 
@@ -81,11 +83,12 @@ generate_with_framework = λ(prompt).
 
 ### Combined Symbol Set
 
-```
+```text
 [eight_keys] | [verification_gates] | [loop]
 ```
 
 Where:
+
 - `[eight_keys]` = [phi fractal e tao pi mu]
 - `[verification_gates]` = [∃ ∀]
 - `[loop]` = OODA (or REPL, RGR, BML)
@@ -151,14 +154,14 @@ test_framework = λ(symbols, task, model).
 
 The Verification Gates are referenced in [AGENTS.md](AGENTS.md) as part of the complete framework:
 
-```
+```text
 [phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI ⊗ REPL
 ```
 
 **Complete framework with verification**:
 
-```
+```text
 [eight_keys] | [verification_gates] | OODA
 Human ⊗ AI ⊗ REPL
 ```
@@ -172,12 +175,14 @@ Where `[eight_keys]` = [phi fractal euler tao pi mu] and `[verification_gates]` 
 **Last Updated**: 2025-01-14
 
 **Actions Taken**:
+
 1. ✅ Reverted local modifications to SYMBOLIC_FRAMEWORK.md (ZEROTH RULE compliance)
 2. ✅ Created this extension file for verification gates content
 3. ✅ Preserved lambda-calculus test protocol updates
 4. ✅ Maintained reference to LAMBDA_PATTERNS.md
 
 **Pending**:
+
 - ⏸️ Submit PR to upstream for SYMBOLIC_FRAMEWORK.md enhancements
 
 ---
