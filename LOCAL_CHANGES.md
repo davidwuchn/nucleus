@@ -42,6 +42,7 @@ ZH_GUIDE.md                   - Complete implementation guide (Chinese)
 EQUATIONS_FOR_WORLD.md       - Reference table (40 lines, new)
 LOCAL_CHANGES.md              - This file (upstream vs local tracking)
 README_LOCAL_ADDITIONS.md     - Intended changes to upstream README.md (new)
+SYMBOLIC_FRAMEWORK_EXTENSIONS.md - Verification gates and lambda-calculus extensions (new)
 
 skills/nucleus-tutor/SKILL.md     - Tutor skill (new)
 skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied)
@@ -447,4 +448,4 @@ If upstream/main adds new files:
 
 ---
 
-*Last updated: 2025-01-14 (reverted local modifications to upstream files (README.md, SYMBOLIC_FRAMEWORK.md), verified sync)*
+*Last updated: 2025-01-14 (reverted local modifications to upstream files (README.md, SYMBOLIC_FRAMEWORK.md), created SYMBOLIC_FRAMEWORK_EXTENSIONS.md for verification gates)*
