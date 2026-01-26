@@ -13,11 +13,12 @@
 - I Ching cosmology structure (太极→两仪→四象→八卦→六十四卦)
 - 64 hexagrams detailed explanations with coding applications
 
-**Practical Application**: See [ZH_GUIDE.md](ZH_GUIDE.md) for implementation guide in Chinese
-- 八卦代码示例 (Trigram code examples)
-- 六十四卦快速参考 (64 hexagrams quick reference)  
-- 团队采纳指南 (Team adoption roadmap)
-- 验证计划 (Validation plan)
+**Practical Application**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for implementation examples
+- Code examples demonstrating Eight Keys principles
+- Verification and testing protocols
+- Framework workflows and practical usage
+
+See this document for 64 hexagrams detailed explanations and philosophical context.
 
 **Framework Basics**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework introduction in English
 - Critical perspective and three questions
@@ -64,13 +65,13 @@
 
 **Key Achievement**: Complete mapping of all 64 hexagrams to software development situations, providing actionable wisdom for navigating complex coding challenges.
 
-**Practical Application**: This philosophical foundation is implemented in **[ZH_GUIDE.md](ZH_GUIDE.md)**, which provides:
-- Code examples showing trigram violations and corrections
-- Quick reference tables for common programming challenges
-- Decision trees for selecting appropriate hexagrams
-- Validation plan for measuring framework effectiveness
+**Practical Application**: This philosophical foundation is implemented in the **[NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md)** framework, which provides:
+- Code examples showing Eight Keys violations and corrections
+- Eight Keys / Bagua mapping table for trigram correspondences
+- Verification protocols and testing frameworks
+- Practical workflows for software development
 
-**For immediate use**: See the **[八卦代码示例](#) section in ZH_GUIDE.md** for concrete Clojure/Java/Python examples of each trigram principle in action.
+**For immediate use**: See the **Real-World Examples section in NUCLEUS_GUIDE.md** for concrete Clojure/Java/Python/JavaScript examples of each principle in action.
 
 ---
 
@@ -122,7 +123,7 @@ For each trigram, research and document:
 **Research Questions Answered**:
 1. "天行健" means heaven's movement is strong and persistent; applied to code: vitality that keeps evolving, not static repetition.
 2. 刚健中正: strength balanced with propriety → code that is robust yet maintains clear boundaries and correctness.
-3. Best fit is φ (Vitality) - confirmed by ZH_GUIDE.md mapping: 乾对应φ活力.
+3. Best fit is φ (Vitality) - mapping confirmed in NUCLEUS_GUIDE.md: 乾对应φ活力.
 
 ---
 
