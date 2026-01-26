@@ -1115,7 +1115,7 @@ All 64 hexagrams are now mapped to coding situations above, providing a complete
 - **Hunt, Andrew & Thomas, David**: *The Pragmatic Programmer* - Practical wisdom with philosophical depth
 - **Geoffrey James**: *The Tao of Programming* - Humorous Taoist insights applied to software
 - **Brooks, Frederick P.**: *The Mythical Man-Month* - Classic software engineering wisdom
-- **Whitford, Michael**: *From Entropy to Epiplexity* (arXiv:2601.03220) - Theoretical foundation for mathematical framework in AI prompting
+- **Whitford, Michael**: *From Entropy to Epiplexity* ([arXiv:2601.03220](https://arxiv.org/abs/2601.03220)) - Theoretical foundation for mathematical framework in AI prompting
 
 #### Project Documentation (Primary Sources)
 - **NUCLEUS_GUIDE.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) with complete framework specification and operational policies
