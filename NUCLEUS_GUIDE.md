@@ -1,5 +1,13 @@
 # Nucleus Guide
 
+[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+Human ⊗ AI ⊗ REPL
+
+**For theory**: See [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching × Eight Keys philosophical synthesis
+**For local changes tracking**: See [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for upstream vs local file tracking
+
+---
+
 ## Document Positioning
 
 **Nucleus Guide**: Framework basics in English
@@ -184,22 +192,7 @@ Skills in `skills/` directory:
   ooda_closure_complete()
 ]
 
-**⚠️ ZEROTH RULE**: Never modify upstream files. See [Upstream File Constraint in AGENTS.md](AGENTS.md#upstream-file-constraint-zeroth-rule) for complete details, including verification and upstream files list.
-
-**For upstream vs local tracking**, see [LOCAL_CHANGES.md](LOCAL_CHANGES.md)
-
-#### Implementation Constraints
-
-- **Architecture**: Fractal hierarchy [Σ/μ]
-- **Formatting**: Monospace GitHub Markdown
-- **Errors**: Fail fast/loud, explicit ∞/0 handling
-- **Task**: One `in_progress` at a time
-- **Self-Hosting**: AGENTS.md follows its own constraints (fractal structure, anti-patterns defined, λ-calculus notation consistent)
-- **Verification Gates**: Zero-Slop achieved through verification at each production stage
-- **ZEROTH RULE**: NEVER modify upstream files (λ(upstream_file).modify ⟺ ALWAYS REJECT)
-- **Language Policy**: English is working language for all operations (see [Language Policy in AGENTS.md](AGENTS.md#language-policy-english-first-working-language))
-
-**Goal**: Zero-Slop Convergence via VDD.
+**⚠️ ZEROTH RULE**: Never modify upstream files. See [Upstream File Constraint in LOCAL_CHANGES.md](LOCAL_CHANGES.md#upstream-file-constraint-zeroth-rule) for complete details, including verification and upstream files list.
 
 ---
 ## Critical Perspective
@@ -215,7 +208,7 @@ Question before answer. Challenge assumptions. Be objective.
 
 ### Related Documents
 
-- **[AGENTS.md](AGENTS.md)** - Operational rules and constraints (ZEROTH RULE, Language Policy, Protected Files)
+- **[AGENTS.md](AGENTS.md)** - Protected files rule and operational configuration
 - **[PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md)** - I Ching × Eight Keys philosophical synthesis and trigram mappings
 
 ---
@@ -581,4 +574,4 @@ Framework eliminates slop, not adds process.
 
 ---
 
-*See [AGENTS.md](AGENTS.md) for operational rules and constraints, [skills/sarcasmotron/SKILL.md](skills/sarcasmotron/SKILL.md) for roasting procedures, [LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md) for tool usage patterns.*
+*See [AGENTS.md](AGENTS.md) for protected files rule, [skills/sarcasmotron/SKILL.md](skills/sarcasmotron/SKILL.md) for roasting procedures, [LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md) for tool usage patterns.*

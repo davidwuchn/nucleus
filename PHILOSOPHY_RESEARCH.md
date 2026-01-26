@@ -80,8 +80,8 @@ Create authentic philosophical synthesis between I Ching trigrams and the Eight 
 
 ## Sources
 - **I Ching**: Original trigram meanings and commentaries.
-- **Eight Keys**: AGENTS.md defines the Eight Keys (φ fractal e τ π μ ∃ ∀).
-- **NUCLEUS_GUIDE.md**: Contains the completed mapping between trigrams and Eight Keys in the Eight Keys / Bagua table.
+- **Eight Keys**: NUCLEUS_GUIDE.md defines the Eight Keys (φ fractal e τ π μ ∃ ∀) with complete specification.
+- **NUCLEUS_GUIDE.md**: Contains the completed mapping between trigrams and Eight Keys in the Eight Keys / Bagua table and full framework specification.
 
 ## Philosophical Approach
 This research follows a **hermeneutic** (interpretive) rather than **historical** approach. The goal is **authentic philosophical synthesis**, not archaeological reconstruction.
@@ -387,7 +387,7 @@ Core principle: What is the undifferentiated source of this framework?
 
 **Application to coding**: The fundamental principle from which all software guidance flows. For this framework, the 太极 is:
 
-**"Minimize complexity to reduce failure modes"** (AGENTS.md Philosophy)
+**"Minimize complexity to reduce failure modes"** (NUCLEUS_GUIDE.md Philosophy)
 
 This single principle generates the entire framework:
 1. From this principle emerges the tension between **Yin** (structure, constraints) and **Yang** (creation, transformation)
@@ -1112,10 +1112,12 @@ All 64 hexagrams are now mapped to coding situations above, providing a complete
 - **Hunt, Andrew & Thomas, David**: *The Pragmatic Programmer* - Practical wisdom with philosophical depth
 - **Geoffrey James**: *The Tao of Programming* - Humorous Taoist insights applied to software
 - **Brooks, Frederick P.**: *The Mythical Man-Month* - Classic software engineering wisdom
+《From Entropy to Epiplexity》
 
 #### Project Documentation (Primary Sources)
-- **AGENTS.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) and operational framework
-- **NUCLEUS_GUIDE.md**: Contains completed trigram↔Eight Keys mapping with Chinese philosophical context
+- **NUCLEUS_GUIDE.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) with complete framework specification and operational policies
+- **AGENTS.md**: Protected files rule and operational configuration
+- **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis and trigram mappings
 - **SYMBOLIC_FRAMEWORK.md**: Mathematical foundation using λ-calculus notation
 - **LAMBDA_PATTERNS.md**: Practical tool usage patterns
 
@@ -1252,9 +1254,9 @@ The NUCLEUS_GUIDE.md provides:
 | **Team conflict** | Seek truth through direct communication | 睽卦(38), 家人卦(37) |
 | **Unclear requirements** | Define boundaries, explore within constraints | 蒙卦(4), 屯卦(3) |
 
-### Integration with AGENTS.md Framework
+### Integration with NUCLEUS_GUIDE.md Framework
 
-This research extends the **Eight Keys framework** defined in [AGENTS.md](AGENTS.md):
+This research extends the **Eight Keys framework** defined in [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md):
 
 - **φ (Vitality)**: Now enriched with 乾 (Heaven) - "天行健" perpetual motion
 - **fractal (Clarity)**: Now enriched with 坎 (Water) - "重险习坎" navigating danger with clear assumptions
@@ -1269,4 +1271,4 @@ This research extends the **Eight Keys framework** defined in [AGENTS.md](AGENTS
 
 ---
 
-*This document presents a complete authentic philosophical synthesis ready for practical application. For immediate implementation, see [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md). For framework specification, see [AGENTS.md](AGENTS.md).*
+*This document presents a complete authentic philosophical synthesis ready for practical application. For immediate implementation and framework specification, see [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md). For protected files rule, see [AGENTS.md](AGENTS.md).*
