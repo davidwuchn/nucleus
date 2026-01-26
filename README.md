@@ -338,15 +338,38 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 
 ## Documentation
 
+### Framework Documentation
+- **[GUIDE_INDEX.md](GUIDE_INDEX.md)** - Complete documentation index and learning paths
+- **[AGENTS.md](AGENTS.md)** - Core framework specification (Zero-Slop Specification)
+- **[NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md)** - Framework basics and practical workflows (English)
+- **[PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md)** - I Ching × Eight Keys philosophical synthesis
+- **[ZH_GUIDE.md](ZH_GUIDE.md)** - Complete implementation guide with code examples (Chinese)
+
+### Core Theory & Patterns
 - **[SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md)** - Complete theory, principles, and usage patterns
 - **[OPERATOR_ALGEBRA.md](OPERATOR_ALGEBRA.md)** - Mathematical operators and collaboration modes
 - **[LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md)** - Example lambda calculus patterns (adapt to YOUR tools)
+
+### Examples & Applications
 - **[DIAG.md](DIAG.md)** - Example debugger prompt for exploring AI latent space (only works on some models)
 - **[NUCLEUS_GAME.md](NUCLEUS_GAME.md)** - A game-in-a-prompt "programmed" in nucleus format (copy/paste to AI to play)
 - **[RECURSIVE_DEPTHS.md](RECURSIVE_DEPTHS.md)** - Another game-in-a-prompt, zork-like text adventure (copy/paste to AI to play)
 - **[EXECUTIVE.md](EXECUTIVE.md)** - Example prompts for Executive tasks
 - **[WRITING.md](WRITING.md)** - Example prompts for writing tasks
+
+### Skills & Tools
+- **[skills/sarcasmotron/SKILL.md](skills/sarcasmotron/SKILL.md)** - Eight Keys violation detection with humor
+- **[TEST.md](TEST.md)** - Verification scenarios and test cases
+- **[LOCAL_CHANGES.md](LOCAL_CHANGES.md)** - Tracking local modifications
+
+### Related Projects
 - **[MEMENTUM](https://github.com/michaelwhitford/mementum)** - A git-based AI memory system based on nucleus.
+
+### Learning Path
+1. **Start with** [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework basics and documentation overview
+2. **Read** [AGENTS.md](AGENTS.md) for formal framework specification
+3. **Apply** [ZH_GUIDE.md](ZH_GUIDE.md) for implementation with code examples (Chinese)
+4. **Understand theory** with [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching cosmology
 
 ## Testing
 
