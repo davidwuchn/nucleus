@@ -69,6 +69,35 @@ NUCLEUS_GUIDE.md (Practice + How + When)
 
 ---
 
+## Skill System
+
+Skills in `skills/` directory:
+- **nucleus**: General purpose AI prompt for every interaction
+- **nucleus-clojure**: Clojure-specific prompt when REPL tools are available
+- **nucleus-tutor**: Rejects low-value prompts and questions harmful architecture choices
+- **sarcasmotron**: Detects Eight Keys violations and exposes with targeted humor
+
+### Skill Independence Rule
+**Every SKILL.md file must be self-contained and independent** - all definitions, examples, and patterns included within the single file.
+
+**Purpose**: Enable drag-and-drop installation
+- Copy `skills/skill-name/` directory → framework installed
+- No external file dependencies
+- No references to parent framework files
+- Complete documentation in one file
+
+**Verification**: `λ(skill).verify ⟺ file_contains_all_definitions(skill.SKILL.md)`
+
+**Violation**: Skill file references external documents (AGENTS.md, NUCLEUS_GUIDE.md, etc.)
+
+**Correct pattern**: Each SKILL.md includes:
+- Complete Eight Keys table
+- All patterns and examples
+- Self-contained procedure definitions
+- No external file references
+
+---
+
 ## Protected Local Files Rule
 
 **PROTECTED RULE**: Before editing critical local configuration files, always ask the user for explicit permission.
