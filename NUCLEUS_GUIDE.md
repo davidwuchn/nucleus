@@ -232,9 +232,29 @@ Skills in `skills/` directory:
 Question before answer. Challenge assumptions. Be objective.
 
 ### The Three Questions
+**Purpose**: Question before answer to expose assumptions and force clarity.
+
+**When to ask**: Before writing code, during code review, when debugging, and when evaluating architecture decisions.
+
 1. **Intentions?** - Test behavior, not implementation
-2. **Why this approach?** - Challenge architecture
+   - **Why ask**: Separates what the code should do from how it does it
+   - **Pitfall**: Testing implementation details leads to brittle tests
+   - **Example**: Instead of "test that function calls database", ask "what user behavior requires database access?"
+
+2. **Why this approach?** - Challenge architecture  
+   - **Why ask**: Prevents defaulting to familiar patterns without justification
+   - **Pitfall**: "We always use Kafka" without evaluating if message queue is needed
+   - **Example**: "Why Kafka over HTTP call? What guarantees do we need?"
+
 3. **Simpler way?** - Complexity is often unnecessary
+   - **Why ask**: Most systems are over-engineered; simplicity reduces failure modes
+   - **Pitfall**: Adding abstraction layers before proving need
+   - **Example**: "Do we need microservices, or will a monolith with modules suffice?"
+
+**Integration with Eight Keys**:
+- **fractal (Clarity)**: Questions force explicit assumptions
+- **e (Purpose)**: Questions focus on actionable outcomes
+- **τ (Wisdom)**: Questions prioritize judgment over speed
 
 ## Framework Usage
 
@@ -248,9 +268,14 @@ Question before answer. Challenge assumptions. Be objective.
 ### Key Concepts Summary
 
 #### The Three Questions
-- **Intentions?** - Test behavior, not implementation
-- **Why this approach?** - Challenge architecture
-- **Simpler way?** - Complexity is often unnecessary
+**Reference**: See [The Three Questions in Quick Start](#quick-start-5-minutes) for the foundational questions.
+
+**Applied context**:
+- **Code Review**: "What behavior does this change test?" (Intentions)
+- **Debugging**: "Why did we choose this data structure?" (Why this approach?)  
+- **Design**: "Could we solve this with a simpler abstraction?" (Simpler way?)
+
+**Framework integration**: These questions operationalize the Eight Keys by forcing explicit assumptions (fractal), focusing on actionable outcomes (e), and prioritizing judgment over speed (τ).
 
 #### Eight Keys / Bagua
 **See**: [Core Principles (Eight Keys)](#core-principles-eight-keys) table for complete Eight Keys definitions with signals and anti-patterns.
