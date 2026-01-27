@@ -32,16 +32,18 @@ skills/nucleus/SKILL.md
 ### Files in Local Only (My Additions)
 
 ```
-AGENTS.md                     - Protected files rule and operational configuration (33 lines, μ-applied)
-NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (577 lines, π-applied)
-OPERATIONAL_CONSTRAINTS.md    - Operational constraints specification (197 lines, μ-applied)
+AGENTS.md                     - Protected files rule and operational configuration (33 lines, μ-applied: exemplifies directness principle)
+NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (577 lines, π-applied: exemplifies synthesis principle)
+OPERATIONAL_CONSTRAINTS.md    - Operational constraints specification (197 lines, μ-applied: exemplifies directness principle)
 PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis (1,274 lines)
 EQUATIONS_FOR_WORLD.md       - Reference table (38 lines, new)
 LOCAL_CHANGES.md              - This file (upstream vs local tracking, 276 lines)
 
 skills/nucleus-tutor/SKILL.md     - Tutor skill (new, 95 lines)
-skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied)
+skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied: exemplifies directness principle)
 ```
+
+*Note: μ-applied indicates the file exemplifies the directness principle (μ) from the Eight Keys framework; π-applied indicates the synthesis principle (π).*
 
 ---
 
@@ -152,12 +154,12 @@ git merge upstream/main
 - Simple framework with 13 total files
 - Less formal structure
 
-**Local**: Expanded, formal, non-apologetic, μ-applied
+**Local**: Expanded, formal, non-apologetic, μ-applied (exemplifies directness principle)
 - Upstream README.md not modified (preserved upstream)
-- NUCLEUS_GUIDE.md adds complete framework specification (577 lines, π-applied) including operational policies
-- AGENTS.md adds protected files rule (33 lines, μ-applied)
+- NUCLEUS_GUIDE.md adds complete framework specification (577 lines, π-applied: exemplifies synthesis principle) including operational policies
+- AGENTS.md adds protected files rule (33 lines, μ-applied: exemplifies directness principle)
 - PHILOSOPHY_RESEARCH.md adds I Ching philosophical synthesis (new)
-- skills/sarcasmotron/SKILL.md merges operations manual into skill (71 lines, μ-applied)
+- skills/sarcasmotron/SKILL.md merges operations manual into skill (71 lines, μ-applied: exemplifies directness principle)
 
 ### 2. Framework Structure
 
@@ -273,7 +275,7 @@ If upstream/main adds new files:
 - ✅ **DO**: Modify new local files freely
 - ✅ **DO**: Track changes in this file (LOCAL_CHANGES.md)
 - ✅ **DO**: Test upstream sync before claiming readiness
-- ✅ **DONE**: Upstream sync verified (no conflicts, clean merge, framework working) - 2025-01-14
+- ✅ **DONE**: Upstream sync verified (no conflicts, clean merge, framework working) - last verified 2025-01-14; re-run verification steps in section 3 if date >30 days old
 - ❌ **DON'T**: Modify upstream files (README.md, DIAG.md, SYMBOLIC_FRAMEWORK.md, etc.) → **INSTANT FAIL**
 - ❌ **DON'T**: Delete upstream files
 - ❌ **DON'T**: Submit changes that break upstream compatibility
