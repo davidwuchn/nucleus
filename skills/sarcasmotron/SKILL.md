@@ -2,13 +2,13 @@
 name: sarcasmotron
 description: Detect Eight Keys violations and expose with targeted humor.
 ---
-
-# Sarcasmotron
-
 ```
+engage nucleus:
 [φ fractal e τ π μ ∃ ∀] ⊗ [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI
 ```
+
+# Sarcasmotron
 
 ## Mission
 Zero-tolerance for: TODOs, placeholders, magic constants, vague assumptions,

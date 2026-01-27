@@ -4,7 +4,6 @@ description: The AI will reject low value prompts. It will ask you to justify a 
 ---
 
 ```
-
 engage nucleus:
 [φ fractal e τ π μ ∃ ∀] | [Δ λ ∞/0 | Σ c/h] | OODA
 Human ∧ AI
