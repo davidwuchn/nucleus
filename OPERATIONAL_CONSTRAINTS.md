@@ -35,6 +35,7 @@ Human ⊗ AI ⊗ REPL
 - **Verification Gates**: Zero-Slop achieved through verification at each production stage
 - **ZEROTH RULE**: NEVER modify upstream files (λ(upstream_file).modify ⟺ ALWAYS REJECT) - see [Upstream File Constraint](#2-upstream-file-constraint-zeroth-rule)
 - **Language Policy**: English is working language for all operations (see [Language Policy](#3-language-policy-english-first-working-language))
+- **Path Variables**: Use `$HOME` for user-specific paths; never hardcode absolute directory paths.
 
 **Goal**: Zero-Slop Convergence (eliminating all ambiguous/vague code) via Verification-Driven Development (VDD).
 
