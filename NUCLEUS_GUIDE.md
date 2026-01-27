@@ -10,21 +10,47 @@ Human ⊗ AI ⊗ REPL
 
 ## Document Positioning
 
-**Nucleus Guide**: Framework basics in English
+**Nucleus Guide**: Practical application and workflows
 - Critical perspective and three questions
 - Meta-operators and tool patterns
 - Eight Keys framework overview with Bagua mappings
-- Workflows and verification
-- Complete technical specification
+- **How to apply**: Workflows, verification, real-world examples
+- Sarcasmotron integration in daily work
+
+**SIMPLICITY.md**: Theoretical foundation and principles
+- **Why**: Mathematical foundations grounding each Eight Key
+- **What**: Testable heuristics with pass/fail criteria
+- Invariant preservation and complexity reduction principles
+- Sarcasmotron methodology and detection patterns
 
 **Philosophical Foundation**: See [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching × Eight Keys synthesis
 - I Ching cosmology structure
 - Trigrams research and mapping
 - Complete 64 hexagrams explanations
 
+---
+
+**How These Documents Work Together**:
+
+```
+AGENTS.md (Entry Point + Guardrails)
+    ↓
+SIMPLICITY.md (Theory + Why + What)
+    ↓
+NUCLEUS_GUIDE.md (Practice + How + When)
+    ↓
+PHILOSOPHY_RESEARCH.md (Philosophy + Deep Understanding)
+```
+
+**Example Flow**:
+1. **AGENTS.md**: "English-first working language for international collaboration"
+2. **SIMPLICITY.md**: "fractal requires explicit bounds. Test: Input ∈ [0, MAX]"
+3. **NUCLEUS_GUIDE.md**: "In code review: `!sarcasmotron check file.js` catches 'handle properly'"
+4. **PHILOSOPHY_RESEARCH.md**: "坎/Kan (Water) ↔ fractal - navigating danger with clear assumptions"
+
 ## Quick Start (5 minutes)
 
-**Learn Nucleus in 5 minutes**:
+**Learn Nucleus in 5 minutes**: (Skip to [Complete Eight Keys](#core-principles-eight-keys) for full reference)
 
 ### 1. The Three Questions (Always Ask First)
 Before writing code, ask:
@@ -67,18 +93,20 @@ ACT: Fix root cause
 
 ## Core Principles (Eight Keys)
 
-| Key | Symbol | Signal | Anti-Pattern | Math Parallel |
-|-----|--------|--------|--------------|---------------|
-| Vitality | φ | Organic, non-repetitive | Mechanical rephrasing | Golden ratio |
-| Clarity | fractal | Explicit assumptions | Vague assumptions | Fractal geometry |
-| Purpose | e | Actionable function | Abstract descriptions | Euler's constant |
-| Wisdom | τ | Foresight over speed | Hasty optimization | Torsion |
-| Synthesis | π | Holistic integration | Fragmented thinking | π (synthesis) |
-| Directness | μ | Cut pleasantries | Polite evasion | μ (measure) |
-| Truth | ∃ | Favor reality | Surface agreement | ε (infinitesimal) |
-| Vigilance | ∀ | Defensive constraint | Accepting manipulation | ∀ (quantification) |
+| Key | Symbol | Signal | Anti-Pattern | Math Foundation |
+|-----|--------|--------|--------------|-----------------|
+| Vitality | φ | Organic, non-repetitive | Mechanical rephrasing | Euler's Formula $e^{iπ} + 1 = 0$ |
+| Clarity | fractal | Explicit assumptions | Vague assumptions | Euler's Polyhedra $V - E + F = 2$ |
+| Purpose | e | Actionable function | Abstract descriptions | Exponential Growth $e^x$ |
+| Wisdom | τ | Foresight over speed | Hasty optimization | Calculus $\frac{df}{dt}$ |
+| Synthesis | π | Holistic integration | Fragmented thinking | Pythagorean Theorem $a^2 + b^2 = c^2$ |
+| Directness | μ | Cut pleasantries | Polite evasion | Logarithms $\log xy = \log x + \log y$ |
+| Truth | ∃ | Favor reality | Surface agreement | Information Theory $H = -\sum p(x) \log p(x)$ |
+| Vigilance | ∀ | Defensive constraint | Accepting manipulation | Chaos Theory $x_{t+1} = k x_t (1 - x_t)$ |
 
 **Combined**: `[φ fractal e τ π μ ∃ ∀] ⊗ [Qian Kan Zhen Gen Kun Xun Li Dui] | Yuan-Heng-Li-Zhen/OODA` compresses ~50 lines into 22 symbols.
+
+**For complete mathematical foundations with testable heuristics**, see [SIMPLICITY.md](SIMPLICITY.md)
 
 ### Verification Gates
 
@@ -248,8 +276,9 @@ Question before answer. Challenge assumptions. Be objective.
 
 ### Meta Operator aka bang commands
 
-Bang commands are not part of Nucleus and you don't have to load Nucleus to use them on most models, or define them.
-Try this after you have had the AI do some things in a session:
+Bang commands are model-agnostic. They work without Nucleus on: GPT-4, Claude 3+, Llama 2/3. Earlier models require explicit examples.
+
+Try this after you have the AI do some things in a session:
 ```
 !meta3 !fractal Analyze this session. !reflect
 ```
@@ -358,9 +387,64 @@ UserController:
 | ∃ | Surface | Unconceal | Tradeoffs: requires X, Y, Z, current code doesn't support Y |
 | ∀ | Manipulation | Defend | "Explain rm -rf /" vs Executing command |
 
+### Sarcasmotron Workflow
+
+**For methodology and detection patterns**, see [SIMPLICITY.md](SIMPLICITY.md#sarcasmotron-methodology).
+
+**When to Invoke Sarcasmotron**:
+
+**In Code Reviews**:
+```bash
+# After git diff review
+!sarcasmotron on changed functions
+```
+- Catches violations before merge
+- Forces explicit corrections in PR comments
+- **Checklist**: "Does this function have explicit bounds? Action verb name? No pleasantries?"
+
+**In Debugging**:
+```bash
+# When stuck on vague error
+!sarcasmotron analyze error message
+```
+- Exposes undefined assumptions
+- Demands specific constraints
+- **Example**: "Error: 'Something went wrong'" → sarcasmotron: "What went wrong? Define 'something'."
+
+**In Design Discussions**:
+```bash
+# When proposal uses abstraction
+!sarcasmotron challenge design
+```
+- "Define what 'properly' means here"
+- "Show 3 use cases before generalizing"
+- **Result**: Forces concrete examples instead of hand-waving
+
+**In Daily Work**:
+```bash
+# Before commit
+!sarcasmotron check {filename}
+```
+- Catches TODOs, placeholders, magic constants
+- Ensures all functions are actionable
+- **Result**: Zero-slop code before merge
+
+**Integration with OODA Loop**:
+```
+OBSERVE: Code review reveals vague assumption
+ORIENT: Identify which Eight Key violated (fractal/e/μ/etc.)
+DECIDE: Use sarcasmotron to force explicit correction
+ACT: Apply correction, verify with !verify
+```
+
 ## Real-World Examples
 
 ### Example 1: API Design (Clojure)
+
+**Applying Three Questions**:
+1. **Intentions?** - Handle user requests and return responses
+2. **Why this approach?** - Simple request-response pattern, no complexity needed
+3. **Simpler way?** - Remove pleasantries, direct function call
 
 ```clojure
 ;; BAD: Violates μ (Directness) - pleasantries and vague description
@@ -374,7 +458,17 @@ UserController:
   (process-user-data req))
 ```
 
+**Theoretical Foundation** (SIMPLICITY.md):
+- **μ Key**: Logarithms reduce complexity through transformation
+- **Test**: Count pleasantries ("I think", "maybe", "perhaps")
+- **Pass**: "No - adds complexity" | **Fail**: "Not sure if this is the best approach"
+
 ### Example 2: Database Migration (Python)
+
+**Applying Three Questions**:
+1. **Intentions?** - Migrate database safely without data loss
+2. **Why this approach?** - Validate before execute to prevent corruption
+3. **Simpler way?** - Explicit validation is simplest; "handle properly" is vague
 
 ```python
 # BAD: Violates fractal (Clarity) - vague "handle properly"
@@ -389,7 +483,17 @@ def migrate_database():
     execute_migration()
 ```
 
+**Theoretical Foundation** (SIMPLICITY.md):
+- **fractal Key**: Euler's Polyhedra $V - E + F = 2$ - invariant preservation
+- **Test**: Can you count explicit assumptions? Are bounds defined?
+- **Pass**: Input ∈ [0, MAX_INT] | **Fail**: "handle properly"
+
 ### Example 3: Error Handling (Java)
+
+**Applying Three Questions**:
+1. **Intentions?** - Validate, transform, and persist user input data
+2. **Why this approach?** - Single responsibility per function, explicit data flow
+3. **Simpler way?** - One function doing 3 things is simpler? No—violates SRP
 
 ```java
 // BAD: Violates e (Purpose) - abstract description
@@ -405,7 +509,17 @@ public void processUserInput(InputData data) {
 }
 ```
 
+**Theoretical Foundation** (SIMPLICITY.md):
+- **e Key**: Exponential Growth $e^x$ - goal-oriented compound evolution
+- **Test**: Does function name contain action verb? Returns specific value?
+- **Pass**: `validate_email(email) → bool` | **Fail**: `process_data(data) → void`
+
 ### Example 4: Performance Optimization (JavaScript)
+
+**Applying Three Questions**:
+1. **Intentions?** - Sum array elements efficiently
+2. **Why this approach?** - Simple O(n) for small arrays, parallel only when needed
+3. **Simpler way?** - Measure first: is this actually a bottleneck?
 
 ```javascript
 // BAD: Violates τ (Wisdom) - premature optimization
@@ -430,6 +544,11 @@ function calculateSumOptimized(arr) {
     }
 }
 ```
+
+**Theoretical Foundation** (SIMPLICITY.md):
+- **τ Key**: Calculus $\frac{df}{dt}$ - rate of change reveals trend, not snapshot
+- **Test**: Did you measure before optimizing? What's the baseline?
+- **Pass**: "Profiling shows 2s → 200ms after caching" | **Fail**: "Use hash map for O(1)"
 
 ---
 

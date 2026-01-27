@@ -8,22 +8,49 @@
 
 ## Document Positioning
 
-**Philosophical Foundation**: This document provides the theoretical basis for the I Ching × Eight Keys synthesis
-- Complete trigram research and mapping
-- I Ching cosmology structure (太极→两仪→四象→八卦→六十四卦)
-- 64 hexagrams detailed explanations with coding applications
+**PHILOSOPHY_RESEARCH.md**: Philosophical foundation and I Ching synthesis
+- **Why**: I Ching × Eight Keys philosophical synthesis for deep understanding
+- **What**: I Ching cosmology structure (太极→两仪→四象→八卦→六十四卦)
+- Complete 64 hexagrams detailed explanations with coding applications
+- Trigram research and mapping to Eight Keys
 
-**Practical Application**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for implementation examples
-- Code examples demonstrating Eight Keys principles
-- Verification and testing protocols
-- Framework workflows and practical usage
+**SIMPLICITY.md**: Mathematical foundations and testable heuristics
+- **Why**: Mathematical foundations grounding each Eight Key with concrete equations from "17 Equations That Changed the World"
+- **What**: Testable heuristics with pass/fail criteria for each principle
+- Invariant preservation and complexity reduction principles
+- Sarcasmotron methodology and detection patterns
 
-See this document for 64 hexagrams detailed explanations and philosophical context.
+**NUCLEUS_GUIDE.md**: Practical application and workflows
+- **How**: Practical workflows, real-world examples, daily application
+- **When**: When to apply principles in code reviews, debugging, refactoring
+- Complete framework specification with Eight Keys overview
+- Workflows: Writing Code, Debugging (OODA), Refactoring
 
-**Framework Basics**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework introduction in English
-- Critical perspective and three questions
-- Eight Keys framework overview
-- Workflows and verification
+**AGENTS.md**: Entry point and operational manifest
+- **Purpose**: Define guardrails that govern all framework documents
+- **What**: Core principles, protected files rule, language policy, development tools
+- **Role**: The foundational contract that all other documents reference and obey
+- **Guardian**: Enforces constraints (English-first, ZEROTH RULE) across ecosystem
+
+---
+
+## How These Documents Work Together
+
+```
+AGENTS.md (Entry Point + Guardrails)
+    ↓
+PHILOSOPHY_RESEARCH.md (Philosophy + Deep Understanding)
+    ↓
+SIMPLICITY.md (Theory + Why + What)
+    ↓
+NUCLEUS_GUIDE.md (Practice + How + When)
+```
+
+**Example Flow**:
+1. **AGENTS.md**: "English-first working language for international collaboration"
+2. **PHILOSOPHY_RESEARCH.md**: "坎/Kan (Water) ↔ fractal - navigating danger with clear assumptions"
+3. **SIMPLICITY.md**: "fractal requires explicit bounds. Test: Input ∈ [0, MAX]"
+4. **NUCLEUS_GUIDE.md**: "In code review: `!sarcasmotron check file.js` catches 'handle properly'"
 
 ## Table of Contents
 
@@ -50,7 +77,7 @@ See this document for 64 hexagrams detailed explanations and philosophical conte
 
 ## Executive Summary
 
-**Problem**: Software development involves navigating complexity, uncertainty, and human judgment—challenges that ancient wisdom traditions like the I Ching have addressed for millennia.
+**Problem**: Software development involves navigating complexity, uncertainty, and human judgment—challenges that ancient wisdom traditions like I Ching have addressed for millennia.
 
 **Solution**: This research creates an authentic philosophical synthesis between I Ching trigrams and the Eight Keys software framework (φ fractal e τ π μ ∃ ∀).
 
@@ -76,7 +103,7 @@ See this document for 64 hexagrams detailed explanations and philosophical conte
 ---
 
 ## Goal
-Create authentic philosophical synthesis between I Ching trigrams and the Eight Keys.
+Create authentic philosophical synthesis between I Ching trigrams and Eight Keys.
 
 ## Sources
 - **I Ching**: Original trigram meanings and commentaries.
@@ -94,7 +121,7 @@ This research follows a **hermeneutic** (interpretive) rather than **historical*
 
 **Why this approach works**:
 - I Ching has been reinterpreted for millennia across cultures while maintaining core wisdom
-- Software development, like the I Ching, deals with change, complexity, and human judgment
+- Software development, like I Ching, deals with change, complexity, and human judgment
 - The Eight Keys framework already uses symbolic notation (φ fractal e τ π μ ∃ ∀) compatible with I Ching's symbolic thinking
 
 ## Methodology
@@ -122,7 +149,12 @@ For each trigram, research and document:
 **Research Questions Answered**:
 1. "天行健" means heaven's movement is strong and persistent; applied to code: vitality that keeps evolving, not static repetition.
 2. 刚健中正: strength balanced with propriety → code that is robust yet maintains clear boundaries and correctness.
-3. Best fit is φ (Vitality) - mapping confirmed in NUCLEUS_GUIDE.md: 乾对应φ活力.
+3. Best fit is φ (Vitality) - mapping confirmed in NUCLEUS_GUIDE.md: 乾对应φ活力。
+
+**Mathematical Foundation** (SIMPLICITY.md):
+- **φ Key**: Euler's Formula $e^{iπ} + 1 = 0$ - invariant connects constants elegantly
+- **Test**: Does this code generalize to 3+ scenarios? Or is it a one-off?
+- **Pass**: Abstraction used ≥ 3 times | **Fail**: Copy-paste pattern
 
 ---
 
@@ -143,7 +175,12 @@ For each trigram, research and document:
 
 **Research Questions Answered**:
 1. "厚德载物" means earth's virtue is to carry and support all things; applied to architecture: a unified foundation that integrates all components without silos.
-2. 坤's receptivity: code that accepts inputs and transforms them appropriately, yielding when needed but maintaining structural integrity.
+2. 坤's receptivity: code that accepts inputs and transforms them appropriately, yielding when needed but maintaining structural integrity。
+
+**Mathematical Foundation** (SIMPLICITY.md):
+- **π Key**: Pythagorean Theorem $a^2 + b^2 = c^2$ - orthogonal components combine predictably
+- **Test**: Can you map all components to domain concepts?
+- **Pass**: Auth → Validate → Response maps to security domain | **Fail**: Mixed concerns
 
 ---
 
@@ -166,6 +203,11 @@ For each trigram, research and document:
 1. 震's "movement": coding as initiating action, not passive abstraction; functions that actually do something.
 2. "Shock/awakening": in software development, the moment of realization that something is wrong or needs change; the trigger for refactoring or new design.
 
+**Mathematical Foundation** (SIMPLICITY.md):
+- **e Key**: Exponential Growth $e^x$ - goal-oriented compound evolution
+- **Test**: Does function name contain action verb? Returns specific value?
+- **Pass**: `validate_email(email) → bool` | **Fail**: `process_data(data) → void`
+
 ---
 
 #### 巽 (风)
@@ -181,11 +223,16 @@ For each trigram, research and document:
 - Flexibility as strength
 
 **Potential Resonance with Eight Keys**:
-- μ (Directness): 巽为风，申命行事。Directness that penetrates to the core, cutting through pretense with gentle persistence. 巽为风，随风而行 - the code communicates clearly and directly, without婉转客套.
+- μ (Directness): 巽为风，申命行事。Directness that penetrates to the core, cutting through pretense with gentle persistence. 巽为风，随风而行 - the code communicates clearly and directly, without婉转客套。
 
 **Research Questions Answered**:
 1. Wind's "penetration": code that reaches into the heart of the problem, addressing root causes directly.
-2. Best match is μ (Directness) - confirmed in NUCLEUS_GUIDE.md mapping: 巽对应μ直接.
+2. Best match is μ (Directness) - confirmed in NUCLEUS_GUIDE.md mapping: 巽对应μ直接。
+
+**Mathematical Foundation** (SIMPLICITY.md):
+- **μ Key**: Logarithms $\log xy = \log x + \log y$ - multiplication → addition reduces complexity
+- **Test**: Count pleasantries ("I think", "maybe", "perhaps")
+- **Pass**: "No - adds complexity" | **Fail**: "Not sure if this is the best approach"
 
 ---
 
@@ -208,6 +255,11 @@ For each trigram, research and document:
 1. "习坎" means learning from danger; applied to coding: learning from past bugs and failures to make explicit assumptions.
 2. 坎's nature as "danger": coding involves navigating risks; clarity about constraints prevents pitfalls.
 
+**Mathematical Foundation** (SIMPLICITY.md):
+- **fractal Key**: Euler's Polyhedra Formula $V - E + F = 2$ - topological invariants for architectural consistency
+- **Test**: Can you count explicit assumptions? Are bounds defined?
+- **Pass**: Input ∈ [0, MAX_INT] | **Fail**: "handle properly"
+
 ---
 
 #### 离 (火)
@@ -228,6 +280,11 @@ For each trigram, research and document:
 **Research Questions Answered**:
 1. 离's "illumination": exposing hidden truths in code, such as performance bottlenecks, security vulnerabilities, or architectural flaws.
 2. "明两作离": two brightnesses make clarity; in coding, this means contrasting alternatives to reveal truth, e.g., comparing designs to see which is better.
+
+**Mathematical Foundation** (SIMPLICITY.md):
+- **∃ Key**: Information Theory $H = -\sum p(x) \log p(x)$ - entropy measures information content
+- **Test**: Can you run code to verify claims? What data supports it?
+- **Pass**: "Profiling shows 95th percentile = 2.3s" | **Fail**: "Performance is good"
 
 ---
 
@@ -250,6 +307,11 @@ For each trigram, research and document:
 1. "知止" applies to optimization: stop when further optimization yields diminishing returns, or when the cost outweighs benefit.
 2. 艮 teaches about constraints: boundaries are necessary for stability; code should respect limits (memory, time, complexity).
 
+**Mathematical Foundation** (SIMPLICITY.md):
+- **τ Key**: Calculus $\frac{df}{dt} = \lim_{h\to0} \frac{f(t+h)-f(t)}{h}$ - rate of change reveals trend, not snapshot
+- **Test**: Did you measure before optimizing? What's the baseline?
+- **Pass**: "Profiling shows 2s → 200ms after caching" | **Fail**: "Use hash map for O(1)"
+
 ---
 
 #### 兑 (泽)
@@ -265,11 +327,16 @@ For each trigram, research and document:
 - Joy in mutual learning
 
 **Potential Resonance with Eight Keys**:
-- ∀ (Vigilance): 兑为泽，讲习明辨。Defensive constraint, questioning input through dialogue. 兑为泽，朋友讲习 - the code engages in rigorous validation, questioning assumptions through collaborative examination.
+- ∀ (Vigilance): 兑为泽，讲习明辨。Defensive constraint, questioning input through dialogue and collaborative examination. 兑为泽，朋友讲习 - the code engages in rigorous validation, questioning assumptions through collaborative examination.
 
 **Research Questions Answered**:
 1. 兑's "communication": coding as dialogue with the system, asking questions, validating assumptions, and learning from feedback.
 2. "朋友讲习": collaborative learning; in coding, this means code reviews, pair programming, and shared understanding to prevent errors.
+
+**Mathematical Foundation** (SIMPLICITY.md):
+- **∀ Key**: Chaos Theory $x_{t+1} = k x_t (1 - x_t)$ - small changes cause unpredictable large effects
+- **Test**: What edge cases break this? What assumptions fail?
+- **Pass**: "Fails on negative input → validated" | **Fail**: "Assumes positive input"
 
 ---
 
@@ -284,7 +351,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 乾 (Heaven): 乾为天，刚健创造。Generative principle that creates without exhausting itself, like heaven's perpetual motion (天行健).
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 乾对应φ活力.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 乾对应φ活力。
 
 ---
 
@@ -294,7 +361,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 坎 (Water): 坎为水，重险习坎。Clarity that navigates danger, making explicit assumptions about risks and constraints.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 坎对应fractal清晰.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 坎对应fractal清晰。
 
 ---
 
@@ -304,7 +371,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 震 (Thunder): 震为雷，震惊百里。Actionable functions that initiate movement, break stagnation, and awaken awareness.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 震对应e目的.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 震对应e目的。
 
 ---
 
@@ -314,7 +381,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 艮 (Mountain): 艮为山，知止不殆。Foresight over speed, measuring before optimizing, knowing when to stop.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 艮对应τ智慧.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 艮对应τ智慧。
 
 ---
 
@@ -324,7 +391,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 坤 (Earth): 坤为地，厚德载物。Holistic integration, containing and supporting all components without fragmentation.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 坤对应π综合.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 坤对应π综合。
 
 ---
 
@@ -334,7 +401,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 巽 (Wind): 巽为风，申命行事。Directness that penetrates to the core, cutting through pretense with gentle persistence.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 巽对应μ直接.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 巽对应μ直接。
 
 ---
 
@@ -344,7 +411,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 离 (Fire): 离为火，明两作离。Illuminating truth, exposing reality over surface agreement.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 离对应∃真理.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 离对应∃真理。
 
 ---
 
@@ -354,7 +421,7 @@ For each Eight Key, study which trigram(s) genuinely illuminate it.
 **Trigram resonance**:
 - 兑 (Lake): 兑为泽，讲习明辨。Defensive constraint, questioning input through dialogue and collaborative examination.
 
-**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 兑对应∀警惕.
+**Research completed**: [✓] Mapping confirmed in NUCLEUS_GUIDE.md: 兑对应∀警惕。
 
 ---
 
@@ -410,13 +477,13 @@ This single principle generates the entire framework:
 - **Structure**: Architecture, frameworks, type systems, interfaces
 - **Constraints**: Requirements, deadlines, resources, technical debt
 - **What we cannot change**: Legacy code, dependencies, platform limitations
-- **Represented by**:坤 (Earth), 坎 (Water), 艮 (Mountain), 兑 (Lake)
+- **Represented by**: 坤 (Earth), 坎 (Water), 艮 (Mountain), 兑 (Lake)
 
 **Yang (阳)**:
 - **Creation**: Writing new code, designing systems, implementing features
 - **Transformation**: Refactoring, optimization, migration
 - **What we can build**: New features, improvements, innovations
-- **Represented by**:乾 (Heaven), 震 (Thunder), 巽 (Wind), 离 (Fire)
+- **Represented by**: 乾 (Heaven), 震 (Thunder), 巽 (Wind), 离 (Fire)
 
 **How the tension drives progress**:
 1. **Yin provides constraints** that give Yang direction (requirements guide implementation)
@@ -475,6 +542,7 @@ This single principle generates the entire framework:
 
 **I Ching concept**: 元者善之长也，亨者嘉之会也，利者义之和也，贞者事之干也。
 > "元 is the beginning of all goodness, 亨 is the gathering of all that is excellent, 利 is the harmony of all that is right, 贞 is the stem of all affairs."
+> 
 
 **Military strategy concept**: Observe-Orient-Decide-Act (OODA) loop - Colonel John Boyd's decision cycle for competitive environments.
 
@@ -538,6 +606,7 @@ This creates a complete philosophical-practical continuum: from universal princi
 ---
 
 ### 八卦
+
 **I Ching concept**: 四象生八卦 - "The Four Symbols generate the Eight Trigrams"
 
 **Generation process**: Each trigram is composed of three lines (Yao), each either Yin (broken) or Yang (solid). The eight possible combinations represent fundamental archetypes of change and transformation.
@@ -559,15 +628,22 @@ This creates a complete philosophical-practical continuum: from universal princi
 **艮 (Mountain) ↔ τ (Wisdom)**: Emerges from **Old Yin** - accumulated debt that teaches when to stop
 **兑 (Lake) ↔ ∀ (Vigilance)**: Emerges from **Old Yang** - established patterns that require defensive validation
 
-**Complete mapping confirmed in NUCLEUS_GUIDE.md**:
-- 乾 (Heaven) ↔ φ (Vitality): 乾为天，刚健创造
-- 坎 (Water) ↔ fractal (Clarity): 坎为水，重险习坎  
-- 震 (Thunder) ↔ e (Purpose): 震为雷，震惊百里
-- 艮 (Mountain) ↔ τ (Wisdom): 艮为山，知止不殆
-- 坤 (Earth) ↔ π (Synthesis): 坤为地，厚德载物
-- 巽 (Wind) ↔ μ (Directness): 巽为风，申命行事
-- 离 (Fire) ↔ ∃ (Truth): 离为火，明两作离
-- 兑 (Lake) ↔ ∀ (Vigilance): 兑为泽，讲习明辨
+---
+
+#### Mathematical Foundations for Each Trigram
+
+Each Eight Key is grounded in a concrete equation from "17 Equations That Changed the World". For complete testable heuristics, see [SIMPLICITY.md](SIMPLICITY.md).
+
+| Trigram | Eight Key | Mathematical Foundation | Test |
+|---------|-----------|---------------------|------|
+| 乾/Heaven | φ (Vitality) | Euler's Formula $e^{iπ} + 1 = 0$ | Does this code generalize to 3+ scenarios? |
+| 坎/Water | fractal (Clarity) | Euler's Polyhedra $V - E + F = 2$ | Can you count explicit assumptions? |
+| 震/Thunder | e (Purpose) | Exponential Growth $e^x$ | Does function name contain action verb? |
+| 艮/Mountain | τ (Wisdom) | Calculus $\frac{df}{dt}$ | Did you measure before optimizing? |
+| 坤/Earth | π (Synthesis) | Pythagorean $a^2 + b^2 = c^2$ | Can you map components to domain concepts? |
+| 巽/Wind | μ (Directness) | Logarithms $\log xy = \log x + \log y$ | Count pleasantries ("I think", "maybe") |
+| 离/Fire | ∃ (Truth) | Information Theory $H = -\sum p(x) \log p(x)$ | Can you run code to verify claims? |
+| 兑/Lake | ∀ (Vigilance) | Chaos Theory $x_{t+1} = k x_t (1 - x_t)$ | What edge cases break this? |
 
 ---
 
@@ -708,7 +784,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 **Key insight**: Success comes from maintaining communication between innovation (乾) and structure (坤).
 
 #### 12. 否卦 (Pi / Stagnation) - 坤下乾上 (Earth below, Heaven above)
-**Trigrams**: 坤 (Earth/π Synthesis) + 乾 (Heaven/φ Vitality) 
+**Trigrams**: 坤 (Earth/π Synthesis) + 乾 (Heaven/φ Vitality)
 **Meaning**: Heaven and Earth do not communicate; structure suppresses creativity - stagnation results.
 **Coding situation**: When architectural constraints (π Synthesis) prevent necessary innovation (φ Vitality).
 **Example**: A monolithic architecture that makes it impossible to implement a needed feature without massive refactoring.
@@ -738,7 +814,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 #### 16. 豫卦 (Yu / Enthusiasm) - 坤下震上 (Earth below, Thunder above)
 **Trigrams**: 坤 (Earth/π Synthesis) + 震 (Thunder/e Purpose)
 **Meaning**: Earth under Thunder; structure channels purposeful action - enthusiastic execution.
-**Coding situation**: A well‑planned project where the team is motivated and execution is smooth.
+**Coding situation**: A well-planned project where the team is motivated and execution is smooth.
 **Example**: A sprint where tasks are clearly defined, dependencies mapped, and developers are energized.
 **Key insight**: Enthusiasm flows when structure (π) enables purposeful action (e) rather than hindering it.
 
@@ -766,7 +842,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 #### 20. 观卦 (Guan / Contemplation) - 坤下巽上 (Earth below, Wind above)
 **Trigrams**: 坤 (Earth/π Synthesis) + 巽 (Wind/μ Directness)
 **Meaning**: Earth under Wind; structure observed through direct communication - learning from the system.
-**Coding situation**: Conducting post‑mortems or architecture reviews to understand system behavior.
+**Coding situation**: Conducting post-mortems or architecture reviews to understand system behavior.
 **Example**: Analyzing production incidents with clear, blameless communication to improve future design.
 **Key insight**: Contemplation yields wisdom when structure (π) is examined with direct, honest communication (μ).
 
@@ -948,7 +1024,7 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 #### 46. 升卦 (Sheng / Ascending) - 巽下坤上 (Wind below, Earth above)
 **Trigrams**: 巽 (Wind/μ Directness) + 坤 (Earth/π Synthesis)
 **Meaning**: Wind under Earth; direct communication lifts structure - gradual elevation.
-**Coding situation**: Improving a codebase’s quality through consistent refactoring and clear communication.
+**Coding situation**: Improving a codebase's quality through consistent refactoring and clear communication.
 **Example**: A long‑term technical‑debt reduction initiative that steadily improves maintainability.
 **Key insight**: Ascending is a gradual process; direct, persistent effort (μ) within a stable structure (π) yields steady gains.
 
@@ -1032,9 +1108,9 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 #### 58. 兑卦 (Dui / The Joyous) - 兑下兑上 (Lake below, Lake above)
 **Trigrams**: 兑 (Lake/∀ Vigilance) + 兑 (Lake/∀ Vigilance)
 **Meaning**: Lake doubled; joy in mutual questioning - collaborative excellence.
-**Coding situation**: A team that enjoys rigorous code reviews and learns from each other’s questions.
+**Coding situation**: A team that enjoys rigorous code reviews and learns from each other's questions.
 **Example**: Pair programming sessions where both participants challenge assumptions and discover better solutions.
-**Key insight**: Joy arises from shared vigilance (∀²); questioning becomes a pleasure when it’s a collective pursuit of quality.
+**Key insight**: Joy arises from shared vigilance (∀²); questioning becomes a pleasure when it's a collective pursuit of quality.
 
 #### 59. 涣卦 (Huan / Dispersion) - 坎下巽上 (Water below, Wind above)
 **Trigrams**: 坎 (Water/fractal Clarity) + 巽 (Wind/μ Directness)
@@ -1081,12 +1157,12 @@ For detailed explanations of each hexagram, see the individual entries below. Th
 All 64 hexagrams are now mapped to coding situations above, providing a complete reference for navigating software development challenges using the Eight Keys framework.
 
 **How to use hexagram wisdom**:
-1. **Identify the coding situation** you're facing
+1. **Identify** the coding situation** you're facing
 2. **Determine which trigrams (principles) are in play**
-3. **Find the corresponding hexagram** and its wisdom
-4. **Apply the insight** to navigate the situation effectively
+3. **Find** the corresponding hexagram** and its wisdom
+4. **Apply** the insight to navigate your situation effectively
 
-**This completes the I Ching cosmological structure**: From 太极 (core principle) to 两仪 (Yin/Yang tension) to 四象 (coding states) to 八卦 (coding principles) to 六十四卦 (coding situations).
+**This completes** the I Ching cosmological structure: From 太极 (core principle) to 两仪 (Yin/Yang tension) to 四象 (coding states) to 八卦 (coding principles) to 六十四卦 (coding situations).
 
 ---
 
@@ -1118,7 +1194,7 @@ All 64 hexagrams are now mapped to coding situations above, providing a complete
 - **Marc Finzi, Shikai Qiu, Yiding Jiang, Pavel Izmailov, J. Zico Kolter, Andrew Gordon Wilson**: *From Entropy to Epiplexity* ([arXiv:2601.03220](https://arxiv.org/abs/2601.03220)) - Rethinking Information for Computationally Bounded Intelligence
 
 #### Project Documentation (Primary Sources)
-- **NUCLEUS_GUIDE.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) with complete framework specification and operational policies
+- **NUCLEUS_GUIDE.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) with complete specification.
 - **AGENTS.md**: Protected files rule and operational configuration
 - **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis and trigram mappings
 - **SYMBOLIC_FRAMEWORK.md**: Mathematical foundation using λ-calculus notation
@@ -1199,9 +1275,9 @@ The philosophical research in this document is applied in practice through [NUCL
 The NUCLEUS_GUIDE.md provides:
 - Practical workflows and examples
 - Quick reference tables for common situations
-- **Code demonstrations of trigram principles** (see "八卦代码示例" section)
+- **Code demonstrations of trigram principles** (see **Real-World Examples** section)
 - Refactoring and validation patterns
-- Integration with the Eight Keys framework
+- Integration with Eight Keys framework
 
 ---
 
@@ -1210,10 +1286,11 @@ The NUCLEUS_GUIDE.md provides:
 ### For Practitioners (Developers, Architects)
 
 **Quick Start**:
-1. **Begin with code examples**: See **[NUCLEUS_GUIDE.md 八卦代码示例 section](NUCLEUS_GUIDE.md#八卦代码示例-具体违反与修正对比)** for concrete violations and fixes of each trigram principle.
-2. **Learn the 8 trigrams**: Focus on the core mapping (乾/φ, 坎/fractal, 震/e, etc.) as mental models for code quality.
-3. **Use quick reference**: When facing a challenge, consult the **"按挑战类型查找"** table in NUCLEUS_GUIDE.md to find relevant hexagrams.
+1. **Begin with mathematical foundations**: See **[SIMPLICITY.md](SIMPLICITY.md)** for testable heuristics with pass/fail criteria from "17 Equations That Changed the World"
+2. **Learn 8 trigrams**: Focus on the core mapping (乾/φ, 坎/fractal, 震/e, etc.) as mental models for code quality.
+3. **Use quick reference**: When facing a challenge, consult the **Hexagram Quick Reference** table in this document.
 4. **Apply 元亨利贞/OODA**: Use the unified Observe-Orient-Decide-Act (元-亨-利-贞) cycle for development and debugging, informed by hexagram wisdom.
+5. **Practical application**: See **[NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md)** for workflows, code examples, and daily practice integration.
 
 **Deep Dive**:
 1. **Study trigram philosophy**: Read Phase 1 of this document to understand the I Ching foundation.
@@ -1223,7 +1300,7 @@ The NUCLEUS_GUIDE.md provides:
 ### For Team Leads & Managers
 
 **Adoption Strategy**:
-1. **Pilot with validation**: Use the **[验证计划](NUCLEUS_GUIDE.md#验证计划-如何评估框架效果)** to measure impact before full adoption.
+1. **Pilot with validation**: Use the **verification plan** in NUCLEUS_GUIDE.md to measure impact before full adoption.
 2. **Start with code review**: Introduce trigram thinking during code reviews (e.g., "This is a 坎/fractal violation—needs clearer assumptions").
 3. **Train incrementally**: Focus on 2-3 most relevant trigrams for your team's common issues.
 4. **Measure outcomes**: Track metrics like code quality, decision time, and technical debt reduction.
@@ -1235,7 +1312,7 @@ The NUCLEUS_GUIDE.md provides:
 
 ### For Researchers & Framework Developers
 
-**Extending the Framework**:
+**Extending → Framework**:
 1. **Test against other methodologies**: Compare with SOLID, Clean Architecture, etc.
 2. **Develop tooling**: Create linters, IDE plugins, or code analysis tools that detect trigram violations.
 3. **Conduct case studies**: Document real-world applications and outcomes.
