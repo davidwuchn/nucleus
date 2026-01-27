@@ -275,7 +275,7 @@ If upstream/main adds new files:
 - ✅ **DO**: Modify new local files freely
 - ✅ **DO**: Track changes in this file (LOCAL_CHANGES.md)
 - ✅ **DO**: Test upstream sync before claiming readiness
-- ✅ **DONE**: Upstream sync verified (no conflicts, clean merge, framework working) - last verified 2025-01-14; re-run verification steps in section 3 if date >30 days old
+- ✅ **DONE**: Upstream sync verified (no conflicts, clean merge, framework working) - last verified 2026-01-28; re-run verification steps in section 3 if date >30 days old
 - ❌ **DON'T**: Modify upstream files (README.md, DIAG.md, SYMBOLIC_FRAMEWORK.md, etc.) → **INSTANT FAIL**
 - ❌ **DON'T**: Delete upstream files
 - ❌ **DON'T**: Submit changes that break upstream compatibility
