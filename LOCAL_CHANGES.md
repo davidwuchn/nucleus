@@ -37,6 +37,7 @@ NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (577 lines, 
 OPERATIONAL_CONSTRAINTS.md    - Operational constraints specification (197 lines, μ-applied: exemplifies directness principle)
 PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis (1,274 lines)
 EQUATIONS_FOR_WORLD.md       - Reference table (38 lines, new)
+BANG_COMMANDS.md             - Bang commands reference (297 lines, π-applied: exemplifies synthesis principle)
 LOCAL_CHANGES.md              - This file (upstream vs local tracking, 276 lines)
 
 skills/nucleus-tutor/SKILL.md     - Tutor skill (new, 95 lines)
@@ -219,6 +220,12 @@ git merge upstream/main
   - Used to demonstrate symbolic compression hypothesis
   - Added as reference material
 
+- **BANG_COMMANDS.md**: Bang commands reference
+  - Comprehensive documentation of all bang commands
+  - Model-agnostic meta-operators and framework-specific commands
+  - Usage patterns and integration with Eight Keys and OODA cycle
+  - Quick reference for daily use
+
 ---
 ## Commit Strategy
 
@@ -233,7 +240,7 @@ See [Upstream File Constraint](#upstream-file-constraint-zeroth-rule) for comple
 | Category | Files | Policy |
 |----------|-------|--------|
 | **Preserve Upstream** | All 13 upstream files (11 markdown + 2 skills) | DO NOT MODIFY |
-| **New Local Additions** | AGENTS.md, NUCLEUS_GUIDE.md, PHILOSOPHY_RESEARCH.md, EQUATIONS_FOR_WORLD.md, LOCAL_CHANGES.md, skills/nucleus-tutor/SKILL.md, skills/sarcasmotron/SKILL.md | Modify freely |
+| **New Local Additions** | AGENTS.md, NUCLEUS_GUIDE.md, PHILOSOPHY_RESEARCH.md, EQUATIONS_FOR_WORLD.md, BANG_COMMANDS.md, LOCAL_CHANGES.md, skills/nucleus-tutor/SKILL.md, skills/sarcasmotron/SKILL.md | Modify freely |
 
 ### Example Commit
 
