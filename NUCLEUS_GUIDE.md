@@ -336,7 +336,7 @@ The complete symbolic framework can be expressed using I Ching hexagrams for AI 
 
 Bang commands are model-agnostic. They work without Nucleus on: GPT-4, Claude 3+, Llama 2/3. Earlier models require explicit examples.
 
-Try this after you have the AI do some things in a session:
+After the AI has written code, fixed bugs, or reviewed a pull request, try:
 ```
 !meta3 !fractal Analyze this session. !reflect
 ```
