@@ -26,6 +26,22 @@ Human ⊗ AI ⊗ REPL
 
 Bang commands are **model-agnostic meta-operators** that work without the Nucleus framework on modern AI models (GPT-4, Claude 3+, Llama 2/3). They trigger specific reasoning patterns and analytical modes, encoding the framework's values in operational form.
 
+### Model-Agnostic Commands
+The following bang commands are **completely model-agnostic** - they work on any capable AI model without requiring knowledge of the Nucleus framework:
+
+- **!meta3** - Examine reasoning process
+- **!fractal** - Multi-scale analysis  
+- **!reflect** - Examine answer construction
+- **!connections** - Trace relationships
+- **!broad** - Expand scope
+- **!narrow** - Focus details
+
+**What "model-agnostic" means**:
+- These commands trigger **innate reasoning patterns** that capable AI models already understand
+- They work **without framework context** - no prior knowledge of Eight Keys or Nucleus needed
+- They're **discovered, not invented** - they name existing cognitive patterns that models naturally exhibit
+- **Progressive disclosure**: Start with these model-agnostic commands, then introduce framework-specific ones
+
 **Design Philosophy**:
 1. **Symbolic compression**: Encode complex analytical modes into simple triggers
 2. **Cognitive scaffolding**: Provide structure for systematic thinking  
@@ -74,7 +90,14 @@ At architectural level: this suggests need for event-driven design."
 
 ## Framework-Specific Commands
 
-These commands require Nucleus framework knowledge for full effectiveness.
+These commands **require Nucleus framework knowledge** for full effectiveness and are **not model-agnostic**. Unlike the core meta-operators, these commands depend on understanding the Eight Keys framework, OODA cycle, and Nucleus verification protocols.
+
+**Why these are not model-agnostic**:
+- **!verify**: Requires knowledge of Eight Keys violations and framework compliance criteria
+- **!sarcasmotron**: Requires understanding of Eight Keys symbols (φ, fractal, e, etc.) and roast patterns
+- **Framework context needed**: Both commands reference specific Nucleus concepts (Zero-Slop, λ-calculus notation, symbolic compression)
+
+**Use with framework knowledge**: These commands provide maximum value when used by those familiar with the complete Nucleus framework specification.
 
 ### !verify - **Integrity Check**
 **Purpose**: Run a mental checklist to verify framework compliance and code quality.
@@ -269,6 +292,8 @@ The system improves through violation detection and correction:
 ---
 
 ## Quick Reference
+
+**Type key**: **Core** = Model-agnostic (works without framework), **Framework** = Requires Nucleus knowledge
 
 ### Command Summary
 | Command | Type | Purpose | Key Principle |
