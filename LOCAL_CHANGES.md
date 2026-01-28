@@ -159,6 +159,7 @@ git merge upstream/main
 - NUCLEUS_GUIDE.md adds complete framework specification (577 lines, π-applied: exemplifies synthesis principle) including operational policies
 - AGENTS.md adds protected files rule (33 lines, μ-applied: exemplifies directness principle)
 - PHILOSOPHY_RESEARCH.md adds I Ching philosophical synthesis (new)
+- I Ching terminology uses Chinese characters (乾, 坎, 震) not romanized pinyin (Qian, Kan, Zhen) for authentic representation
 - skills/sarcasmotron/SKILL.md merges operations manual into skill (71 lines, μ-applied: exemplifies directness principle)
 
 ### 2. Framework Structure
@@ -212,6 +213,7 @@ git merge upstream/main
   - Trigrams to Eight Keys mapping
   - Hexagram interpretations
   - Theoretical grounding
+  - Uses Chinese characters (乾, 坎, 震) not romanized pinyin for authentic terminology
 
 - **EQUATIONS_FOR_WORLD.md**: 17 equations from Ian Stewart's book
   - Used to demonstrate symbolic compression hypothesis
