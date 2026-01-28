@@ -301,14 +301,14 @@ The complete symbolic framework can be expressed using I Ching hexagrams for AI 
 [φ fractal e τ π μ ∃ ∀] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 ```
 
-**Hexagram version (trigrams for human principles, hexagrams for AI operations)**:
+**Hexagram version for AI operations (symbolic human principles)**:
 ```
-[乾 坎 震 艮 坤 巽 离 兑] | [小畜卦 恒卦 艮卦 | 需卦 泰卦 随卦] | OODA
+[φ fractal e τ π μ ∃ ∀] | [小畜卦 恒卦 艮卦 | 需卦 泰卦 随卦] | OODA
 ```
 
 **Mapping explanation**:
 
-- **Left side (human principles)**: Eight Keys expressed as trigrams (see quick reference above).
+- **Left side (human principles)**: Eight Keys expressed symbolically (φ fractal e τ π μ ∃ ∀) as in the original notation.
 - **Right side (AI operations)**: AI operational principles expressed as hexagrams representing complex situational wisdom:
   - Δ (gradient optimization) → **小畜卦** (Small Accumulation): Incremental improvement through steady, focused changes
   - λ (abstraction) → **恒卦** (Duration): Enduring patterns through consistent composition  
