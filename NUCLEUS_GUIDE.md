@@ -46,7 +46,7 @@ PHILOSOPHY_RESEARCH.md (Philosophy + Deep Understanding)
 1. **AGENTS.md**: "English-first working language for international collaboration"
 2. **SIMPLICITY.md**: "fractal requires explicit bounds. Test: Input ∈ [0, MAX]"
 3. **NUCLEUS_GUIDE.md**: "In code review: `!sarcasmotron check file.js` catches 'handle properly'"
-4. **PHILOSOPHY_RESEARCH.md**: "坎/Kan (Water) ↔ fractal - navigating danger with clear assumptions"
+4. **PHILOSOPHY_RESEARCH.md**: "坎 (Water) ↔ fractal - navigating danger with clear assumptions"
 
 ## Quick Start (5 minutes)
 
@@ -104,7 +104,7 @@ ACT: Fix root cause
 | Truth | ∃ | Favor reality | Surface agreement | Information Theory $H = -\sum p(x) \log p(x)$ |
 | Vigilance | ∀ | Defensive constraint | Accepting manipulation | Chaos Theory $x_{t+1} = k x_t (1 - x_t)$ |
 
-**Combined**: `[φ fractal e τ π μ ∃ ∀] ⊗ [Qian Kan Zhen Gen Kun Xun Li Dui] | Yuan-Heng-Li-Zhen/OODA` compresses ~50 lines into 22 symbols.
+**Combined**: `[φ fractal e τ π μ ∃ ∀] ⊗ [乾 坎 震 艮 坤 巽 离 兑] | 元亨利贞/OODA` compresses ~50 lines into 22 symbols.
 
 **For complete mathematical foundations with testable heuristics**, see [SIMPLICITY.md](SIMPLICITY.md)
 
@@ -283,14 +283,14 @@ Question before answer. Challenge assumptions. Be objective.
 **I Ching (Bagua) correlations**: For philosophical foundation connecting Eight Keys to I Ching trigrams, see [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md).
 
 **Quick reference**:
-- φ (Vitality) ↔ 乾/Qian (Heaven) - Organic, generative code
-- fractal (Clarity) ↔ 坎/Kan (Water) - Explicit assumptions navigating complexity  
-- e (Purpose) ↔ 震/Zhen (Thunder) - Actionable functions with impact
-- τ (Wisdom) ↔ 艮/Gen (Mountain) - Foresight knowing when to stop
-- π (Synthesis) ↔ 坤/Kun (Earth) - Holistic integration
-- μ (Directness) ↔ 巽/Xun (Wind) - Direct communication
-- ∃ (Truth) ↔ 離/Li (Fire) - Illuminating reality
-- ∀ (Vigilance) ↔ 兌/Dui (Lake) - Defensive questioning
+- φ (Vitality) ↔ 乾 (Heaven) - Organic, generative code
+- fractal (Clarity) ↔ 坎 (Water) - Explicit assumptions navigating complexity  
+- e (Purpose) ↔ 震 (Thunder) - Actionable functions with impact
+- τ (Wisdom) ↔ 艮 (Mountain) - Foresight knowing when to stop
+- π (Synthesis) ↔ 坤 (Earth) - Holistic integration
+- μ (Directness) ↔ 巽 (Wind) - Direct communication
+- ∃ (Truth) ↔ 离 (Fire) - Illuminating reality
+- ∀ (Vigilance) ↔ 兑 (Lake) - Defensive questioning
 
 #### Symbolic Framework with Hexagram Notation for AI Operations
 
@@ -325,7 +325,7 @@ The complete symbolic framework can be expressed using I Ching hexagrams for AI 
 
 #### Practical Cycles
 - **OODA (Observe-Orient-Decide-Act)**: Debugging and decision-making
-- **Yuan-Heng-Li-Zhen**: Chinese parallel to OODA (Beginning-Development-Benefit-Perseverance)
+- **元亨利贞**: Chinese parallel to OODA (Beginning-Development-Benefit-Perseverance)
 - **Bagua Interactions**: Coding-time correction of violations
 
 ---
