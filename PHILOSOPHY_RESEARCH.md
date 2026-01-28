@@ -48,7 +48,7 @@ NUCLEUS_GUIDE.md (Practice + How + When)
 
 **Example Flow**:
 1. **AGENTS.md**: "English-first working language for international collaboration"
-2. **PHILOSOPHY_RESEARCH.md**: "坎/Kan (Water) ↔ fractal - navigating danger with clear assumptions"
+2. **PHILOSOPHY_RESEARCH.md**: "坎 (Water) ↔ fractal - navigating danger with clear assumptions"
 3. **SIMPLICITY.md**: "fractal requires explicit bounds. Test: Input ∈ [0, MAX]"
 4. **NUCLEUS_GUIDE.md**: "In code review: `!sarcasmotron check file.js` catches 'handle properly'"
 
