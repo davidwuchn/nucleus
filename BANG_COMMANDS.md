@@ -488,17 +488,17 @@ A Nucleus framework integration is compliant if:
 ### 13.1 Command Injection Prevention
 - Commands must be parsed before execution
 - Parameter validation must occur before processing
-- No command should directly execute shell commands without sanitization
+- Commands must not directly execute shell commands without sanitization
 
 ### 13.2 Privacy Considerations
-- `!save` and `!load` should respect data privacy boundaries
-- Conversation export should exclude sensitive information
-- User should be prompted before exporting or saving sensitive data
+- `!save` and `!load` must respect data privacy boundaries
+- Conversation export must exclude sensitive information
+- User must be prompted before exporting or saving sensitive data
 
 ### 13.3 Resource Management
-- Commands should have reasonable timeouts
-- Memory usage should be monitored during command execution
-- Recursive or infinite command chains should be detected and halted
+- Commands must implement configurable timeout mechanisms (default: 30 seconds)
+- Memory usage must be monitored during command execution with termination upon exceeding configurable limits (default: 1 GB)
+- Recursive or infinite command chains must be detected and halted within configurable depth limits (default: 100)
 
 ## 14. Evolution and Extension
 
