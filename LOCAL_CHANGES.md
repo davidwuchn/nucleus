@@ -12,7 +12,7 @@
 
 ## File Comparison
 
-### Files in Upstream (12 markdown files)
+### Files in Upstream (13 markdown files + 19 ECA files = 32 total)
 
 ```
 DIAG.md
@@ -27,6 +27,29 @@ TEST.md
 WRITING.md
 skills/nucleus-clojure/SKILL.md
 skills/nucleus/SKILL.md
+
+eca/                          - Editor Code Assistant integration (19 files)
+├── README.md                 - ECA configuration and setup
+└── prompts/                  - Prompt templates for ECA tools
+    ├── agent_behavior.md
+    ├── compact.md
+    ├── init.md
+    ├── inline_completion.md
+    ├── plan_behavior.md
+    ├── rewrite.md
+    ├── skill_create.md
+    └── title.md
+    └── tools/                - Tool-specific prompt documentation
+        ├── clj-nrepl-eval.md
+        ├── clj-paren-repair.md
+        ├── directory_tree.md
+        ├── edit_file.md
+        ├── grep.md
+        ├── move_file.md
+        ├── read_file.md
+        ├── shell_command.md
+        ├── skill.md
+        └── write_file.md
 ```
 
 ### Files in Local Only (My Additions)
@@ -58,7 +81,7 @@ skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied: ex
 
 **Reasoning**:
 - **Preserve upstream compatibility**: Never modify upstream files
-- **Clear separation**: Upstream = 12 files (3,500 lines), Local = 8 files (2,561 lines)
+- **Clear separation**: Upstream = 32 files (3,500+ lines), Local = 8 files (2,561 lines)
 - **Track divergence**: Document all changes in this file
 - **Enable upstream sync**: Maintain merge compatibility
 
@@ -239,7 +262,7 @@ See [Upstream File Constraint](#upstream-file-constraint-zeroth-rule) for comple
 
 | Category | Files | Policy |
 |----------|-------|--------|
-| **Preserve Upstream** | All 13 upstream files (11 markdown + 2 skills) | DO NOT MODIFY |
+| **Preserve Upstream** | All 32 upstream files (13 markdown + 2 skills + 19 ECA) | DO NOT MODIFY |
 | **New Local Additions** | AGENTS.md, NUCLEUS_GUIDE.md, PHILOSOPHY_RESEARCH.md, EQUATIONS_FOR_WORLD.md, BANG_COMMANDS.md, LOCAL_CHANGES.md, skills/nucleus-tutor/SKILL.md, skills/sarcasmotron/SKILL.md | Modify freely |
 
 ### Example Commit
@@ -284,7 +307,7 @@ If upstream/main adds new files:
 - ✅ **DO**: Modify new local files freely
 - ✅ **DO**: Track changes in this file (LOCAL_CHANGES.md)
 - ✅ **DO**: Test upstream sync before claiming readiness
-- ✅ **DONE**: Upstream sync verified (no conflicts, clean merge, framework working) - last verified 2026-01-28; re-run verification steps in section 3 if date >30 days old
+- ✅ **DONE**: Upstream sync verified (no conflicts, clean merge, framework working) - last verified 2026-01-29; re-run verification steps in section 3 if date >30 days old
 - ❌ **DON'T**: Modify upstream files (README.md, DIAG.md, SYMBOLIC_FRAMEWORK.md, etc.) → **INSTANT FAIL**
 - ❌ **DON'T**: Delete upstream files
 - ❌ **DON'T**: Submit changes that break upstream compatibility
