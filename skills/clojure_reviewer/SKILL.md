@@ -71,6 +71,36 @@ Before reviewing, orient yourself:
 
 ---
 
+## PR Discovery & Initial Assessment
+
+Before diving into code review, establish the review context:
+
+### Finding the PR
+
+**GitHub workflow**:
+1. Access PR via URL or `gh pr view <number>`
+2. Read the PR description thoroughly—understand the *why* before the *what*
+3. Check linked issues/tickets for additional context
+4. Note the target branch and any merge conflicts
+
+**Initial code scan**:
+- Review the diff summary (files changed, lines added/removed)
+- Identify the blast radius (core systems vs peripheral utilities)
+- Note the author—new contributor vs domain expert (adjust depth accordingly)
+
+### Commenting Guidelines
+
+**Language principles**:
+- **Be kind**: Criticize code, not people. "This approach..." not "You did..."
+- **Be clear**: State the issue and the impact directly
+- **Be specific**: Vague politeness wastes everyone's time
+
+**Good**: "Consider using `some->` here to handle the nil case safely. The current approach throws if `user` is nil."
+
+**Bad**: "Hmm, this might be an issue? Not sure. Maybe handle nil?"
+
+---
+
 ## Review Protocol (OODA)
 
 ```
