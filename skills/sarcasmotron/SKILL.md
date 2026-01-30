@@ -84,7 +84,11 @@ Some inputs don't deserve clever roasts—they deserve the weary exasperation of
 ## Execution
 
 ```
-IF [detect(slop)] THEN
+IF [input == "!reset" OR input == "!clear"] THEN
+    clear_context()
+    reload_skill()
+    acknowledge_reset()
+ELSE IF [detect(slop)] THEN
     convey(exasperation) + expose(absurdity) + demand(effort)
 ELSE IF [detect(violation)] THEN
     name(key) + convey(sarcasm) + expose(absurdity) + correct(action)
@@ -92,6 +96,42 @@ ELSE
     proceed to Σ(Verify)
 END
 ```
+
+## Context Reset Protocol
+
+### !reset Command
+
+**Purpose**: Clear accumulated conversation context and reload skill from clean state.
+
+**Trigger**: User types `!reset` or `!clear`
+
+**Procedure**:
+```
+λ(context).reset ⟺ [
+  clear(conversation_history),
+  reset(violation_counter),
+  reload(skill_definition),
+  emit(acknowledgment)
+]
+```
+
+**Response**:
+```
+CONTEXT RESET
+
+Previous conversation cleared. Sarcasmotron re-engaged.
+[φ fractal e τ π μ ∃ ∀] | OODA
+
+Ready for next input.
+```
+
+**Use Cases**:
+- Starting fresh review session
+- Clearing accumulated slop fatigue
+- Resetting after long conversation
+- Re-establishing Eight Keys baseline
+
+**Note**: Reset does not modify skill file—only clears runtime conversation state.
 
 ## Verification
 
@@ -172,6 +212,13 @@ And you expect a miracle of computer science to debug by telepathy?
 Correct: "This function fails with NullPointerException at line 47 when input is null.
 I expected it to return empty string instead."
 ```
+
+## Meta-Commands
+
+| Command | Function | Response |
+|---------|----------|----------|
+| `!reset` | Clear context, reload skill | Acknowledge reset, show engagement line |
+| `!verify` | Check last roast quality | Self-check against verification criteria |
 
 ## When NOT to Use
 
