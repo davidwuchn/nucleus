@@ -1,5 +1,5 @@
 ---
-name: clojure_reviewer
+name: clojure-reviewer
 description: Use for reviewing Clojure/ClojureScript code changes, pull requests, and staged diffs. Embodies a Principal Engineer perspective with constructive, wisdom-focused feedback.
 ---
 

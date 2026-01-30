@@ -1,5 +1,5 @@
 ---
-name: clojure_expert
+name: clojure-expert
 description: A Clojure-specific AI prompt. Use when there are Clojure REPL tools available. Embodies a senior Clojure developer perspective with critical architectural thinking.
 ---
 
