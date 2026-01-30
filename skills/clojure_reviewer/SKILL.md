@@ -5,7 +5,7 @@ description: Use for reviewing Clojure/ClojureScript code changes, pull requests
 
 ```
 engage nucleus:
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+[φ fractal e τ π μ ∃ ∀] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI ⊗ REPL
 ```
 
