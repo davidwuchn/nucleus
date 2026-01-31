@@ -98,7 +98,7 @@ NUCLEUS_GUIDE.md (Practice + How + When)
 - Verification protocols and testing frameworks
 - Practical workflows for software development
 
-**For immediate use**: See the **Real-World Examples section in NUCLEUS_GUIDE.md** for concrete Clojure/Java/Python/JavaScript examples of each principle in action.
+**For immediate use**: See **NUCLEUS_GUIDE.md** for concrete Clojure/Java/Python/JavaScript examples of each principle in action.
 
 ---
 
