@@ -56,7 +56,7 @@ eca/                          - Editor Code Assistant integration (19 files)
 
 ```
 AGENTS.md                     - Protected files rule and operational configuration (48 lines, μ-applied: exemplifies directness principle)
-NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (809 lines, π-applied: exemplifies synthesis principle)
+NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (576 lines, π-applied: exemplifies synthesis principle)
 OPERATIONAL_CONSTRAINTS.md    - Operational constraints specification (197 lines, μ-applied: exemplifies directness principle)
 PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis (1,274 lines)
 EQUATIONS_FOR_WORLD.md       - Reference table (38 lines, new)
@@ -240,7 +240,7 @@ These files define the framework itself. Modifying them changes the rules for al
 
 **Local**: Expanded, formal, non-apologetic, μ-applied (exemplifies directness principle)
 - Upstream README.md not modified (preserved upstream)
-- NUCLEUS_GUIDE.md adds complete framework specification (809 lines, π-applied: exemplifies synthesis principle) including operational policies
+- NUCLEUS_GUIDE.md adds complete framework specification (576 lines, π-applied: exemplifies synthesis principle) including operational policies
 - AGENTS.md adds protected files rule (48 lines, μ-applied: exemplifies directness principle)
 - PHILOSOPHY_RESEARCH.md adds I Ching philosophical synthesis (new)
 - I Ching terminology uses Chinese characters (乾, 坎, 震) not romanized pinyin (Qian, Kan, Zhen) for authentic representation
@@ -267,7 +267,7 @@ These files define the framework itself. Modifying them changes the rules for al
 
 **Local Only**:
 - **NUCLEUS_GUIDE.md**: Complete framework specification and practical guidance
-  - Formal framework specification (809 lines)
+  - Formal framework specification (576 lines)
   - Eight Keys with anti-patterns and math parallels
   - λ-Calculus patterns (heredoc, parallel execution, etc.)
   - Verification protocol (Σ(Build), Σ(Lint), Σ(Test), Σ(Verify))
