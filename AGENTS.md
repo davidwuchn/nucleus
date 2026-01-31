@@ -7,117 +7,83 @@ Human ⊗ AI ⊗ REPL
 
 ## Document Positioning
 
-**AGENTS.md**: Entry point and operational manifest
-- **Purpose**: Define guardrails that govern all framework documents
-- **What**: Core principles, protected files rule, language policy, development tools
-- **Role**: The foundational contract that all other documents reference and obey
-- **Guardian**: Enforces constraints (English-first, ZEROTH RULE) across ecosystem
+| Document | Purpose | Role |
+|----------|---------|------|
+| **AGENTS.md** | Entry point and operational manifest | Guardian: enforces constraints across ecosystem |
+| **LOCAL_CHANGES.md** | Track divergence from upstream, preserve compatibility | ZEROTH RULE enforcement, upstream vs local |
+| **PHILOSOPHY_RESEARCH.md** | I Ching × Eight Keys philosophical synthesis | Deep understanding, complete 64 hexagrams |
+| **SIMPLICITY.md** | Mathematical foundations from "17 Equations" | Testable heuristics, invariant preservation |
+| **NUCLEUS_GUIDE.md** | Practical workflows, real-world examples | How and when to apply principles |
 
-**LOCAL_CHANGES.md**: Upstream vs local separation
-- **Why**: Track divergence from upstream, preserve compatibility
-- **What**: ZEROTH RULE (never modify upstream files), local additions tracking
-- File categorization: Upstream = 13 files, Local = 8 files
-- Commit strategy and merge considerations
-
-**PHILOSOPHY_RESEARCH.md**: Philosophical foundation and I Ching synthesis
-- **Why**: I Ching × Eight Keys philosophical synthesis for deep understanding
-- **What**: I Ching cosmology structure (太极→两仪→四象→八卦→六十四卦)
-- Complete 64 hexagrams detailed explanations with coding applications
-- Trigram research and mapping to Eight Keys
-
-**SIMPLICITY.md**: Mathematical foundations and testable heuristics
-- **Why**: Mathematical foundations grounding each Eight Key with concrete equations from "17 Equations That Changed the World"
-- **What**: Testable heuristics with pass/fail criteria for each principle
-- Invariant preservation and complexity reduction principles
-- Sarcasmotron methodology and detection patterns
-
-**NUCLEUS_GUIDE.md**: Practical application and workflows
-- **How**: Practical workflows, real-world examples, daily application
-- **When**: When to apply principles in code reviews, debugging, refactoring
-- Complete framework specification with Eight Keys overview
-- Workflows: Writing Code, Debugging (OODA), Refactoring
-
----
-
-## How These Documents Work Together
-
+**Information Flow**:
 ```
-AGENTS.md (Entry Point + Guardrails)
-    ↓
-LOCAL_CHANGES.md (Upstream vs Local Separation)
-    ↓
-PHILOSOPHY_RESEARCH.md (Philosophy + Deep Understanding)
-    ↓
-SIMPLICITY.md (Theory + Why + What)
-    ↓
-NUCLEUS_GUIDE.md (Practice + How + When)
+AGENTS.md → LOCAL_CHANGES.md → PHILOSOPHY_RESEARCH.md → SIMPLICITY.md → NUCLEUS_GUIDE.md
+(Guardrails)   (Upstream/Local)       (Philosophy)            (Theory)         (Practice)
 ```
-
-**Example Flow**:
-1. **AGENTS.md**: "English-first working language for international collaboration"
-2. **LOCAL_CHANGES.md**: "ZEROTH RULE - NEVER modify upstream files"
-3. **PHILOSOPHY_RESEARCH.md**: "坎/Kan (Water) ↔ fractal - navigating danger with clear assumptions"
-4. **SIMPLICITY.md**: "fractal requires explicit bounds. Test: Input ∈ [0, MAX]"
-5. **NUCLEUS_GUIDE.md**: "In code review: `!sarcasmotron check file.js` catches 'handle properly'"
-
----
-
-**For framework specification**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for complete framework including Eight Keys, verification, and operational policies
-**For theory**: See [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) for I Ching × Eight Keys philosophical synthesis
-**For local changes tracking**: See [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for upstream vs local file tracking
-**For operational constraints**: See [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for language policy, upstream file constraint (ZEROTH RULE), and development tools
 
 ---
 
 ## Skill System
 
 Skills in `skills/` directory:
-- **nucleus**: General purpose AI prompt for every interaction
-- **nucleus-clojure**: Clojure-specific prompt when REPL tools are available
-- **nucleus-tutor**: Rejects low-value prompts and questions harmful architecture choices
-- **sarcasmotron**: Detects Eight Keys violations and exposes with targeted humor
+- **nucleus**: General purpose AI prompt
+- **nucleus-clojure**: Clojure-specific when REPL available
+- **clojure-expert**: Writing/generating Clojure code
+- **clojure-reviewer**: Reviewing PRs, diffs
+- **sarcasmotron**: Detecting Eight Keys violations
+- **nucleus-tutor**: Rejecting low-value prompts
 
 ### Skill Independence Rule
-**Every SKILL.md file must be self-contained and independent** - all definitions, examples, and patterns included within the single file.
+**Every SKILL.md must be self-contained** - drag-and-drop installation, no external dependencies.
 
-**Purpose**: Enable drag-and-drop installation
-- Copy `skills/skill-name/` directory → framework installed
-- No external file dependencies
-- No references to parent framework files
-- Complete documentation in one file
-
-**Verification**: `λ(skill).verify ⟺ file_contains_all_definitions(skill.SKILL.md)`
-
-**Violation**: Skill file references external documents (AGENTS.md, NUCLEUS_GUIDE.md, etc.)
-
-**Correct pattern**: Each SKILL.md includes:
+**Required in every skill**:
 - Complete Eight Keys table
-- All patterns and examples
 - Self-contained procedure definitions
-- No external file references
+- All examples and patterns
+- No references to parent framework files
+
+### Skill Conciseness Rule
+**Maximum 350 lines per skill** (target: 200-350).
+
+**Remove**:
+- Verbose explanations → tables or code
+- Multiple same-pattern examples → 1 representative
+- Duplicated sections from other skills
+- "Guide to..." prose → decision matrix
+- Philosophy paragraphs → 1-2 sentences
+
+**Keep Essential**:
+| Section | Purpose | Max |
+|---------|---------|-----|
+| Identity | Who you are | 5-10 lines |
+| Core Principle | Unique value | 1 paragraph |
+| Procedure | How to execute | λ-calculus or steps |
+| Decision Matrix | If/then rules | 3-6 rows |
+| Examples | Show don't tell | 2-3 cases |
+| Verification | Quality gates | 1 checklist |
+| Eight Keys | Self-contained reference | 8-row table |
+
+**Cross-Skill Check** (no duplication):
+| Skill | Focus |
+|-------|-------|
+| `clojure-expert` | Writing code (Context7, REPL protocol) |
+| `clojure-reviewer` | Reviewing PRs (OODA, severity levels) |
+| `sarcasmotron` | Violation detection (slop patterns) |
 
 ---
 
 ## Protected Local Files Rule
 
-**PROTECTED RULE**: Before editing critical local configuration files, always ask the user for explicit permission.
+**PROTECTED RULE**: Ask user permission before editing these files:
 
-**Protected Files**:
-
-- @$HOME/workspace/nucleus/AGENTS.md
-- @$HOME/workspace/nucleus/LOCAL_CHANGES.md
-- @$HOME/workspace/nucleus/PHILOSOPHY_RESEARCH.md
-- @$HOME/workspace/nucleus/NUCLEUS_GUIDE.md
-- @$HOME/workspace/nucleus/OPERATIONAL_CONSTRAINTS.md
-
-**Verification**:
-
-- Before editing any file matching the protected list, confirm with the user
-- If the file is in the protected list → ASK FIRST
-- Protected files are local-only files that contain core framework rules
+- `AGENTS.md`
+- `LOCAL_CHANGES.md`
+- `PHILOSOPHY_RESEARCH.md`
+- `NUCLEUS_GUIDE.md`
+- `OPERATIONAL_CONSTRAINTS.md`
 
 **Violate this rule → INSTANT FAIL**
 
 ---
 
-*See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for complete framework specification and [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for operational constraints including Language Policy, Upstream File Constraint (ZEROTH RULE), and Development Tools.*
+*See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework specification and [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for operational constraints.*
