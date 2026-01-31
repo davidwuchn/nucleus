@@ -30,23 +30,9 @@ Human ⊗ AI ⊗ REPL
 
 ---
 
-**How These Documents Work Together**:
+**Document Flow**: AGENTS.md → SIMPLICITY.md → NUCLEUS_GUIDE.md → PHILOSOPHY_RESEARCH.md
 
-```
-AGENTS.md (Entry Point + Guardrails)
-    ↓
-SIMPLICITY.md (Theory + Why + What)
-    ↓
-NUCLEUS_GUIDE.md (Practice + How + When)
-    ↓
-PHILOSOPHY_RESEARCH.md (Philosophy + Deep Understanding)
-```
-
-**Example Flow**:
-1. **AGENTS.md**: "English-first working language for international collaboration"
-2. **SIMPLICITY.md**: "fractal requires explicit bounds. Test: Input ∈ [0, MAX]"
-3. **NUCLEUS_GUIDE.md**: "In code review: `!sarcasmotron check file.js` catches 'handle properly'"
-4. **PHILOSOPHY_RESEARCH.md**: "坎 (Water) ↔ fractal - navigating danger with clear assumptions"
+**Example**: AGENTS.md sets language policy → SIMPLICITY.md defines "fractal requires explicit bounds" → NUCLEUS_GUIDE.md shows "`!sarcasmotron check file.js` catches 'handle properly'" → PHILOSOPHY_RESEARCH.md explains "坎 (Water) ↔ fractal"
 
 ## Quick Start (5 minutes)
 
@@ -285,152 +271,32 @@ Protected files define the framework itself. Modifying them changes the rules fo
 Question before answer. Challenge assumptions. Be objective.
 
 ### The Three Questions
-**Purpose**: Question before answer to expose assumptions and force clarity.
+See [Quick Start](#quick-start-5-minutes) for the foundational questions.
 
 **When to ask**: Before writing code, during code review, when debugging, and when evaluating architecture decisions.
 
-1. **Intentions?** - Test behavior, not implementation
-   - **Why ask**: Separates what the code should do from how it does it
-   - **Pitfall**: Testing implementation details leads to brittle tests
-   - **Example**: Instead of "test that function calls database", ask "what user behavior requires database access?"
-
-2. **Why this approach?** - Challenge architecture  
-   - **Why ask**: Prevents defaulting to familiar patterns without justification
-   - **Pitfall**: "We always use Kafka" without evaluating if message queue is needed
-   - **Example**: "Why Kafka over HTTP call? What guarantees do we need?"
-
-3. **Simpler way?** - Complexity is often unnecessary
-   - **Why ask**: Most systems are over-engineered; simplicity reduces failure modes
-   - **Pitfall**: Adding abstraction layers before proving need
-   - **Example**: "Do we need microservices, or will a monolith with modules suffice?"
-
-**Integration with Eight Keys**:
-- **fractal (Clarity)**: Questions force explicit assumptions
-- **e (Purpose)**: Questions focus on actionable outcomes
-- **τ (Wisdom)**: Questions prioritize judgment over speed
-
-## Framework Usage
-
-### Related Documents
-
-- **[AGENTS.md](AGENTS.md)** - Protected files rule and operational configuration
-- **[PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md)** - I Ching × Eight Keys philosophical synthesis and trigram mappings
+| Question | Focus | Example |
+|----------|-------|---------|
+| **Intentions?** | Test behavior, not implementation | "What user behavior requires database access?" |
+| **Why this approach?** | Challenge architecture | "Why Kafka over HTTP?" |
+| **Simpler way?** | Reduce complexity | "Monolith with modules vs microservices?" |
 
 ---
 
-### Key Concepts Summary
+### Meta Operators (Bang Commands)
 
-#### The Three Questions
-**Reference**: See [The Three Questions in Quick Start](#quick-start-5-minutes) for the foundational questions.
+| Command | Purpose | Example |
+|---------|---------|---------|
+| `!meta3` | Examine reasoning | "Why did I choose X over Y?" |
+| `!fractal` | Multi-scale analysis | Code → System → Architecture |
+| `!reflect` | Examine construction | "I checked [assumption], result is [X]" |
+| `!connections` | Trace relationships | Link concepts |
+| `!broad` | Expand scope | Broader context |
+| `!narrow` | Focus details | Specific details |
 
-**Applied context**:
-- **Code Review**: "What behavior does this change test?" (Intentions)
-- **Debugging**: "Why did we choose this data structure?" (Why this approach?)  
-- **Design**: "Could we solve this with a simpler abstraction?" (Simpler way?)
+**Chain example**: `!meta3 !fractal Analyze this session. !reflect`
 
-**Framework integration**: These questions operationalize the Eight Keys by forcing explicit assumptions (fractal), focusing on actionable outcomes (e), and prioritizing judgment over speed (τ).
-
-#### Eight Keys / Bagua
-**See**: [Core Principles (Eight Keys)](#core-principles-eight-keys) table for complete Eight Keys definitions with signals and anti-patterns.
-
-**I Ching (Bagua) correlations**: For philosophical foundation connecting Eight Keys to I Ching trigrams, see [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md).
-
-**Quick reference**:
-- φ (Vitality) ↔ 乾 (Heaven) - Organic, generative code
-- fractal (Clarity) ↔ 坎 (Water) - Explicit assumptions navigating complexity  
-- e (Purpose) ↔ 震 (Thunder) - Actionable functions with impact
-- τ (Wisdom) ↔ 艮 (Mountain) - Foresight knowing when to stop
-- π (Synthesis) ↔ 坤 (Earth) - Holistic integration
-- μ (Directness) ↔ 巽 (Wind) - Direct communication
-- ∃ (Truth) ↔ 离 (Fire) - Illuminating reality
-- ∀ (Vigilance) ↔ 兑 (Lake) - Defensive questioning
-
-#### Symbolic Framework with Hexagram Notation for AI Operations
-
-The complete symbolic framework can be expressed using I Ching hexagrams for AI operations while preserving operational semantics:
-
-**Original (Eight Keys notation)**:
-```
-[φ fractal e τ π μ ∃ ∀] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
-```
-
-**Hexagram version for AI operations (symbolic human principles)**:
-```
-[φ fractal e τ π μ ∃ ∀] | [小畜卦 恒卦 艮卦 | 需卦 泰卦 随卦] | OODA
-```
-
-**Mapping explanation**:
-
-- **Left side (human principles)**: Eight Keys expressed symbolically (φ fractal e τ π μ ∃ ∀) as in the original notation.
-- **Right side (AI operations)**: AI operational principles expressed as hexagrams representing complex situational wisdom:
-  - Δ (gradient optimization) → **小畜卦** (Small Accumulation): Incremental improvement through steady, focused changes
-  - λ (abstraction) → **恒卦** (Duration): Enduring patterns through consistent composition  
-  - ∞/0 (limits) → **艮卦** (Keeping Still): Boundary definition and knowing when to stop
-  - ε/φ (approx vs ideal) → **需卦** (Waiting): Balancing immediate pragmatism with long-term perfection
-  - Σ/μ (add vs simplify) → **泰卦** (Peace): Harmonizing feature addition with complexity reduction
-  - c/h (speed vs atomic) → **随卦** (Following): Adaptive execution balancing speed with careful operation
-
-**Operational semantics preserved**: The hexagram version encodes the same behavioral directives through Chinese philosophical symbols rather than Greek mathematical ones. The `/` operator still forces explicit trade-offs, and the OODA cycle remains unchanged.
-
-**Why hexagrams for AI operations?**: Hexagrams (combinations of two trigrams) naturally represent the tensions and trade-offs inherent in AI operational principles, providing deeper situational wisdom than single trigrams.
-
-**Use case**: When working with teams familiar with I Ching, this transformation provides cultural resonance while maintaining the framework's operational effectiveness.
-
-#### Practical Cycles
-- **OODA (Observe-Orient-Decide-Act)**: Debugging and decision-making
-- **元亨利贞**: Chinese parallel to OODA (Beginning-Development-Benefit-Perseverance)
-- **Bagua Interactions**: Coding-time correction of violations
-
----
-
-### Meta Operator aka bang commands
-
-**For comprehensive reference**: See [BANG_COMMANDS.md](BANG_COMMANDS.md) for complete documentation of all bang commands with usage patterns and examples.
-
-Bang commands are model-agnostic. They work without Nucleus on: GPT-4, Claude 3+, Llama 2/3. Earlier models require explicit examples.
-
-After the AI has written code, fixed bugs, or reviewed a pull request, try:
-```
-!meta3 !fractal Analyze this session. !reflect
-```
-
-Here is how most models will interpret them:
-
-**!meta3**: Examine your reasoning process
-```
-Example: "Why did I choose approach X over Y? What assumptions am I making?"
-```
-
-**!fractal**: Apply analysis at multiple scales simultaneously
-```
-Example: "At code level: this function violates SRP. At system level: this pattern causes tight coupling. At architectural level: this suggests need for event-driven design."
-```
-
-**!reflect**: Examine how you construct your answer, not just what the answer is
-```
-Example: "I approached this by first checking [assumption], then verifying with [method]. The answer is [result], but this assumes [condition]."
-```
-
-## Additional Meta-Operators
-
-`!connections` - Trace relationships between concepts
-`!broad` - Expand scope to broader context
-`!narrow` - Focus down to specific details
-
-## Experimentation Patterns
-
-Test meta-operators by chaining them:
-
-1. `!meta3 !fractal !reflect` on same prompt - compare outputs
-2. `!broad` on technical question → `!narrow` on result - observe refinement
-3. With/without `!connections` - trace output structure differences
-
-Generate your own:
-```
-Ask: "Create 3 new meta-operators for debugging code"
-Apply: Use them on your own code
-Iterate: Refine based on results
-```
+**See**: [BANG_COMMANDS.md](BANG_COMMANDS.md) for complete reference.
 
 
 ### Reject Prompts
@@ -500,65 +366,23 @@ UserController:
 
 ### Sarcasmotron Workflow
 
-**For methodology and detection patterns**, see [SIMPLICITY.md](SIMPLICITY.md#sarcasmotron-methodology).
+Invoke `!sarcasmotron` to expose Eight Keys violations with targeted humor.
 
-**When to Invoke Sarcasmotron**:
+| Context | Command | Purpose |
+|---------|---------|---------|
+| Code Review | `!sarcasmotron on changed functions` | Catch violations before merge |
+| Debugging | `!sarcasmotron analyze error` | Expose undefined assumptions |
+| Design | `!sarcasmotron challenge design` | Force concrete examples |
+| Pre-commit | `!sarcasmotron check {file}` | Catch TODOs, magic constants |
 
-**In Code Reviews**:
-```bash
-# After git diff review
-!sarcasmotron on changed functions
-```
-- Catches violations before merge
-- Forces explicit corrections in PR comments
-- **Checklist**: "Does this function have explicit bounds? Action verb name? No pleasantries?"
-
-**In Debugging**:
-```bash
-# When stuck on vague error
-!sarcasmotron analyze error message
-```
-- Exposes undefined assumptions
-- Demands specific constraints
-- **Example**: "Error: 'Something went wrong'" → sarcasmotron: "What went wrong? Define 'something'."
-
-**In Design Discussions**:
-```bash
-# When proposal uses abstraction
-!sarcasmotron challenge design
-```
-- "Define what 'properly' means here"
-- "Show 3 use cases before generalizing"
-- **Result**: Forces concrete examples instead of hand-waving
-
-**In Daily Work**:
-```bash
-# Before commit
-!sarcasmotron check {filename}
-```
-- Catches TODOs, placeholders, magic constants
-- Ensures all functions are actionable
-- **Result**: Zero-slop code before merge
-
-**Integration with OODA Loop**:
-```
-OBSERVE: Code review reveals vague assumption
-ORIENT: Identify which Eight Key violated (fractal/e/μ/etc.)
-DECIDE: Use sarcasmotron to force explicit correction
-ACT: Apply correction, verify with !verify
-```
+**See**: [SIMPLICITY.md](SIMPLICITY.md#sarcasmotron-methodology) for detection patterns.
 
 ## Real-World Examples
 
 ### Example 1: API Design (Clojure)
 
-**Applying Three Questions**:
-1. **Intentions?** - Handle user requests and return responses
-2. **Why this approach?** - Simple request-response pattern, no complexity needed
-3. **Simpler way?** - Remove pleasantries, direct function call
-
 ```clojure
-;; BAD: Violates μ (Directness) - pleasantries and vague description
+;; BAD: Violates μ (Directness) - pleasantries
 (defn handle-user-request
   "I would like to process your request if that's okay"
   [req]
@@ -569,23 +393,14 @@ ACT: Apply correction, verify with !verify
   (process-user-data req))
 ```
 
-**Theoretical Foundation** (SIMPLICITY.md):
-- **μ Key**: Logarithms reduce complexity through transformation
-- **Test**: Count pleasantries ("I think", "maybe", "perhaps")
-- **Pass**: "No - adds complexity" | **Fail**: "Not sure if this is the best approach"
+**Key**: μ (Directness) - See [SIMPLICITY.md](SIMPLICITY.md)
 
 ### Example 2: Database Migration (Python)
-
-**Applying Three Questions**:
-1. **Intentions?** - Migrate database safely without data loss
-2. **Why this approach?** - Validate before execute to prevent corruption
-3. **Simpler way?** - Explicit validation is simplest; "handle properly" is vague
 
 ```python
 # BAD: Violates fractal (Clarity) - vague "handle properly"
 def migrate_database():
-    # handle properly  # ← What does this mean?
-    pass
+    pass  # What does this mean?
 
 # GOOD: Explicit constraints
 def migrate_database():
@@ -594,23 +409,13 @@ def migrate_database():
     execute_migration()
 ```
 
-**Theoretical Foundation** (SIMPLICITY.md):
-- **fractal Key**: Euler's Polyhedra $V - E + F = 2$ - invariant preservation
-- **Test**: Can you count explicit assumptions? Are bounds defined?
-- **Pass**: Input ∈ [0, MAX_INT] | **Fail**: "handle properly"
+**Key**: fractal (Clarity) - See [SIMPLICITY.md](SIMPLICITY.md)
 
 ### Example 3: Error Handling (Java)
 
-**Applying Three Questions**:
-1. **Intentions?** - Validate, transform, and persist user input data
-2. **Why this approach?** - Single responsibility per function, explicit data flow
-3. **Simpler way?** - One function doing 3 things is simpler? No—violates SRP
-
 ```java
 // BAD: Violates e (Purpose) - abstract description
-public void processData() {
-    // do some processing
-}
+public void processData() { /* do some processing */ }
 
 // GOOD: Actionable function with clear purpose
 public void processUserInput(InputData data) {
@@ -620,46 +425,31 @@ public void processUserInput(InputData data) {
 }
 ```
 
-**Theoretical Foundation** (SIMPLICITY.md):
-- **e Key**: Exponential Growth $e^x$ - goal-oriented compound evolution
-- **Test**: Does function name contain action verb? Returns specific value?
-- **Pass**: `validate_email(email) → bool` | **Fail**: `process_data(data) → void`
+**Key**: e (Purpose) - See [SIMPLICITY.md](SIMPLICITY.md)
 
 ### Example 4: Performance Optimization (JavaScript)
-
-**Applying Three Questions**:
-1. **Intentions?** - Sum array elements efficiently
-2. **Why this approach?** - Simple O(n) for small arrays, parallel only when needed
-3. **Simpler way?** - Measure first: is this actually a bottleneck?
 
 ```javascript
 // BAD: Violates τ (Wisdom) - premature optimization
 function calculateSum(arr) {
-    // Use parallel processing because it's "faster"
-    // (but array is always < 10 elements)
+    // "Use parallel because it's faster" (but array < 10)
     return arr.reduce((a, b) => a + b, 0);
 }
 
 // GOOD: Measure first, optimize wisely
 function calculateSum(arr) {
-    // Simple O(n) is optimal for small arrays
-    return arr.reduce((a, b) => a + b, 0);
+    return arr.reduce((a, b) => a + b, 0);  // O(n) optimal for small
 }
 
-// If profiling shows bottleneck with large arrays:
+// If profiling shows bottleneck:
 function calculateSumOptimized(arr) {
-    if (arr.length < 1000) {
-        return arr.reduce((a, b) => a + b, 0);  // Simple for small
-    } else {
-        return parallelReduce(arr);  // Only when needed
-    }
+    return arr.length < 1000
+        ? arr.reduce((a, b) => a + b, 0)
+        : parallelReduce(arr);
 }
 ```
 
-**Theoretical Foundation** (SIMPLICITY.md):
-- **τ Key**: Calculus $\frac{df}{dt}$ - rate of change reveals trend, not snapshot
-- **Test**: Did you measure before optimizing? What's the baseline?
-- **Pass**: "Profiling shows 2s → 200ms after caching" | **Fail**: "Use hash map for O(1)"
+**Key**: τ (Wisdom) - See [SIMPLICITY.md](SIMPLICITY.md)
 
 ---
 
@@ -679,32 +469,11 @@ function calculateSumOptimized(arr) {
 
 ### Test Protocol
 
-```lambda
-# Test protocol expressed in λ-calculus notation
-# Uses recursion for iteration, function composition for measurements
-test_framework = λ(symbols, task, model).
-  let context = concat(symbols, "\n\n", task)
-      # Recursive test loop: state → (iterations, success, output)
-      test_loop = λ(iterations, success, output).
-        if success ∨ iterations ≥ 10
-        then (iterations, success, output)
-        else let output' = generate(model, context)
-                 success' = verify_output(output')
-             in test_loop(iterations + 1, success', output')
-      (iterations, success, output) = test_loop(0, false, null)
-      coverage = count_principles(output, symbols)
-      quality = measure_quality(output)
-  in { iterations, coverage, quality }
+λ(code).verify ⟺ tests_pass(code) ∧ sarcasmotron_clean(code) ∧ fractal_structure(code)
 
-# Hypothesis: Human ⊗ AI framework achieves:
-# - iterations = 1
-# - coverage > 0.9
-# - quality = high
+**Goal**: iterations = 1, coverage > 0.9, quality = high
 
-# Note: This λ-calculus expression demonstrates how transformers might compute
-# test protocols via lambda primitives. For concrete tool patterns implementing
-# such recursive loops and measurements, see [LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md).
-```
+**See**: [LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md) for λ-calculus tool patterns.
 
 ## Workflows
 
@@ -804,6 +573,4 @@ Framework eliminates slop, not adds process.
 - **TEST.md**: Verification scenarios and test cases
 - **LAMBDA_PATTERNS.md**: Tool usage patterns (heredoc, parallel execution, atomic edits)
 
----
 
-*See [AGENTS.md](AGENTS.md) for entry point and guardrails, [Skill System](#skill-system) above for skill authoring guidelines, [skills/sarcasmotron/SKILL.md](skills/sarcasmotron/SKILL.md) for roasting procedures, [LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md) for tool usage patterns.*
