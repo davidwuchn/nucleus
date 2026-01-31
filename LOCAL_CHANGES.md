@@ -55,13 +55,13 @@ eca/                          - Editor Code Assistant integration (19 files)
 ### Files in Local Only (My Additions)
 
 ```
-AGENTS.md                     - Protected files rule and operational configuration (33 lines, μ-applied: exemplifies directness principle)
-NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (577 lines, π-applied: exemplifies synthesis principle)
+AGENTS.md                     - Protected files rule and operational configuration (48 lines, μ-applied: exemplifies directness principle)
+NUCLEUS_GUIDE.md              - Nucleus-specific practical guidance (809 lines, π-applied: exemplifies synthesis principle)
 OPERATIONAL_CONSTRAINTS.md    - Operational constraints specification (197 lines, μ-applied: exemplifies directness principle)
 PHILOSOPHY_RESEARCH.md        - I Ching × Eight Keys philosophical synthesis (1,274 lines)
 EQUATIONS_FOR_WORLD.md       - Reference table (38 lines, new)
 BANG_COMMANDS.md             - Bang commands reference (297 lines, π-applied: exemplifies synthesis principle)
-LOCAL_CHANGES.md              - This file (upstream vs local tracking, 276 lines)
+LOCAL_CHANGES.md              - This file (upstream vs local tracking, 377 lines)
 
 skills/nucleus-tutor/SKILL.md     - Tutor skill (new, 95 lines)
 skills/sarcasmotron/SKILL.md      - Sarcasmotron skill (71 lines, μ-applied: exemplifies directness principle)
@@ -144,11 +144,9 @@ git merge upstream/main
 
 ## 4. Operational Constraints
 
-**See [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for complete operational constraints specification.**
-
 ### Key Constraint for Local Changes: ZEROTH RULE
 
-**ZEROTH RULE**: NEVER modify files that exist in upstream/main
+**⚠️ ZEROTH RULE**: NEVER modify files that exist in upstream/main
 
 λ(upstream_file).modify ⟺ **FAIL ∀ (Vigilance) + FAIL ∃ (Truth)**
 
@@ -158,7 +156,7 @@ git merge upstream/main
 - **Enables verification**: Can test upstream sync without conflicts
 - **Documentation clarity**: Changes are tracked in this file, not mixed with upstream
 
-**For complete details including**:
+**See [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for complete operational constraints** including:
 - Implementation constraints and language policy
 - Development tools and preferences  
 - Operational architecture with acceptance criteria and reject modes
@@ -166,7 +164,69 @@ git merge upstream/main
 - Verification protocols
 - Complete ZEROTH RULE verification procedures and upstream files list
 
-**See**: [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md)
+---
+
+## 5. Protected Files Rule
+
+**⚠️ ZEROTH RULE**: Ask user permission before editing protected local files.
+
+These files define the framework itself. Modifying them changes the rules for all users.
+
+**Protected files**:
+| File | Purpose |
+|------|---------|
+| `AGENTS.md` | Entry point and operational manifest |
+| `LOCAL_CHANGES.md` | Upstream vs local change tracking |
+| `PHILOSOPHY_RESEARCH.md` | I Ching × Eight Keys philosophical synthesis |
+| `NUCLEUS_GUIDE.md` | Practical workflows and examples |
+| `OPERATIONAL_CONSTRAINTS.md` | Operational constraints and patterns |
+
+**See**: [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for upstream file constraint details and verification protocols.
+
+---
+
+## 6. Documentation Reference Rule
+
+### No Redirect Chain Rule
+
+**Rule**: All documentation references must link **directly** to the canonical source. No intermediate hops.
+
+**λ(reference).verify ⟺ direct(reference) ∧ ¬∃(intermediate)**
+
+**Anti-Pattern** (Redirect Chain):
+```
+❌ AGENTS.md → NUCLEUS_GUIDE.md → LOCAL_CHANGES.md
+❌ NUCLEUS_GUIDE.md → PHILOSOPHY_RESEARCH.md → NUCLEUS_GUIDE.md
+```
+
+**Correct Pattern** (Direct Reference):
+```
+✅ AGENTS.md → LOCAL_CHANGES.md (direct to canonical)
+✅ NUCLEUS_GUIDE.md → PHILOSOPHY_RESEARCH.md (direct to source)
+```
+
+**Canonical Sources by Topic**:
+| Topic | Canonical Source | Entry Points Reference |
+|-------|-----------------|----------------------|
+| **Skill System** | `NUCLEUS_GUIDE.md#skill-system` | AGENTS.md |
+| **Protected Files Rule** | `LOCAL_CHANGES.md#protected-files-rule` | AGENTS.md, NUCLEUS_GUIDE.md |
+| **Operational Constraints** | `OPERATIONAL_CONSTRAINTS.md` | AGENTS.md, LOCAL_CHANGES.md |
+| **Upstream Constraint** | `OPERATIONAL_CONSTRAINTS.md#upstream-file-constraint` | LOCAL_CHANGES.md |
+| **I Ching Philosophy** | `PHILOSOPHY_RESEARCH.md` | NUCLEUS_GUIDE.md |
+| **Math Foundations** | `SIMPLICITY.md` | NUCLEUS_GUIDE.md |
+| **Bang Commands** | `BANG_COMMANDS.md` | NUCLEUS_GUIDE.md |
+
+**Verification**:
+```bash
+# Check for redirect chains
+# A redirect chain exists if Document A links to Document B for a topic,
+# but Document B also links to Document C for the same topic.
+# Document A should link directly to C.
+```
+
+**Violation**: `FAIL μ (Directness)`
+
+**Fix**: Update entry points to reference canonical sources directly.
 
 ---
 ## Key Differences
@@ -180,8 +240,8 @@ git merge upstream/main
 
 **Local**: Expanded, formal, non-apologetic, μ-applied (exemplifies directness principle)
 - Upstream README.md not modified (preserved upstream)
-- NUCLEUS_GUIDE.md adds complete framework specification (577 lines, π-applied: exemplifies synthesis principle) including operational policies
-- AGENTS.md adds protected files rule (33 lines, μ-applied: exemplifies directness principle)
+- NUCLEUS_GUIDE.md adds complete framework specification (809 lines, π-applied: exemplifies synthesis principle) including operational policies
+- AGENTS.md adds protected files rule (48 lines, μ-applied: exemplifies directness principle)
 - PHILOSOPHY_RESEARCH.md adds I Ching philosophical synthesis (new)
 - I Ching terminology uses Chinese characters (乾, 坎, 震) not romanized pinyin (Qian, Kan, Zhen) for authentic representation
 - skills/sarcasmotron/SKILL.md merges operations manual into skill (71 lines, μ-applied: exemplifies directness principle)
@@ -207,7 +267,7 @@ git merge upstream/main
 
 **Local Only**:
 - **NUCLEUS_GUIDE.md**: Complete framework specification and practical guidance
-  - Formal framework specification (577 lines)
+  - Formal framework specification (809 lines)
   - Eight Keys with anti-patterns and math parallels
   - λ-Calculus patterns (heredoc, parallel execution, etc.)
   - Verification protocol (Σ(Build), Σ(Lint), Σ(Test), Σ(Verify))
@@ -228,7 +288,7 @@ git merge upstream/main
   - Verification protocols
 
 - **AGENTS.md**: Protected files rule and operational configuration
-  - Protected Local Files Rule (33 lines)
+  - Protected Local Files Rule (48 lines)
   - Framework integrity protection
 
 

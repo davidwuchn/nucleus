@@ -23,4 +23,10 @@ AGENTS.md → LOCAL_CHANGES.md → PHILOSOPHY_RESEARCH.md → SIMPLICITY.md → 
 
 ---
 
-*See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for skill system, protected files rule, and framework specification.*
+## Protected Files Rule
+
+**⚠️ ZEROTH RULE**: Ask user permission before editing protected files.
+
+**Protected**: `AGENTS.md`, `LOCAL_CHANGES.md`, `PHILOSOPHY_RESEARCH.md`, `NUCLEUS_GUIDE.md`, `OPERATIONAL_CONSTRAINTS.md`
+
+**See**: [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for framework specification and skill authoring guidelines, [LOCAL_CHANGES.md](LOCAL_CHANGES.md#protected-files-rule) for protected files rule, [OPERATIONAL_CONSTRAINTS.md](OPERATIONAL_CONSTRAINTS.md) for operational constraints and upstream verification.

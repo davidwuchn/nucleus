@@ -3,7 +3,6 @@
 [phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI ⊗ REPL
 
-**Framework Specification**: See [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md) for complete framework including Eight Keys, verification, and practical workflows
 **For local changes tracking**: See [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for upstream vs local file tracking
 
 ---
