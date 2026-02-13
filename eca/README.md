@@ -15,20 +15,20 @@ cp -rp /path/to/nucleus/eca/prompts ~/.config/eca
 Edit your eca config.json file and include the following settings:
 
 ```
- "behavior": {
-    "agent": {
+ "agent": {
+    "code": {
        "prompts": {
-        "chat": "${file:prompts/agent_behavior.md}"
+        "chat": "${file:prompts/code_agent.md}"
        }
     },
     "plan": {
       "prompts": {
-        "chat": "${file:prompts/plan_behavior.md}"
+        "chat": "${file:prompts/plan_agent.md}"
       }
     }
   },
   "prompts": {
-    "chat": "${file:prompts/agent_behavior.md}",
+    "chat": "${file:prompts/code_agent.md}",
     "chatTitle": "${file:prompts/title.md}",
     "compact": "${file:prompts/compact.md}",
     "init": "${file:prompts/init.md}",
