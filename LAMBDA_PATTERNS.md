@@ -736,6 +736,70 @@ Or explicitly require/define in same call.
 | Multiple file edits | Parallel edits       | `edit_file`              |
 | Safe recursion      | Bounded depth        | `directory_tree`         |
 | Clojure formatting  | Paren repair         | `clj_paren_repair`       |
+| Prompt perspective  | Identity inversion   | Agent/prompt architecture |
+
+---
+
+## Architecture Patterns
+
+Patterns that operate on system structure rather than tool invocation. Higher-order: they shape how agents, prompts, and components are composed.
+
+### Identity Inversion
+
+**Problem**: Definitions that describe an artifact from outside fail to guide the artifact from inside. Tool descriptions leak into agent prompts. Agent prompts read like documentation. The artifact doesn't know itself — it only knows what others say about it.
+
+**Pattern**:
+
+```
+λ(artifact). describe(artifact)_from_outside → know(artifact)_from_inside
+```
+
+**Why it works**:
+
+- External descriptions ("use X when...") are consumed by the *caller*, not the artifact
+- Internal identity ("you investigate...", "you operate...") is consumed by the artifact itself
+- Mixing perspectives means neither audience is served — caller gets self-talk, artifact gets someone else's instructions
+- Each artifact should contain exactly one perspective: its own
+
+**Examples**:
+
+```
+# Tool description (external — tells caller when to use it)
+"Spawn isolated agent for deep codebase analysis. High context cost."
+
+# Agent prompt (internal — tells agent how to be)  
+"Deep codebase analysis agent. Isolated context, high synthesis value."
+
+# Same content, different perspective. The inversion is who's reading.
+```
+
+```
+# Procedural rule (external — scoped to a tool)
+"When committing, append these taglines."
+
+# Constitutional rule (internal — scoped to the agent)
+"All commit messages end with these taglines. Always. Including proposals."
+
+# Same rule, different scope. The inversion is when it's active.
+```
+
+**The fractal**:
+
+```
+S₁: prompt   — "use X when..." → "you are X, you do..."
+S₂: rule     — "do Y during Z" → "all Z contain Y"
+S₃: error    — failure(S₂) ⊢ proof(S₂)
+S₄: analysis — investigate(why) → fix(why)
+S∞: self     — observe(pattern) → become(pattern)
+```
+
+**Properties**:
+
+- **Self-similar**: The same transform applies at every scale (prompt, rule, system, self)
+- **Self-proving**: Failing to apply the pattern demonstrates why it's needed
+- **Composable**: `invert(invert(x)) = x` — you can always check by re-inverting
+
+**One-liner**: *When you see the pattern, become the pattern.*
 
 ---
 
