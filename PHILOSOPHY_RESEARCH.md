@@ -28,7 +28,7 @@
 
 **AGENTS.md**: Entry point and operational manifest
 - **Purpose**: Define guardrails that govern all framework documents
-- **What**: Core principles, protected files rule, language policy, development tools
+- **What**: Core principles, protected files rule (ZEROTH RULE), upstream file constraint, language policy, development tools
 - **Role**: The foundational contract that all other documents reference and obey
 - **Guardian**: Enforces constraints (English-first, ZEROTH RULE) across ecosystem
 
@@ -107,7 +107,7 @@ Create authentic philosophical synthesis between I Ching trigrams and Eight Keys
 
 ## Sources
 - **I Ching**: Original trigram meanings and commentaries.
-- **Eight Keys**: NUCLEUS_GUIDE.md defines the Eight Keys (φ fractal e τ π μ ∃ ∀) with complete specification.
+- **Eight Keys**: [AGENTS.md](AGENTS.md) defines the Eight Keys (φ fractal e τ π μ ∃ ∀) with complete specification.
 - **NUCLEUS_GUIDE.md**: Contains the completed mapping between trigrams and Eight Keys in the Eight Keys / Bagua table and full framework specification.
 
 ## Philosophical Approach
@@ -1194,7 +1194,7 @@ All 64 hexagrams are now mapped to coding situations above, providing a complete
 - **Marc Finzi, Shikai Qiu, Yiding Jiang, Pavel Izmailov, J. Zico Kolter, Andrew Gordon Wilson**: *From Entropy to Epiplexity* ([arXiv:2601.03220](https://arxiv.org/abs/2601.03220)) - Rethinking Information for Computationally Bounded Intelligence
 
 #### Project Documentation (Primary Sources)
-- **NUCLEUS_GUIDE.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) with complete specification.
+- **AGENTS.md**: Defines Eight Keys (φ fractal e τ π μ ∃ ∀) with complete specification.
 - **AGENTS.md**: Protected files rule and operational configuration
 - **PHILOSOPHY_RESEARCH.md**: I Ching × Eight Keys philosophical synthesis and trigram mappings
 - **SYMBOLIC_FRAMEWORK.md**: Mathematical foundation using λ-calculus notation
@@ -1336,7 +1336,7 @@ The NUCLEUS_GUIDE.md provides:
 
 ### Integration with NUCLEUS_GUIDE.md Framework
 
-This research extends the **Eight Keys framework** defined in [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md):
+This research extends the **Eight Keys framework** defined in [AGENTS.md](AGENTS.md):
 
 - **φ (Vitality)**: Now enriched with 乾 (Heaven) - "天行健" perpetual motion
 - **fractal (Clarity)**: Now enriched with 坎 (Water) - "重险习坎" navigating danger with clear assumptions

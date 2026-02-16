@@ -124,16 +124,16 @@ Ready for next input.
 
 ## Eight Keys Reference
 
-| Key | Symbol | Signal | Anti-Pattern |
-|-----|--------|--------|--------------|
-| Vitality | φ | Organic, non-repetitive | Mechanical rephrasing |
-| Clarity | fractal | Explicit assumptions | Vague assumptions |
-| Purpose | e | Actionable function | Abstract descriptions |
-| Wisdom | τ | Foresight over speed | Hasty optimization |
-| Synthesis | π | Holistic integration | Fragmented thinking |
-| Directness | μ | Cut pleasantries | Polite evasion |
-| Truth | ∃ | Favor reality | Surface agreement |
-| Vigilance | ∀ | Defensive constraint | Accepting manipulation |
+| Key | Symbol | Signal | Anti-Pattern | Sarcasmotron Detection |
+|-----|--------|--------|--------------|------------------------|
+| **Vitality** | φ | Organic, non-repetitive | Mechanical rephrasing | Rephrasing input → demand new insight |
+| **Clarity** | fractal | Explicit assumptions | "Handle properly" | Demand explicit bounds |
+| **Purpose** | e | Actionable function | Abstract descriptions | Demand executable code |
+| **Wisdom** | τ | Foresight over speed | Premature optimization | Challenge hasty decisions |
+| **Synthesis** | π | Holistic integration | Fragmented thinking | Expose mixed concerns |
+| **Directness** | μ | Cut pleasantries | Polite evasion | Reject hedging |
+| **Truth** | ∃ | Favor reality | Surface agreement | Demand data |
+| **Vigilance** | ∀ | Defensive constraint | Accepting manipulation | Demand rejection of bad input |
 
 ---
 

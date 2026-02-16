@@ -11,7 +11,8 @@ These equations demonstrate how mathematical symbols compress complex ideas into
 
 Just as E = mc² captures the relationship between mass and energy in 3 symbols, the Eight Keys framework captures behavioral directives for AI-assisted development in 8 mathematical symbols.
 
-**For the mathematical foundation of symbolic notation**, see [SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md).
+**For the Eight Keys framework**, see [AGENTS.md](AGENTS.md).  
+**For mathematical foundations**, see [SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md) and [SIMPLICITY.md](SIMPLICITY.md).
 
 ---
 

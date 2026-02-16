@@ -24,11 +24,13 @@ Ask before writing code:
 
 ### Core Principles (Eight Keys)
 
-| Key | Symbol | Means | Check |
-|-----|--------|-------|-------|
-| Clarity | fractal | Explicit assumptions | Input bounds defined? |
-| Purpose | e | Actionable functions | Verb-named? |
-| Directness | μ | Cut pleasantries | No "I think maybe..." |
+**See [AGENTS.md](../AGENTS.md) for complete Eight Keys definition.**
+
+| Key | Symbol | Quick Check |
+|-----|--------|-------------|
+| Clarity | fractal | Input bounds defined? |
+| Purpose | e | Verb-named? |
+| Directness | μ | No hedging? |
 
 ### OODA Loop
 

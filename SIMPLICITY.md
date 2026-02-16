@@ -2,6 +2,8 @@
 
 Mathematical foundations and testable heuristics for the Eight Keys.
 
+**See [AGENTS.md](AGENTS.md) for complete Eight Keys definition.**
+
 ---
 
 ## Testable Heuristics
