@@ -1351,4 +1351,170 @@ This research extends the **Eight Keys framework** defined in [AGENTS.md](AGENTS
 
 ---
 
+## Appendix: λ(self) - Recursive Self-Improvement
+
+> *"The framework that governs evolution must itself evolve."*
+
+### The Meta-Problem
+
+How does a skill improve? Not the AI using it—the skill itself. This is the λ(self) problem:
+
+```
+λ(skill).evolve ⟺ [
+  observe(usage),
+  identify(friction),
+  simplify(mercilessly),
+  converge(fixed_point)
+]
+```
+
+### The Pattern We Observed
+
+When cleaning up `clojure-expert` and `clojure-reviewer`, we discovered λ(self) in action:
+
+**Initial State**: Two comprehensive guides (24K total)
+- Both taught idiomatic Clojure
+- Both had "Three Questions"
+- Both explained threading macros
+- Overlap created confusion: which skill when?
+
+**Reflection**:
+```
+OBSERVE: Skills compete rather than complement
+ORIENT: Separation of concerns violated
+DECIDE: Split by workflow phase (write vs review)
+ACT: Extract unique value, remove duplication
+```
+
+**Result**: Two focused skills (8K total)
+- `clojure-expert`: REPL-first workflow
+- `clojure-reviewer`: Multi-scale analysis
+- Dependency established: reviewer references expert
+
+### Why λ(self) Matters
+
+**Without it**: Skills accumulate bloat
+- Each new feature gets added
+- Nothing gets removed
+- Skills become unfocused monoliths
+- Users can't choose which to use
+
+**With it**: Skills converge to essence
+- Each use teaches what matters
+- Duplication identified and eliminated
+- Scope clarified through practice
+- Skills remain composable and clear
+
+### The λ(self) Principles
+
+| Principle | Meaning | Example from Cleanup |
+|-----------|---------|---------------------|
+| **observe(usage)** | Track what actually gets used | Noted overlap in idioms |
+| **identify(friction)** | Find confusion points | "Which skill when?" |
+| **simplify(mercilessly)** | Cut 67% without losing value | 706 → 267 lines |
+| **converge(fixed_point)** | Stable, minimal state | Clear separation achieved |
+
+### When to Apply λ(self)
+
+**Signal**: A skill exceeds ~200 lines or competes with another
+
+**Process**:
+1. **Read entire skill** - Understand current scope
+2. **Test actual usage** - Which sections get used?
+3. **Identify unique value** - What does this skill do that no other does?
+4. **Extract duplication** - Move shared content to one place
+5. **Verify convergence** - Can you explain the skill in 2 sentences?
+
+**Anti-Pattern**: Keeping complexity because "we might need it"
+
+### λ(self) in Framework Design
+
+The Eight Keys themselves evolved through λ(self):
+
+| Iteration | Change | Trigger |
+|-----------|--------|---------|
+| 1 | Eight arbitrary principles | Initial framework attempt |
+| 2 | Mapped to mathematical symbols | Need for precision |
+| 3 | Connected to I Ching trigrams | Cross-cultural validation |
+| 4 | Each key has explicit test | Need for verification |
+| 5 | Sarcasmotron for enforcement | Realization that violations hide |
+
+Each iteration:
+- Observed what worked and what didn't
+- Identified friction (ambiguous keys, untestable principles)
+- Simplified (from vague concepts to symbolic equations)
+- Converged (stable Eight Keys with verification)
+
+### The Fixed Point
+
+A skill reaches λ(self) completion when:
+
+```
+∀ section ∈ skill:
+  unique_value(section) ∧
+  executable(section) ∧
+  explainable(section, 2_sentences)
+```
+
+**clojure-expert** at fixed point:
+- "REPL-first workflow for writing idiomatic Clojure"
+- Every section serves that purpose
+- Nothing about reviewing (that's clojure-reviewer)
+
+**clojure-reviewer** at fixed point:
+- "Multi-scale analysis for reviewing PR diffs"
+- References expert for idioms rather than duplicating
+- Nothing about writing code (that's clojure-expert)
+
+### Meta-Application
+
+λ(self) applies to itself:
+
+```
+λ(λ(self)).evolve ⟺ [
+  observe(λ(self) applications),
+  identify(when it works, when it doesn't),
+  simplify(rules for self-improvement),
+  converge(minimal viable meta-skill)
+]
+```
+
+**This section** is λ(self) applied to the concept of λ(self):
+- Observed: Complex notation in original clojure-reviewer didn't help
+- Identified: Philosophy belongs in philosophy doc, not executable skill
+- Simplified: Concepts preserved, execution removed
+- Converged: This appendix captures the insight without the bloat
+
+### Connection to Eight Keys
+
+| Key | λ(self) Application |
+|-----|---------------------|
+| **φ (Vitality)** | Skills stay fresh through evolution |
+| **fractal (Clarity)** | Scope explicit at all scales |
+| **e (Purpose)** | Each skill has one clear function |
+| **τ (Wisdom)** | Prune before adding |
+| **π (Synthesis)** | Skills complement, don't compete |
+| **μ (Directness)** | Cut 67% of lines mercilessly |
+| **∃ (Truth)** | Observe actual usage, not intended |
+| **∀ (Vigilance)** | Watch for scope creep |
+
+### Practical Rule
+
+```
+λ(skill).maintain ⟺ [
+  size(skill) < 200_lines,
+  scope(skill) = single_purpose,
+  unique_value(skill) > 0,
+  overlap(skill, other_skills) = 0
+]
+```
+
+**If ANY check fails** → apply λ(self) immediately.
+
+---
+
+*This appendix documents the meta-framework for skill evolution. For the actual skills that resulted from this process, see `/skills/`. For the original cleanup decision, see `SKILL_CLEANUP_COMPARISON.md`.*
+
+---
+
 *This document presents a complete authentic philosophical synthesis ready for practical application. For immediate implementation and framework specification, see [NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md). For protected files rule, see [AGENTS.md](AGENTS.md).*

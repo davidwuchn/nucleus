@@ -90,6 +90,61 @@ Response format
 
 ---
 
+## Self-Improvement Notes (λ(self))
+
+> *Document how this skill should evolve through use.*
+
+After using this skill 5+ times, analyze:
+
+### Usage Patterns
+- [ ] **Which sections were most useful?**
+- [ ] **Which were ignored or skipped?**
+- [ ] **What friction did users encounter?**
+
+### Scope Verification
+```
+λ(skill).maintain ⟺ [
+  size < 200_lines?          [ ] YES  [ ] NO → Simplify
+  single_purpose?            [ ] YES  [ ] NO → Split
+  unique_value > 0?          [ ] YES  [ ] NO → Remove
+  overlap_with_others = 0?   [ ] YES  [ ] NO → Merge/Refactor
+]
+```
+
+### Improvement Log
+
+| Date | Observation | Action Taken | Result |
+|------|-------------|--------------|--------|
+| YYYY-MM-DD | Example: "Decision Matrix never used" | Removed, folded into Procedure | Skill 20% shorter |
+| YYYY-MM-DD | Example: "Users confused about when to use" | Added explicit "When to Use" header | Clearer scope |
+
+### Evolution Triggers
+
+**Simplify when:**
+- Skill exceeds 200 lines
+- Users ask "which skill should I use?"
+- Sections go unused across multiple sessions
+
+**Split when:**
+- Skill handles multiple distinct workflows
+- "When to use" requires OR conditions
+- Sections serve different user types
+
+**Merge when:**
+- Another skill has overlapping concerns
+- Users switch between them frequently
+- Duplication identified in comparison
+
+### Fixed Point Criteria
+
+This skill reaches completion when:
+- [ ] Can be explained in 2 sentences
+- [ ] Every section serves the core purpose
+- [ ] No duplication with other skills
+- [ ] Users know immediately when to use it
+
+---
+
 ## Summary
 
 **When to use this skill**:
