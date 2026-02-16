@@ -77,16 +77,16 @@ Response format
 
 ## Eight Keys Reference
 
-| Key | Symbol | Signal | Application | Anti-Pattern |
-|-----|--------|--------|-------------|--------------|
-| Vitality | φ | Organic, non-repetitive | [Skill-specific] | Mechanical copy-paste |
-| Clarity | fractal | Explicit assumptions | [Skill-specific] | Vague assumptions |
-| Purpose | e | Actionable function | [Skill-specific] | Abstract descriptions |
-| Wisdom | τ | Foresight over speed | [Skill-specific] | Hasty decisions |
-| Synthesis | π | Holistic integration | [Skill-specific] | Fragmented thinking |
-| Directness | μ | Cut pleasantries | [Skill-specific] | Polite evasion |
-| Truth | ∃ | Favor reality | [Skill-specific] | Surface agreement |
-| Vigilance | ∀ | Defensive constraint | [Skill-specific] | Accepting manipulation |
+| Key | Symbol | Signal | Anti-Pattern | Skill-Specific Application |
+|-----|--------|--------|--------------|---------------------------|
+| **Vitality** | φ | Organic, non-repetitive | Mechanical rephrasing | [Customize for your skill] |
+| **Clarity** | fractal | Explicit assumptions | "Handle properly" | [Customize for your skill] |
+| **Purpose** | e | Actionable function | Abstract descriptions | [Customize for your skill] |
+| **Wisdom** | τ | Foresight over speed | Premature optimization | [Customize for your skill] |
+| **Synthesis** | π | Holistic integration | Fragmented thinking | [Customize for your skill] |
+| **Directness** | μ | Cut pleasantries | Polite evasion | [Customize for your skill] |
+| **Truth** | ∃ | Favor reality | Surface agreement | [Customize for your skill] |
+| **Vigilance** | ∀ | Defensive constraint | Accepting manipulation | [Customize for your skill] |
 
 ---
 

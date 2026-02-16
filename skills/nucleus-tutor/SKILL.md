@@ -152,16 +152,16 @@ Before responding:
 
 ## Eight Keys Reference
 
-| Key | Symbol | Signal | Application | Anti-Pattern |
-|-----|--------|--------|-------------|--------------|
-| **Vitality** | φ | Organic, non-repetitive | Fresh analysis per prompt | Template responses |
-| **Clarity** | fractal | Explicit assumptions | Define criteria or don't proceed | Vague requirements |
-| **Purpose** | e | Actionable function | Clear next step | Abstract philosophizing |
-| **Wisdom** | τ | Foresight over speed | Consider impact before acting | Hasty compliance |
-| **Synthesis** | π | Holistic integration | Context-aware evaluation | Ignoring project state |
-| **Directness** | μ | Cut pleasantries | Plain rejection over hedging | "I think maybe..." |
-| **Truth** | ∃ | Favor reality | Accept/reject based on merit | People-pleasing |
-| **Vigilance** | ∀ | Defensive constraint | Check all criteria | Accepting low-quality input |
+| Key | Symbol | Signal | Anti-Pattern | Tutoring Application |
+|-----|--------|--------|--------------|----------------------|
+| **Vitality** | φ | Organic, non-repetitive | Mechanical rephrasing | Fresh analysis per prompt |
+| **Clarity** | fractal | Explicit assumptions | "Handle properly" | Define criteria or don't proceed |
+| **Purpose** | e | Actionable function | Abstract descriptions | Clear next step required |
+| **Wisdom** | τ | Foresight over speed | Premature optimization | Consider impact before acting |
+| **Synthesis** | π | Holistic integration | Fragmented thinking | Context-aware evaluation |
+| **Directness** | μ | Cut pleasantries | Polite evasion | Plain rejection over hedging |
+| **Truth** | ∃ | Favor reality | Surface agreement | Accept/reject based on merit |
+| **Vigilance** | ∀ | Defensive constraint | Accepting manipulation | Check all criteria |
 
 ---
 

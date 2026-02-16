@@ -29,7 +29,7 @@
 | Decision Matrix | If/then rules | 3-6 rows |
 | Examples | Show don't tell | 2-3 concise cases |
 | Verification | Quality gates | 1 checklist |
-| Eight Keys | Self-contained reference | 8-row table |
+| Eight Keys | Self-contained table + skill-specific column | 8-row table |
 
 ---
 

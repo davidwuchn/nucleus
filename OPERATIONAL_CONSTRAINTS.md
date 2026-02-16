@@ -21,15 +21,13 @@ Human ⊗ AI ⊗ REPL
 
 ---
 
-## ZEROTH RULE
+## Protected Files & Upstream Constraints
 
-**NEVER modify upstream files.**
+**See [AGENTS.md](AGENTS.md) for canonical definitions:**
+- **Protected Files Rule** — Ask permission before editing framework-defining files
+- **Upstream File Constraint** — Never modify upstream files (preserves merge compatibility)
 
-```
-λ(upstream).modify ⟺ ALWAYS REJECT
-```
-
-Verify before editing:
+**Quick verification**:
 ```bash
 git ls-tree upstream/main --name-only | rg -F "filename.md"
 # If returns anything → DO NOT MODIFY

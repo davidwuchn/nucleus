@@ -536,18 +536,22 @@ Add: Document in specification with syntax, semantics, and examples
 - Cognitive Psychology of Reasoning Patterns
 - Formal Methods in Human-Computer Interaction
 
-## Appendix A: Eight Keys Reference Table
+## Appendix A: Eight Keys Reference
 
-| Key | Symbol | Signal | Anti-Pattern | Mathematical Foundation |
-|-----|--------|--------|--------------|-------------------------|
-| Vitality | φ | Organic, non-repetitive | Mechanical rephrasing | Euler's Formula $e^{iπ} + 1 = 0$ |
-| Clarity | fractal | Explicit assumptions | Vague assumptions | Euler's Polyhedra $V - E + F = 2$ |
-| Purpose | e | Actionable function | Abstract descriptions | Exponential Growth $e^x$ |
-| Wisdom | τ | Foresight over speed | Hasty optimization | Calculus $\frac{df}{dt}$ |
-| Synthesis | π | Holistic integration | Fragmented thinking | Pythagorean Theorem $a^2 + b^2 = c^2$ |
-| Directness | μ | Cut pleasantries | Polite evasion | Logarithms $\log xy = \log x + \log y$ |
-| Truth | ∃ | Favor reality | Surface agreement | Information Theory $H = -\sum p(x) \log p(x)$ |
-| Vigilance | ∀ | Defensive constraint | Accepting manipulation | Chaos Theory $x_{t+1} = k x_t (1 - x_t)$ |
+**Canonical definition**: [AGENTS.md](AGENTS.md)
+
+| Key | Symbol | Signal | Anti-Pattern |
+|-----|--------|--------|--------------|
+| Vitality | φ | Organic, non-repetitive | Mechanical rephrasing |
+| Clarity | fractal | Explicit assumptions | Vague assumptions |
+| Purpose | e | Actionable function | Abstract descriptions |
+| Wisdom | τ | Foresight over speed | Hasty optimization |
+| Synthesis | π | Holistic integration | Fragmented thinking |
+| Directness | μ | Cut pleasantries | Polite evasion |
+| Truth | ∃ | Favor reality | Surface agreement |
+| Vigilance | ∀ | Defensive constraint | Accepting manipulation |
+
+**Mathematical foundations**: See [SIMPLICITY.md](SIMPLICITY.md)
 
 **Combined**: `[φ fractal e τ π μ ∃ ∀] ⊗ [Δ λ ∞/0 | ε/φ Σ/μ c/h]` compresses behavioral directives into symbolic form.
 

@@ -21,13 +21,31 @@ Human ⊗ AI ⊗ REPL
 
 ---
 
-## Protected Files Rule (ZEROTH RULE)
+## ZEROTH RULE: Protected Files
 
 **⚠️ Ask user permission before editing protected files.**
 
 Protected files define the framework itself. Modifying them changes the rules for all users.
 
 **Protected**: `AGENTS.md`, `LOCAL_CHANGES.md`, `PHILOSOPHY_RESEARCH.md`, `NUCLEUS_GUIDE.md`, `OPERATIONAL_CONSTRAINTS.md`
+
+---
+
+## Upstream File Constraint
+
+**⚠️ NEVER modify upstream files.**
+
+This repository tracks an upstream source. Modifying upstream files breaks merge compatibility.
+
+**Rule**: `λ(upstream_file).modify ⟺ ALWAYS REJECT`
+
+**Verify before editing**:
+```bash
+git ls-tree upstream/main --name-only | rg -F "filename.md"
+# If returns anything → DO NOT MODIFY
+```
+
+See [LOCAL_CHANGES.md](LOCAL_CHANGES.md) for divergence tracking between upstream and local.
 
 ---
 
