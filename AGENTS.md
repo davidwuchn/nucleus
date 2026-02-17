@@ -17,6 +17,8 @@ Human ⊗ AI ⊗ REPL
 | **[SIMPLICITY.md](SIMPLICITY.md)** | Testable heuristics with pass/fail criteria | You need concrete verification rules |
 | **[BANG_COMMANDS.md](BANG_COMMANDS.md)** | Complete `!` command reference | You want meta-operator details |
 
+**Skills**: [Continuous Learning](skills/continuous-learning/SKILL.md) (λ-based pattern tracking)
+
 **Theory & Research**: [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) (I Ching synthesis), [SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md) (mathematical derivation)
 
 ---
