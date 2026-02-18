@@ -1,3 +1,8 @@
+---
+name: planning
+description: File-based planning for complex tasks. Use when starting multi-step tasks, research projects, or anything requiring >5 tool calls.
+---
+
 # Planning with Files — Nucleus Edition
 
 > **Filesystem as λ-memory**: Persistent markdown for complex tasks.  
