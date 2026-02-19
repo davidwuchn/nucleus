@@ -7,9 +7,12 @@
 ## One-Command Setup
 
 ```bash
-# From your project root
-/Users/davidwu/workspace/nucleus/skills/planning/scripts/init-planning.sh "Your Task Name"
+# From your project root (assuming workspace root contains skills/)
+skills/planning/scripts/init-planning.sh "Your Task Name"
 ```
+
+
+**Note:** Assumes the skills directory is in your workspace root. For other setups, see Portable Setup in README.md.
 
 This creates:
 - `task_plan.md` — Your roadmap
@@ -40,7 +43,8 @@ As you work:
 ### 4. Verify (∀ — Vigilance)
 Before finishing:
 ```bash
-/Users/davidwu/workspace/nucleus/skills/planning/scripts/check-complete.sh
+# From your project root (assuming workspace root contains skills/)
+skills/planning/scripts/check-complete.sh
 ```
 
 ---
@@ -121,14 +125,15 @@ Check:
 Copy from skill directory:
 
 ```bash
+# Assuming you're in the workspace root containing skills/
 # task_plan.md
-cp /Users/davidwu/workspace/nucleus/skills/planning/templates/task_plan.md .
+cp skills/planning/templates/task_plan.md .
 
 # findings.md
-cp /Users/davidwu/workspace/nucleus/skills/planning/templates/findings.md .
+cp skills/planning/templates/findings.md .
 
 # progress.md
-cp /Users/davidwu/workspace/nucleus/skills/planning/templates/progress.md .
+cp skills/planning/templates/progress.md .
 ```
 
 ---
