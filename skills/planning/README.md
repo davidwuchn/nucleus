@@ -162,15 +162,40 @@ Verification checklist:
 Copy to your project and customize:
 
 ```bash
-# From your project root
-cp /Users/davidwu/workspace/nucleus/skills/planning/templates/*.md .
+# From your project root (assuming workspace root contains skills/)
+cp skills/planning/templates/*.md .
 ```
 
 Or use the init script:
 
 ```bash
-/Users/davidwu/workspace/nucleus/skills/planning/scripts/init-planning.sh "Task Name"
+# From your project root (assuming workspace root contains skills/)
+skills/planning/scripts/init-planning.sh "Task Name"
 ```
+
+## Portable Setup
+
+If your project is in a different workspace than the nucleus skills directory:
+
+**Replace `<path-to-nucleus>` with your actual nucleus installation path (e.g., `/home/user/projects/nucleus`):**
+
+1. **Create a symlink** (recommended):
+   ```bash
+   ln -s <path-to-nucleus>/skills/planning .planning
+   ```
+   Then use: `./.planning/scripts/init-planning.sh "Task Name"`
+
+2. **Copy the skill locally** (one-time):
+   ```bash
+   cp -r <path-to-nucleus>/skills/planning ./planning
+   ```
+   Then use: `./planning/scripts/init-planning.sh "Task Name"`
+
+3. **Set environment variable**:
+   ```bash
+   export NUCLEUS_SKILLS=<path-to-nucleus>/skills
+   ```
+   Then use: `$NUCLEUS_SKILLS/planning/scripts/init-planning.sh "Task Name"`
 
 ---
 
