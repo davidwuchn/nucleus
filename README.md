@@ -345,11 +345,77 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 
 **The pattern is tool-agnostic**: Once you understand the λ-calculus structure, you can generate patterns for ANY toolset by asking your AI to apply the same structure to your specific tools.
 
+## Skills
+
+Nucleus skills are domain-specific agents with standardized structure and validation.
+
+**New in v0.2.0**: Complete skill validation system with automated checks.
+
+### Skills Available
+
+- [continuous-learning](skills/continuous-learning/) - λ-based pattern learning system
+- [planning](skills/planning/) - File-based planning for complex tasks
+- [clojure-expert](skills/clojure-expert/) - REPL-first Clojure development
+- [nucleus-tutor](skills/nucleus-tutor/) - Quality gate for low-value prompts
+- [sarcasmotron](skills/sarcasmotron/) - Violation detection with targeted humor
+- [clojure-reviewer](skills/clojure-reviewer/) - Clojure code review
+- [reddit](skills/reddit/) - Reddit API integration
+- [requesthunt](skills/requesthunt/) - Request management
+- [seo-geo](skills/seo-geo/) - SEO audit tools
+
+### Skill Validation
+
+**Run validation**:
+```bash
+cd skills
+./validate_skills.sh
+```
+
+**Validation rules**:
+- Standardized frontmatter (name, description, version)
+- Consistent framework headers
+- Self-contained Eight Keys tables
+- Size constraints (200-350 lines)
+- Cross-skill redundancy elimination
+
+See [skills/SKILL_VALIDATION.md](skills/SKILL_VALIDATION.md) for complete rules.
+
+**Improvement plan**: [skills/SKILLS_IMPROVEMENT_PLAN.md](skills/SKILLS_IMPROVEMENT_PLAN.md)
+
+### Creating New Skills
+
+Use the standardized template: [skills/SKILL_TEMPLATE.md](skills/SKILL_TEMPLATE.md)
+
+**Requirements**:
+- Frontmatter with name, description, version
+- Framework header with all symbols
+- All required sections (Identity, Core Principle, Procedure, etc.)
+- Self-contained Eight Keys table
+- Size: 200-350 lines
+
 ## Documentation
 
+### Core Framework
 - **[SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md)** - Complete theory, principles, and usage patterns
 - **[OPERATOR_ALGEBRA.md](OPERATOR_ALGEBRA.md)** - Mathematical operators and collaboration modes
 - **[LAMBDA_PATTERNS.md](LAMBDA_PATTERNS.md)** - Example lambda calculus patterns (adapt to YOUR tools)
+
+### Practical Guides
+- **[NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md)** - Practical workflows and patterns
+- **[SIMPLICITY.md](SIMPLICITY.md)** - Testable heuristics with pass/fail criteria
+- **[BANG_COMMANDS.md](BANG_COMMANDS.md)** - Complete `!` command reference
+
+### Quality Assurance (NEW v0.2.0)
+- **[ANTI_PATTERNS.md](ANTI_PATTERNS.md)** - Explicit forbidden behaviors and their fixes
+- **[RESEARCH_BASE.md](RESEARCH_BASE.md)** - Evidence and citations supporting framework design
+- **[VALIDATION.md](VALIDATION.md)** - Automated consistency checks and validation rules
+- **[SYNCHRONIZATION.md](SYNCHRONIZATION.md)** - Multi-document consistency rules
+
+### Framework Management
+- **[CHANGELOG.md](CHANGELOG.md)** - Version history and changes
+- **[IMPROVEMENTS_BASED_ON_CLOJURE_SYSTEM_PROMPT.md](IMPROVEMENTS_BASED_ON_CLOJURE_SYSTEM_PROMPT.md)** - Analysis of improvements based on clojure-system-prompt
+
+### Examples
 - **[DIAG.md](DIAG.md)** - Example debugger prompt for exploring AI latent space (only works on some models)
 - **[NUCLEUS_GAME.md](NUCLEUS_GAME.md)** - A game-in-a-prompt "programmed" in nucleus format (copy/paste to AI to play)
 - **[RECURSIVE_DEPTHS.md](RECURSIVE_DEPTHS.md)** - Another game-in-a-prompt, zork-like text adventure (copy/paste to AI to play)
