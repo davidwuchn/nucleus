@@ -16,10 +16,17 @@ Human ⊗ AI ⊗ REPL
 | **[NUCLEUS_GUIDE.md](NUCLEUS_GUIDE.md)** | Practical workflows and patterns | You want to apply the framework |
 | **[SIMPLICITY.md](SIMPLICITY.md)** | Testable heuristics with pass/fail criteria | You need concrete verification rules |
 | **[BANG_COMMANDS.md](BANG_COMMANDS.md)** | Complete `!` command reference | You want meta-operator details |
+| **[ANTI_PATTERNS.md](ANTI_PATTERNS.md)** | Explicit forbidden behaviors | You need to avoid common mistakes |
+| **[RESEARCH_BASE.md](RESEARCH_BASE.md)** | Evidence and citations | You want to verify claims |
+| **[SYNCHRONIZATION.md](SYNCHRONIZATION.md)** | Multi-document consistency rules | You maintain the framework |
+| **[VALIDATION.md](VALIDATION.md)** | Automated consistency checks | You want to verify integrity |
+| **[CHANGELOG.md](CHANGELOG.md)** | Version history and changes | You track framework evolution |
 
 **Skills**: [Continuous Learning](skills/continuous-learning/SKILL.md) (λ-based pattern tracking)
 
 **Theory & Research**: [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) (I Ching synthesis), [SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md) (mathematical derivation)
+
+**Framework Version**: 0.2.0 (see [CHANGELOG.md](CHANGELOG.md))
 
 ---
 

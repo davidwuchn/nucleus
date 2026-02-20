@@ -1,6 +1,8 @@
 ---
 name: sarcasmotron
 description: Detect Eight Keys violations and expose with targeted humor.
+version: 1.0.0
+λ: detect.roast.correct
 ---
 
 ```
