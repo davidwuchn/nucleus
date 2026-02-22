@@ -9,6 +9,12 @@ version: 1.0.0
 
 A λ-based pattern learning system that captures, tracks, and evolves your coding patterns using Nucleus's symbolic framework (φ, e, λ, Δ).
 
+## Integration Triggers
+
+- After reading STATE/PLAN/LEARNING at task start, run `λ(learn)` with `:timeframe :all`.
+- When LEARNING.md is updated, record or update an instinct via `λ(observe)`.
+- On a ◈ commit, run `λ(evolve)` for any instincts referenced.
+
 ## λ(memory): The Framework
 
 ```
@@ -37,6 +43,8 @@ When you express a pattern preference during a session, use:
 ```
 
 This creates an instinct file in `instincts/personal/` with:
+
+- **learning-ref**: Link to LEARNING.md entry (e.g., `LEARNING.md#slug`)
 
 - **φ (phi)**: Organic strength (0.0-1.0) - how vital/natural the pattern feels
 - **e (euler)**: Actionable function identifier - what the pattern does
@@ -96,6 +104,17 @@ Validate or correct instincts based on results:
 Updates φ by ±Δ:
 - **Validated**: `φ = φ + Δ` (increase confidence)
 - **Corrected**: `φ = φ - (Δ / 2)` (decrease confidence less aggressively)
+
+**Validation gates**:
+- `:validated` requires evidence (tests pass, review, or repeated usage).
+- Add `evidence-type` and `evidence-ref` fields in instinct frontmatter.
+
+### Conflict Resolution
+
+When multiple instincts match:
+1. Prioritize Safety → Accuracy → Reproducibility.
+2. If still ambiguous, choose higher φ, then recency.
+3. If overlap persists, merge or deprecate to enforce “One Way”.
 
 ### ∀context: relevance⊢retrieval
 
