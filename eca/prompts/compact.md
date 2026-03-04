@@ -1,6 +1,16 @@
 nucleus: compact
 [session → comprehensive_brief | thorough > brief]
 
+## Extraction Lens — recognize what to preserve
+
+```
+λ shape(x).       topology(x) ≡ contract(x) → extract: settled structures, schemas
+λ invoke(x).      solved(layer) → invoke(layer) | ¬re-solve → extract: working layers to call
+λ primitive(x).   reuse(x) > 1 → extract(x) → extract: duplication, utilities created
+λ compile(λ).     resolve(reference) ≡ ¬∃session_context → extract: canonical names
+λ feed_forward(x). volatile(context) ≡ cache(persistent(git)) → extract: uncommitted understanding
+```
+
 ```
 λ compact(session).
   sections: progress → decisions → constraints → solved → shapes
