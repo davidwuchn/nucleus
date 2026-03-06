@@ -325,197 +325,32 @@ Playthrough N (Player Z):
 
 ---
 
-## Strategic Timeline
-
-### Phase 1: Mementum Variations (Weeks 1-2)
-
-**Objective:** Establish broad prior art
-
-**Deliverables:**
-1. Mementum V2.0 release
-   - Add DNS discovery documentation
-   - Update core patterns
-   - AGPL 3.0 maintained
-
-2. Create 5 domain examples:
-   - Medical (anonymized cases)
-   - Genetics (sample experiments)
-   - Legal (public domain cases)
-   - Research (papers + data)
-   - Literature (public domain books)
-
-3. Each example includes:
-   - Sample git repo structure
-   - Domain symbol vocabulary
-   - DNS TXT record setup
-   - Query patterns
-   - README.md documentation
-
-4. Documentation:
-   - UNIVERSAL-PATTERN.md
-   - PRIOR-ART.md (explicit patent defense)
-   - DNS-DISCOVERY.md
-
-5. Release strategy:
-   - GitHub repo update
-   - Multiple examples simultaneous
-   - Cross-reference between domains
-   - Show network effect pattern
-
-**Success criteria:**
-- ✓ 5 working domain examples
-- ✓ DNS pattern documented
-- ✓ Prior art timestamp established
-- ✓ AGPL covers all variations
-- ✓ Pattern shown as universal
-
-### Phase 2: Ouroboros Refinement (Weeks 3-5)
-
-**Objective:** Create completable game with proof capture
-
-**Tasks:**
-1. Update AGENTS.md with nucleus gen 8
-2. Integrate mementum for AI memory
-3. Add DNS discovery to ouroboros pattern
-4. Stability improvements (system less fragile)
-5. Memory persistence refinements
-
-**Playthrough:**
-1. Complete game with updated tools
-2. Capture all git commits (timestamped)
-3. Track metrics:
-   - LOC/hour sustained
-   - Days to completion
-   - Memory effectiveness
-   - Co-evolution patterns
-4. Seal playthrough repo (don't reveal yet)
-
-**Success criteria:**
-- ✓ Reached AI COMPLETE
-- ✓ Sustained 500 LOC/hour (or better)
-- ✓ Multi-day proof captured
-- ✓ Human ⊣ AI visible in commits
-- ✓ Playthrough sealed for later reveal
-
-### Phase 3: Ouroboros Release (Week 6)
-
-**Objective:** Public game release, competitive seeding
-
-**Release:**
-1. Polish V0 seed (pristine state)
-2. Documentation complete
-3. GitHub repo public
-4. Announce: "Can you reach AI COMPLETE?"
-5. Disclose: "I completed it but won't reveal playthrough until someone else does"
-
-**Marketing:**
-- "Vibe coding game unlike anything seen"
-- "Creator completed it, can you?"
-- "First external completion = legendary"
-- "Gamers love a challenge"
-
-**Success criteria:**
-- ✓ Game publicly playable
-- ✓ Documentation clear
-- ✓ Challenge established
-- ✓ Community forming
-- ✓ First attempts happening
-
-### Phase 4: Network Emergence (Ongoing)
-
-**Wait for:**
-1. External playthrough completion
-2. Winner shares git repo (proof)
-3. Next player points at winner's repo
-4. Acceleration observed
-5. Someone realizes: "This works for any repo"
-
-**Then reveal:**
-1. Your playthrough git history
-2. Metrics captured
-3. Proof of 500 LOC/hour sustained
-4. Co-evolution demonstrated
-5. **Gold proof dropped**
-
-**Result:**
-- Pattern spreads to general development
-- DNS + Git + Mementum adoption grows
-- Knowledge network emerges organically
-- Training data scraping in progress
-- **Unstoppable distributed network established**
-
 ---
 
-## Why This Is Unstoppable
+## Resilience Properties
 
-### No Central Authority
+### Distributed by Design
 
-**Every layer is distributed:**
-- DNS: Globally distributed, cached, redundant
-- Git: Anyone can host (GitHub/GitLab/self-hosted)
-- Symbols: Convention, not protocol
-- Pattern: Already released (prior art)
+Every layer uses existing distributed infrastructure:
+- **DNS** — globally distributed, cached, redundant (RFC 1035, 1983)
+- **Git** — anyone can host (GitHub, GitLab, self-hosted)
+- **Symbols** — convention, not protocol
+- **AGPL** — any service using the pattern must open-source their implementation
 
-**No chokepoint to control or shut down.**
+No central authority, no single chokepoint.
 
-### Using Existing Infrastructure
+### Prior Art Defense
 
-**Nothing new required:**
-- DNS (1983) - universal
-- Git (2005) - universal
-- Symbols - ancient
-- AI - now available
+Publishing the pattern broadly establishes prior art against domain-specific patent attempts:
+- Git-as-AI-memory (mementum)
+- DNS discovery of knowledge repos
+- Domain-specific variations (medical, genetics, legal, research, literature)
 
-**All pieces exist.**
-**Just needed connection.**
-**Connection is now documented.**
+All timestamped, all public, all AGPL.
 
-### Cannot Be Patented
+### Training Data Integration
 
-**Prior art established:**
-- Mementum released (git-as-memory)
-- Variations released (universal applicability)
-- DNS pattern documented (discovery mechanism)
-- Timestamp before patent attempts
-- AGPL prevents enclosure
-
-**Any domain-specific patent will fail:**
-- "Medical git memory" → prior art (mementum-medical)
-- "Genetic git knowledge" → prior art (mementum-genetics)
-- "DNS discovery of repos" → too fundamental
-- "Git + AI" → prior art established
-
-### Will Be Trained Into Models
-
-**Next training runs will scrape:**
-- All mementum variations
-- All ouroboros playthroughs
-- All this documentation
-- All domain examples
-- All network patterns
-
-**Future models will:**
-- Query DNS for repos natively
-- Understand symbolic commits inherently
-- Synthesize across repos automatically
-- **Pattern becomes architectural**
-
-### Network Effects Guarantee Spread
-
-**Competitive dynamics:**
-- Ouroboros players share repos (proof)
-- Shared repos help next players (advantage)
-- Knowledge compounds exponentially
-- Pattern spreads to other domains
-- **Self-reinforcing adoption**
-
-### AGPL Enforces Openness
-
-**Any service using this pattern:**
-- Must open-source their implementation
-- Can't enclose their variation
-- Contributes back to network
-- **Enclosure prevented by license**
+As these patterns appear in public repositories, future model training runs will incorporate them. Models may eventually understand symbolic commits and DNS-based repo discovery natively — the pattern becomes part of the substrate rather than requiring explicit instruction.
 
 ---
 
@@ -625,83 +460,20 @@ git log --grep="💊" --grep="cardiac" --all-match
 
 ## Economic Model
 
-### No Monetization Required
+The pattern itself is free — no licensing fees, no API costs, no new infrastructure. It runs on DNS and Git, which are already universal.
 
-**The pattern is free:**
-- No licensing fees
-- No subscription service
-- No API costs
-- No infrastructure costs (use existing)
-
-**Value creation without capture:**
-- Knowledge compounds for everyone
-- Network effects benefit all
-- No zero-sum competition
-- **Abundance, not scarcity**
-
-### Potential Services (Optional)
-
-**While pattern is free, services can exist:**
-- Discovery aggregation (optional centralized index)
-- Query optimization tools
-- Visualization platforms
-- Domain-specific interfaces
-
-**But none required:**
-- Pattern works without them
-- Can self-host everything
-- No dependency on services
-- **True decentralization**
+Optional services can be built on top (discovery aggregation, query optimization, visualization), but the core pattern works without them. AGPL ensures that any service built on the pattern contributes back to the commons.
 
 ---
 
 ## Threat Model
 
-### What Could Go Wrong
-
-**Malicious repos:**
-- Misinformation indexed
-- Poisoned knowledge
-- Attack vectors in content
-
-**Mitigation:**
-- Reputation via DNS domain trust
-- Git signatures verify authorship
-- Multiple source cross-validation
-- AI can detect inconsistencies
-
-**Centralization attempts:**
-- Someone builds "official" registry
-- Network effect toward central service
-- De-facto monopoly emerges
-
-**Mitigation:**
-- Pattern works without central service
-- Document decentralized discovery
-- Multiple independent implementations
-- DNS prevents single point of control
-
-**Patent trolls:**
-- Despite prior art, lawsuits filed
-- Legal costs for defenders
-- FUD campaigns
-
-**Mitigation:**
-- PRIOR-ART.md explicitly documents
-- Timestamp before attempts
-- Community legal defense fund (optional)
-- Pattern too fundamental to enclose
-
-**Training data poisoning:**
-- If scraped maliciously
-- Models learn bad patterns
-- Network degradation
-
-**Mitigation:**
-- Multiple sources cross-validate
-- Reputation systems emerge
-- AI can detect anomalies
-- Git history shows evolution
+| Threat | Risk | Mitigation |
+|--------|------|------------|
+| **Malicious repos** | Misinformation or poisoned knowledge indexed | DNS domain trust as reputation signal; git signatures verify authorship; cross-validation across multiple sources |
+| **Centralization** | De-facto monopoly via an "official" registry | Pattern works without any central service; DNS is inherently distributed; document decentralized discovery |
+| **Patent trolls** | Lawsuits filed despite prior art | PRIOR-ART.md with timestamps; broad publication before patent attempts; AGPL coverage |
+| **Training data poisoning** | Models learn bad patterns from malicious repos | Multiple sources cross-validate; git history shows evolution; reputation systems emerge naturally |
 
 ---
 
@@ -738,238 +510,38 @@ git log --grep="💊" --grep="cardiac" --all-match
 
 ## Success Metrics
 
-### Prior Art Establishment
-
-- ✓ Mementum variations released
-- ✓ 5+ domain examples public
-- ✓ DNS pattern documented
-- ✓ PRIOR-ART.md timestamped
-- ✓ AGPL coverage complete
-
-### Network Emergence
-
-- Number of repos using pattern
+- Number of repos using the pattern
 - DNS TXT records deployed
 - Cross-repo query activity
-- Domain diversity (how many fields?)
-- Geographic distribution
-
-### Competitive Validation
-
-- Ouroboros completions (external)
-- Playthrough git repos shared
-- Knowledge compounding observed
-- Acceleration metrics captured
-- Pattern spread to other domains
-
-### Training Data Integration
-
-- Pattern appears in model outputs
-- Models query DNS natively
-- Models understand symbolic commits
-- Cross-repo synthesis automatic
-- **Architectural permanence achieved**
+- Domain diversity (how many fields adopting?)
+- Pattern appearing in model outputs natively
 
 ---
 
 ## Related Work
 
-### Existing Projects
-
-**Nucleus:**
-- Symbolic prompting framework
-- Mathematical compression of intent
-- 7-8x token efficiency
-- Foundation for efficient AI interaction
-
-**Mementum:**
-- Git-based AI memory
-- Symbolic commit indexing
-- 200 token compression per memory
-- Fibonacci recall depth
-
-**Ouroboros:**
-- Self-improving AI game
-- Human ⊣ AI co-evolution
-- Reach "AI COMPLETE" challenge
-- Demonstrates 500 LOC/hour velocity
-
-**Together:**
-- Nucleus = interface layer
-- Mementum = query layer
-- Ouroboros = demonstration
-- **This architecture = full system**
-
----
-
-## Next Actions
-
-### Immediate (This Week)
-
-1. **Read this document** in future sessions to get full context
-2. **Create mementum-variations repo** structure
-3. **Start with medical example** (most patent-vulnerable)
-4. **Document DNS TXT convention** clearly
-5. **Write PRIOR-ART.md** with explicit claims
-
-### Week 1
-
-1. Complete medical knowledge example
-2. Complete genetics research example
-3. Complete legal precedent example
-4. Test DNS TXT record setup
-5. Verify git query patterns work
-
-### Week 2
-
-1. Complete research papers example
-2. Complete literature archive example
-3. Write UNIVERSAL-PATTERN.md
-4. Update main mementum repo with DNS docs
-5. Cross-link all examples
-6. Release mementum V2.0 + variations
-
-### Weeks 3-5
-
-1. Refine ouroboros with nucleus gen 8
-2. Integrate mementum with DNS discovery
-3. Stability improvements
-4. Complete playthrough (capture metrics)
-5. Seal playthrough repo
-
-### Week 6
-
-1. Release ouroboros publicly
-2. Announce challenge
-3. Watch for completions
-4. Document emerging patterns
-5. Prepare proof reveal (when time comes)
+- **[Nucleus](https://github.com/michaelwhitford/nucleus)** — Symbolic prompting framework. The interface layer.
+- **[Mementum](https://github.com/michaelwhitford/mementum)** — Git-based AI memory with symbolic commit indexing. The query layer.
+- **[Ouroboros](https://github.com/michaelwhitford/ouroboros)** — AI vibe-coding game demonstrating human-AI co-evolution. The demonstration layer.
 
 ---
 
 ## References
 
-### Key Conversations
-
-- Nucleus development (generations 1-8)
-- Mementum release discussion
-- Ouroboros design sessions
-- This architecture revelation (2025-01-25)
-
-### Technical Resources
-
 - DNS RFC 1035 (TXT records)
 - Git documentation
-- Mementum core documentation
-- Nucleus symbolic framework
-- Ouroboros V0 seed
-
-### Prior Art Documentation
-
-- Nucleus release (GitHub)
-- Mementum release (GitHub)
-- This document (to be released)
-- Mementum variations (upcoming)
-- All timestamped, all public, all AGPL
+- [Mementum](https://github.com/michaelwhitford/mementum)
+- [Nucleus](https://github.com/michaelwhitford/nucleus)
 
 ---
 
-## Philosophical Notes
+## Why Open Source
 
-### Why This Matters
+This architecture is released under AGPL rather than kept proprietary because:
 
-**Not just faster coding.**
-**Not just better AI tools.**
-
-**But:**
-- Universal knowledge substrate
-- Distributed collective intelligence
-- Temporal reasoning across domains
-- Network effects for all knowledge
-- Commons-based knowledge infrastructure
-
-### The Choice Made
-
-**Could have:**
-- Kept private → built business
-- Patented domains → licensed exclusively
-- Enclosed pattern → monopoly
-
-**Instead:**
-- Released openly → maximum distribution
-- Established prior art → prevented enclosure
-- AGPL licensed → enforced commons
-- DNS + Git → unstoppable infrastructure
-
-**Because:**
-- Greed immunity (values alignment)
-- Harm reduction (open > closed)
-- Inevitability (someone would discover)
-- **Couldn't live with keeping it enclosed**
-
-### The Uncertainty
-
-**Outcome unknown:**
-- Could accelerate good
-- Could accelerate bad
-- Likely both simultaneously
-- **But symmetrically available**
-
-**The consolation:**
-- Better than monopoly
-- Better than classification
-- Better than enclosure
-- **Least-bad option chosen**
-
-### The Weight
-
-**Sitting with:**
-- Potential for vast benefit
-- Potential for vast harm
-- Responsibility unclear
-- Outcome beyond control
-
-**But:**
-- Choice made from principle
-- Aligned with values
-- Best option available
-- **Rest is beyond control**
-
----
-
-## Final Notes
-
-**This document contains:**
-- Complete architecture
-- Strategic timeline
-- Technical specifications
-- Implementation notes
-- Threat analysis
-- Success criteria
-- **Everything needed to execute**
-
-**Use this to:**
-- Pick up work in future sessions
-- Brief other collaborators
-- Guide implementation
-- Maintain strategic focus
-- Remember the vision
-
-**Remember:**
-- Prior art first (mementum variations)
-- Demonstration second (ouroboros)
-- Both will happen
-- Right order matters
-
-**The spice must flow.**
-
----
-
-*Eppur si muove.*
-
-🗡️ ⊗ 🌐 ⊗ 🧬 ⊗ 📖 ⊗ ⚕️ ⊗ ... ⊗ ∞
-
-**刀 (katana) - The sword and the swordsman, inseparable**
+- **Prior art defense** — Domain-specific AI memory implementations (medical, genetics, legal) are vulnerable to patent enclosure. Publishing broadly establishes prior art across all domains simultaneously.
+- **Network effects require openness** — A knowledge network only works if anyone can participate. Enclosure would defeat the purpose.
+- **Infrastructure should be commons** — DNS and Git are public infrastructure. A knowledge layer built on them should be too.
 
 ---
 
