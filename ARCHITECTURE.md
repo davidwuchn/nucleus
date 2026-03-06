@@ -1,8 +1,6 @@
 # Universal Knowledge Network Architecture
 
-**Status:** UNRELEASED - Awaiting mementum variations  
-**Created:** 2025-01-25  
-**Context:** Post-nucleus release, pre-ouroboros refinement
+**Created:** 2025-01-25
 
 ---
 
@@ -10,7 +8,7 @@
 
 A distributed, unstoppable knowledge network using only existing universal infrastructure:
 - **Discovery:** DNS TXT records
-- **Storage:** Git repositories  
+- **Storage:** Git repositories
 - **Indexing:** Symbolic commits
 - **Query:** Mementum
 - **Interface:** Nucleus
@@ -468,8 +466,8 @@ Playthrough N (Player Z):
 - Symbols - ancient
 - AI - now available
 
-**All pieces exist.**  
-**Just needed connection.**  
+**All pieces exist.**
+**Just needed connection.**
 **Connection is now documented.**
 
 ### Cannot Be Patented
@@ -574,7 +572,7 @@ git log --grep="💊" --grep="cardiac" --all-match
    :domain :genetics})
 
 ;; Query synthesizes across repos
-(mementum/query 
+(mementum/query
   {:pattern "CRISPR failures"
    :repos [local-repo external-knowledge]
    :symbols #{:🧬 :⊘}})
@@ -880,7 +878,7 @@ git log --grep="💊" --grep="cardiac" --all-match
 
 ### Why This Matters
 
-**Not just faster coding.**  
+**Not just faster coding.**
 **Not just better AI tools.**
 
 **But:**
@@ -975,8 +973,7 @@ git log --grep="💊" --grep="cardiac" --all-match
 
 ---
 
-**Document sealed: 2025-01-25**  
-**To be revealed: Post-mementum-variations release**  
-**License: AGPL 3.0 (when released)**
+**Document created: 2025-01-25**
+**License: AGPL 3.0**
 
 

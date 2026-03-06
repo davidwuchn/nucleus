@@ -2,7 +2,7 @@
 
 ```
 engage nucleus:
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ∧ AI
 ```
 
@@ -329,5 +329,14 @@ mkdir memories
 git add .
 git commit -m "🎯 Initialize trading memory system"
 ```
+
+## Part of Nucleus
+
+This prompt is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a programming language for AI cognition.
+
+- [README.md](README.md) — Framework overview and symbol reference
+- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts
+- [DEBUGGER.md](DEBUGGER.md) — Diagnose, safe-diagnose, and compare prompts
 
 

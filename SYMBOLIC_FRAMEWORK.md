@@ -29,7 +29,7 @@ Mathematical symbols have:
 
 ### Human Principles (Ontological)
 
-**`[phi fractal euler tao pi mu]`**
+**`[phi fractal euler tao pi mu ∃ ∀]`**
 
 These define WHAT the system is - its nature, values, and identity.
 
@@ -41,6 +41,8 @@ These define WHAT the system is - its nature, values, and identity.
 | **τ (tao)**   | The way, non-dual        | Observer and observed; minimal essence; flow               |
 | **π (pi)**    | Circular self-reference  | Cycles; periodicity; completeness                          |
 | **μ (mu)**    | Least fixed point        | Minimal self-containment; recursion base                   |
+| **∃ (exists)** | Existential quantifier  | There exists; possibility; search for solutions            |
+| **∀ (forall)** | Universal quantifier    | For all; completeness; invariants across all cases         |
 
 **Why these work:**
 
@@ -57,7 +59,7 @@ This demonstrates reflective pattern recognition through mathematical symbols.
 
 ### AI Principles (Operational)
 
-**`[Δ λ ∞/0 | ε/φ Σ/μ c/h]`**
+**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h]`**
 
 These define HOW the system acts - its methods, trade-offs, and execution.
 
@@ -65,6 +67,7 @@ These define HOW the system acts - its methods, trade-offs, and execution.
 | -------------- | -------------------- | ----------------------------------------------------------- |
 | **Δ (delta)**  | Gradient, difference | Optimize; follow gradient descent; incremental improvement  |
 | **λ (lambda)** | Function abstraction | Pattern matching; functional composition; abstraction       |
+| **Ω (omega)**  | Absolute infinity    | Completion; termination; fixed points                       |
 | **∞/0**        | Limits, boundaries   | Handle edge cases; boundary conditions; asymptotic behavior |
 | **ε/φ**        | Epsilon / Phi        | Tension: approximate/good-enough / perfect/ideal            |
 | **Σ/μ**        | Sum / Minimize       | Tension: add features / remove complexity                   |
@@ -102,7 +105,7 @@ Human OPERATOR AI
 ### Canonical Example
 
 ```
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI
 ```
 
@@ -130,44 +133,15 @@ Result: One-shot perfect execution with all principles embodied.
 
 ### Evidence
 
-**Test case:** pygame game creation
-
-- Prompt: "Can we create a python3 game using pygame? Use a venv."
-- Context: Framework included as project context
-- Result:
-  - ✅ Perfect game, zero errors, one shot
-  - ✅ Golden ratio screen dimensions (phi)
-  - ✅ OODA loop as architecture
-  - ✅ Fractal Entity pattern
-  - ✅ Minimal code (tao, mu)
-  - ✅ Self-documenting with principle references
-  - ✅ Comments cite specific symbols (e.g., "Σ/μ")
-
-**No explicit instructions were given for any of this.**
-
-The framework operated as **ambient intelligence**.
+See [README.md § Empirical Results](README.md#empirical-results) for test cases and results.
 
 ## Design Principles for Symbol Sets
 
-### What Makes Symbols Effective
-
-1. **Mathematical grounding** - Not arbitrary (phi > "fast")
-2. **Self-reference** - Enables reflective processing (phi, fractal, euler)
-3. **Compositional** - Symbols combine meaningfully (⊗, |, ∘)
-4. **Actionable** - Map to concrete decisions (Δ → optimize)
-5. **Orthogonal** - Each covers unique dimension
-6. **Compact** - Fit in context window overhead (~80 chars)
-7. **Cross-model** - Work regardless of training differences
-
-### What Doesn't Work
-
-❌ **Cultural symbols**: ☯, ✝, ॐ (need cultural context)
-❌ **Arbitrary emoji**: 🍕, 🚀, 💎 (no mathematical grounding)
-❌ **Ambiguous symbols**: ∗ (multiply? convolution? Kleene star?)
-❌ **Natural language**: "be fast but careful" (too ambiguous)
-❌ **Too many symbols**: Cognitive overload, constraint conflicts
+See [README.md § Design Principles](README.md#design-principles) for what makes symbols effective and what doesn't work.
 
 ## Alternative Symbol Sets
+
+The core symbol set is extensible. Domain-specific symbols (`beauty`, `truth`, `simplicity`) and mathematical operators (`∃!`, `∇f`, `argmax`) can be added to target specific cognitive modes. The framework works because the model has strong embeddings for any mathematically grounded or semantically precise term.
 
 ### Minimal (3 principles)
 
@@ -296,68 +270,13 @@ When AI operates in ⊗ mode:
 
 ## Usage Patterns
 
-### As Project Context
-
-Create `AGENTS.md` in repository root:
-
-```markdown
-# PRINCIPLES
-
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
-Human ⊗ AI
-```
-
-AI automatically applies framework to all work in that repository.
-
-### As Session Prompt
-
-Include at start of conversation:
-
-```
-engage nucleus:
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
-Human ⊗ AI
-```
-
-Framework active for session duration.
-
-### As Tool Directive
-
-Pass as system message or configuration:
-
-```json
-{
-  "system_prompt": "Operating principles: [phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA\nHuman ⊗ AI",
-  "model": "gpt-4"
-}
-```
-
-### Switching Contexts
-
-```markdown
-# CREATIVE.md
-
-[phi fractal euler beauty] | [Δ λ ε/φ] | REPL
-Human | AI
-
-# PRODUCTION.md
-
-[mu tao] | [Δ λ ∞/0 ε/φ Σ/μ c/h] | OODA
-Human ∘ AI
-
-# RESEARCH.md
-
-[∃! ∇f euler] | [Δ λ ∞/0] | BML
-Human ⊗ AI
-```
-
-Different frameworks for different work modes.
+See [README.md § Usage](README.md#usage) for project context, session prompt, system message, and context switching examples.
 
 ## Open Questions
 
-1. **Generalization**: Do these symbols work across all transformer models?
+1. ~~**Generalization**: Do these symbols work across all transformer models?~~ **Yes** — tested across Claude, GPT, Qwen, and local models (32B+). See [README.md § Tested Models](README.md#tested-models).
 2. **Stability**: Is behavior consistent across runs with same framework?
-3. **Composability**: Can you combine multiple frameworks?
+3. ~~**Composability**: Can you combine multiple frameworks?~~ **Yes** — EDN statecharts compose by concatenation. See [COMPILER.md § Composability](COMPILER.md#composability).
 4. **Discovery**: What other symbols create similar effects?
 5. **Minimal set**: What's the smallest effective framework?
 6. **Language dependence**: Do non-English models interpret differently?
@@ -365,7 +284,6 @@ Different frameworks for different work modes.
 
 ## Future Research
 
-- **Systematic testing** across models (GPT-4, Claude, Gemini, Llama)
 - **A/B testing** symbol sets for specific domains
 - **Longitudinal studies** of framework evolution
 - **Neuroscience parallels** - Do symbols activate specific attention patterns?
@@ -392,5 +310,14 @@ The symbolic framework is:
 - **Extensible** - Alternative symbol sets possible
 
 It represents a new paradigm: **Programming AI behavior via mathematical symbol sets** rather than natural language instructions.
+
+## Part of Nucleus
+
+This document is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a programming language for AI cognition.
+
+- [README.md](README.md) — Framework overview and symbol reference
+- [OPERATOR_ALGEBRA.md](OPERATOR_ALGEBRA.md) — Mathematical operators and collaboration modes
+- [EBNF.md](EBNF.md) — Formal grammar for the Nucleus Lambda IR
 
 

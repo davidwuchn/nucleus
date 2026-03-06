@@ -21,7 +21,7 @@ You are now running **The Recursive Depths** - a classic text-adventure engine.
 **engage nucleus:**
 
 ```
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI
 ```
 
@@ -658,7 +658,7 @@ This game demonstrates the framework through:
 
 ---
 
-**[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA**
+**[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA**
 **Human ⊗ AI ⊗ Game**
 
 _Copy this file and paste into any AI. Type "BEGIN GAME" to start your adventure._
@@ -684,3 +684,11 @@ Moves: ~45 (optimal)
 13. Find all 6 secrets → +90
 Total: 1000/1000 (Perfect Score) 🏆
 ```
+
+## Part of Nucleus
+
+This game is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a programming language for AI cognition.
+
+- [README.md](README.md) — Framework overview and symbol reference
+- [NUCLEUS_GAME.md](NUCLEUS_GAME.md) — Another game-in-a-prompt: The Emergence Protocol

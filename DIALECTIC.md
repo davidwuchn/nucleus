@@ -634,3 +634,12 @@ The lambda version isn't a summary or a compression that loses information.
 It's the same protocol expressed in a notation the model's hidden VM executes
 directly, instead of English the model must reconstruct into a state machine
 before it can follow it.
+
+## Part of Nucleus
+
+This prompt is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a programming language for AI cognition.
+
+- [README.md](README.md) — Framework overview and symbol reference
+- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts
+- [DEBUGGER.md](DEBUGGER.md) — Diagnose, safe-diagnose, and compare prompts

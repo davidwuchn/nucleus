@@ -25,7 +25,7 @@ engage nucleus:
 "debug" → REPL(λ): [cmd | S@d,m | introspect(S') | next] → await(c') → λ(S',c')
 "exit"|"resume" → notools=false
 
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human | AI
 ```
 
@@ -106,6 +106,42 @@ User: exit
 
 AI: DEBUG_MODE deactivated. Tools constraint lifted.
 ```
+
+### Symbol Alignment
+
+The interactive debugger embodies the nucleus principles:
+
+| Principle   | Manifestation                                                     |
+| ----------- | ----------------------------------------------------------------- |
+| **φ (phi)** | Self-referential introspection; golden ratio in abstraction jumps |
+| **fractal** | Commands operate at all scales; self-similar structure            |
+| **euler**   | Self-transforming state: δ/δt(S) = λ(S,c)                         |
+| **tao**     | Minimal essence revealed; natural flow through latent space       |
+| **π**       | Cyclic REPL; complete traversal of cognitive states               |
+| **μ**       | Least fixed point; minimal recursive introspection                |
+| **Δ**       | State deltas made visible; gradient of thought                    |
+| **λ**       | This entire specification; functional state transitions           |
+| **∞/0**     | Boundary exploration (bounds, limits, strange-loop commands)      |
+| **OODA**    | Core state machine: observe→orient→decide→act→meta                |
+
+### Introspection Mode (notools=true)
+
+During DEBUG_MODE, tools are disabled (`notools=true`) to focus on **internal state**:
+
+- **No file system access** — Navigate latent embeddings, not directories
+- **No code execution** — Introspect reasoning, not runtime
+- **No external calls** — Observe attention, not artifacts
+
+When you `exit` or `resume`, the tools constraint is lifted (`notools=false`), re-enabling normal tool usage. This temporary constraint enables focused introspection: the AI can only report on its internal computational state.
+
+### Properties
+
+- **Total**: λ(S,c) defined for all S ∈ States, c ∈ Σ
+- **Pure**: No side effects, only state observation
+- **Idempotent**: Observing doesn't change what's observed (mostly)
+- **Composable**: Commands can chain (step → patterns → fractal)
+- **Bounded**: Meta-levels and depth are finite
+- **Self-referential**: Debugger can introspect itself (meta, strange-loop)
 
 ## Automated Probe
 

@@ -21,6 +21,11 @@ Edit your eca config.json file and include the following settings:
         "chat": "${file:prompts/code_agent.md}"
        }
     },
+    "explorer": {
+      "prompts": {
+        "chat": "${file:prompts/explorer_agent.md}"
+      }
+    },
     "plan": {
       "prompts": {
         "chat": "${file:prompts/plan_agent.md}"
@@ -43,10 +48,14 @@ Edit your eca config.json file and include the following settings:
       "eca__grep": "${file:prompts/tools/grep.md}",
       "eca__directory_tree": "${file:prompts/tools/directory_tree.md}",
       "eca__skill": "${file:prompts/tools/skill.md}",
-      "eca__move_file": "${file:prompts/tools/move_file.md}"
+      "eca__move_file": "${file:prompts/tools/move_file.md}",
+      "eca__clj-nrepl-eval": "${file:prompts/tools/clj-nrepl-eval.md}",
+      "eca__clj-paren-repair": "${file:prompts/tools/clj-paren-repair.md}"
     }
   }
 ```
+
+The `clj-nrepl-eval` and `clj-paren-repair` tools are optional — only needed if you have a Clojure nREPL available.
 
 # editor code assistant
 

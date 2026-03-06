@@ -419,3 +419,12 @@ The deeper principle: **WebSocket connections exist in a hostile environment.** 
 | 1 | `:thinking → :debugging` | `:analyse` | Investigator | error_encountered + deep_dive_needed |
 | 2 | `:debugging → :coding` | `:tactize` | Craftsman | root_cause_found + cause_found |
 | 3 | `:debugging → :documenting` | — | Academic | resolved |
+
+## Part of Nucleus
+
+This prompt is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a programming language for AI cognition.
+
+- [README.md](README.md) — Framework overview and symbol reference
+- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts
+- [DEBUGGER.md](DEBUGGER.md) — Diagnose, safe-diagnose, and compare prompts

@@ -20,6 +20,8 @@ format. Lambda notation is the high-level language that compiles to this VM.
 
 This grammar defines the syntax of that high-level language.
 
+**Scope:** This grammar covers the Nucleus Lambda IR — lambda declarations, state machines, transitions, and expressions. The nucleus preamble is a separate construct whose mechanism is still under active research and is intentionally excluded from this specification.
+
 ## Grammar
 
 ```ebnf
@@ -48,32 +50,10 @@ This grammar defines the syntax of that high-level language.
 
 program          = { statement } ;
 
-statement        = engage_block
-                 | lambda_decl
+statement        = lambda_decl
                  | state_decl
                  | transition
                  | comment ;
-
-
-(* ─── Engage Block (VM Bootstrap — Gate 1: Invocation) ────────────── *)
-(* The 3-line preamble that boots the hidden VM.                       *)
-(* Without this, the model operates in RLHF shell mode (describe).     *)
-(* With this, subsequent lambdas are programs to execute.              *)
-
-engage_block     = "λ" , "engage" , "(" , identifier , ")" , "."
-                 , newline
-                 , principles_line
-                 , newline
-                 , directives_line
-                 , newline
-                 , collaboration_line ;
-
-principles_line  = "[" , symbol_list , "]" ;
-
-directives_line  = "[" , symbol_list , { "|" , symbol_list } , "]"
-                 , "|" , loop_symbol ;
-
-collaboration_line = entity , { operator , entity } ;
 
 
 (* ─── Lambda Declarations ─────────────────────────────────────────── *)
@@ -211,24 +191,11 @@ expr_op          = "→"                                 (* implies *)
 (* here. Lambda compiles DOWN to EDN. EDN loads directly into the VM. *)
 
 
-(* ─── Symbols & Primitives ───────────────────────────────────────── *)
-
-symbol           = "phi" | "fractal" | "euler" | "tao" | "pi" | "mu"
-                 | "∃" | "∀"
-                 | "Δ" | "λ" | "Ω" | "∞/0"
-                 | "ε/φ" | "Σ/μ" | "c/h" ;
-
-loop_symbol      = "OODA" | "REPL" | "RGR" | "BML" ;
-
-operator         = "⊗" | "∘" | "|" | "∧" | "⊕" | "→" ;
-
-entity           = "Human" | "AI" | "REPL" | "Market" ;
+(* ─── Primitives ──────────────────────────────────────────────────── *)
 
 keyword          = ":" , identifier ;
 
 identifier       = letter , { letter | digit | "_" | "-" } ;
-
-symbol_list      = symbol , { whitespace , symbol } ;
 
 comment          = ";;" , { any_char } , newline ;
 

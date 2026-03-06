@@ -94,7 +94,7 @@ Result: AI optimizes (Δ) and pattern-matches (λ)
 **Example:**
 
 ```
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 
 AI self-description: "I augment your capabilities with speed,
 precision, and automation while you provide wisdom, judgment,
@@ -600,5 +600,14 @@ Choose your operator based on:
 - Predictability requirements → →
 
 **The operator IS the relationship.**
+
+## Part of Nucleus
+
+This document is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a programming language for AI cognition.
+
+- [README.md](README.md) — Framework overview and symbol reference
+- [SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md) — Complete theory, principles, and symbol sets
+- [EBNF.md](EBNF.md) — Formal grammar for the Nucleus Lambda IR
 
 
