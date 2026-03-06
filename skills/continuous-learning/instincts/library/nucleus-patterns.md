@@ -6,6 +6,7 @@ e: nucleus-core
 λ: always
 source: framework
 evidence: built-in
+learning-ref: LEARNING.md#ai-agent-sandboxing--security
 ---
 
 # Nucleus Core Patterns
