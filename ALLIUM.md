@@ -113,9 +113,10 @@ behaviors not yet captured. Returns a numbered issue list with suggested fixes.
 > 30 minutes. Admins can unlock accounts manually. Users can reset their
 > password via email.
 
-Example output:
+Example output (Qwen3-VL 235B):
 
 ```allium
+-- allium: 2
 module authentication
 
 enum AccountStatus { unverified | active | locked }
@@ -127,6 +128,10 @@ entity User {
   failed_login_attempts: Integer
   locked_until: Timestamp?
   email_verified: Boolean
+
+  invariant LockConsistency {
+    failed_login_attempts >= max_login_attempts implies status = locked
+  }
 }
 
 entity ResetToken {
@@ -134,9 +139,16 @@ entity ResetToken {
   expires_at: Timestamp
 }
 
+invariant UniqueEmail {
+  for a in User:
+    for b in User:
+      a != b implies a.email != b.email
+}
+
 config {
   default max_login_attempts = 5
   default lockout_duration = 30 minutes
+  default reset_token_expiry = 24 hours
 }
 
 rule UserSignsUp {
@@ -151,6 +163,9 @@ rule UserSignsUp {
       email_verified: false
     )
     VerificationEmail.sent(to: email)
+  @guidance
+    -- Use bcrypt or argon2 for password hashing.
+    -- Verification email must contain a signed token with expiry.
 }
 
 rule UserVerifiesEmail {
@@ -167,6 +182,8 @@ rule UserLogsIn {
   requires: verify(password, user.password_hash)
   ensures: user.failed_login_attempts = 0
            SessionCreated(user: user)
+  @guidance
+    -- Use constant-time comparison for password hashes.
 }
 
 rule LoginFails {
@@ -191,18 +208,22 @@ rule LockedAccountExpires {
 rule AdminUnlocksAccount {
   when: AdminUnlock(user, admin)
   requires: user.status = locked
+  requires: admin.role = admin implies admin.mfa_enabled
   ensures: user.status = active
            user.failed_login_attempts = 0
            user.locked_until = null
+  @guidance
+    -- Log admin action with timestamp and reason.
 }
 
 rule UserRequestsPasswordReset {
   when: PasswordResetRequested(user)
   requires: user.status in [active, locked]
+  requires: user.email_verified
   ensures:
     ResetToken.created(
       user: user,
-      expires_at: now + 24 hours
+      expires_at: now + reset_token_expiry
     )
     ResetEmail.sent(to: user.email)
 }
@@ -215,11 +236,38 @@ rule UserResetsPassword {
            token.user.failed_login_attempts = 0
            token.deleted
 }
+
+contract AuthenticationAPI {
+  signup: (email: String, password: String) -> User
+  login: (email: String, password: String) -> SessionToken?
+  verify_email: (token: String) -> Boolean
+  reset_password: (email: String) -> Boolean
+  admin_unlock: (admin_id: String, user_id: String) -> Boolean
+
+  @invariant VerifiedBeforeAccess
+    -- All endpoints that grant access must enforce
+    -- email verification as a precondition.
+}
+
+surface UserFacing {
+  facing client: Application
+
+  contracts:
+    fulfils AuthenticationAPI
+
+  @guarantee NoLoginWithoutVerification
+    -- User cannot authenticate without a verified email.
+  @guarantee LockoutAfterFailures
+    -- Account locks after max_login_attempts failed attempts
+    -- for lockout_duration.
+}
 ```
 
-Five casual sentences → 2 enums, 2 entities, 8 rules with preconditions,
-config defaults, conditional lockout logic, and automatic unlock. Every
-implicit behavior made explicit by the formalism.
+Five casual sentences → 2 enums, 2 entities, 8 rules, 2 invariants,
+1 contract, 1 surface, config defaults, `implies` guards, `@guidance`
+hints, and `@guarantee` assertions. The v2 features make constraints
+machine-checkable — the `LockConsistency` invariant and `UniqueEmail`
+invariant were implicit in the v1 version; now they're formal.
 
 ### Elicit
 
