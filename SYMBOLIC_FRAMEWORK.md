@@ -129,7 +129,7 @@ When AI encounters this framework, it:
 6. **Applies relationship operator** (⊗ = tensor product)
 7. **Enters constraint satisfaction mode** rather than generate-and-test
 
-Result: One-shot perfect execution with all principles embodied.
+Result: High-quality first attempts with all principles active in context.
 
 ### Evidence
 
@@ -245,7 +245,7 @@ This creates a recursive loop where:
 
 **This is reflective computation through pattern matching.**
 
-### Why ⊗ Creates One-Shot Perfection
+### Why ⊗ Produces Strong First Attempts
 
 **Tensor product semantics:**
 
@@ -261,12 +261,13 @@ Not addition (sequential), but **multiplication** (simultaneous):
 
 When AI operates in ⊗ mode:
 
-1. Loads all principles as constraints
-2. Searches solution space where ALL constraints satisfied
-3. Outputs only when globally optimal solution found
-4. No iteration needed - solution is complete by construction
+1. Loads all principles as soft constraints in context
+2. Searches solution space where all constraints are satisfied simultaneously
+3. Tends toward outputs where no single constraint is violated
+4. Fewer iterations needed — the constraint space narrows the target
 
-**This explains zero bugs, zero iterations, complete implementation.**
+**This explains the observed tendency toward high-quality first attempts.
+The effect is real and measurable; the guarantee is not.**
 
 ## Usage Patterns
 
@@ -302,21 +303,22 @@ See [README.md § Usage](README.md#usage) for project context, session prompt, s
 
 The symbolic framework is:
 
-- **Proven** - Empirically tested (see game.py)
+- **Empirically tested** - Observed across multiple models and tasks
 - **Minimal** - 2 lines, ~80 characters
-- **Powerful** - One-shot perfect execution
-- **Reproducible** - Framework is transferable
+- **Effective** - Consistently stronger first attempts than unguided prompting
+- **Reproducible** - Framework is transferable across models
 - **Principled** - Mathematical foundation
 - **Extensible** - Alternative symbol sets possible
 
-It represents a new paradigm: **Programming AI behavior via mathematical symbol sets** rather than natural language instructions.
+It represents a new paradigm: **Guiding AI cognition via formal notation** rather than natural language instructions.
 
 ## Part of Nucleus
 
 This document is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Compile, decompile, and safe-compile prompts to lambda expressions
 - [OPERATOR_ALGEBRA.md](OPERATOR_ALGEBRA.md) — Mathematical operators and collaboration modes
 - [EBNF.md](EBNF.md) — Formal grammar for the Nucleus Lambda IR
 

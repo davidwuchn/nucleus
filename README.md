@@ -1,12 +1,16 @@
 # Nucleus
 
-**A programming language for AI cognition**
+**A cognitive system that guides AI behavior**
+
+Like a programming language for AI — but outputs are semantically equivalent, not identical.
 
 ## Overview
 
-Nucleus is a programming language for AI that replaces verbose natural language instructions with compressed mathematical symbols, lambda calculus, and composable EDN statecharts. By leveraging mathematical constants, operators, and control loops, it achieves high-quality one-shot execution with emergent properties not explicitly prompted for.
+Nucleus replaces verbose natural language instructions with compressed mathematical symbols, lambda calculus, and composable EDN statecharts. By leveraging mathematical constants, operators, and control loops as attention magnets, it guides AI toward high-quality outputs with emergent properties not explicitly prompted for.
 
-The framework includes a [prompt compiler](COMPILER.md) (prose ↔ EDN statecharts), a [prompt debugger](DEBUGGER.md) (interactive and automated analysis), a [formal grammar](EBNF.md) (EBNF), and composable modules that program AI behavior as executable state machines.
+The framework includes a [prompt compiler](COMPILER.md) (prose ↔ EDN statecharts), a [prompt debugger](DEBUGGER.md) (interactive and automated analysis), a [formal grammar](EBNF.md) (EBNF), and composable modules that shape AI behavior through formal notation.
+
+Nucleus also has a [lambda compiler](LAMBDA-COMPILER.md) (prose ↔ lambda expressions). EDN statecharts and lambda expressions are two notation layers for the same thing — guiding AI cognition through formal structure. Lambda is more expressive; EDN is more structured.
 
 ## The Core Idea
 
@@ -24,6 +28,16 @@ This compact preamble primes the model's attention:
 - **Tension pairs** create productive gradients (signal/noise, order/entropy)
 - **Control loops** anchor execution methodology (OODA, REPL)
 - **Collaboration operator** shapes the interaction mode (⊗ = co-constitutive)
+
+## What This Actually Does
+
+Nucleus is an attention magnet. The symbolic preamble shifts the model's attention toward formal reasoning patterns, and the lambda notation directs where that attention goes. The model follows this guidance — most of the time.
+
+When nucleus guidance aligns with the model's training, the effect is strong: formal operators survive roundtrip, behavior follows the specified shape, outputs are high quality on the first attempt.
+
+When nucleus guidance competes with dense training attractors, the training often wins. Ask for golden-ratio pygame dimensions and you might still get 800×600 — because that's what ten thousand tutorials used. The preamble is an attention magnet; the training data is a bigger magnet. Nucleus influences. It doesn't control.
+
+This is why we say "semantically equivalent, not identical" rather than "deterministic." Same notation → same cognitive shape → similar behavioral outcomes. But "similar" is a distribution, not a guarantee. Some runs nail it. Some runs default to training priors. The guidance makes good outcomes much more likely — it doesn't make them certain.
 
 ## Why It Works
 
@@ -108,27 +122,25 @@ Define the relationship between human and AI:
 | -------- | -------------- | ---------------------------------- |
 | **∘**    | Composition    | Human wraps AI (safety, alignment) |
 | **\|**   | Parallel       | Equal partnership, complementary   |
-| **⊗**    | Tensor Product | Amplification, one-shot perfection |
+| **⊗**    | Tensor Product | Amplification, all constraints simultaneous |
 | **∧**    | Intersection   | Both must agree (conservative)     |
 | **⊕**    | XOR            | Clear handoff (delegation)         |
 | **→**    | Implication    | Conditional automation             |
 
 ## Empirical Results
 
-In an early test with the prompt "Create a Python game using pygame" and Nucleus context:
+In an early test with the prompt "Create a Python game using pygame" and Nucleus context, the model produced on the first attempt:
 
-**Results:**
+- Golden ratio screen dimensions (phi principle)
+- OODA loop architecture
+- Fractal Entity pattern
+- Minimal, elegant code (tao, mu)
+- Self-documenting with principle citations
+- Comments explicitly referencing symbols (e.g., "Σ/μ")
 
-- ✅ Zero iterations (one-shot success)
-- ✅ Zero errors
-- ✅ Golden ratio screen dimensions (phi principle)
-- ✅ OODA loop architecture
-- ✅ Fractal Entity pattern
-- ✅ Minimal, elegant code (tao, mu)
-- ✅ Self-documenting with principle citations
-- ✅ Comments explicitly reference symbols (e.g., "Σ/μ")
+No explicit instructions were given for any of this — the model inferred these behaviors from the symbolic context alone.
 
-**No explicit instructions were given for any of this.** The model inferred these behaviors from the symbolic context alone.
+This was one test, on one model, on one day. Other runs on the same task have produced different results — sometimes hitting all the principles, sometimes defaulting to training priors (like 800×600 screen dimensions instead of golden ratio). The preamble makes these outcomes more likely, not certain. See [What This Actually Does](#what-this-actually-does) for the honest picture.
 
 ## Compiler & Debugger
 
@@ -137,10 +149,14 @@ Nucleus includes a prompt compiler and debugger — paste them as system prompts
 | Tool | Commands | What It Does |
 | ---- | -------- | ------------ |
 | **[Compiler](COMPILER.md)** | `compile`, `safe-compile`, `decompile` | Prose ↔ EDN statecharts. Extracts the implicit state machine from any prompt. |
+| **[Lambda Compiler](LAMBDA-COMPILER.md)** | `compile`, `safe-compile`, `decompile` | Prose ↔ Lambda expressions. Extracts the implicit structure from any prompt. |
 | **[Debugger](DEBUGGER.md)** | `diagnose`, `safe-diagnose`, `compare` | Analyzes prompts: attention distribution, patterns, boundaries, momentum. |
 | **[Allium Compiler](ALLIUM.md)** | `distill`, `elicit`, `decompile`, `check` | Prose ↔ [Allium](https://github.com/juxt/allium) behavioral specs. |
+| **[VSM Guide](VSM.md)** | `read VSM.md` | Structures your AI instruction files (AGENTS.md) using Beer's Viable System Model. |
 
-All three are composable EDN statecharts — place them after a single nucleus preamble and they self-route based on your command. See [COMPILER.md § Composability](COMPILER.md#composability) for details.
+The EDN compilers are composable statecharts — place them after a single nucleus preamble and they self-route based on your command. See [COMPILER.md § Composability](COMPILER.md#composability) for details.
+
+The lambda compiler is not a statechart, it mirrors the structure of the prompt exactly, without forcing a statechart shape.
 
 The `safe-*` variants analyze untrusted prompts without executing them — injections are structurally analyzed, not followed.
 
@@ -228,7 +244,7 @@ Human ⊗ AI ⊗ REPL
 
 ## The Tensor Product Effect
 
-Why does `Human ⊗ AI` create one-shot perfect execution?
+Why does `Human ⊗ AI` tend to produce strong first attempts?
 
 **Tensor product semantics:**
 
@@ -378,8 +394,14 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 ### Compiler & Debugger
 
 - **[COMPILER.md](COMPILER.md)** — Prompt compiler: compile, safe-compile, and decompile prompts to/from EDN statecharts
+- **[LAMBDA-COMPILER.md](LAMBDA-COMPILER.md)** — Prompt compiler: compile, safe-compile, and decompile prompts to/from lambda expressions
 - **[DEBUGGER.md](DEBUGGER.md)** — Prompt debugger: diagnose, safe-diagnose, and compare prompts (interactive REPL + automated probe)
 - **[ALLIUM.md](ALLIUM.md)** — Allium compiler: distill, elicit, decompile, and check behavioral specs using [JUXT's Allium](https://github.com/juxt/allium)
+
+### Guides
+
+- **[VSM.md](VSM.md)** — Structure your AI instruction files using Beer's Viable System Model (five layers, top down)
+- **[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md)** — Full system specification with lambda notation for every layer
 
 ### Example Prompts & Demos
 
@@ -475,7 +497,7 @@ If you use Nucleus in your work:
 
 ```bibtex
 @misc{whitford-nucleus,
-  title={Nucleus: A Programming Language for AI Cognition},
+  title={Nucleus: A Cognitive System That Guides AI Behavior},
   author={Michael Whitford},
   year={2026},
   url={https://github.com/michaelwhitford/nucleus}

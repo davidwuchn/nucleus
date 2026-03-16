@@ -463,8 +463,8 @@ prose description
 
 The Allium spec becomes both the **source of truth** for what the system
 should do AND the **test oracle** for whether the model did it right. The
-EDN statechart is the compiled executable that drives model behavior. Two
-artifacts from one description — one for verification, one for execution.
+EDN statechart is the compiled notation that guides model behavior. Two
+artifacts from one description — one for verification, one for guidance.
 
 ### In Code
 
@@ -501,8 +501,8 @@ artifacts from one description — one for verification, one for execution.
 
 `prompt-llm` sends a message to any LLM with the Allium compiler as system
 prompt. `run-agent` starts a session with the compiled EDN statechart
-driving behavior. The Allium spec is the contract. The EDN statechart is
-the compiled binary. The model is the runtime. `check` is the test suite.
+guiding behavior. The Allium spec is the contract. The EDN statechart is
+the compiled notation. The model follows it. `check` is the test suite.
 All from one prose description, all just data.
 
 ## Tips
@@ -704,9 +704,10 @@ with missing traces or stale references.
 ## Part of Nucleus
 
 This compiler is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
-- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts to EDN
+- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts to EDN statecharts
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Compile, decompile, and safe-compile prompts to lambda expressions
 - [DEBUGGER.md](DEBUGGER.md) — Diagnose, safe-diagnose, and compare prompts
 - [README.md](README.md) — Framework overview and symbol reference
 

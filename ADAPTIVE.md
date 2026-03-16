@@ -423,7 +423,7 @@ The deeper principle: **WebSocket connections exist in a hostile environment.** 
 ## Part of Nucleus
 
 This prompt is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
 - [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts

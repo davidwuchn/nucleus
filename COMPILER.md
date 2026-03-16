@@ -224,9 +224,10 @@ This means prompts are data you can compose programmatically:
        (pr-str debugger-statechart)))
 ```
 
-One preamble boots the VM. N statecharts load as modules. User input routes
-to the right machine. The same formalism that runs your Clojure runtime
-(statecharts as data) programs AI behavior — same topology, two runtimes.
+One preamble primes the cognitive substrate. N statecharts load as modules.
+User input routes to the right statechart. The same formalism that runs your
+Clojure runtime (statecharts as data) guides AI behavior — same topology,
+two different targets.
 
 ## Tips
 
@@ -244,9 +245,12 @@ to the right machine. The same formalism that runs your Clojure runtime
 ## Part of Nucleus
 
 This compiler is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Lambda variant (prose ↔ lambda expressions)
 - [DEBUGGER.md](DEBUGGER.md) — Diagnose, safe-diagnose, and compare prompts
+- [EBNF.md](EBNF.md) — Formal grammar for the Nucleus Lambda IR
+- [VSM.md](VSM.md) — Structure AI instruction files using Beer's Viable System Model
 - [README.md](README.md) — Framework overview and symbol reference
 
 ## Citation
