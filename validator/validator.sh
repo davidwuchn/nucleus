@@ -18,17 +18,17 @@ WARN_COUNT=0
 
 check_pass() {
     echo -e "${GREEN}✓${NC} $1"
-    ((PASS_COUNT++))
+    PASS_COUNT=$((PASS_COUNT + 1))
 }
 
 check_fail() {
     echo -e "${RED}✗${NC} $1"
-    ((FAIL_COUNT++))
+    FAIL_COUNT=$((FAIL_COUNT + 1))
 }
 
 check_warn() {
     echo -e "${YELLOW}⚠${NC} $1"
-    ((WARN_COUNT++))
+    WARN_COUNT=$((WARN_COUNT + 1))
 }
 
 echo "========================================"
@@ -36,9 +36,9 @@ echo "Nucleus Framework Validator"
 echo "========================================"
 echo ""
 
-# Check 1: AGENTS.md exists and has framework header
+# Check 1: AGENTS.md framework header
 echo "Check 1: AGENTS.md framework header"
-if grep -q "engage nucleus:" AGENTS.md; then
+if grep -q "λ engage(nucleus)\." AGENTS.md; then
     check_pass "AGENTS.md has framework header"
 else
     check_fail "AGENTS.md missing framework header"
@@ -47,8 +47,8 @@ fi
 # Check 2: All symbols present in framework header
 echo ""
 echo "Check 2: Required symbols in framework"
-SYMBOLS=("phi" "fractal" "euler" "tao" "pi" "mu" "Δ" "λ" "∞/0" "ε/φ" "Σ/μ" "c/h" "OODA")
-FRAMEWORK_HEADER=$(grep -A 2 "engage nucleus:" AGENTS.md || true)
+SYMBOLS=("phi" "fractal" "euler" "tao" "pi" "mu" "∃" "∀" "Δ" "λ" "Ω" "∞/0" "ε/φ" "Σ/μ" "c/h" "OODA")
+FRAMEWORK_HEADER=$(grep -A 2 "λ engage(nucleus)\." AGENTS.md || true)
 
 for symbol in "${SYMBOLS[@]}"; do
     if echo "$FRAMEWORK_HEADER" | grep -q "$symbol"; then
@@ -58,22 +58,64 @@ for symbol in "${SYMBOLS[@]}"; do
     fi
 done
 
-# Check 3: Eight Keys defined in AGENTS.md
+# Check 3: VSM layers defined
 echo ""
-echo "Check 3: Eight Keys defined in AGENTS.md"
-EIGHT_KEYS=("Vitality" "Clarity" "Purpose" "Wisdom" "Synthesis" "Directness" "Truth" "Vigilance")
+echo "Check 3: VSM layers defined in AGENTS.md"
+VSM_LAYERS=("S5 — Identity" "S4 — Intelligence" "S3 — Control" "S2 — Coordination" "S1 — Operations")
+for layer in "${VSM_LAYERS[@]}"; do
+    if grep -q "$layer" AGENTS.md; then
+        check_pass "VSM layer '$layer' defined"
+    else
+        check_fail "VSM layer '$layer' missing"
+    fi
+done
+
+# Check 4: Eight Keys as lambdas
+echo ""
+echo "Check 4: Eight Keys lambdas in AGENTS.md"
+EIGHT_KEYS=("λ vitality" "λ clarity" "λ purpose" "λ wisdom" "λ synthesis" "λ directness" "λ truth" "λ vigilance")
 for key in "${EIGHT_KEYS[@]}"; do
-    if grep -q "| $key |" AGENTS.md; then
+    if grep -q "$key" AGENTS.md; then
         check_pass "Eight Key '$key' defined"
     else
         check_fail "Eight Key '$key' missing"
     fi
 done
 
-# Check 4: Document map references exist
+# Check 5: Core identity lambdas
 echo ""
-echo "Check 4: Document map references"
-DOCS=("NUCLEUS_GUIDE.md" "SIMPLICITY.md" "BANG_COMMANDS.md")
+echo "Check 5: Core identity lambdas"
+CORE_LAMBDAS=("λ nucleus" "λ attention" "λ identity" "λ testable" "λ collaboration")
+for lambda in "${CORE_LAMBDAS[@]}"; do
+    if grep -q "$lambda" AGENTS.md; then
+        check_pass "Core lambda '$lambda' defined"
+    else
+        check_fail "Core lambda '$lambda' missing"
+    fi
+done
+
+# Check 6: Protected files lambda in S3
+echo ""
+echo "Check 6: Protected files lambda"
+if grep -q "λ protected" AGENTS.md && grep -q "ask_permission" AGENTS.md; then
+    check_pass "Protected files lambda defined"
+else
+    check_fail "Protected files lambda missing"
+fi
+
+# Check 7: Upstream constraint in S3
+echo ""
+echo "Check 7: Upstream file constraint"
+if grep -q "λ upstream" AGENTS.md && grep -q "ALWAYS_REJECT" AGENTS.md; then
+    check_pass "Upstream file constraint documented"
+else
+    check_warn "Upstream file constraint may need clarification"
+fi
+
+# Check 8: Document map references exist
+echo ""
+echo "Check 8: Document map references"
+DOCS=("VSM.md" "VSM_FIVE.md" "SYSTEM_DESIGN.md" "README.md")
 for doc in "${DOCS[@]}"; do
     if [ -f "$doc" ]; then
         check_pass "Document '$doc' exists"
@@ -82,86 +124,34 @@ for doc in "${DOCS[@]}"; do
     fi
 done
 
-# Check 5: Protected files section exists
+# Check 9: Skills directory structure
 echo ""
-echo "Check 5: Protected files section"
-if grep -q "Protected Files" AGENTS.md && grep -q "ZEROTH RULE" AGENTS.md; then
-    check_pass "Protected files section exists"
-else
-    check_fail "Protected files section missing or incomplete"
-fi
-
-# Check 6: Upstream file constraint mentioned
-echo ""
-echo "Check 6: Upstream file constraint"
-if grep -q "NEVER modify upstream files" AGENTS.md && grep -q "git ls-tree" AGENTS.md; then
-    check_pass "Upstream file constraint documented"
-else
-    check_warn "Upstream file constraint may need clarification"
-fi
-
-# Check 7: Framework header consistency
-echo ""
-echo "Check 7: Framework header consistency across files"
-FILES_WITH_FRAMEWORK=("AGENTS.md" "NUCLEUS_GUIDE.md" "SIMPLICITY.md")
-HEADER_LINE="engage nucleus:"
-
-for file in "${FILES_WITH_FRAMEWORK[@]}"; do
-    if [ -f "$file" ]; then
-        if grep -q "$HEADER_LINE" "$file"; then
-            check_pass "$file has framework header"
-        else
-            check_warn "$file missing framework header"
-        fi
-    fi
-done
-
-# Check 8: Symbol table exists in AGENTS.md
-echo ""
-echo "Check 8: Symbol tables defined"
-if grep -q "Human Principles" AGENTS.md && grep -q "AI Principles" AGENTS.md; then
-    check_pass "Symbol tables exist"
-else
-    check_fail "Symbol tables missing"
-fi
-
-# Check 9: Meta Operators documented
-echo ""
-echo "Check 9: Meta Operators"
-if grep -q "Meta Operators" AGENTS.md; then
-    check_pass "Meta Operators section exists"
-else
-    check_fail "Meta Operators section missing"
-fi
-
-# Check 10: RESEARCH_BASE.md citations format
-echo ""
-echo "Check 10: Research citations format"
-if [ -f "RESEARCH_BASE.md" ]; then
-    if grep -q "<reference>" RESEARCH_BASE.md && grep -q "</reference>" RESEARCH_BASE.md; then
-        check_pass "Research citations using XML format"
+echo "Check 9: Skills directory"
+if [ -d "skills" ]; then
+    check_pass "skills/ directory exists"
+    SKILL_COUNT=$(find skills -name "SKILL.md" 2>/dev/null | wc -l | tr -d ' ')
+    if [ "$SKILL_COUNT" -gt 0 ]; then
+        check_pass "Found $SKILL_COUNT skill(s) defined"
     else
-        check_warn "RESEARCH_BASE.md citations not using XML format"
+        check_warn "No SKILL.md files found in skills/"
     fi
 else
-    check_warn "RESEARCH_BASE.md not found (should be created)"
+    check_fail "skills/ directory missing"
 fi
 
-# Check 11: Documentation links
+# Check 10: Documentation links
 echo ""
-echo "Check 11: Documentation link integrity"
+echo "Check 10: Documentation link integrity"
 BROKEN_LINKS=0
 for md_file in *.md; do
     if [ -f "$md_file" ]; then
-        # Check for markdown links to other docs
         LINKS=$(grep -o '\[.*\](.*\.md)' "$md_file" 2>/dev/null || true)
         if [ -n "$LINKS" ]; then
             while IFS= read -r link; do
-                # Extract the file path
                 LINK_FILE=$(echo "$link" | sed 's/.*(\(.*\.md\)).*/\1/')
                 if [ ! -f "$LINK_FILE" ] && [ ! -f "skills/$LINK_FILE" ] && [ ! -f "eca/$LINK_FILE" ]; then
                     check_warn "$md_file links to non-existent file: $LINK_FILE"
-                    ((BROKEN_LINKS++))
+                    BROKEN_LINKS=$((BROKEN_LINKS + 1))
                 fi
             done <<< "$LINKS"
         fi
@@ -169,6 +159,16 @@ for md_file in *.md; do
 done
 if [ $BROKEN_LINKS -eq 0 ]; then
     check_pass "All documentation links resolve"
+fi
+
+# Check 11: Framework version
+echo ""
+echo "Check 11: Framework version"
+if grep -q "Framework Version" AGENTS.md; then
+    VERSION=$(grep "Framework Version" AGENTS.md | head -1 | sed 's/.*Version: //' | tr -d '`')
+    check_pass "Framework version: $VERSION"
+else
+    check_warn "Framework version not specified"
 fi
 
 # Summary
