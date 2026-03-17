@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ECA_DIR="$HOME/.config/eca"
+HOOKS_DIR="$ECA_DIR/hooks"
+SETTINGS="$ECA_DIR/config.json"
+
+echo "Uninstalling nucleus behaviors hook from ECA"
+
+# Remove symlink
+if [ -L "$HOOKS_DIR/nucleus-behaviors.sh" ]; then
+  rm "$HOOKS_DIR/nucleus-behaviors.sh"
+  echo "  removed: hooks/nucleus-behaviors.sh"
+else
+  echo "  not found: hooks/nucleus-behaviors.sh"
+fi
+
+# Remove from config.json
+if [ -f "$SETTINGS" ]; then
+  if grep -q '"nucleus-behaviors"' "$SETTINGS" 2>/dev/null; then
+    tmp=$(mktemp)
+    jq 'del(.hooks."nucleus-behaviors")' "$SETTINGS" > "$tmp" && mv "$tmp" "$SETTINGS"
+    echo "  removed: nucleus-behaviors from config.json"
+  else
+    echo "  not found: nucleus-behaviors in config.json"
+  fi
+fi
+
+# Remove state directory
+STATE_DIR="$ECA_DIR/.behaviors"
+if [ -d "$STATE_DIR" ]; then
+  rm -rf "$STATE_DIR"
+  echo "  removed: .behaviors state directory"
+fi
+
+echo ""
+echo "Done. Nucleus behaviors hook uninstalled."

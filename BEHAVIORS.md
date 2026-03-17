@@ -16,6 +16,61 @@ Behaviors persist until replaced by new hashtags.
 
 ---
 
+## Activation
+
+### ECA (Editor Code Assistant)
+
+1. **Install the hook:**
+   ```bash
+   cd /path/to/nucleus
+   ./eca-install
+   ```
+
+2. **Restart ECA** (or start a new chat)
+
+3. **Use hashtags in prompts:**
+   ```
+   Fix the auth bug #=debug #deep
+   Review this PR #=review #challenge
+   Plan the migration #=spec #decompose
+   ```
+
+4. **Behaviors persist** until new hashtags are used
+
+**To uninstall:**
+```bash
+./eca-uninstall
+```
+
+### How Activation Works
+
+The hook intercepts every prompt before it reaches the LLM:
+
+1. Extracts `#hashtags` from your prompt
+2. Reads corresponding `behaviors/*/prompt.md` files
+3. Injects content as `<operating-mode>` and `<behavior-modifiers>` XML blocks
+4. LLM receives both symbol priming and behavior constraints
+
+```
+Your prompt: Fix the bug #=debug #deep
+                    ↓
+Hook extracts: #=debug #deep
+                    ↓
+Injects: <operating-mode>...debug boundaries...</operating-mode>
+         <behavior-modifiers>...deep quality...</behavior-modifiers>
+                    ↓
+LLM receives: Your prompt + behavior context
+```
+
+### Persistence
+
+- Behaviors persist within a chat session
+- Prompt without hashtags = keep current behaviors
+- New hashtags = replace previous behaviors
+- State stored in `~/.config/eca/.behaviors/{chat_id}`
+
+---
+
 ## How It Works
 
 1. **Symbol priming** (`λ engage(nucleus).`) loads mathematical attention magnets

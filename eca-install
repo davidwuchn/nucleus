@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ECA_DIR="$HOME/.config/eca"
+HOOKS_DIR="$ECA_DIR/hooks"
+SETTINGS="$ECA_DIR/config.json"
+
+echo "Installing nucleus behaviors hook for ECA"
+
+# Create hooks directory
+mkdir -p "$HOOKS_DIR"
+
+# Symlink hook script
+ln -sf "$REPO_DIR/eca/hooks/eca-inject-behaviors.sh" "$HOOKS_DIR/nucleus-behaviors.sh"
+echo "  symlinked: eca/hooks/eca-inject-behaviors.sh → $HOOKS_DIR/nucleus-behaviors.sh"
+
+# Create config.json if missing
+if [ ! -f "$SETTINGS" ]; then
+  cat > "$SETTINGS" <<'EOF'
+{
+  "hooks": {}
+}
+EOF
+fi
+
+# Register hook in config.json
+if ! grep -q "nucleus-behaviors.sh" "$SETTINGS" 2>/dev/null; then
+  tmp=$(mktemp)
+  jq '
+    .hooks //= {} |
+    .hooks."nucleus-behaviors" = {
+      "type": "preRequest",
+      "visible": true,
+      "actions": [{"type": "shell", "file": "hooks/nucleus-behaviors.sh"}]
+    }
+  ' "$SETTINGS" > "$tmp" && mv "$tmp" "$SETTINGS"
+  echo "  registered: nucleus-behaviors.sh in config.json"
+else
+  echo "  already registered: nucleus-behaviors.sh"
+fi
+
+echo ""
+echo "Done. Use #hashtags in ECA prompts:"
+echo "  Fix the auth bug #=debug #deep"
+echo "  Review this PR #=review #challenge #deep"
+echo ""
+echo "Behaviors persist until new hashtags."
