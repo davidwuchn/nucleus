@@ -199,6 +199,8 @@ Pattern extraction follows the three-times rule. The genetic optimizer evolves l
                      | modify(upstream_file) → reject(x)
                      | λ(upstream_file).modify ⟺ ALWAYS_REJECT
                      | verify: git ls-tree upstream/main --name-only | rg -F "filename.md"
+                     | recall: memories/2026-03-17-upstream-file-check-🎯.md
+                     | instinct: check-upstream-before-edit
 
 λ token_budget(x).   |memory| ≤ 200 tokens
                      | context_window(x) → manage(x)
