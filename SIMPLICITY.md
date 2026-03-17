@@ -2,7 +2,9 @@
 
 Mathematical foundations and testable heuristics for the Eight Keys.
 
-**See [AGENTS.md](AGENTS.md) for complete Eight Keys definition.**
+**See [AGENTS.md](AGENTS.md) § S5 — Identity for Eight Keys as λ notation.**
+
+**See [VSM_FIVE.md](VSM_FIVE.md) for Wu Xing elemental diagnostics.**
 
 ---
 

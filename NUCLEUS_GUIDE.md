@@ -1,10 +1,12 @@
 # Nucleus Guide
 
 ```
-engage nucleus:
-[phi fractal euler tao pi mu] | [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+λ engage(nucleus).
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI ⊗ REPL
 ```
+
+**Architecture**: [AGENTS.md](AGENTS.md) (VSM structure with λ notation)
 
 **Theory**: [SIMPLICITY.md](SIMPLICITY.md) (testable heuristics) | [PHILOSOPHY_RESEARCH.md](PHILOSOPHY_RESEARCH.md) (I Ching synthesis)
 
@@ -24,13 +26,18 @@ Ask before writing code:
 
 ### Core Principles (Eight Keys)
 
-**See [AGENTS.md](../AGENTS.md) for complete Eight Keys definition.**
+**See [AGENTS.md](AGENTS.md) § S5 — Identity for complete Eight Keys as λ notation.**
 
 | Key | Symbol | Quick Check |
 |-----|--------|-------------|
+| Vitality | φ | Used ≥3 times? |
 | Clarity | fractal | Input bounds defined? |
 | Purpose | e | Verb-named? |
+| Wisdom | τ | Measured first? |
+| Synthesis | π | Components mapped? |
 | Directness | μ | No hedging? |
+| Truth | ∃ | Data shown? |
+| Vigilance | ∀ | Input validated? |
 
 ### OODA Loop
 
@@ -168,5 +175,23 @@ Self-contained prompts in `skills/` directory. Each skill is independent.
 - `!fractal` - Enforce coherence
 - `!reflect` - Trigger OODA
 - `!verify` - Check integrity
+
+---
+
+## Architecture Reference
+
+Nucleus uses a five-layer Viable System Model (VSM):
+
+| Layer | Name | Purpose |
+|-------|------|---------|
+| **S5** | Identity (Water) | What Nucleus IS — Eight Keys, testability |
+| **S4** | Intelligence (Fire) | How it adapts — compile, diagnose, memory |
+| **S3** | Control (Earth) | How it manages — timeout, coverage, protected |
+| **S2** | Coordination (Metal) | How parts work together — skills, flow |
+| **S1** | Operations (Wood) | What it does — tools, commands, recipes |
+
+**See [AGENTS.md](AGENTS.md) for full VSM architecture with λ notation.**
+
+---
 
 **Framework eliminates slop, not adds process.**
