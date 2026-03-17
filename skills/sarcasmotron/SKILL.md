@@ -1,13 +1,14 @@
 ---
 name: sarcasmotron
 description: Detect Eight Keys violations and expose with targeted humor.
-version: 1.0.0
+version: 2.0.0
 λ: detect.roast.correct
+ci: true
 ---
 
 ```
-engage nucleus:
-[φ fractal e τ π μ ∃ ∀] ⊗ [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
+λ engage(nucleus).
+[φ fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
 Human ⊗ AI
 ```
 
@@ -121,6 +122,111 @@ Ready for next input.
   conveys_exasperation_at_wasted_potential
 ]
 ```
+
+---
+
+## CI Mode (v2.0.0)
+
+Sarcasmotron v2.0.0 introduces CI mode for automated integration with pipelines and pre-commit hooks.
+
+### CLI Interface
+
+```bash
+# Interactive mode (default) - human-readable roasts
+bb validator/check_all.bb -d .
+
+# CI mode - structured JSON output
+bb validator/check_all.bb -d . --ci
+
+# Check specific key
+bb validator/check_all.bb -d . -k directness --ci
+```
+
+### JSON Output Schema
+
+```json
+{
+  "version": "2.0.0",
+  "mode": "ci",
+  "results": [
+    {
+      "key": "directness",
+      "symbol": "μ",
+      "violations": [
+        {
+          "key": "directness",
+          "symbol": "μ",
+          "file": "./AGENTS.md",
+          "line": 42,
+          "content": "This might work",
+          "pattern": "might",
+          "fix": "Remove 'might' - be direct"
+        }
+      ],
+      "summary": {
+        "total": 1
+      }
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "by_key": {
+      "directness": 1,
+      "clarity": 0,
+      "truth": 0,
+      "vitality": 0,
+      "vigilance": 0
+    }
+  }
+}
+```
+
+### CI Integration Examples
+
+**GitHub Actions:**
+```yaml
+- name: Eight Keys Check
+  run: bb validator/check_all.bb -d . --ci > violations.json
+  
+- name: Fail on violations
+  run: |
+    total=$(jq '.summary.total' violations.json)
+    if [ "$total" -gt 0 ]; then
+      echo "Found $total Eight Keys violations"
+      jq '.results[].violations[]' violations.json
+      exit 1
+    fi
+```
+
+**Pre-commit Hook:**
+```bash
+#!/bin/bash
+# .git/hooks/pre-commit
+bb validator/check_all.bb -d . --ci > /tmp/violations.json
+if [ $? -ne 0 ]; then
+  echo "Eight Keys violations detected:"
+  jq -r '.results[].violations[] | "\(.file):\(.line) - \(.pattern)"' /tmp/violations.json
+  exit 1
+fi
+```
+
+### Exit Codes
+
+| Code | Meaning |
+|------|---------|
+| 0 | No violations found |
+| 1 | Violations detected |
+| 2 | Error (invalid arguments, missing files) |
+
+### Available Predicates
+
+| Script | Key | Symbol | Checks |
+|--------|-----|--------|--------|
+| `check_vitality.bb` | Vitality | φ | Duplicate content, mechanical repetition |
+| `check_directness.bb` | Directness | μ | Hedging language |
+| `check_clarity.bb` | Clarity | fractal | Vague language, undefined bounds |
+| `check_truth.bb` | Truth | ∃ | Unsubstantiated claims |
+| `check_vigilance.bb` | Vigilance | ∀ | Risky patterns, missing validation |
 
 ---
 
