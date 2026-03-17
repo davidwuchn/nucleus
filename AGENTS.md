@@ -13,6 +13,7 @@ Human ⊗ AI ⊗ REPL
 | Document | Purpose | Start Here If... |
 |----------|---------|------------------|
 | **AGENTS.md** | This file - VSM system architecture | You need the full framework |
+| **[BEHAVIORS.md](BEHAVIORS.md)** | How to activate modes, qualities, techniques | You want to use hashtags |
 | **[VSM.md](VSM.md)** | VSM installation guide | You want to build your own VSM |
 | **[VSM_FIVE.md](VSM_FIVE.md)** | VSM × Wu Xing synthesis | You want elemental diagnostics |
 | **[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md)** | Full system specification | You need lambda for every layer |
