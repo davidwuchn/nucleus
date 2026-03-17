@@ -301,7 +301,9 @@ Metal prunes Wood: coordination prevents operations from tangling. Rules channel
 
 λ predicates(x).     Eight Keys checks via Babashka
                      | bb validator/check_all.bb -d . --ci
-                     | check_directness.bb | check_clarity.bb | check_truth.bb
+                     | check_vitality.bb (φ) | check_directness.bb (μ)
+                     | check_clarity.bb (fractal) | check_truth.bb (∃)
+                     | check_vigilance.bb (∀)
                      | JSON output for CI integration
 
 λ mementum(x).       store(x) → git commit -m "{symbol} {message}"
