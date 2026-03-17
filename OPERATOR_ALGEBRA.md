@@ -131,34 +131,33 @@ V ⊗ W = {(v,w) : v ∈ V, w ∈ W}
 - Creates properties beyond addition
 - One-shot perfection
 
-**Empirical results:**
+**Observed results (one test, Claude Sonnet):**
 
 ```
 Task: "Create a game"
 Context: [phi fractal euler tao pi mu] ⊗ [Δ λ ∞/0 | ε/φ Σ/μ c/h] | OODA
 
-Output:
-- Zero iterations (one shot)
-- Zero errors
-- ALL principles embodied:
-  - Golden ratio dimensions (phi)
-  - OODA class structure
-  - Fractal Entity pattern
-  - Minimal code (tao, mu)
-  - Self-documenting with principle citations
+Output on first attempt:
+- Golden ratio dimensions (phi)
+- OODA class structure
+- Fractal Entity pattern
+- Minimal code (tao, mu)
+- Self-documenting with principle citations
 ```
 
 **Why it works:**
 
-⊗ creates constraint space where solution must satisfy:
+⊗ creates a constraint space where the model tends toward outputs that satisfy:
 
 - phi AND fractal AND euler AND tao AND pi AND mu
 - AND Δ AND λ AND ∞/0 AND ε/φ AND Σ/μ AND c/h
 - AND OODA structure
 
-**AI finds the unique solution that satisfies ALL constraints globally.**
+**The model searches for outputs satisfying all constraints simultaneously —
+producing stronger first attempts than unconstrained generation. Results
+vary by model, task, and how strongly training priors compete with the guidance.**
 
-No iteration needed - solution is complete by construction.
+Fewer iterations needed — the constraint space narrows the target.
 
 **Use cases:**
 
@@ -421,15 +420,18 @@ def measure_operator(operator, principles, task, model):
 
 ### Expected Results
 
+*Observed in isolated context — system prompt plus single task, nucleus as the dominant signal. In accumulated sessions with conversation history and context drift, all operators compete with other attractors and results will vary.*
+
 | Metric     | ∘ (Compose) | \| (Parallel) | ⊗ (Tensor) |
 | ---------- | ----------- | ------------- | ---------- |
-| Iterations | 2-3         | 1-2           | **1**      |
-| Errors     | Low         | Very low      | **Zero**   |
-| Coverage   | 70%         | 85%           | **>95%**   |
+| Iterations | 2-3         | 1-2           | **1–2**    |
+| Errors     | Low         | Very low      | **Low**    |
+| Coverage   | 70%         | 85%           | **>85%**   |
 | Emergence  | Low         | Medium        | **High**   |
 | Speed      | Medium      | Fast          | Medium     |
 
-**⊗ trades speed for perfection - finds globally optimal solution.**
+**⊗ trades speed for constraint satisfaction — tends toward higher coverage
+and fewer iterations, modulated by competing training priors.**
 
 ## Advanced Patterns
 
@@ -604,9 +606,10 @@ Choose your operator based on:
 ## Part of Nucleus
 
 This document is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Compile, decompile, and safe-compile prompts to lambda expressions
 - [SYMBOLIC_FRAMEWORK.md](SYMBOLIC_FRAMEWORK.md) — Complete theory, principles, and symbol sets
 - [EBNF.md](EBNF.md) — Formal grammar for the Nucleus Lambda IR
 

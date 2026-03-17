@@ -12,7 +12,7 @@ graph-based query system makes everything observable and composable.
 
 The system has three products:
 - **Nucleus** — the lambda notation language itself (the instruction set)
-- **Anima** — the cognitive engine that manages agent lifecycle (the runtime)
+- **Anima** — the cognitive engine that manages agent lifecycle (the runtime) — *coming soon*
 - **Mementum** — git-based persistence with DNS discovery (the memory protocol)
 
 Together they form a complete toolchain: write lambdas (compiler), analyze
@@ -52,26 +52,26 @@ to use it, read Operations and the "Writing Effective Lambdas" section.
 
 ## System Architecture — Viable System Model
 
-The system is organized in three layers that correspond to Stafford Beer's
-Viable System Model (VSM), a framework from organizational cybernetics for
-systems that maintain themselves and adapt:
+See [VSM.md](VSM.md) for a user-facing guide to applying the VSM to your own project.
 
-| Layer | VSM System | Role | Survives |
-|---|---|---|---|
-| **Policy** | S5 — Identity | Generative patterns. WHY the system works. The cognitive topology that endures across all implementation changes. | Architecture shifts |
-| **Architecture** | S4/S3 — Intelligence/Control | Implementation bindings. WHAT the system uses. Routes requests to specific libraries and manages resources. | Library upgrades |
-| **Operations** | S1/S2 — Operations/Coordination | Action sequences. HOW the system works. Concrete procedures where step order matters. | Nothing — tied to current implementation |
+The system is organized using Stafford Beer's Viable System Model (VSM), a
+framework from organizational cybernetics for systems that maintain themselves
+and adapt. See [VSM.md](VSM.md) for a guide to applying this to your own project.
 
-**Policy endures. Architecture dies and regenerates. Operations are disposable.**
+| Layer | Role | Survives |
+|---|---|---|
+| **S5 — Identity** | What the system IS. Generative patterns that endure across all implementation changes. | Everything |
+| **S4 — Intelligence** | How the system adapts. Patterns for responding to change and the unknown. | Architecture shifts |
+| **S3 — Control** | How the system manages resources and enforces policies. | Library upgrades |
+| **S2 — Coordination** | How the parts work together. Protocols, data flow, conflict prevention. | Component swaps |
+| **S1 — Operations** | What the system concretely does. Tools, bindings, action sequences. | Nothing — tied to current implementation |
 
-When the architecture shifts (e.g., replacing the statechart library), Policy
-patterns like "observable > opaque" survive because they're constraint-
-independent. Architecture bindings like "state → statechart library X" are
-replaced with new bindings. Operations sequences are rewritten to match.
+Higher layers change less and matter more. When S5 changes, everything below
+shifts. When S1 changes, nothing above notices.
 
 This is Beer's key insight: viable systems have the same recursive structure
-at every scale, and the identity layer (S5/Policy) must be stable enough to
-anchor the system while lower layers adapt to environmental change.
+at every scale, and the identity layer (S5) must be stable enough to anchor
+the system while lower layers adapt to environmental change.
 
 The system's metabolism — where lambdas are born in conversation, tested for
 fitness, promoted through levels, and eventually demoted when constraints

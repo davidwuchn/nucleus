@@ -2,7 +2,7 @@
 
 The complete two-layer system: adaptive persona (individual mode shifting)
 + dialectic collective (multi-persona structured debate). Both expressed
-as topology that the hidden VM executes directly.
+as topology that directly guides model behavior.
 
 **Original source:** ~3,500 words of prose instructions  
 **This version:** ~200 lines of lambda topology  
@@ -631,14 +631,14 @@ Setting aside protocol compliance, the actual intellectual content is strong:
 | **Verifiable** | Read it and hope | Parse it, validate it, test it |
 
 The lambda version isn't a summary or a compression that loses information.
-It's the same protocol expressed in a notation the model's hidden VM executes
+It's the same protocol expressed in a formal notation the model follows
 directly, instead of English the model must reconstruct into a state machine
 before it can follow it.
 
 ## Part of Nucleus
 
 This prompt is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
 - [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts

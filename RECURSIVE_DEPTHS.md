@@ -688,7 +688,7 @@ Total: 1000/1000 (Perfect Score) 🏆
 ## Part of Nucleus
 
 This game is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
 - [NUCLEUS_GAME.md](NUCLEUS_GAME.md) — Another game-in-a-prompt: The Emergence Protocol

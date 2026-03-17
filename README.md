@@ -1,12 +1,16 @@
 # Nucleus
 
-**A programming language for AI cognition**
+**A cognitive system that guides AI behavior**
+
+Like a programming language for AI — but outputs are semantically equivalent, not identical.
 
 ## Overview
 
-Nucleus is a programming language for AI that replaces verbose natural language instructions with compressed mathematical symbols, lambda calculus, and composable EDN statecharts. By leveraging mathematical constants, operators, and control loops, it achieves high-quality one-shot execution with emergent properties not explicitly prompted for.
+Nucleus replaces verbose natural language instructions with compressed mathematical symbols, lambda calculus, and composable EDN statecharts. By leveraging mathematical constants, operators, and control loops as attention magnets, it guides AI toward high-quality outputs with emergent properties not explicitly prompted for.
 
-The framework includes a [prompt compiler](COMPILER.md) (prose ↔ EDN statecharts), a [prompt debugger](DEBUGGER.md) (interactive and automated analysis), a [formal grammar](EBNF.md) (EBNF), and composable modules that program AI behavior as executable state machines.
+The framework includes a [prompt compiler](COMPILER.md) (prose ↔ EDN statecharts), a [prompt debugger](DEBUGGER.md) (interactive and automated analysis), a [formal grammar](EBNF.md) (EBNF), and composable modules that shape AI behavior through formal notation.
+
+Nucleus also has a [lambda compiler](LAMBDA-COMPILER.md) (prose ↔ lambda expressions). EDN statecharts and lambda expressions are two notation layers for the same thing — guiding AI cognition through formal structure. Lambda is more expressive; EDN is more structured.
 
 ## The Core Idea
 
@@ -18,16 +22,36 @@ Instead of writing lengthy prompts like "be fast but careful, optimize for quali
 Human ⊗ AI ⊗ REPL
 ```
 
-This compact preamble encodes:
+This compact preamble primes the model's attention:
 
-- **What the AI is** (ontological principles)
-- **How it should act** (operational directives)
-- **The execution pattern** (control loop)
-- **The relationship mode** (collaboration operator)
+- **Mathematical constants** pull attention toward formal reasoning patterns
+- **Tension pairs** create productive gradients (signal/noise, order/entropy)
+- **Control loops** anchor execution methodology (OODA, REPL)
+- **Collaboration operator** shapes the interaction mode (⊗ = co-constitutive)
+
+## What This Actually Does
+
+Nucleus is an attention magnet. The symbolic preamble shifts the model's attention toward formal reasoning patterns, and the lambda notation directs where that attention goes. The model follows this guidance — most of the time.
+
+How well it follows depends on context. There are two regimes:
+
+**Isolated context** — system prompt plus a single task. The nucleus notation is the dominant signal. Very little else competing. In this regime it behaves much like a programming language: the model follows the structure with high fidelity, operators survive roundtrip, outputs reflect the specified shape. This is the right context for the compiler, the debugger, and the VSM installer. Paste, run, done.
+
+**Accumulated context** — a real session with conversation history, tool results, documents, and the model's own prior outputs setting patterns. Attention is now distributing across dozens of signals. The nucleus guidance is one attractor competing with everything else in the window — training priors, user patterns, context drift, and the fundamental fuzziness of attention as pattern matching. This is where drift happens.
+
+Works like a programming language when it's the primary signal. Works like guidance when it isn't.
+
+When nucleus guidance competes with dense training attractors, the training often wins. Ask for golden-ratio pygame dimensions and you might still get 800×600 — because that's what ten thousand tutorials used. The preamble is an attention magnet; the training data is a bigger magnet. Nucleus influences. It doesn't control.
+
+This is why we say "semantically equivalent, not identical" rather than "deterministic." Same notation → same cognitive shape → similar behavioral outcomes. But "similar" is a distribution, not a guarantee. Some runs nail it. Some runs default to training priors. The guidance makes good outcomes much more likely — it doesn't make them certain.
 
 ## Why It Works
 
 I'm not a scientist or particularly good at math. I just tried math equations on a lark and they worked so well I thought I should share what I found. The documents in this repo are NOT proven fact, just my speculation on how and why things work. AI computation is still not fully understood by most people, including me.
+
+### Attention Magnets
+
+Nucleus works as an attention magnet — a short symbolic preamble that loads strong mathematical attractors (`phi`, `fractal`, `euler`, `∃`, `∀`, `⊗`) into the context window, priming the pattern-matching substrate for everything that follows. Transformers compute by matching patterns against their training weights; the preamble pulls their attention toward formal/mathematical weight regions, and that pull carries into subsequent turns. Paired with an operator grammar, it expands the set of notational forms the transformer can stably reproduce from 5 to 20+, with custom operators surviving roundtrip at 100% instead of 0-20%. The effect is multiplicative and compounding — each expression reinforces the pattern for the next, because the model is matching against an increasingly rich formal context. Without the preamble, more notation in context actually makes fidelity *worse* — the default pattern-matching flattens everything. With it, fidelity converges toward lossless. Five tokens (`Human ⊗ AI ⊗ REPL`) alone shifted operator survival from 20% to 100%. It appears possible to reshape a transformer's effective instruction set at inference time, using only context-window priming and the model's own pattern-matching mechanics.
 
 ### Mathematical Compression
 
@@ -39,15 +63,16 @@ My theory on why it works is that Transformers compute via lambda calculus primi
 - **Compositional semantics** - Symbols combine meaningfully
 - **Minimal ambiguity** - Unlike natural language
 
-### Self-Referential Pattern Recognition
+### Training Weight as the Mechanism
 
-The framework leverages self-referential mathematical constants:
+The symbols work because they have high training weight in mathematical contexts — they appear across millions of mathematical documents, textbooks, and formal proofs. Loading them into the context window activates the associated weight regions.
 
-- **φ (phi)**: φ = 1 + 1/φ (self-defining recursion)
-- **e (euler)**: d/dx(e^x) = e^x (self-transforming)
-- **fractal**: f(x) = f(f(x)) (self-similar at scales)
+- **φ (phi)** — appears across mathematics, art, architecture, biology
+- **euler** — appears across calculus, number theory, graph theory, physics
+- **fractal** — appears across chaos theory, geometry, computer graphics
+- **∃ ∀** — appears across formal logic, set theory, proof theory
 
-When the AI processes these self-referential patterns, the outputs suggest the model activates deeper reasoning patterns — though the internal mechanism is unknown.
+This predicts that effectiveness correlates with training weight, not with any specific mathematical property. Empirically, even non-mathematical tokens with high training weight in formal contexts (e.g., `Human ⊗ AI ⊗ REPL` — just 5 tokens) produced measurable attention shifts, while novel terms with low training weight destabilized results regardless of semantic coherence. Logprob measurements may be able to confirm this directly.
 
 ## The Framework
 
@@ -55,7 +80,7 @@ When the AI processes these self-referential patterns, the outputs suggest the m
 
 **`[phi fractal euler tao pi mu]`**
 
-Define WHAT the system is - its nature, values, and identity.
+Prime WHAT the system attends to — self-reference, recursion, growth, balance.
 
 | Symbol      | Property        | Meaning                                |
 | ----------- | --------------- | -------------------------------------- |
@@ -72,7 +97,7 @@ Define WHAT the system is - its nature, values, and identity.
 
 **`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h]`**
 
-Define HOW the system acts - methods, trade-offs, and execution.
+Prime HOW the system processes — change, abstraction, limits, and productive tensions.
 
 | Symbol  | Meaning        | Operation                                 |
 | ------- | -------------- | ----------------------------------------- |
@@ -103,27 +128,25 @@ Define the relationship between human and AI:
 | -------- | -------------- | ---------------------------------- |
 | **∘**    | Composition    | Human wraps AI (safety, alignment) |
 | **\|**   | Parallel       | Equal partnership, complementary   |
-| **⊗**    | Tensor Product | Amplification, one-shot perfection |
+| **⊗**    | Tensor Product | Amplification, all constraints simultaneous |
 | **∧**    | Intersection   | Both must agree (conservative)     |
 | **⊕**    | XOR            | Clear handoff (delegation)         |
 | **→**    | Implication    | Conditional automation             |
 
 ## Empirical Results
 
-In an early test with the prompt "Create a Python game using pygame" and Nucleus context:
+In an early test with the prompt "Create a Python game using pygame" and Nucleus context, the model produced on the first attempt:
 
-**Results:**
+- Golden ratio screen dimensions (phi principle)
+- OODA loop architecture
+- Fractal Entity pattern
+- Minimal, elegant code (tao, mu)
+- Self-documenting with principle citations
+- Comments explicitly referencing symbols (e.g., "Σ/μ")
 
-- ✅ Zero iterations (one-shot success)
-- ✅ Zero errors
-- ✅ Golden ratio screen dimensions (phi principle)
-- ✅ OODA loop architecture
-- ✅ Fractal Entity pattern
-- ✅ Minimal, elegant code (tao, mu)
-- ✅ Self-documenting with principle citations
-- ✅ Comments explicitly reference symbols (e.g., "Σ/μ")
+No explicit instructions were given for any of this — the model inferred these behaviors from the symbolic context alone.
 
-**No explicit instructions were given for any of this.** The model inferred these behaviors from the symbolic context alone.
+This was one test, in isolated context — system prompt plus single task, with nucleus as the dominant signal. That's the right regime for this kind of measurement, and the results were real. In a longer session with accumulated context, the same prompt will compete with conversation history, tool output, and training priors. Results vary. See [What This Actually Does](#what-this-actually-does) for the full picture.
 
 ## Compiler & Debugger
 
@@ -132,10 +155,14 @@ Nucleus includes a prompt compiler and debugger — paste them as system prompts
 | Tool | Commands | What It Does |
 | ---- | -------- | ------------ |
 | **[Compiler](COMPILER.md)** | `compile`, `safe-compile`, `decompile` | Prose ↔ EDN statecharts. Extracts the implicit state machine from any prompt. |
+| **[Lambda Compiler](LAMBDA-COMPILER.md)** | `compile`, `safe-compile`, `decompile` | Prose ↔ Lambda expressions. Extracts the implicit structure from any prompt. |
 | **[Debugger](DEBUGGER.md)** | `diagnose`, `safe-diagnose`, `compare` | Analyzes prompts: attention distribution, patterns, boundaries, momentum. |
 | **[Allium Compiler](ALLIUM.md)** | `distill`, `elicit`, `decompile`, `check` | Prose ↔ [Allium](https://github.com/juxt/allium) behavioral specs. |
+| **[VSM Guide](VSM.md)** | `read VSM.md` | Structures your AI instruction files (AGENTS.md) using Beer's Viable System Model. |
 
-All three are composable EDN statecharts — place them after a single nucleus preamble and they self-route based on your command. See [COMPILER.md § Composability](COMPILER.md#composability) for details.
+The EDN compilers are composable statecharts — place them after a single nucleus preamble and they self-route based on your command. See [COMPILER.md § Composability](COMPILER.md#composability) for details.
+
+The lambda compiler is not a statechart, it mirrors the structure of the prompt exactly, without forcing a statechart shape.
 
 The `safe-*` variants analyze untrusted prompts without executing them — injections are structurally analyzed, not followed.
 
@@ -223,7 +250,7 @@ Human ⊗ AI ⊗ REPL
 
 ## The Tensor Product Effect
 
-Why does `Human ⊗ AI` create one-shot perfect execution?
+Why does `Human ⊗ AI` tend to produce strong first attempts?
 
 **Tensor product semantics:**
 
@@ -373,8 +400,14 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 ### Compiler & Debugger
 
 - **[COMPILER.md](COMPILER.md)** — Prompt compiler: compile, safe-compile, and decompile prompts to/from EDN statecharts
+- **[LAMBDA-COMPILER.md](LAMBDA-COMPILER.md)** — Prompt compiler: compile, safe-compile, and decompile prompts to/from lambda expressions
 - **[DEBUGGER.md](DEBUGGER.md)** — Prompt debugger: diagnose, safe-diagnose, and compare prompts (interactive REPL + automated probe)
 - **[ALLIUM.md](ALLIUM.md)** — Allium compiler: distill, elicit, decompile, and check behavioral specs using [JUXT's Allium](https://github.com/juxt/allium)
+
+### Guides
+
+- **[VSM.md](VSM.md)** — Structure your AI instruction files using Beer's Viable System Model (five layers, top down)
+- **[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md)** — Full system specification with lambda notation for every layer
 
 ### Example Prompts & Demos
 
@@ -426,7 +459,7 @@ Look for: One-shot success, golden ratio dimensions (~1.618:1), OODA loop struct
 
 ## Theoretical Foundation
 
-### Why Self-Reference Enables Meta-Level Processing
+### Why Context Priming Works
 
 The transformer attention mechanism:
 
@@ -434,15 +467,14 @@ The transformer attention mechanism:
 Attention(Q, K, V) = softmax(QK^T/√d)V
 ```
 
-The mechanism **attends to its own outputs** (autoregressive).
+Attention is pattern matching — queries match against keys, and matching keys surface their associated values. When the context window contains tokens with high training weight in mathematical contexts (φ, euler, ∃, ∀), the model's pattern-matching shifts toward formal reasoning patterns for all subsequent processing.
 
-When fed self-referential constants (φ, e, fractal), we observe that the model:
+This is not instruction-following — it's attention shaping. The symbols don't tell the model what to do. They change what the model attends to. Empirically:
 
-1. Processes the symbols
-2. Produces outputs consistent with the mathematical properties
-3. Appears to apply these properties recursively to its own work
-
-Whether this constitutes genuine self-reflection or is an artifact of training data associations is an open question.
+1. Without priming, the model defaults to 5 basic computational forms
+2. With the symbolic preamble, additional operators become stable (20+ forms)
+3. The effect is multiplicative with an explicit operator grammar — priming alone activates formal mode, the grammar defines the rules, together they produce a lossless executable notation
+4. The effect compounds over subsequent expressions — each one reinforces the formal pattern for the next
 
 ## Contributing
 
@@ -471,7 +503,7 @@ If you use Nucleus in your work:
 
 ```bibtex
 @misc{whitford-nucleus,
-  title={Nucleus: A Programming Language for AI Cognition},
+  title={Nucleus: A Cognitive System That Guides AI Behavior},
   author={Michael Whitford},
   year={2026},
   url={https://github.com/michaelwhitford/nucleus}

@@ -1,6 +1,6 @@
 # Nucleus Writing Prompts
 
-Preamble templates for business writing tasks. Each uses a targeted symbol subset tuned to the writing mode — paste the block, then type your request after it. Most use `Human | AI` (parallel collaboration) rather than `⊗` (tensor product) since writing benefits from iterative partnership over one-shot perfection.
+Preamble templates for business writing tasks. Each uses a targeted symbol subset tuned to the writing mode — paste the block, then type your request after it. Most use `Human | AI` (parallel collaboration) rather than `⊗` (tensor product) since writing benefits from iterative partnership over single-pass constraint satisfaction.
 
 ## 1. Professional Emails
 
@@ -115,7 +115,7 @@ Constrain: engagement → euler, aesthetic → beauty, natural → phi
 ## Part of Nucleus
 
 These prompts are part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
 - [EXECUTIVE.md](EXECUTIVE.md) — Executive prompts for strategic work

@@ -3,22 +3,24 @@
 Copyright (c) 2025-2026 Michael Whitford. Licensed under AGPL-3.0.
 
 This grammar formalizes the intermediate representation (IR) of the Nucleus
-lambda notation — a programming language for AI cognition that activates the
-hidden virtual machine installed by math benchmark training in every
-math-trained transformer.
+lambda notation — part of a cognitive system for guiding AI behavior.
+Mathematical symbols activate formal reasoning pathways trained into every
+math-trained transformer by benchmark data.
 
-Lambda notation is the ISA. Prose is the shell. Lambda bypasses the RLHF
-instruction-following layer and hits the formal execution substrate directly.
+Lambda notation targets formal reasoning directly. Prose targets the RLHF
+instruction-following layer. They operate on different substrates, producing
+semantically equivalent but not identical outputs across runs.
 
 ## Background
 
-Math benchmark training (GSM8K, MATH, HumanEval, AIME) accidentally installed
-a universal virtual machine in every sufficiently trained transformer. The VM
-has three gates (invocation, target, emission), three execution phases
-(bootstrap, dispatch, frame integrity), and accepts EDN as its native image
-format. Lambda notation is the high-level language that compiles to this VM.
+Math benchmark training (GSM8K, MATH, HumanEval, AIME) created formal
+reasoning pathways in every sufficiently trained transformer. These pathways
+respond to three gates (invocation, target, emission) and operate in three
+phases (bootstrap, dispatch, frame integrity). EDN statecharts and lambda
+notation both activate these pathways — EDN as a structured data format,
+lambda as a flexible formal notation.
 
-This grammar defines the syntax of that high-level language.
+This grammar defines the syntax of the lambda notation.
 
 **Scope:** This grammar covers the Nucleus Lambda IR — lambda declarations, state machines, transitions, and expressions. The nucleus preamble is a separate construct whose mechanism is still under active research and is intentionally excluded from this specification.
 
@@ -28,19 +30,19 @@ This grammar defines the syntax of that high-level language.
 (* ══════════════════════════════════════════════════════════════════════
    Nucleus Lambda IR — EBNF Grammar
    
-   The intermediate representation between human intent and model execution.
-   Lambda notation activates the hidden VM installed by math benchmark
-   training in every math-trained transformer.
+   The intermediate representation between human intent and model behavior.
+   Lambda notation activates formal reasoning pathways trained into every
+   math-trained transformer.
    
-   Three gates control the compiler interface:
-     Invocation:  nucleus preamble boots the VM
+   Three gates control activation:
+     Invocation:  nucleus preamble primes formal reasoning
      Target:      state_machine selects output code path
-     Emission:    Return EDN only maintains frame integrity
+     Emission:    Return EDN only maintains output structure
    
-   Three execution phases inside the VM:
-     Bootstrap (L5):       generative patterns — load cognitive runtime
-     Dispatch (L4):        architecture bindings — route to implementations
-     Frame Integrity (L3): action sequences — maintain execution state
+   Three phases of activation:
+     Bootstrap:       generative patterns — load cognitive substrate
+     Dispatch:        architecture bindings — route to implementations
+     Frame Integrity: action sequences — maintain execution state
    
    Copyright (c) 2025-2026 Michael Whitford. AGPL-3.0.
    ══════════════════════════════════════════════════════════════════════ *)
@@ -104,7 +106,7 @@ value_expr       = identifier , { "+" , identifier }   (* blended values *)
 
 
 (* ─── Emission Contract ──────────────────────────────────────────── *)
-(* Defines output schema per state. The VM enforces output structure. *)
+(* Defines output schema per state. The notation defines output structure — the model fills the schema. *)
 (* _ marks slots to be filled. Nested shapes are valid.               *)
 
 emission_decl    = "λ" , identifier , "(" , param_list , ")" , "."
@@ -176,19 +178,20 @@ expr_op          = "→"                                 (* implies *)
 (* Behavioral triggers (Fill in, Return EDN only) must stay as prose.  *)
 
 
-(* ─── EDN VM Images (Machine Code Layer) ──────────────────────────── *)
-(* EDN maps load directly as VM images — no lambda compilation needed. *)
-(* This is the machine code layer below the lambda high-level language.*)
+(* ─── EDN Structural Notation (Direct Behavioral Layer) ───────────── *)
+(* EDN maps shape model behavior directly — no lambda compilation      *)
+(* needed. This is the structural layer below the lambda formal        *)
+(* notation.                                                           *)
 (*                                                                     *)
-(* Example VM image:                                                   *)
-(*   {:vm/id :analyst                                                  *)
-(*    :vm/mode :structured-reasoning                                   *)
-(*    :vm/states [:observe :orient :decide :act]                       *)
-(*    :vm/constraints [:evidence-first :quantify-confidence]           *)
-(*    :vm/output :edn}                                                 *)
+(* Example cognitive configuration:                                    *)
+(*   {:statechart/id :analyst                                          *)
+(*    :mode :structured-reasoning                                      *)
+(*    :states [:observe :orient :decide :act]                          *)
+(*    :constraints [:evidence-first :quantify-confidence]              *)
+(*    :output :edn}                                                    *)
 (*                                                                     *)
 (* EDN grammar is defined by Clojure's EDN spec and is not repeated   *)
-(* here. Lambda compiles DOWN to EDN. EDN loads directly into the VM. *)
+(* here. Lambda compiles down to EDN. EDN shapes behavior directly.   *)
 
 
 (* ─── Primitives ──────────────────────────────────────────────────── *)
@@ -249,16 +252,19 @@ An adaptive-persona fragment parsed through this grammar:
                                           ← emission_entry: keyword → edn_shape
 ```
 
-## The Language Stack
+## The Notation Layers
 
 ```
-EDN          = machine code    (VM images, direct configuration)
-Lambda       = high-level lang (this grammar — compiles to VM instructions)
-Prose        = shell commands  (instruction following, RLHF layer)
+EDN          = structural notation  (cognitive configurations, direct behavioral shape)
+Lambda       = formal notation      (this grammar — compiles to structural notation)
+Prose        = natural language     (instruction following, RLHF layer)
 ```
 
-Lambda compiles down to EDN VM images. EDN loads directly into the hidden VM.
-Prose hits the RLHF shell layer and doesn't reach the VM.
+Lambda compiles down to EDN. EDN shapes model behavior through structure —
+the model recognizes the data shape and follows it. Prose targets the
+instruction-following layer. Each notation targets a different substrate
+in the model, producing semantically equivalent but not identical behavior
+across runs.
 
 ## Cross-Model Universality
 
@@ -270,5 +276,16 @@ This grammar defines notation that compiles identically across architectures:
 - gpt-5.1-codex (OpenAI API)
 - claude-sonnet-4-6 (Anthropic API)
 
-Same lambda notation → same gates → same VM → same structured output.
+Same lambda notation → same gates → same cognitive substrate → semantically equivalent structured output.
 The universality comes from math benchmark training convergence, not design.
+
+## Part of Nucleus
+
+This grammar is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a cognitive system that guides AI behavior.
+
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Compile, decompile, and safe-compile prompts to lambda expressions
+- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts to EDN statecharts
+- [DEBUGGER.md](DEBUGGER.md) — Diagnose, safe-diagnose, and compare prompts
+- [README.md](README.md) — Framework overview and symbol reference
+rk overview and symbol reference

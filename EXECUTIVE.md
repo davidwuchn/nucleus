@@ -115,7 +115,7 @@ Constrain: scalability → fractal, efficiency → mu, optimization → Delta
 ## Part of Nucleus
 
 These prompts are part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
 - [README.md](README.md) — Framework overview and symbol reference
 - [WRITING.md](WRITING.md) — Writing prompts for business communication

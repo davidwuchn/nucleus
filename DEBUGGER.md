@@ -419,17 +419,18 @@ EDN statecharts compose by concatenation. The debugger and compiler can share
 a single system prompt — see [COMPILER.md](COMPILER.md#composability) for
 details and examples.
 
-One nucleus preamble boots the VM. Multiple statecharts load as modules.
-User input routes to the right machine: `compile` hits the compiler,
-`diagnose` hits the debugger. Add or remove statecharts without affecting
-the others.
+One nucleus preamble primes the cognitive substrate. Multiple statecharts
+load as modules. User input routes to the right statechart: `compile` hits
+the compiler, `diagnose` hits the debugger. Add or remove statecharts
+without affecting the others.
 
 ## Part of Nucleus
 
 This debugger is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
-framework — a programming language for AI cognition.
+framework — a cognitive system that guides AI behavior.
 
-- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts
+- [COMPILER.md](COMPILER.md) — Compile, decompile, and safe-compile prompts to EDN statecharts
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Compile, decompile, and safe-compile prompts to lambda expressions
 - [README.md](README.md) — Framework overview and symbol reference
 
 ## Citation

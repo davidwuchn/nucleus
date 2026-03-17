@@ -875,4 +875,13 @@ To add a new pattern:
 - Total? Idempotent? Composable?
 ```
 
+## Part of Nucleus
+
+This document is part of the [Nucleus](https://github.com/michaelwhitford/nucleus)
+framework — a cognitive system that guides AI behavior.
+
+- [LAMBDA-COMPILER.md](LAMBDA-COMPILER.md) — Compile, decompile, and safe-compile prompts to lambda expressions
+- [EBNF.md](EBNF.md) — Formal grammar for the Nucleus Lambda IR
+- [README.md](README.md) — Framework overview and symbol reference
+
 
