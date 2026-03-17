@@ -5,7 +5,7 @@
 - **Upstream**: https://github.com/michaelwhitford/nucleus.git
 - **Origin**: https://github.com/davidwuchn/nucleus
 - **Current Branch**: main
-- **Last Verified**: 2026-01-29
+- **Last Verified**: 2026-03-17
 
 ---
 
@@ -30,21 +30,43 @@ eca/README.md, eca/prompts/*.md, eca/prompts/tools/*.md
 
 See [AGENTS.md](AGENTS.md) for **Upstream File Constraint** verification.
 
-### Local Additions (10 files)
+### Local Additions
 
 | File | Lines | Purpose |
 |------|-------|---------|
-| `AGENTS.md` | 88 | Entry point and guardrails (μ-applied) |
-| `NUCLEUS_GUIDE.md` | 576 | Practical workflows (π-applied) |
+| `AGENTS.md` | 350+ | VSM architecture, Eight Keys, behaviors system |
+| `BEHAVIORS.md` | 200+ | User guide for behavior activation |
+| `NUCLEUS_GUIDE.md` | 576 | Practical workflows |
 | `PHILOSOPHY_RESEARCH.md` | 1,274 | I Ching × Eight Keys synthesis |
-| `OPERATIONAL_CONSTRAINTS.md` | 197 | Operational constraints (μ-applied) |
-| `BANG_COMMANDS.md` | 297 | Bang commands reference (π-applied) |
-| `LOCAL_CHANGES.md` | — | This file |
-| `EQUATIONS_FOR_WORLD.md` | 38 | Reference equations |
-| `skills/nucleus-tutor/SKILL.md` | 95 | Tutor skill |
-| `skills/sarcasmotron/SKILL.md` | 71 | Sarcasmotron skill (μ-applied) |
+| `VSM.md` | 400+ | VSM installation guide |
+| `VSM_FIVE.md` | 300+ | VSM × Wu Xing synthesis |
+| `SYSTEM_DESIGN.md` | 500+ | Full system specification |
+| `COMPILER.md`, `DEBUGGER.md` | 200+ | λ compiler and debugger tools |
+| `behaviors/` | 70 files | 35 behaviors with prompt.md + README.md |
+| `validator/` | 10 files | Eight Keys predicates, CI integration |
+| `eca/` | 3 files | ECA hook for behavior injection |
 
-*μ-applied = exemplifies directness (μ); π-applied = exemplifies synthesis (π)*
+**Behaviors**: 12 modes, 12 qualities, 11 techniques — each with terse `prompt.md` and detailed `README.md`
+
+**Validators**: Babashka predicates for vitality (φ), directness (μ), clarity (fractal), truth (∃), vigilance (∀)
+
+---
+
+## Behaviors System
+
+**Activation**: Hashtag-based (`#=mode #quality #technique`)
+
+**ECA Integration**: `eca/hooks/eca-inject-behaviors.sh` auto-injects prompts
+
+| Category | Count | Examples |
+|----------|-------|----------|
+| Modes | 12 | `#=code`, `#=debug`, `#=review`, `#=test`, `#=spec` |
+| Qualities | 12 | `#deep`, `#wide`, `#challenge`, `#steel-man`, `#concise` |
+| Techniques | 11 | `#simulate`, `#decompose`, `#tdd`, `#backward`, `#temporal` |
+
+**Pipeline**: research → assess → spec → code
+
+**Files**: Each behavior has `prompt.md` (terse, 5 lines) + `README.md` (detailed, 50 lines)
 
 ---
 
@@ -53,10 +75,12 @@ See [AGENTS.md](AGENTS.md) for **Upstream File Constraint** verification.
 | Aspect | Upstream | Local |
 |--------|----------|-------|
 | **Tone** | Minimal, apologetic | Formal, non-apologetic |
-| **Framework** | Simple engage line | Full specification with Eight Keys |
-| **Philosophy** | Math symbols only | I Ching × Eight Keys synthesis |
-| **Verification** | None formal | Σ(Build), Σ(Lint), Σ(Test), Σ(Verify) |
-| **Structure** | 13 files | 23 files (13 + 10 local) |
+| **Framework** | Simple engage line | VSM 5-layer architecture |
+| **Eight Keys** | Implied | Explicit lambdas + predicates |
+| **Behaviors** | None | 35 hashtag-activated (modes/qualities/techniques) |
+| **Activation** | Manual | ECA hook auto-injection |
+| **Verification** | None formal | Babashka predicates + CI JSON output |
+| **Structure** | 32 files | 100+ files (behaviors/ + validator/ + eca/) |
 
 ---
 
@@ -65,7 +89,7 @@ See [AGENTS.md](AGENTS.md) for **Upstream File Constraint** verification.
 ### Protected Files
 **See [AGENTS.md](AGENTS.md#zeroth-rule-protected-files)** — Ask permission before editing framework-defining files.
 
-Protected: `AGENTS.md`, `LOCAL_CHANGES.md`, `PHILOSOPHY_RESEARCH.md`, `NUCLEUS_GUIDE.md`, `OPERATIONAL_CONSTRAINTS.md`
+Protected: `AGENTS.md`, `BEHAVIORS.md`, `LOCAL_CHANGES.md`, `PHILOSOPHY_RESEARCH.md`, `NUCLEUS_GUIDE.md`, `VSM.md`, `VSM_FIVE.md`
 
 ### Upstream Constraint  
 **See [AGENTS.md](AGENTS.md#upstream-file-constraint)** — Never modify upstream files.
