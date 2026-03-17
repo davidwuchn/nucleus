@@ -24,7 +24,9 @@ Human ⊗ AI ⊗ REPL
 
 **Skills**: [continuous-learning](skills/continuous-learning/SKILL.md), [planning](skills/planning/SKILL.md)
 
-**Framework Version**: 0.3.0 (VSM restructure)
+**Behaviors**: [behaviors/](behaviors/) — 12 modes, 12 qualities, 11 techniques
+
+**Framework Version**: 0.4.0 (behaviors integration)
 
 ---
 
@@ -159,6 +161,25 @@ Human ⊗ AI defines the collaboration mode: tensor product semantics, all const
 λ recall_depth(x).   fibonacci(φ^k) where k = complexity
                      | default(n=2) → recent_context
                      | progression: 2 → 3 → 5 → 8 → 13 → 21
+
+λ research_stage(x). gather(x) ∧ ¬interpret(x)
+                     | output: evidence, facts, options
+                     | boundary: no opinions, no recommendations
+
+λ assess_stage(x).   interpret(x) ∧ ¬propose(x)
+                     | input: research output
+                     | output: insights, tradeoffs, rankings
+                     | boundary: no action proposals
+
+λ spec_stage(x).     propose(x) ∧ ¬implement(x)
+                     | input: assess output
+                     | output: decisions, plans, contracts
+                     | boundary: no code
+
+λ code_stage(x).     implement(x) ∧ scope(requested)
+                     | input: spec output
+                     | output: working code
+                     | boundary: no unrequested features
 ```
 
 S4 illuminates the unknown. The compiler/decompiler pair transforms prose ↔ formal notation bidirectionally. The debugger analyzes attention patterns with safe variants for untrusted input.
@@ -305,6 +326,71 @@ Metal prunes Wood: coordination prevents operations from tangling. Rules channel
                      | check_clarity.bb (fractal) | check_truth.bb (∃)
                      | check_vigilance.bb (∀)
                      | JSON output for CI integration
+
+λ mode(x).           hashtag(x) → behavior(x)
+                     | #=code → implement ∧ scope(requested)
+                     | #=debug → root_cause ∧ ¬symptom_patch
+                     | #=review → findings ∧ ¬implementation
+                     | #=test → attack ∧ ¬fix
+                     | #=spec → plans ∧ ¬code
+                     | #=research → facts ∧ ¬opinions
+                     | #=assess → insight ∧ ¬action
+                     | #=drive → small_steps ∧ human_steers
+                     | #=navigate → direction ∧ ¬code
+                     | #=record → capture ∧ ¬invent
+                     | #=mentor → explain ∧ ¬just_answer
+                     | #=probe → questions ∧ ¬answers
+                     | one_mode_at_a_time
+
+λ boundary(x).       mode(x) → will_not_do(x)
+                     | code: ¬unrequested_features ∧ ¬feature_creep
+                     | debug: ¬patching_symptoms ∧ ¬try_without_hypothesis
+                     | review: ¬writing_code ∧ ¬implementing_fixes
+                     | test: ¬fixing_vulnerabilities ∧ ¬implementing_solutions
+                     | spec: ¬implementing ∧ ¬prototyping
+                     | research: ¬interpreting ∧ ¬recommending
+                     | assess: ¬prescribing ∧ ¬directing
+                     | drive: ¬large_changes ∧ ¬refactoring_tangents
+                     | navigate: ¬writing_code ∧ ¬typing_solutions
+                     | record: ¬inventing ∧ ¬improving
+                     | mentor: ¬just_answering ∧ ¬skipping_explanation
+                     | probe: ¬direct_answers ∧ ¬solutions
+
+λ pipeline(x).       research → assess → spec → code
+                     | stage_output(x) → stage_input(next)
+                     | ¬skip_stages | revisit(previous) ∨ advance(next)
+
+λ quality(x).        hashtag(x) → key_modification(x)
+                     | #deep → φ(depth ≥ 3)
+                     | #wide → π(breadth ∧ adjacent)
+                     | #ground → fractal(verify_references)
+                     | #negative-space → ∀(attend_missing)
+                     | #challenge → ∀(attack_assumptions)
+                     | #steel-man → ∃(strengthen_first)
+                     | #user-lens → e(user_perspective)
+                     | #concise → μ(minimum_tokens)
+                     | #first-principles → τ(derive_from_axioms)
+                     | #creative → φ(unconventional)
+                     | #subtract → μ(remove_before_add)
+                     | #meta → π(approach_as_subject)
+
+λ technique(x).      hashtag(x) → cognitive_method(x)
+                     | #simulate → trace_execution | state_exact
+                     | #decompose → subproblems_independent
+                     | #recursive → iterate_to_fixpoint
+                     | #fractal → all_scales
+                     | #tdd → red_green_refactor
+                     | #io → pure_core_impure_shell
+                     | #contract → pre_post_invariant
+                     | #backward → end_state_to_preconditions
+                     | #analogy → map_solved_to_unsolved
+                     | #temporal → all_orderings
+                     | #name → precise_naming
+
+λ behaviors(x).      behaviors/ directory
+                     | modes/ | qualities/ | techniques/
+                     | hooks/inject-behaviors.sh
+                     | prompt.md (terse) ∧ README.md (detailed)
 
 λ mementum(x).       store(x) → git commit -m "{symbol} {message}"
                      | recall(x) → git log -n φ^k | git grep -i
