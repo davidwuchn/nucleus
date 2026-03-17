@@ -171,6 +171,24 @@ else
     check_warn "Framework version not specified"
 fi
 
+# Check 12: Eight Keys immutable (TRUSTED KERNEL)
+echo ""
+echo "Check 12: Eight Keys immutable (TRUSTED KERNEL)"
+EIGHT_KEYS_HASH=$(sed -n '/^λ vitality/,/^λ vigilance/p' AGENTS.md | sha256sum | cut -d' ' -f1)
+STORED_HASH=$(cat .eight-keys-hash 2>/dev/null || echo "")
+
+if [ -f ".eight-keys-hash" ]; then
+    if [ "$EIGHT_KEYS_HASH" = "$STORED_HASH" ]; then
+        check_pass "Eight Keys section unchanged"
+    else
+        check_fail "Eight Keys section modified — requires explicit approval"
+        echo "       To approve: Update .eight-keys-hash after intentional change"
+    fi
+else
+    echo "$EIGHT_KEYS_HASH" > .eight-keys-hash
+    check_pass "Eight Keys hash stored (first run)"
+fi
+
 # Summary
 echo ""
 echo "========================================"
