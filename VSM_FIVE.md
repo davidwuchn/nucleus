@@ -55,9 +55,7 @@ S5(Water) → S1(Wood) → S4(Fire) → S3(Earth) → S2(Metal) → S5(Water)
 
 > **Note:** This mapping is interpretive. Traditional Wu Xing describes natural transformation; VSM describes organizational dependency. The synthesis treats them as parallel structures that illuminate each other, not as literal equivalences.
 
----
-
-## The Controlling Cycle (相克)
+### Controlling Cycle (相克)
 
 In Five Elements theory, elements also **constrain** each other to prevent excess. This is the **Controlling Cycle** — equally important for organizational health:
 
@@ -265,6 +263,23 @@ The Five Elements map to seasons — organizations also have seasonal rhythms:
 - Check the **controlling cycle**: What's constraining what?
 - Ask: Is this healthy constraint or unhealthy suppression?
 - Metal controlling Wood = good (coordination). Metal crushing Wood = bad (bureaucracy).
+
+---
+
+## Quick Reference: Diagnostic Lookup
+
+| Symptom | Likely Imbalance | Check First | Remedy |
+|:---|:---|:---|:---|
+| Chaos, burnout | Wood excess (S1) | Is S2 coordinating? | Add protocols |
+| No output, paralysis | Wood deficient (S1) | Is S5 clear? | Clarify purpose |
+| Constant pivoting | Fire excess (S4) | Is S3 grounded? | Tie to reality |
+| No innovation | Fire deficient (S4) | Is R&D funded? | Invest in scanning |
+| Micromanagement | Earth excess (S3) | Is S1 trusted? | Delegate |
+| Resource chaos | Earth deficient (S3) | Are limits set? | Establish processes |
+| Bureaucracy kills ideas | Metal excess (S2) | Are exceptions allowed? | Loosen standards |
+| Duplicated work | Metal deficient (S2) | Are calendars shared? | Add sync meetings |
+| Values without action | Water excess (S5) | Is S1 consulted? | Ground in operations |
+| Identity crisis | Water deficient (S5) | Are values written? | Articulate mission |
 
 ---
 
