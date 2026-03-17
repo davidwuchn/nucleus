@@ -30,7 +30,11 @@ if [ -z "$HASHTAGS" ]; then
     ACTIVE=$(cat "$STATE_FILE")
     CONTEXT=""
     for TAG in $ACTIVE; do
-      NAME="${TAG#\#}"
+      # Handle both #=mode and #quality formats
+      NAME="${TAG#\#=}"  # Try stripping #=
+      if [ "$NAME" = "$TAG" ]; then
+        NAME="${TAG#\#}"  # Fall back to stripping just #
+      fi
       for CATEGORY in modes qualities techniques; do
         FILE="$BEHAVIORS_DIR/$CATEGORY/$NAME/prompt.md"
         if [ -f "$FILE" ]; then
@@ -58,7 +62,7 @@ fi
 
 # Separate mode from modifiers
 MODE_TAG=$(grep '^#=' <<< "$HASHTAGS" | head -1) || true
-MODE_TAG="${MODE_TAG#\#}"
+MODE_TAG="${MODE_TAG#\#=}"  # Strip #= prefix
 MOD_TAGS=$(grep -v '^#=' <<< "$HASHTAGS") || true
 
 # Read mode content
@@ -103,7 +107,7 @@ fi
 if [ -n "$STATE_FILE" ]; then
   mkdir -p "$STATE_DIR"
   ACTIVE=""
-  [ -n "$MODE_TAG" ] && [ -n "$MODE_CONTEXT" ] && ACTIVE+="#$MODE_TAG"
+  [ -n "$MODE_TAG" ] && [ -n "$MODE_CONTEXT" ] && ACTIVE+="#=$MODE_TAG"
   if [ -n "$MOD_TAGS" ]; then
     while IFS= read -r TAG; do
       [ -z "$TAG" ] && continue
