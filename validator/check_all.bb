@@ -14,9 +14,11 @@
    ["-h" "--help" "Show help"]])
 
 (def predicates
-  [{:key "directness" :symbol "μ" :script "check_directness.bb"}
+  [{:key "vitality" :symbol "φ" :script "check_vitality.bb"}
+   {:key "directness" :symbol "μ" :script "check_directness.bb"}
    {:key "clarity" :symbol "fractal" :script "check_clarity.bb"}
-   {:key "truth" :symbol "∃" :script "check_truth.bb"}])
+   {:key "truth" :symbol "∃" :script "check_truth.bb"}
+   {:key "vigilance" :symbol "∀" :script "check_vigilance.bb"}])
 
 (defn run-predicate [predicate dir ci-mode]
   (let [script-path (str "validator/" (:script predicate))
