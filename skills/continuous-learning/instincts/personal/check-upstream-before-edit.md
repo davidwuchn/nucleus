@@ -7,9 +7,15 @@ e: check-upstream-before-edit
 Δ: 0.10
 source: session-manual
 evidence: 1
-access-count: 1
+access-count: 2
 last-accessed: 2026-03-17
 timeframe: project
+verified: true
+verification:
+  method: runtime-test
+  evidence: [e552c10, 236d850]
+  date: 2026-03-17
+  notes: "Prevented upstream violation on README.md during VSM restructure"
 ---
 
 # Check Upstream Before Edit
