@@ -278,7 +278,7 @@ This mapping complements the VSM installation process in VSM.md:
 | **S4 — Intelligence** | Fire | How does your system handle the unknown? How do you test ideas before committing? What changes often? |
 | **S3 — Control** | Earth | What resources need managing? What policies enforce identity? What happens when something goes wrong? |
 | **S2 — Coordination** | Metal | What subsystems need to work together? How does data flow? What protocols keep things in sync? |
-| **S1 — Operations** | Wood | What value-producing activities drive growth? What tools and workflows enable execution? |
+| **S1 — Operations** | Wood | What tools, technologies, and workflows enable execution? What value-producing activities drive growth? |
 
 **Read VSM.md** for the full installation process and lambda notation guide.
 
