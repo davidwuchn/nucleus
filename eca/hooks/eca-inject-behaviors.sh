@@ -9,8 +9,13 @@ if [ -z "$PROMPT" ]; then
   exit 0
 fi
 
-# Resolve symlink to find the repo
-SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+# Resolve symlink (macOS compatible)
+SCRIPT_PATH="${BASH_SOURCE[0]}"
+while [[ -L "$SCRIPT_PATH" ]]; do
+    DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
+    SCRIPT_PATH="$(readlink "$SCRIPT_PATH")"
+    [[ "$SCRIPT_PATH" != /* ]] && SCRIPT_PATH="$DIR/$SCRIPT_PATH"
+done
 REPO_DIR="$(cd "$(dirname "$SCRIPT_PATH")/../.." && pwd)"
 BEHAVIORS_DIR="$REPO_DIR/behaviors"
 
