@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+DEBUG="${DEBUG:-true}"
+
 INPUT=$(cat)
 PROMPT=$(jq -r '.prompt // empty' <<< "$INPUT")
 SESSION_ID=$(jq -r '.chat_id // empty' <<< "$INPUT")
@@ -19,8 +21,15 @@ done
 REPO_DIR="$(cd "$(dirname "$SCRIPT_PATH")/../.." && pwd)"
 BEHAVIORS_DIR="$REPO_DIR/behaviors"
 
-# Extract hashtags: #=mode, #quality, #technique
-HASHTAGS=$(grep -oE '#[=a-zA-Z0-9_-]+' <<< "$PROMPT" | sort -u) || true
+# Extract only the user's actual prompt (ignore injected AdditionalContext)
+# Look for <user-prompt> section, otherwise use the raw prompt
+USER_PROMPT=$(sed -n '/<user-prompt>/,/<\/user-prompt>/p' <<< "$PROMPT" | sed '1d;$d')
+if [ -z "$USER_PROMPT" ]; then
+  USER_PROMPT="$PROMPT"
+fi
+
+# Extract hashtags: #=mode, #quality, #technique (only from user's prompt)
+HASHTAGS=$(grep -oE '#[=a-zA-Z0-9_-]+' <<< "$USER_PROMPT" | sort -u) || true
 
 # State directory for persistence
 STATE_DIR="$HOME/.config/eca/.behaviors"
@@ -61,7 +70,13 @@ fi
 MODE_COUNT=$(grep -c '^#=' <<< "$HASHTAGS") || true
 if [ "$MODE_COUNT" -gt 1 ]; then
   MODE_TAGS=$(grep '^#=' <<< "$HASHTAGS" | tr '\n' ' ')
-  echo "Error: multiple operating modes: ${MODE_TAGS%. }. Use one mode at a time." >&2
+  INPUT_SUMMARY=$(jq -c '{chat_id, behavior, agent, prompt: .prompt[:100]}' <<< "$INPUT" 2>/dev/null || echo "$PROMPT")
+  ERROR_MSG="Multiple operating modes: ${MODE_TAGS%. }. Use one mode at a time.\n\nValid modes: code, debug, review, test, spec, research, assess, drive, navigate, record, mentor, probe\n\nInput: $INPUT_SUMMARY"
+  if [ "${DEBUG:-}" = "true" ]; then
+    jq -n --arg msg "$ERROR_MSG" '{additionalContext: ("⚠️ Error: " + $msg)}'
+  else
+    echo "Error: $ERROR_MSG" >&2
+  fi
   exit 2
 fi
 
