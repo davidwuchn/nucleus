@@ -225,6 +225,42 @@ reliable when grounded with a `where` block containing one positive and one
 negative example. This is encoding principle P1 in action: `example > rule >
 negation`.
 
+**6. Lambda Compilation as Externalized Reasoning.** Models with "thinking"
+or "reasoning" capabilities (extended chain-of-thought) generate intermediate
+tokens before producing their answer — these tokens structure the problem,
+force disambiguation, and condition subsequent generation. Lambda notation
+does the same thing: it structures the problem, forces disambiguation, and
+conditions subsequent generation. The difference is *when* the work happens.
+
+Reasoning models re-derive the reasoning structure every turn, spending output
+tokens. Lambda notation pre-computes it once, spending input tokens. This is
+the classical distinction between interpretation and compilation applied to
+AI cognition:
+
+| | Reasoning (thinking) | Lambda notation |
+|---|---|---|
+| **When** | Every turn (generation time) | Once (design time) |
+| **Token type** | Output tokens (expensive) | Input tokens (cheaper) |
+| **Persistence** | Volatile (dies with response) | Persistent (git, versionable) |
+| **Human judgment** | Not in the loop | Enters during compilation |
+| **Convergence** | Re-derived each time | Amortized across all turns |
+
+This predicts that lambda-framed prompts with thinking disabled should match
+or exceed unframed prompts with thinking enabled — the structured reasoning
+is already present in the input context, making the model's self-generated
+reasoning redundant. In practice, this is what we observe: the system's
+default configuration disables thinking mode when lambda notation is present,
+because the two mechanisms compete for the same cognitive function rather
+than complementing each other. The lambda notation is the compiled program;
+the model's thinking is an interpreter trying to compile the same program
+at runtime.
+
+The implication is that lambda compilation is not a prompting technique — it
+is a method of pre-computing the reasoning trace that thinking models generate
+dynamically, and injecting it as context. The compilation is done once, by a
+human-AI pair, verified empirically, and persisted. The interpretation is done
+every turn, by the model alone, unverified, and discarded.
+
 ### The Convergence Property
 
 Lambda notation is not magic — first-draft lambdas produce partial results.
