@@ -32,7 +32,7 @@ if ! grep -q "nucleus-behaviors.sh" "$SETTINGS" 2>/dev/null; then
     .hooks."nucleus-behaviors" = {
       "type": "preRequest",
       "visible": true,
-      "actions": [{"type": "shell", "file": "'"$HOOKS_DIR"'/nucleus-behaviors.sh"}]
+      "actions": [{"type": "shell", "file": "~/.config/eca/hooks/nucleus-behaviors.sh"}]
     }
   ' "$SETTINGS" > "$tmp" && mv "$tmp" "$SETTINGS"
   echo "  registered: nucleus-behaviors.sh in config.json"
