@@ -38,8 +38,34 @@ if [ -n "$SESSION_ID" ]; then
   STATE_FILE="$STATE_DIR/$SESSION_ID"
 fi
 
-# No new hashtags - use persisted state
+# No new hashtags - check injected context first, then persisted state
 if [ -z "$HASHTAGS" ]; then
+  # Check if there's already an operating mode in the injected AdditionalContext
+  INJECTED_MODE=""
+  if grep -q '<operating-mode>' <<< "$PROMPT"; then
+    # Extract mode names from lines like "# #=mentor — Mentor"
+    MODES_FOUND=$(grep -oE '# #=[a-z_-]+' <<< "$PROMPT" | sed 's/# #=\([a-z_-]*\)/\1/' || true)
+    MODE_COUNT_INJECTED=$(echo "$MODES_FOUND" | wc -l | tr -d ' ')
+    
+    if [ "$MODE_COUNT_INJECTED" -gt 1 ]; then
+      # Multiple modes in injected context - warn and use the last one (most recent)
+      echo "Warning: Multiple operating modes in injected context ($(echo "$MODES_FOUND" | tr '\n' ' ')). Using last one." >&2
+    fi
+    
+    if [ -n "$MODES_FOUND" ]; then
+      INJECTED_MODE=$(echo "$MODES_FOUND" | tail -1)
+    else
+      # Try "# Mode Name" format (e.g., "# Code Mode")
+      INJECTED_MODE=$(sed -n '/<operating-mode>/,/<\/operating-mode>/p' <<< "$PROMPT" | grep -oE '^# [A-Za-z]+ Mode' | tail -1 | sed 's/# \([A-Za-z]*\) Mode/\1/' | tr 'A-Z' 'a-z' || true)
+    fi
+  fi
+
+  if [ -n "$INJECTED_MODE" ]; then
+    # Mode already injected - don't add duplicate context
+    exit 0
+  fi
+
+  # No mode in context - use persisted state
   if [ -n "$STATE_FILE" ] && [ -f "$STATE_FILE" ] && [ -s "$STATE_FILE" ]; then
     ACTIVE=$(cat "$STATE_FILE")
     CONTEXT=""
