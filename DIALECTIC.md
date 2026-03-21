@@ -4,7 +4,7 @@ The complete two-layer system: adaptive persona (individual mode shifting)
 + dialectic collective (multi-persona structured debate). Both expressed
 as topology that directly guides model behavior.
 
-**Original source:** ~3,500 words of prose instructions  
+**Original source:** ~3,500 words of prose instructions by [Bahul Neel Upadhyaya](https://github.com/bhulneel) — see his article [The Dialectic Prompt](https://levelup.gitconnected.com/the-dialectic-prompt-when-friction-helped-turn-my-ai-from-coding-assistant-to-my-software-brain-151ccc62b0e3)  
 **This version:** ~200 lines of lambda topology  
 **Compression:** ~85% token reduction, formally parseable by EBNF grammar
 
