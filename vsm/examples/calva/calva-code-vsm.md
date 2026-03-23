@@ -1,13 +1,4 @@
----
-title: "Calva"
-status: active
-category: upstream
-tags: [calva, vscode-extension, nrepl, clojure, repl, lambda, generated]
----
-
-# Calva — Lambda Document
-
-Extracted from 248 TypeScript/ClojureScript files (~52K lines). Namespace: `calva` (VSCode Extension + nREPL client).
+# Calva — Code VSM
 
 ## Require Map
 
@@ -90,17 +81,37 @@ import * as vscode from 'vscode';
     - output_sent_to_calva_ui ∧ callbacks_if_provided
     - result_includes_otherWhosSinceLast for multi_party_awareness
 
-λ evaluateCode(sessionKey, code, ns?, output?, nReplEvalOptions?).
-  status: deprecated | use evaluate() instead
+λ evaluateCode(sessionKey, code, output?, opts?).               // v0
+  status: v0_only | legacy_surface | ¬marked_deprecated(in_v0)
+  input: sessionKey ≡ "clj" | "cljs" | "cljc" | undefined
+         code ≡ string
+         output? ≡ { stdout, stderr }
+         opts? ≡ Record<string, unknown> (default: {})
+  return: Promise<Result>
+  | Result ≡ {
+      result: string
+      ns: string
+      output: string
+      errorOutput: string
+    }
+  | constraints:
+    - ¬ns_param | always_evals_in(null) → server_default_ns
+    - ¬who_tracking | ¬output_to_calva_ui | callbacks_only
+    - sessionKey_auto_routed_if_undefined
+    - ⚠ bug: stderr_callback_wired_to(output.stdout)
+
+λ evaluateCode(sessionKey, code, ns?, output?, nReplEvalOptions?). // v1 deprecated
+  status: deprecated | use evaluate() instead | v1_migration_bridge
   input: sessionKey ≡ "clj" | "cljs" | "cljc" | string | undefined
          code ≡ string
          ns? ≡ string (default: "user")
          output? ≡ { stdout, stderr }
          nReplEvalOptions? ≡ Record<string, unknown>
   return: Promise<Result>
-  | same_Result_shape_as_evaluate
+  | same_Result_shape_as_evaluate(minus_who ∧ minus_otherWhosSinceLast)
+  | output_sent_to_calva_ui ∧ callbacks_if_provided
   | auto_routes_if_sessionKey_undefined
-  | backward_compat_entrypoint | v0_and_v1_both_provide
+  | ¬who_tracking(in_deprecated_path)
 
 λ currentSessionKey().
   return: string | undefined
@@ -124,6 +135,7 @@ import * as vscode from 'vscode';
 
 ```
 λ onOutputLogged(callback).
+  access: getApi().v1.repl.onOutputLogged | ¬direct_on_v1
   input: callback ≡ (msg: OutputMessage) → void
          OutputMessage ≡ {
            category: OutputCategory
@@ -142,20 +154,37 @@ import * as vscode from 'vscode';
   | effect: subscribe_to_all_calva_output_events
   | callback_invoked_for_every_output | includes_evaluations ∧ errors ∧ metadata
   | dispose_to_unsubscribe
+  | internally_wraps: resultOutput.subscribe() → maps_internal_categories_to_api_categories
 ```
 
 ### Session Registry (nREPL Sessions)
 
 ```
+λ sessionRegistry.SessionMetadata.
+  shape ≡ {
+    key: string
+    projectRoot?: string
+    globs?: string[]
+    globSpecs?: SessionGlobSpec[]
+    connectionOwnerId?: string            // clientKey_of_owning_connection
+    isSecondary?: boolean                 // true_for_cljs_sessions
+    lastActivity?: number                 // epoch_ms_updated_on_eval
+  }
+  | stored_on_session_as: (session as any)._calvaSessionMetadata
+  | connectionOwnerId_auto_derived_from: session.client.clientKey
+
+λ sessionRegistry.registerSession(key, session, metadata?).
+  input: key ≡ string
+         session ≡ NReplSession
+         metadata? ≡ Omit<SessionMetadata, 'key'> (default: {})
+  effect: makes_session_discoverable | getSession(key) returns it
+  | auto_computes: connectionOwnerId from session.client.clientKey if_not_provided
+  | attaches_metadata_to_session_object
+
 λ sessionRegistry.getSession(key).
   input: key ≡ string
   return: NReplSession | undefined
   | lookup_by_sessionKey | "clj", "cljs", "cljc", or_custom_name
-
-λ sessionRegistry.registerSession(session, metadata).
-  input: session ≡ NReplSession
-         metadata ≡ { key, projectRoot?, globs?, ... }
-  effect: makes_session_discoverable | getSession(key) returns it
 
 λ sessionRegistry.unregisterSession(key).
   input: key ≡ string
@@ -163,18 +192,21 @@ import * as vscode from 'vscode';
 
 λ sessionRegistry.listSessions().
   return: SessionMetadata[]
-  | SessionMetadata ≡ {
-      key: string
-      projectRoot?: string
-      lastActivity?: number
-      globs?: string[]
-      globSpecs?: SessionGlobSpec[]
-    }
+  | all_registered_sessions | extracted_from_session._calvaSessionMetadata
 
-λ sessionRegistry.updateSessionActivity(session | sessionKey).
-  input: session ≡ NReplSession | sessionKey ≡ string
+λ sessionRegistry.getSessionMetadata(key).
+  input: key ≡ string
+  return: SessionMetadata | undefined
+  | metadata_without_session_object | lighter_than_getSession
+
+λ sessionRegistry.updateSessionActivity(sessionOrKey).
+  input: sessionOrKey ≡ NReplSession | string
   effect: updates_lastActivity_timestamp | for_ui_display
-  | idempotent
+
+λ sessionRegistry.isSessionSecondary(key).
+  input: key ≡ string
+  return: boolean
+  | checks_isSecondary_on_metadata | false_if_not_found
 
 λ sessionRegistry.resolveSessionKey(session?, fallback?).
   input: session? ≡ NReplSession | undefined
@@ -182,6 +214,58 @@ import * as vscode from 'vscode';
   return: string
   | coerces_session_to_string_key
   | uses_fallback_if_session_not_provided
+
+λ sessionRegistry.listSessionsByClient(clientKey).
+  input: clientKey ≡ string
+  return: SessionMetadata[]
+  | filters_by_connectionOwnerId | all_sessions_owned_by_client
+  | enables: multi_connection_traversal
+
+λ sessionRegistry.findPrimarySessionForConnection(sessionKey).
+  input: sessionKey ≡ string (any_session_in_connection)
+  return: NReplSession | undefined
+  | finds_sibling: given_cljs_session → returns_clj_session
+  | traversal: sessionKey → connectionOwnerId → listSessionsByClient → find(¬isSecondary)
+  | use_case: evaluate_CLJ_code_for_feature_related_to_CLJS_session
+
+λ sessionRegistry.getClientKeyForSession(sessionKey).
+  input: sessionKey ≡ string
+  return: string | undefined
+  | reverse_lookup: session → connectionOwnerId
+
+λ sessionRegistry.getConnectionStateForSession(sessionKey).
+  input: sessionKey ≡ string
+  return: ConnectionContext | undefined
+  | ConnectionContext ≡ ConnectionState & { clientKey, projectRoot? }
+  | bridges: session_world → client_world
+  | primary_way_to_access: cljsBuild, cljsTypeName, sessionGlobMap from_session_key
+
+λ sessionRegistry.getPrimarySessionForClient(clientKey).
+  input: clientKey ≡ string
+  return: NReplSession | undefined
+  | forward_lookup: client → primary_session(¬isSecondary)
+
+λ sessionRegistry.getPrimarySessionKeyForClient(clientKey).
+  input: clientKey ≡ string
+  return: string | undefined
+  | same_as_above | returns_key_not_session
+
+λ sessionRegistry.getSecondarySessionKeyForClient(clientKey).
+  input: clientKey ≡ string
+  return: string | undefined
+  | forward_lookup: client → secondary_session(isSecondary)
+
+λ sessionRegistry.setClojureDocsSessionKey(key).
+  input: key ≡ string | null (null_to_clear)
+  effect: designates_session_for_clojuredocs_lookups
+  | module_local_state | ¬in_registry_map
+
+λ sessionRegistry.getClojureDocsSessionKey().
+  return: string | null
+
+λ sessionRegistry.getClojureDocsSession().
+  return: NReplSession | undefined
+  | convenience: getSession(getClojureDocsSessionKey())
 ```
 
 ### NRepl Session (Low-level)
@@ -193,17 +277,13 @@ import * as vscode from 'vscode';
          options ≡ {
            stdout?: (msg: string) → void
            stderr?: (msg: string) → void
-           pprintOptions?: PprintOptions
+           pprintOptions?: PrettyPrintingOptions
            ...nrepl_bencode_options
          }
-  return: {
-      value: Promise<string>
-      ns: string
-      outPut: string
-      errorOutput: string
-    }
-  | effect: async_eval_over_nREPL | result_promise_settles_when_complete
+  return: NReplEvaluation
+  | ¬promise | returns_immediately | evaluation.value ≡ Promise<string>
   | callbacks_invoked_during_eval | streaming_stdout/stderr
+  | debug_aware: if(active_debug_session ∧ clj) → sends_debug_input_op
 
 λ NReplSession.info(ns, symbol).
   input: ns ≡ string
@@ -228,6 +308,234 @@ import * as vscode from 'vscode';
 λ NReplSession.close().
   return: Promise<void>
   | effect: graceful_shutdown | all_pending_evals_drain_first
+
+λ NReplSession.loadFile(file, opts?).
+  input: file ≡ string (file_content)
+         opts? ≡ {
+           fileName?: string
+           filePath?: string
+           stderr?: (x: string) → void
+           stdout?: (x: string) → void
+           pprintOptions: PrettyPrintingOptions
+         }
+  return: NReplEvaluation
+  | load-file_op | sends_full_file_content_to_server
+  | same_return_shape_as_eval | NReplEvaluation_with_value_promise
+
+λ NReplSession.interrupt(interruptId).
+  input: interruptId ≡ string (nREPL message id)
+  return: Promise<void>
+  | sends_interrupt_op | removes_id_from_runningIds
+  | rejects_if_not_supported
+
+λ NReplSession.interruptAll().
+  return: number (count_of_interrupted)
+  | interrupts_all_runningIds | clears_list_then_interrupts_each
+
+λ NReplSession.stdin(message).
+  input: message ≡ string
+  effect: sends_stdin_op_to_server | for_need-input_responses
+  | fire_and_forget | ¬promise
+
+λ NReplSession.evaluateInNs(nsForm, ns).
+  input: nsForm ≡ string (ns_declaration_code)
+         ns ≡ string
+  effect: eval(nsForm, ns).value | swallows_errors(console.error)
+  | convenience: ensures_ns_exists_before_subsequent_eval
+
+λ NReplSession.requireREPLUtilities(ns).
+  input: ns ≡ string
+  effect: loads_repl_utilities(apropos, dir, doc, source, etc)
+  | clj → clojure.main/repl-requires | cljs → cljs.repl_refers
+  | replType_aware | called_after_session_creation
+
+λ NReplSession.complete(ns, symbol, context?).
+  input: ns ≡ string
+         symbol ≡ string
+         context? ≡ string
+  return: Promise<CompletionResult>
+  | complete_op | cider-nrepl | enhanced_cljs_completion_optional
+  | context ≡ surrounding_code_for_context_aware_completion
+
+λ NReplSession.classpath().
+  return: Promise<ClasspathResult>
+  | classpath_op | returns_project_classpath_entries
+
+λ NReplSession.describe(verbose?).
+  input: verbose? ≡ boolean
+  return: Promise<DescribeResult>
+  | describe_op | returns_server_capabilities(ops, versions, etc)
+
+λ NReplSession.outSubscribe(verbose?).
+  input: verbose? ≡ boolean
+  return: Promise<any>
+  | out-subscribe_op | subscribes_to_out-of-band_output
+
+λ NReplSession.listSessions().
+  return: Promise<any>
+  | ls-sessions_op | lists_all_server_side_nrepl_sessions
+
+λ NReplSession.loadAll().
+  return: Promise<any>
+  | ns-load-all_op | loads_all_namespaces_on_classpath
+
+λ NReplSession.listNamespaces(regexps).
+  input: regexps ≡ string[]
+  return: Promise<any>
+  | ns-list_op | filter-regexps_for_subset
+
+λ NReplSession.nsPath(ns).
+  input: ns ≡ string
+  return: Promise<any>
+  | ns-path_op | returns_file_path_for_namespace
+
+λ NReplSession.refresh(opts?).
+  return: Promise<{ reloaded, status, error?, errorNs?, err? }>
+  | refresh_op | clojure.tools.namespace | reloads_changed_namespaces
+  | streams_out_to_output_channel_during_refresh
+
+λ NReplSession.refreshAll(opts?).
+  return: Promise<{ reloaded, status, error?, errorNs?, err? }>
+  | refresh-all_op | reloads_all_namespaces | same_response_shape_as_refresh
+
+λ NReplSession.testVarQuery(query).
+  input: query ≡ cider.VarQuery {
+           ns-query?: { exactly?: string[] }
+           search?: string
+           test?: boolean
+           search-property?: string
+         }
+  return: Promise<cider.TestResults>
+  | test-var-query_op | cider-nrepl | primary_test_dispatch
+
+λ NReplSession.test(ns, test).
+  input: ns ≡ string
+         test ≡ string (test_name)
+  return: Promise<cider.TestResults>
+  | convenience → testVarQuery({ ns-query: { exactly: [ns] }, search, test?: true })
+
+λ NReplSession.testNs(ns).
+  input: ns ≡ string
+  return: Promise<cider.TestResults>
+  | convenience → testVarQuery({ ns-query: { exactly: [ns] } })
+
+λ NReplSession.testAll().
+  return: Promise<cider.TestResults>
+  | convenience → testVarQuery({ test?: true })
+
+λ NReplSession.retest().
+  return: Promise<cider.TestResults>
+  | retest_op | reruns_last_failed_tests
+
+λ NReplSession.testStacktrace(ns, test, index).
+  input: ns ≡ string
+         test ≡ string
+         index ≡ number
+  return: Promise<any>
+  | test-stacktrace_op | retrieves_stacktrace_for_specific_test_failure
+
+λ NReplSession.formatCode(code, options?).
+  input: code ≡ string
+         options? ≡ string
+  return: Promise<any>
+  | format-code_op | cider-nrepl | server_side_formatting
+
+λ NReplSession.initDebugger().
+  effect: sends_init-debugger_op | ¬immediate_response
+  | response_arrives_later_when_breakpoint_hit
+  | fire_and_forget | registers_message_handler_for_later
+
+λ NReplSession.sendDebugInput(input, debugResponseId, debugResponseKey).
+  input: input ≡ any
+         debugResponseId ≡ string
+         debugResponseKey ≡ string
+  return: Promise<any>
+  | debug-input_op | sends_user_debug_decision_back_to_server
+
+λ NReplSession.listDebugInstrumentedDefs().
+  return: Promise<any>
+  | debug-instrumented-defs_op | lists_all_instrumented_vars
+
+λ NReplSession.clojureDocsLookup(ns, symbol).
+  input: ns ≡ string
+         symbol ≡ string
+  return: Promise<any>
+  | clojuredocs-lookup_op | queries_clojuredocs_via_cider_middleware
+
+λ NReplSession.clojureDocsRefreshCache().
+  return: Promise<any>
+  | clojuredocs-refresh-cache_op | refreshes_local_clojuredocs_cache
+
+λ NReplSession.shadowCljsRemoteInit().
+  return: Promise<any>
+  | shadow-remote-init_op | data-type: "edn"
+  | resolves(null)_if_not_supported | for_older_shadow_versions
+
+λ NReplSession.shadowCljsRemoteRegisterNotify().
+  return: Promise<any>
+  | shadow-remote-msg_op | request-clients_with_notify
+  | subscribes_to_runtime_connect/disconnect_events
+  | resolves(null)_if_not_supported
+```
+
+### NRepl Evaluation (Eval Lifecycle)
+
+```
+λ NReplEvaluation.
+  identity ≡ stateful_tracker_for_running_eval
+  | created_by: NReplSession.eval() ∧ NReplSession.loadFile()
+  | global_instance_tracking: static Instances[] | for_interruptAll
+
+  constructor(id, session, stderr, stdout, stdin, value).
+    id ≡ string (nREPL message id)
+    session ≡ NReplSession
+    stderr ≡ (x: string) → void
+    stdout ≡ (x: string) → void
+    stdin ≡ () → Promise<string> | null
+    value ≡ Promise<any> (settles_when_eval_complete)
+
+  properties(read_only):
+    ns: string                    // resolved_namespace_from_response
+    msgValue: string              // raw_value_or_debug_value | "" if_unset
+    pprintOut: string             // pprint-out_from_server_side_printing
+    outPut: string                // accumulated_stdout
+    errorOutput: string           // accumulated_stderr
+    exception: string             // ex_from_nrepl_response
+    stacktrace: any               // from_eval-error_causes
+    msgs: any[]                   // all_raw_nrepl_messages
+    running: boolean              // true_while_processing_messages
+    finished: boolean             // true_after_resolve_or_reject
+    interrupted: boolean          // true_after_interrupt()
+    hasException: boolean         // ≡ !!exception
+
+  methods:
+    interrupt().
+      | guard: ¬interrupted ∧ running | else_noop
+      | effect: sets_interrupted → rejects_promise → sends_nrepl_interrupt
+      | cleans_up: removes_message_handler ∧ removes_from_Instances
+
+    out(message).
+      | effect: accumulates_to_outPut ∧ calls_stdout_callback
+      | suppressed_if_interrupted
+
+    err(message).
+      | effect: accumulates_to_errorOutput ∧ calls_stderr_callback
+      | suppressed_if_interrupted
+
+    in(message).
+      | effect: sends_stdin_to_session | delegates_to(session.stdin)
+
+    static interruptAll(stderr).
+      | effect: interrupts_all_running_evaluations
+      | returns: number_of_interrupted
+
+  resolution_rules:
+    | exception ∧ ¬debug_quit → reject(exception)
+    | pprintOut → resolve(pprintOut)
+    | stacktrace ∧ ¬exception → reject('') | debug_eval_error
+    | else → resolve(msgValue) | client_side_pprint_if_enabled
+    | need-input → stdin() ∨ promptForUserInputString() | feeds_back_via_session.stdin
+    | need-debug-input → resolves_like_done | debugger_takes_over
 ```
 
 ### Document & Navigation
@@ -349,6 +657,10 @@ import * as vscode from 'vscode';
   return: string | undefined
   | read_only | used_during_streaming_eval
 
+λ who_tracking.clearCurrentWho(sessionId).
+  input: sessionId ≡ string
+  effect: removes_current_who_for_session | cleanup_on_eval_complete_or_session_close
+
 λ who_tracking.clearSessionTracking(sessionKey).
   effect: resets_tracking_state | for_session_cleanup
 ```
@@ -423,19 +735,20 @@ import * as vscode from 'vscode';
 λ getApi().
   return: {
     v0: {
-      evaluateCode: fn(sessionKey, code, ns?, output?, opts?) → Promise<Result>
-      repl: module
+      evaluateCode: fn(sessionKey, code, output?, opts?) → Promise<Result>  // 4 params, ¬ns
+      repl: module(evaluateCode, currentSessionKey)
       ranges, editor, pprint, vscode: modules
     }
     v1: {
-      repl: module                              // newer ≡ v1
+      repl: module(evaluate, evaluateCode†, currentSessionKey,              // † deprecated
+                   listSessions, onOutputLogged)
       ranges, editor, document, pprint, info: modules
-      onOutputLogged: fn(callback) → Disposable
     }
   }
   | v0_for_legacy_extensions | v1_preferred_for_new_code
   | both_live_simultaneously | no_conflict
   | API_boundary_≡_here
+  | ⚠ onOutputLogged ≡ v1.repl.onOutputLogged | ¬v1.onOutputLogged
 
 λ edge(evaluate, onOutputLogged).
   direction: evaluate → output → onOutputLogged
