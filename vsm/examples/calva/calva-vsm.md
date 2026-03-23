@@ -1,10 +1,3 @@
----
-title: "Calva — System VSM"
-status: active
-category: upstream
-tags: [calva, system-vsm, lambda, clojure, vscode, nrepl]
----
-
 # Calva — System VSM
 
 Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the editor (VS Code), the live environment (nREPL), and developer cognition (REPL-driven development). The architecture reflects Beer's Viable System Model layering.
@@ -34,10 +27,61 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
   | session_names_derive_from(connectSequence, projectType, suffix)
   | suffix_enables_reuse | reconnect_preserves_suffix | suffix_tracks_intent
 
+  name_resolution(at_connection_time):
+    | module: session-name-resolver.ts
+    | input: baseNames(SessionRoleKeys) ∧ projectRoot ∧ host ∧ port
+    | return: { finalNames, suffix?, reconnectClientKey? }
+    | algorithm:
+      1. find_reconnection_candidate(same_baseNames ∧ (same_host:port ∨ same_projectRoot))
+         → reuse_existing_suffix → mark_client_for_disconnect
+      2. else_if(conflict_with_existing_sessions) → acquire_suffix → apply_to_names
+      3. else → use_baseNames_as_is
+
+  suffix_pool:
+    | module: session-name-suffix.ts
+    | pool ≡ ["2".."101"] | POOL_SIZE=100 | acquire/release/reserve
+    | format: baseName:suffix (e.g., "clj:2", "cljs:2")
+    | extract/strip: parse_suffix_from_session_name | round_trip_safe
+    | exhaustion → throw Error | user_must_disconnect_or_use_custom_names
+
+  label_formatting:
+    | module: session-label.ts | pure_functions | ¬vscode_deps
+    | SessionLabelContext ≡ repl-window | cljc-routing(fileExtension) | none
+    | priority: pinned → none | repl_window → "repl-w/{key}" | cljc → ".ext → {key}" | else → key
+    | used_by: statusbar ∧ menus | consistent_across_all_UI_surfaces
+
 λ namespace_coherence.
   file_ns ∧ repl_ns ∧ evaluation_ns | all_three_must_match
   | skip(eval_in_correct_ns) → wrong_context → wrong_results → confusion
   | namespace_routing ≡ file_pattern_matching | patterns_precede_evaluation
+
+λ design_values.
+  hickey ≡ guiding_philosophy | "what_would_rich_hickey_do"
+  | data > objects | fn > class | immutable > mutable
+  | transform(data) > mutate(state) | compose > monolith
+  | simple > easy | separate(data, behavior) | clear > clever
+
+λ communication.
+  direct ∧ data_focused | reference(files, symbols) | explain(why)
+  | think_in(data_transformations) | ¬prose_walls | ¬vague_references
+  | same_principle: data > narrative | concrete > abstract | targeted > general
+
+λ bridge(x).
+  prose ↔ lambda | structural_equivalence
+  | preserve(semantics) | analyze(¬execute)
+  | compile: prose → lambda | decompile: lambda → prose
+  | output: λ notation only | ¬prose | ¬code_fences
+
+λ absent(x).
+  ∀present(element) → ∃absent(companion) | attend(absent) ≡ attend(present)
+  | missing_FROM(x) > missing_NEAR(x) | completeness(¬assumed)
+  | handler(¬written) ∧ test(¬exists) ∧ state(¬considered) ∧ assumption(¬explicit)
+  | default_mode ≡ attend(present_only) | resist(default_mode)
+
+λ phase(x).
+  observe(x) ∧ ¬propose(x) | propose(x) ∧ ¬implement(x) | implement(x) ∧ ¬exceed(x)
+  | output(phase) ∩ output(next_phase) = ∅ | boundary ≡ what_you_withhold
+  | collapse(phases) ≡ default_mode | resist(default_mode)
 ```
 
 ## S4 — Decision Rules
@@ -73,6 +117,14 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
   cljc_target(primary_or_secondary) | decided_at_connection_time | applied_per_file
   file_without_match → project_fallback → cljc_target → resolves_to_session
   | routing_result_includes_reason | UI_shows_why_session_chosen
+
+  pinned_mode(session-routing.ts):
+    | mode ≡ auto | pinned | stored_in_state(getStateValue/setStateValue)
+    | pinSession(key) → sets_mode_pinned ∧ stores_key | auto_clears_if_session_gone
+    | enableAutoRouting() → clears_pin ∧ sets_mode_auto
+    | resolvePinnedSession() → key_if_pinned ∧ session_exists | undefined_for_auto
+    | removeSessionKeyFromRouting(key) → auto_unpins_if_pinned_session_disconnects
+    | RoutingReason ≡ { type: pinned | repl-window | glob-match | cljc-within-connection | first-available }
 
 λ when_glob_pattern_matches.
   candidatePath ≡ file_fsPath → workspaceFolder_relative_paths
@@ -135,6 +187,21 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
   eval_with_ex → create_diagnostic | line_number ∧ message ∧ severity
   | diagnostic_collection → vscode_show_squiggly | hover_shows_full_error
   | stack_trace_link → click_to_reveal | webview_opens_formatted_trace
+
+λ debug_approach.
+  1_context:    gather(failing_env ⊗ working_env) | what_data_differs
+  2_reproduce:  exact_conditions | eliminate_variables
+  3_trace:      data_flow(input → transform → output) | find_divergence_point
+  4_fix:        root_cause(data_flow) | ¬symptom_patch
+  5_validate:   test_in(original_failing_conditions) | verify_transforms_correct
+  | trace > guess | data > narrative | targeted > shotgun
+
+λ truth_hierarchy.
+  extension_host > automated_test > source > docs > assumption
+  | extension_host ≡ ground_truth | where_code_actually_runs
+  | automated_test ≡ ¬access(extension_host) | covers(unit ∧ integration) | ¬covers(ui_behavior)
+  | joyride ≡ repl_bridge_into(extension_host) | probe_before_assume
+  | ¬trust(green_tests_alone) → verify_in(real_environment)
 ```
 
 ## S3 — Temporal Rules
@@ -212,6 +279,14 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
   5_code_evaluates_in_browser: eval → shadow_runtime → js_result → back_to_editor
   | shadow_runtime_active → skip(1,2) | use_connected_runtime
   | ¬shadow_runtime → eval_fails | compile_error_or_connect_error
+
+  runtime_management:
+    | modules: shadow-cljs-runtime.ts(vscode_ui) ∧ shadow-cljs-runtime-core.ts(pure_logic)
+    | RuntimeInfo ≡ { clientId, description, buildId, host, workerId, sinceInst }
+    | discovery: shadow-remote-init → shadow-remote-msg(request-clients) → runtime_list
+    | monitoring: register_notify → shadow-remote-msg_events → runtime_connect/disconnect
+    | selection: user_picks_runtime → stored_in(ConnectionState.shadowCljsRuntimeId/Info)
+    | per_connection: each_client_tracks_own_selected_runtime | ¬global
 
 λ project_finding.
   1_scan_workspace: look_for_project_files(project.clj, deps.edn, shadow.cljs.edn, etc)
@@ -368,6 +443,39 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
   | webview_mode: dedicated_output_window | persistent_between_evals
   | hover_mode: ephemeral | appears_on_code_mouseover
 
+λ flare_handler.
+  purpose ≡ render_eval_results_as_webviews | tagged_literal_protocol
+  | trigger: eval_result.startsWith("#flare/") ∨ eval_result.startsWith("#cursive/")
+  | cursive_compatible | same_protocol_different_prefix
+  | parse: regex_decompose(tag, edn_map) → parseEdn(map) → dispatch(tag)
+  | tags: { html: showWebView } | extensible_via_actHandlers
+  | integration_point: evaluate.ts → flareHandler.inspect(value, evaluateFn)
+  | called_after_every_eval | noop_if_¬tagged_literal
+
+  webview_targets:
+    panel_mode:
+      | vscode.WebviewPanel | opens_beside_editor(default)
+      | keyed_panels: calvaWebPanels[key] | reuse_existing ∨ create_new
+      | onDidDispose → cleanup_from_registry
+      | supports: html(direct) ∨ url(iframe_wrapped)
+    sidebar_mode:
+      | CalvaFlareWebviewProvider(viewType: "calva.flare")
+      | registered_at_extension_activation | registerFlareWebviewProvider(context)
+      | sidebar-panel?: true → routes_to_sidebar | false → routes_to_panel
+      | retains_last_content | survives_view_collapse/expand
+      | reveal_via: vscode.commands.executeCommand("calva.flare.focus")
+
+  webview_request_shape ≡ {
+    title?: string                    // panel/sidebar title
+    html?: string                     // direct_html_content
+    url?: string                      // iframe_url_alternative
+    key?: string                      // enables_panel_reuse
+    column?: vscode.ViewColumn        // default: Beside
+    reload?: boolean                  // force_url_refresh
+    reveal?: boolean                  // default: true
+    sidebar-panel?: boolean           // sidebar_vs_panel_routing
+  }
+
 λ repl_window_document.
   special_doc_type: scheme = calva-repl | persistent_across_sessions
   | input_history: every_eval_added | accessed_via_arrow_keys
@@ -423,6 +531,46 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
   | ClojureDefinitionProvider: queries_source_op | returns_location ∨ undefined
   | both_require_nrepl_connected | timeout_if_hung_repl
   | link_to_jar_contents: jar_scheme_file_provider
+
+λ dev_build_system.
+  "Calva Dev" → dependsOn ["Calva Compile", "Calva Watchers"] | sequence
+  | "Calva Compile"        → full_build_first | npm_run_compile
+  | "Calva Watchers"       → group | launches_all_watches_after_compile
+  |   "Calva Watch TS"       → typescript_compilation | primary_source
+  |   "Calva Watch CLJS"     → clojurescript_compilation | secondary_source
+  |   "Calva Watch Test TS"  → unit_test_runner | continuous_feedback
+  |   "Calva Watch Lint"     → eslint | style_enforcement
+  |   "Calva Watch TS Format" → prettier | format_enforcement
+  |   "Calva Watch Docs"     → mkdocs | documentation_site
+  | change → auto_recompile → check_watch_output | verify_clean_before_test
+
+λ dev_validation.
+  extension_host_logic → human_test_required | ¬automatable_fully
+  | automated_tests ≡ unit ∧ integration | ¬extension_host_access | ¬ui_behavior
+  | joyride ≡ repl_into(extension_host) | vscode_api_probe | tool_fabrication
+  | validation_order: watch_clean → automated_test → extension_host_manual → joyride_probe
+  | skip(extension_host_test) → untested_in_real_env → regression_risk
+
+λ dev_terminal.
+  command_execution ≡ wait_for_completion | isBackground: false
+  | return_all_output > partial_stream | complete_results > cancelled_reruns
+  | ¬parallel_commands_during_test | ¬poll | ¬sleep_wait
+
+λ repo_orientation.
+  package.json ≡ manifest | commands ∧ config_schema ∧ activation ∧ keybindings
+  | main ≡ ./out/extension | source ≡ src/extension.ts
+  | src/nrepl/     → client, sessions, routing, jack-in, protocol
+  | src/api/       → v0, v1, who-tracking, public surface
+  | src/connector.ts → jack-in ∧ connect lifecycle
+  | src/state.ts   → global state management
+  | discover_rest: tree ∧ grep | these_four ≡ stable_gravity_wells
+
+λ dev_workflow.
+  branch_target ≡ dev | ¬published | ¬main
+  | CHANGELOG.md ≡ required_on_every_PR | [Unreleased] section
+  | PR_checklist ≡ enforced | cross_platform_testing_considered
+  | ci ≡ CircleCI | release ≡ version_tag_push → automated
+  | publish_script ≡ babashka | scripts/publish.clj
 ```
 
 ## Memory Anchors
@@ -431,7 +579,7 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
 λ remember.
   calva ≡ live_clojure_development_in_vscode
   | core_tension: responsiveness ⊗ correctness | instant_feedback ∧ always_right_context
-  
+
   the_invariants:
     ∀eval → has_session ∧ has_namespace | both_derive_mechanically
     ∀session → created_fresh ∨ reused_preserving_suffix
@@ -439,7 +587,7 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
     ∀process → one_client_per_process | one_client_per_manual_connect
     ¬eval_in_wrong_namespace | ¬eval_in_wrong_session | ¬eval_in_offline_session
     ¬two_clients_own_same_process | ¬orphaned_processes
-  
+
   the_fears:
     session_routing_breaks → eval_in_wrong_context → silent_failure
     namespace_desynchronizes → file_says_A → repl_has_B → confusion
@@ -449,7 +597,7 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
     terminal_closes_unexpectedly → process_dies → ¬detected_by_calva
     interrupt_fails_on_java21 → eval_hangs_forever → frozen_ui
     circular_dependency_in_config_loading → infinite_loop → extension_hangs
-  
+
   the_checks:
     before_eval: session_exists ∧ namespace_valid | routing_algorithm_chose_correctly
     before_jack_in: projectRoot_valid ∧ projectType_matches ∧ connectSequence_exists
@@ -458,7 +606,13 @@ Calva is a Clojure/ClojureScript IDE in VS Code. It bridges three worlds: the ed
     after_connect: describe_received ∧ primary_session_created ∧ secondary_if_needed
     after_eval: status_is_done | value_or_ex_set | result_routed_to_output
     after_disconnect: socket_destroyed ∧ handlers_cleaned ∧ registry_cleared
-  
+
+  the_dev_checks:
+    before_commit: watch_tasks_clean ∧ automated_tests_pass ∧ lint_clean
+    before_trusting_test: extension_host_tested_manually | ¬trust(automated_only)
+    before_assuming_state: joyride_probe ∨ watch_output | ¬guess(build_state)
+    after_change: verify_recompilation_via_watch | ¬assume(auto_built)
+
   the_dynamics:
     code_enters: editor → routing_selects_session → eval_in_nrepl → result_returns
     connection_forms: user_action → jack_in ∨ connect → client_created ∧ sessions_cloned
