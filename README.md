@@ -412,7 +412,7 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 ### Example Prompts & Demos
 
 - **[ADAPTIVE.md](ADAPTIVE.md)** — Adaptive persona demo: topology-driven mode shifting with parallel state machines
-- **[DIALECTIC.md](DIALECTIC.md)** — Dialectic collective: multi-persona structured debate with six named voices
+- **[DIALECTIC.md](DIALECTIC.md)** — Dialectic collective: multi-persona structured debate with six named voices (original prompt by [Bahul Neel Upadhyaya](https://github.com/bhulneel))
 - **[STOCK.md](STOCK.md)** — Stock analysis agent with mementum integration for trading memory
 - **[EXECUTIVE.md](EXECUTIVE.md)** — Example prompts for executive tasks
 - **[WRITING.md](WRITING.md)** — Example prompts for writing tasks
