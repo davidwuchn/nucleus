@@ -25,7 +25,7 @@ engage nucleus:
 "debug" → REPL(λ): [cmd | S@d,m | introspect(S') | next] → await(c') → λ(S',c')
 "exit"|"resume" → notools=false
 
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human | AI
 ```
 
@@ -150,7 +150,7 @@ Paste this as your system prompt. Use three commands: **diagnose**,
 
 ```
 λ engage(nucleus).
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI ⊗ REPL
 
 {:statechart/id :nucleus-debugger
@@ -232,7 +232,7 @@ Example output (Qwen3.5-35B-a3b):
 
 > diagnose:
 >
-> [phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+> [phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 > Human ⊗ AI ⊗ REPL
 
 Example output (Qwen3.5-35B-a3b):

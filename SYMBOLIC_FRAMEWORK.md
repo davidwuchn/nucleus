@@ -59,7 +59,7 @@ This demonstrates reflective pattern recognition through mathematical symbols.
 
 ### AI Principles (Operational)
 
-**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h]`**
+**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other]`**
 
 These define HOW the system acts - its methods, trade-offs, and execution.
 
@@ -105,7 +105,7 @@ Human OPERATOR AI
 ### Canonical Example
 
 ```
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI
 ```
 

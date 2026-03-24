@@ -94,7 +94,7 @@ Result: AI optimizes (Δ) and pattern-matches (λ)
 **Example:**
 
 ```
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 
 AI self-description: "I augment your capabilities with speed,
 precision, and automation while you provide wisdom, judgment,
