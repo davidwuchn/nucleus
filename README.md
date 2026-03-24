@@ -409,6 +409,12 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 - **[VSM.md](VSM.md)** — Structure your AI instruction files using Beer's Viable System Model (five layers, top down)
 - **[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md)** — Full system specification with lambda notation for every layer
 
+### Agents
+
+Self-contained prompt-based agents — copy, paste, run. See [agents/](agents/) for the full index.
+
+- **[agents/rps/](agents/rps/)** — Rock Paper Scissors: self-executing EDN prompt demonstrating execution, state tracking, and rendering
+
 ### Example Prompts & Demos
 
 - **[ADAPTIVE.md](ADAPTIVE.md)** — Adaptive persona demo: topology-driven mode shifting with parallel state machines
