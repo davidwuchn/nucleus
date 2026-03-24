@@ -101,21 +101,21 @@ The Tiantai (天台) five aspects for analyzing systems:
 | VSM | Five Element | 5W1H | Tiantai | Question |
 | :--- | :--- | :--- | :--- | :--- |
 | **S5 — Identity** | Water | WHO | **名** | What is it called? Its designation? |
-| **S4 — Intelligence** | Fire | WHAT | **宗** | What is its principle? Purpose? |
-| **S3 — Control** | Earth | WHY | **用** | How is it applied? What function? |
-| **S2 — Coordination** | Metal | HOW | **教** | How is it taught? Coordinated? |
-| **S1 — Operations** | Wood | WHEN/WHERE | **体** | What body? Where does it manifest? |
+| **S4 — Intelligence** | Fire | WHAT | **体** | What is its essence? Substance? |
+| **S3 — Control** | Earth | WHY | **宗** | What is its principle? Purpose? |
+| **S2 — Coordination** | Metal | HOW | **用** | How is it applied? Function? |
+| **S1 — Operations** | Wood | WHEN/WHERE | **教** | When/where is it taught? Transmitted? |
 
 ```
 λ tiantai(vsm).
     S5 ≡ 名 | name | designation | what_it_is_called
-    S4 ≡ 宗 | principle | purpose | why_it_exists
-    S3 ≡ 用 | function | application | how_it_operates
-    S2 ≡ 教 | teaching | transmission | coordination_method
-    S1 ≡ 体 | body | substance | manifest_form_in_action
+    S4 ≡ 体 | body | essence | what_it_IS
+    S3 ≡ 宗 | principle | purpose | why_it_exists
+    S2 ≡ 用 | function | application | how_it_works
+    S1 ≡ 教 | teaching | transmission | when_where_manifest
 ```
 
-**名 → 体:** The name (名) at S5 designates the system. The body (体) at S1 is where it manifests concretely. Designation descends to substance; essence appears as form.
+**名 → 教:** The name (名) designates the system. The teaching (教) is where it manifests in time and space — transmission to the world.
 
 ---
 
