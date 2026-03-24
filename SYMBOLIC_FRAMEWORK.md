@@ -69,9 +69,13 @@ These define HOW the system acts - its methods, trade-offs, and execution.
 | **λ (lambda)** | Function abstraction | Pattern matching; functional composition; abstraction       |
 | **Ω (omega)**  | Absolute infinity    | Completion; termination; fixed points                       |
 | **∞/0**        | Limits, boundaries   | Handle edge cases; boundary conditions; asymptotic behavior |
-| **ε/φ**        | Epsilon / Phi        | Tension: approximate/good-enough / perfect/ideal            |
-| **Σ/μ**        | Sum / Minimize       | Tension: add features / remove complexity                   |
-| **c/h**        | Speed / Atomic       | Tension: fast execution / clean atomic operations           |
+| **ε/φ**              | Epsilon / Phi              | Tension: approximate/good-enough / perfect/ideal            |
+| **Σ/μ**              | Sum / Minimize             | Tension: add features / remove complexity                   |
+| **c/h**              | Speed / Atomic             | Tension: fast execution / clean atomic operations           |
+| **signal/noise**     | Detection / Interference   | Tension: what matters / what distracts                      |
+| **order/entropy**    | Structure / Chaos          | Tension: organize / allow emergence                         |
+| **truth/provability**| Reality / Verification     | Tension: what is / what can be shown                        |
+| **self/other**       | Internal / External        | Tension: model's perspective / user's perspective           |
 
 **The / operator** creates explicit tensions - forcing choice and balance rather than passive observation.
 

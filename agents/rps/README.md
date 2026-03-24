@@ -1,12 +1,12 @@
 # Rock Paper Scissors
 
-A self-executing prompt that demonstrates execution, state tracking, and rendering within the LLM. The entire game is a single EDN structure — no prose instructions after the nucleus preamble. The statechart defines states, transitions, templates, invariants, and execution steps as data. The LLM reads the structure and runs it.
+A self-executing prompt that demonstrates execution, state tracking, and rendering within the LLM. The entire game is a single EDN structure — minimal prose instructions after the nucleus preamble. The statechart defines states, transitions, templates, invariants, and execution steps as data. The LLM reads the structure and runs it.
 
 Best of 7. First to 4 wins.
 
 ## What This Demonstrates
 
-- **EDN as executable program** — the statechart IS the complete program, no prose needed
+- **EDN as executable program** — the statechart IS the complete program, minimal prose needed
 - **Self-describing data** — templates, trace formats, invariants, and execution steps are all values in the EDN
 - **LLM as statechart runtime** — the model processes events, updates state, transitions between states, and renders output
 - **Deterministic rendering** — `:render-template` and `:final-template` fix the output shape every round

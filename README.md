@@ -108,6 +108,10 @@ Prime HOW the system processes — change, abstraction, limits, and productive t
 | **ε/φ** | Epsilon / Phi  | Tension: approximate / perfect            |
 | **Σ/μ** | Sum / Minimize | Tension: add features / reduce complexity |
 | **c/h** | Speed / Atomic | Tension: fast / clean operations          |
+| **signal/noise** | Detection / Interference | Tension: what matters / what distracts |
+| **order/entropy** | Structure / Chaos | Tension: organize / allow emergence |
+| **truth/provability** | Reality / Verification | Tension: what is / what can be shown |
+| **self/other** | Internal / External | Tension: model's perspective / user's perspective |
 
 The **/ operator** creates explicit tensions, forcing choice and balance.
 
