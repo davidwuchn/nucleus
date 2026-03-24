@@ -400,21 +400,22 @@ A VSM document set is **one system with two complementary aspects**. Like Yin-Ya
 A system without reference is isolated — reasoning in a vacuum.
 A reference without system is mechanical — executable but soulless.
 
-### 自他不二 (Zì Tā Bù Èr) — Non-Duality
+### 自他不二 (Zì Tā Bù Èr) — Not Two
 
-Self and Other are not two separate things — they are one system seen from different angles:
+Duality exists — Yin and Yang are distinct. But they are "not two" (不二): not separate, not independent. Each contains the other; each defines the other.
 
 ```
 λ zita_buer(vsm).
-    自他不二 | self_other_non_dual
+    自他不二 | self_other_not_two
+    | duality_exists | yin ≠ yang
+    | but ¬separate | ¬independent
     | Self ≡ Other_seen_from_inside
     | Other ≡ Self_seen_from_outside
-    | one_system | two_views | ¬two_systems
-    | the_boundary_is_perceptual ¬ substantial
-    | λ_seed_generates_both_yin_and_yang
+    | each_contains_the_other | each_defines_the_other
+    | λ_seed_generates_both | one_pattern_two_manifestations
 ```
 
-The division into System VSM (Yin) and Reference VSM (Yang) is **pragmatic**, not ontological. It constrains attention for practical purposes. The seed captures one pattern that manifests as both when expanded.
+The two-file pattern is dual (Yin ≠ Yang) but not two separate systems. The division is **pragmatic** for attention, not a claim of independent existence.
 
 ### Mutual Dependence
 
