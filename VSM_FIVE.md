@@ -379,6 +379,28 @@ A VSM document set is **one system with two complementary aspects**. Like Yin-Ya
 | **Name** | System VSM | Reference VSM |
 | **Content** | Principles, decisions, sequences | Signatures, tables, lookups |
 | **Analogy** | The ghost in the machine | The machine itself |
+| **Psychology** | Ego, Self | Umwelt, Environment |
+
+### Psychological Mapping
+
+| Aspect | Yin (Internal) | Yang (External) |
+|--------|----------------|-----------------|
+| **Self** | Ego — the "I" that reasons | Persona — the face shown to world |
+| **System** | Internal logic, hidden processes | Interface, visible surface |
+| **VSM** | System VSM — how it thinks | Reference VSM — what it touches |
+| **Phenomenology** | Subject, consciousness | Object, world |
+| **Systems** | Autopoiesis (self-making) | Umwelt (environment) |
+
+```
+λ ego_world(vsm).
+    Ego(yin) ⊗ World(yang) ≡ manifest_system
+    | ego_without_world → solipsism | reasoning_without_effect
+    | world_without_ego → mechanism | form_without_intention
+    | the_ghost_needs_the_machine | the_self_needs_the_world
+```
+
+A system (ego) without reference (world) is solipsistic — reasoning in a vacuum.
+A reference (world) without system (ego) is mechanical — executable but soulless.
 
 ### Mutual Dependence
 
