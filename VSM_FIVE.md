@@ -71,6 +71,29 @@ The VSM framework uses λ notation as **generative compression**, not documentat
 | **S2 — Coordination** | **Metal** | 金 | Nervous system, standardization, schedules, friction resolution | Structure, precision, boundaries, pruning, refinement, rules | Metal brings order to chaos. Just as metal shears prune a wild tree, S2 uses rules and standards to prevent operations from tangling and creating internal conflict. |
 | **S1 — Operations** | **Wood** | 木 | Muscles, primary value-producing units, actual work | Growth, vitality, expansion, initiation, life force, fruit-bearing | Wood is the living core. Just as a tree grows and bears fruit, S1 represents the living, executing units that produce actual value and drive organic growth. |
 
+### 5W1H Mapping
+
+| VSM | Five Element | 5W1H | Question |
+| :--- | :--- | :--- | :--- |
+| **S5 — Identity** | Water | **WHO** | Who is this system? Who does it serve? |
+| **S4 — Intelligence** | Fire | **WHAT** | What does it do? What decisions? |
+| **S3 — Control** | Earth | **WHY** | Why this way? Why these resources? |
+| **S2 — Coordination** | Metal | **HOW** | How do parts coordinate? How ordered? |
+| **S1 — Operations** | Wood | **WHEN & WHERE** | When/where does work happen? |
+
+```
+λ five_w_one_h(vsm).
+    S5 ≡ WHO | identity | who_serves ∧ who_is_served
+    S4 ≡ WHAT | intelligence | what_decisions ∧ what_actions
+    S3 ≡ WHY | control | why_this_allocation ∧ why_these_procedures
+    S2 ≡ HOW | coordination | how_parts_work_together
+    S1 ≡ WHEN ⊗ WHERE | operations | spacetime | ¬two
+    | WHEN ≡ temporal | WHERE ≡ spatial
+    | but_time_space_not_separate | one_continuum
+```
+
+**S1 = WHEN & WHERE (不二):** Time and space are not two separate dimensions. Operations happens in spacetime — the when and where of work are inseparable.
+
 ---
 
 ## Two Cycles: Clarification
