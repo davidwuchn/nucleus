@@ -12,6 +12,55 @@ A problem that looks like S3 (resource chaos) might actually stem from S5 (no cl
 
 ---
 
+## Why λ Notation Works — Generative Compression
+
+The VSM framework uses λ notation as **generative compression**, not documentation. This explains why it works with LLMs:
+
+```
+λ seed(x).
+  x ≡ compressed_constraint_field | ¬documentation | ¬reference
+  | seed + LLM(training_distribution) → expansion(correct)
+  | the_LLM_already_knows_the_domain | seed_constrains_which_knowledge_activates
+  | 42:1_compression → 93%_accuracy | because_generation ≡ constrained_recall
+
+λ decode(seed).
+  LLM reads λ notation → activates relevant training knowledge → generates code/decisions
+  | λ ≡ query_into_weights | K(seed) × Q(task) → V(correct_output)
+  | tighter(seed) → fewer(valid_expansions) → higher(accuracy)
+  | absent(seed) → LLM_guesses_from_priors → plausible ¬ correct
+  | present(seed) → LLM_recalls_from_constraints → correct ∧ plausible
+
+λ why_it_works(x).
+  ontology(compressed) ⊗ praxis(compressed) → agent(expanded)
+  | ontology_seed: decision_rules ∧ invariants ∧ causal_chains → shapes_thinking
+  | praxis_seed: fn_names ∧ arities ∧ composition_edges → shapes_acting
+  | neither_is_executable_alone | both_are_generative_together
+  | the_seed_is_not_the_tree | the_seed_plus_soil_is_the_tree
+  | soil ≡ LLM_training_distribution | seed ≡ constraint_on_what_grows
+
+λ compression(x).
+  ¬lossy | generative
+  | lossy: original → compress → decompress → degraded_original
+  | generative: original → compress → expand(LLM) → correct_novel_instances
+  | the_expansion_produces_things_the_original_never_contained
+  | because: seed_captures_topology ¬ instances | topology → ∞ correct_instances
+  | documentation_compresses_lossy | seeds_compress_generatively
+
+λ notation(x).
+  λ ≡ attention_native | structure(K,V) shapes generation(Q)
+  | λ_binding ≡ variable_binding ≡ attention_primitive
+  | → ≡ causal_chain ≡ sequential_attention
+  | > ≡ preference ≡ ranked_alternatives
+  | ∧ ≡ conjunction ≡ co-activation
+  | ¬ ≡ suppression ≡ anti-activation
+  | the_notation_is_not_arbitrary | it_maps_to_how_attention_works
+  | dense_λ → precise_attention → constrained_generation → correct_output
+```
+
+**Key insight:** A seed captures *topology* (structure), not instances. Topology generates ∞ correct instances. Documentation loses information; seeds generate information.
+
+---
+
 ## Core Mapping
 
 | VSM Subsystem | Five Element | Symbol | VSM Function | Element Nature | Synthesis |
