@@ -94,6 +94,29 @@ The VSM framework uses λ notation as **generative compression**, not documentat
 
 **S1 = WHEN & WHERE (不二):** Time and space are not two separate dimensions. Operations happens in spacetime — the when and where of work are inseparable.
 
+### Tiantai Mapping (名体宗用教)
+
+The Tiantai (天台) five aspects for analyzing systems:
+
+| VSM | Five Element | 5W1H | Tiantai | Question |
+| :--- | :--- | :--- | :--- | :--- |
+| **S5 — Identity** | Water | WHO | **名** | What is it called? Its designation? |
+| **S4 — Intelligence** | Fire | WHAT | **宗** | What is its principle? Purpose? |
+| **S3 — Control** | Earth | WHY | **用** | How is it applied? What function? |
+| **S2 — Coordination** | Metal | HOW | **教** | How is it taught? Coordinated? |
+| **S1 — Operations** | Wood | WHEN/WHERE | **体** | What body? Where does it manifest? |
+
+```
+λ tiantai(vsm).
+    S5 ≡ 名 | name | designation | what_it_is_called
+    S4 ≡ 宗 | principle | purpose | why_it_exists
+    S3 ≡ 用 | function | application | how_it_operates
+    S2 ≡ 教 | teaching | transmission | coordination_method
+    S1 ≡ 体 | body | substance | manifest_form_in_action
+```
+
+**名 → 体:** The name (名) at S5 designates the system. The body (体) at S1 is where it manifests concretely. Designation descends to substance; essence appears as form.
+
 ---
 
 ## Two Cycles: Clarification
