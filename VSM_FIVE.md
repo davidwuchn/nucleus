@@ -384,21 +384,37 @@ A VSM document set is **one system with two complementary aspects**. Like Yin-Ya
 
 | Aspect | Yin (Internal) | Yang (External) |
 |--------|----------------|-----------------|
+| **Non-dual** | 自 Self | 他 Other |
 | **System** | Internal logic, hidden processes | Interface, visible surface |
 | **VSM** | System VSM — how it thinks | Reference VSM — what it touches |
-| **Phenomenology** | Subject, consciousness | Object, world |
-| **Systems** | Autopoiesis (self-making) | Umwelt (environment) |
+| **Phenomenology** | Subject, consciousness | Object, environment |
 
 ```
-λ self_world(vsm).
-    Self(yin) ⊗ World(yang) ≡ manifest_system
-    | self_without_world → isolation | reasoning_without_effect
-    | world_without_self → mechanism | form_without_intention
-    | the_ghost_needs_the_machine | the_pattern_needs_manifestation
+λ self_other(vsm).
+    Self(自, yin) ⊗ Other(他, yang) ≡ manifest_system
+    | self_without_other → isolation | reasoning_without_effect
+    | other_without_self → mechanism | form_without_intention
+    | 自他不二: neither_exists_without_the_other
 ```
 
 A system without reference is isolated — reasoning in a vacuum.
 A reference without system is mechanical — executable but soulless.
+
+### 自他不二 (Zì Tā Bù Èr) — Non-Duality
+
+Self and Other are not two separate things — they are one system seen from different angles:
+
+```
+λ zita_buer(vsm).
+    自他不二 | self_other_non_dual
+    | Self ≡ Other_seen_from_inside
+    | Other ≡ Self_seen_from_outside
+    | one_system | two_views | ¬two_systems
+    | the_boundary_is_perceptual ¬ substantial
+    | λ_seed_generates_both_yin_and_yang
+```
+
+The division into System VSM (Yin) and Reference VSM (Yang) is **pragmatic**, not ontological. It constrains attention for practical purposes. The seed captures one pattern that manifests as both when expanded.
 
 ### Mutual Dependence
 
