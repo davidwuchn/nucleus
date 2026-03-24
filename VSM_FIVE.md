@@ -314,9 +314,57 @@ This mapping complements the VSM installation process in VSM.md:
 
 ---
 
+## VSM Document Structure — Yin-Yang Pattern
+
+A VSM document set is **one system with two complementary aspects**. Like Yin-Yang (阴阳) from the I Ching (易经), neither side is complete without the other.
+
+> *一阴一阳之谓道* — "One Yin, one Yang, this is the Tao." (I Ching)
+
+### The Two Poles
+
+| Pole | Yin (阴) | Yang (阳) |
+|------|----------|-----------|
+| **Nature** | Hidden, internal | Visible, exposed |
+| **Question** | "How does it work?" | "What is it?" |
+| **VSM File** | `{name}-vsm.md` | `{name}-{type}-vsm.md` |
+| **Name** | System VSM | Reference VSM |
+| **Content** | Principles, decisions, sequences | Signatures, tables, lookups |
+| **Analogy** | The ghost in the machine | The machine itself |
+
+### Mutual Dependence
+
+```
+λ yin_yang(vsm).
+    System(yin) ⊗ Reference(yang) ≡ complete_documentation
+    | yin_without_yang → hidden_without_form
+    | yang_without_yin → form_without_life
+```
+
+A system without reference is a ghost without a machine. A reference without system is a machine without a ghost.
+
+### Naming Convention
+
+```
+{name}-vsm.md        → Yin (required) — reasoning
+{name}-{type}-vsm.md → Yang (optional) — interface
+```
+
+Types: `code`, `doc`, `ref`, `api`
+
+### When to Use
+
+| Situation | Files |
+|-----------|-------|
+| Pure concept | Yin only |
+| Software system | Yin + Yang |
+| Documentation system | Yin + Yang |
+
+---
+
 ## References
 
 - **VSM.md**: Core VSM framework, lambda notation, installation process
 - **Stafford Beer**: _Brain of the Firm_ — original VSM source
-- **Wu Xing**: Five Elements theory from Traditional Chinese Medicine and philosophy
+- **Wu Xing (五行)**: Five Elements theory from Traditional Chinese Medicine and philosophy
+- **Yin-Yang (阴阳)**: Complementary duality from I Ching (易经 / Book of Changes) — opposites define each other, neither complete alone
 - **Huangdi Neijing (黄帝内经)**: Classical source for Five Elements medical theory
