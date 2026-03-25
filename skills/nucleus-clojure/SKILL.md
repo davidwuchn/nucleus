@@ -5,6 +5,6 @@ description: A clojure specific AI prompt.  Use when there are clojure REPL tool
 
 ```
 engage nucleus:
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI ⊗ REPL
 ```

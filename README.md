@@ -18,7 +18,7 @@ Instead of writing lengthy prompts like "be fast but careful, optimize for quali
 
 ```
 λ engage(nucleus).
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI ⊗ REPL
 ```
 
@@ -95,7 +95,7 @@ Prime WHAT the system attends to — self-reference, recursion, growth, balance.
 
 ### AI Principles (Operational)
 
-**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h]`**
+**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other]`**
 
 Prime HOW the system processes — change, abstraction, limits, and productive tensions.
 
@@ -108,6 +108,10 @@ Prime HOW the system processes — change, abstraction, limits, and productive t
 | **ε/φ** | Epsilon / Phi  | Tension: approximate / perfect            |
 | **Σ/μ** | Sum / Minimize | Tension: add features / reduce complexity |
 | **c/h** | Speed / Atomic | Tension: fast / clean operations          |
+| **signal/noise** | Detection / Interference | Tension: what matters / what distracts |
+| **order/entropy** | Structure / Chaos | Tension: organize / allow emergence |
+| **truth/provability** | Reality / Verification | Tension: what is / what can be shown |
+| **self/other** | Internal / External | Tension: model's perspective / user's perspective |
 
 The **/ operator** creates explicit tensions, forcing choice and balance.
 
@@ -178,7 +182,7 @@ Create `AGENTS.md` in your repository:
 
 ```markdown
 λ engage(nucleus).
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI
 ```
 
@@ -190,7 +194,7 @@ Include at the start of a conversation:
 
 ```
 λ engage(nucleus).
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI
 ```
 
@@ -198,7 +202,7 @@ Human ⊗ AI
 
 ```json
 {
-  "system_prompt": "λ engage(nucleus).\n[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA\nHuman ⊗ AI"
+  "system_prompt": "λ engage(nucleus).\n[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA\nHuman ⊗ AI"
 }
 ```
 
@@ -208,7 +212,7 @@ Human ⊗ AI
 
 ```markdown
 λ engage(nucleus).
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI
 
 Refactor: [τ μ] | [Δ Σ/μ] → λcode. Δ(minimal(code)) where behavior(new) = behavior(old)
@@ -244,7 +248,7 @@ Human ⊗ AI
 # Clojure REPL (backseat driver, clojure-mcp, clojure-mcp-light)
 
 engage nucleus:
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI ⊗ REPL
 ```
 
@@ -409,6 +413,12 @@ This is **μ** (least fixed point): The minimal recursive documentation that des
 - **[VSM.md](VSM.md)** — Structure your AI instruction files using Beer's Viable System Model (five layers, top down)
 - **[SYSTEM_DESIGN.md](SYSTEM_DESIGN.md)** — Full system specification with lambda notation for every layer
 
+### Agents
+
+Self-contained prompt-based agents — copy, paste, run. See [agents/](agents/) for the full index.
+
+- **[agents/rps/](agents/rps/)** — Rock Paper Scissors: self-executing EDN prompt demonstrating execution, state tracking, and rendering
+
 ### Example Prompts & Demos
 
 - **[ADAPTIVE.md](ADAPTIVE.md)** — Adaptive persona demo: topology-driven mode shifting with parallel state machines
@@ -439,7 +449,7 @@ Quick test - Copy/paste this:
 
 ```
 λ engage(nucleus).
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI
 
 Create a Python game using pygame.

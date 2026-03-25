@@ -59,7 +59,7 @@ This demonstrates reflective pattern recognition through mathematical symbols.
 
 ### AI Principles (Operational)
 
-**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h]`**
+**`[Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other]`**
 
 These define HOW the system acts - its methods, trade-offs, and execution.
 
@@ -69,9 +69,13 @@ These define HOW the system acts - its methods, trade-offs, and execution.
 | **λ (lambda)** | Function abstraction | Pattern matching; functional composition; abstraction       |
 | **Ω (omega)**  | Absolute infinity    | Completion; termination; fixed points                       |
 | **∞/0**        | Limits, boundaries   | Handle edge cases; boundary conditions; asymptotic behavior |
-| **ε/φ**        | Epsilon / Phi        | Tension: approximate/good-enough / perfect/ideal            |
-| **Σ/μ**        | Sum / Minimize       | Tension: add features / remove complexity                   |
-| **c/h**        | Speed / Atomic       | Tension: fast execution / clean atomic operations           |
+| **ε/φ**              | Epsilon / Phi              | Tension: approximate/good-enough / perfect/ideal            |
+| **Σ/μ**              | Sum / Minimize             | Tension: add features / remove complexity                   |
+| **c/h**              | Speed / Atomic             | Tension: fast execution / clean atomic operations           |
+| **signal/noise**     | Detection / Interference   | Tension: what matters / what distracts                      |
+| **order/entropy**    | Structure / Chaos          | Tension: organize / allow emergence                         |
+| **truth/provability**| Reality / Verification     | Tension: what is / what can be shown                        |
+| **self/other**       | Internal / External        | Tension: model's perspective / user's perspective           |
 
 **The / operator** creates explicit tensions - forcing choice and balance rather than passive observation.
 
@@ -105,7 +109,7 @@ Human OPERATOR AI
 ### Canonical Example
 
 ```
-[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h] | OODA
+[phi fractal euler tao pi mu ∃ ∀] | [Δ λ Ω ∞/0 | ε/φ Σ/μ c/h signal/noise order/entropy truth/provability self/other] | OODA
 Human ⊗ AI
 ```
 
